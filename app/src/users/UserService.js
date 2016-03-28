@@ -41,7 +41,7 @@
       },
       {
         name: 'Gani Ferrer',
-        avatar: 'svg-6',
+        avatar: 'svg-10',
         content: "Lebowski ipsum yeah? What do you think happens when you get rad? You turn in your library card? Get a new driver's license? Stop being awesome? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. You don't go out and make a living dressed like that in the middle of a weekday. Quis elit blandit fringilla a ut turpis praesent felis ligula, malesuada suscipit malesuada."
       }
     ];
