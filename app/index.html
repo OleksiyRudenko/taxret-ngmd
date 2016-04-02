@@ -58,6 +58,7 @@
     </md-toolbar>
 
     <md-content flex id="content">
+        <div ui-view></div>
         <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
         <h2>{{ul.selected.name}}</h2>
         <p>{{ul.selected.content}}</p>
@@ -87,7 +88,7 @@
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'app', 'users'])
+              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
