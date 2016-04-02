@@ -23,12 +23,12 @@
 
   </head>
 
-  <body ng-app="taxretApp" layout="row" ng-controller="AppController as ul" ng-cloak >
+  <body ng-app="taxretApp" layout="row" ng-controller="AppController as appct" ng-cloak >
 
   <!-- A. Sidenav. Menu-button if port width > 960px (gt-sm) -->
   <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
       md-component-id="left"
-      ng-click="ul.toggleList()" aria-label="Show User List"
+      ng-click="appct.toggleList()" aria-label="Show User List"
       md-is-locked-open="$mdMedia('gt-sm')">
 
     <md-toolbar class="md-whiteframe-z1">
@@ -36,8 +36,8 @@
     </md-toolbar>
 
     <md-list>
-      <md-list-item ng-repeat="it in ul.users">
-          <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+      <md-list-item ng-repeat="it in appct.users">
+          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.selected }">
             <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
             {{it.name}}
           </md-button>
@@ -51,7 +51,7 @@
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
     <md-toolbar layout="row" class="md-whiteframe-z1">
-      <md-button id="main" class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+      <md-button id="main" class="menu" hide-gt-sm ng-click="appct.toggleList()" aria-label="Show User List">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
       <h3>Angular Material - Starter App</h3>
@@ -59,12 +59,12 @@
 
     <md-content flex id="content">
         <div ui-view></div>
-        <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
-        <h2>{{ul.selected.name}}</h2>
-        <p>{{ul.selected.content}}</p>
+        <md-icon md-svg-icon="{{appct.selected.avatar}}" class="avatar"></md-icon>
+        <h2>{{appct.selected.name}}</h2>
+        <p>{{appct.selected.content}}</p>
 
-        <md-button class="contact" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
-          <md-tooltip>Contact {{ ul.selected.name }}</md-tooltip>
+        <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.selected)" aria-label="Share with {{ appct.selected.name }}">
+          <md-tooltip>Contact {{ appct.selected.name }}</md-tooltip>
           <md-icon md-svg-icon="share"></md-icon>
         </md-button>
       </md-content>
@@ -76,7 +76,8 @@
   <script src="../node_modules/angular-animate/angular-animate.js"></script>
   <script src="../node_modules/angular-aria/angular-aria.js"></script>
   <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
-  <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script -->
+  <script type="text/javascript" src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
 
   <script src="./src/app/AppModule.js"></script>
   <script src="./src/app/AppController.js"></script>
