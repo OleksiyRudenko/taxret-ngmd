@@ -35,13 +35,13 @@
   <!-- A. Sidenav. Menu-button if port width > 960px (gt-sm) -->
   <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
       md-component-id="left"
-      ng-click="appct.toggleList()" aria-label="Show User List"
+      ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
       md-is-locked-open="$mdMedia('gt-sm')">
 
     <md-toolbar class="md-whiteframe-z1">
         <md-button style="text-align:left" ui-sref="declarants">
-            <md-icon md-svg-icon="{{appct.selected.avatar}}" class="avatar"></md-icon>
-            {{appct.selected.name}}
+            <md-icon md-svg-icon="{{appct.currDeclarant.avatar}}" class="avatar"></md-icon>
+            {{appct.currDeclarant.name}}
         </md-button>
     </md-toolbar>
 
@@ -55,7 +55,7 @@
 
     <md-list>
       <md-list-item ng-repeat="it in appct.users">
-          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.selected }">
+          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.currDeclarant }">
             <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
             {{it.name}}
           </md-button>
@@ -81,12 +81,13 @@
 
     <md-content flex id="content">
         <div ui-view></div>
-        <md-icon md-svg-icon="{{appct.selected.avatar}}" class="avatar"></md-icon>
-        <h2>{{appct.selected.name}}</h2>
-        <p>{{appct.selected.content}}</p>
+        <md-icon md-svg-icon="{{appct.currDeclarant.avatar}}" class="avatar"></md-icon>
+        <h2>{{appct.currDeclarant.name}}</h2>
+        <p>{{appct.currDeclarant.content}}</p>
 
-        <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.selected)" aria-label="Share with {{ appct.selected.name }}">
-          <md-tooltip>Contact {{ appct.selected.name }}</md-tooltip>
+        <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.currDeclarant)"
+                   aria-label="Share with {{ appct.currDeclarant.name }}">
+          <md-tooltip>Contact {{ appct.currDeclarant.name }}</md-tooltip>
           <md-icon md-svg-icon="share"></md-icon>
         </md-button>
       </md-content>
@@ -145,7 +146,10 @@
                       $stateProvider
                               .state('declarants', {
                                   url: "/declarants",
-                                  templateUrl: "partials/declarants.html"
+                                  templateUrl: "partials/declarants.html",
+                                  controller: function($scope) {
+                                      $scope.items = ["A", "List", "Of", "Items"];
+                                  }
                               })
                               .state('payroll', {
                                   url: "/payroll",

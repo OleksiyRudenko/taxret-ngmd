@@ -1,6 +1,32 @@
 <!-- ui.router state -->
 <!-- partials/declarants.html -->
 <h1>Декларанти</h1>
-<hr/>
+<md-tabs md-dynamic-height md-border-bottom xxng-controller="UserController as userct">
+    <md-tab label="Вибрати">
+        <md-content class="md-padding">
+            <md-list>
+                <md-list-item ng-repeat="it in userct.users">
+                    <md-button ng-click="userct.selectUser(it)" ng-class="{'selected' : it === userct.selected }">
+                        <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+                        {{it.name}}
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-content>
+        <h3>List of State 1 Items</h3>
+        <ul>
+            <li ng-repeat="item in items">{{ item }}</li>
+        </ul>
+    </md-tab>
+
+
+    <md-tab label="Всі ФО">
+        <md-content class="md-padding">
+            {{currDeclarant}}
+        </md-content>
+    </md-tab>
+
+
+</md-tabs>
 <a ui-sref="declarants.list">Show List</a>
 <div ui-view></div>

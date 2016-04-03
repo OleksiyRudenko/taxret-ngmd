@@ -8,7 +8,7 @@
        ]);
 
   /**
-   * Main Controller for the Angular Material Starter App
+   * User List Controller for the TaxRet App
    * @param $scope
    * @param $mdSidenav
    * @param avatarsService
@@ -43,12 +43,12 @@
       $mdSidenav('left').toggle();
     }
 
-    /**
-     * Select the current avatars
-     * @param menuId
-     */
+      /**
+       * Select the current avatars
+       * @param user
+       */
     function selectUser ( user ) {
-      self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+      self.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
     }
 
     /**

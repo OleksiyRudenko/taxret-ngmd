@@ -6,18 +6,19 @@
     angular
         .module('app')
         .controller('AppController', [
-            'appService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
+            'appService', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
             AppController
         ]);
 
     /**
-     * Main Controller for the Angular Material Starter App
+     * Main Controller for the TaxRet App
      * @param $scope
+     * @param userService
      * @param $mdSidenav
      * @param avatarsService
      * @constructor
      */
-    function AppController( appService, $mdSidenav, $mdBottomSheet, $log) {
+    function AppController( appService, userService, $mdSidenav, $mdBottomSheet, $log) {
         var self = this;
 
         self.states     = [
@@ -58,19 +59,19 @@
             }
         ];
 
-        self.selected     = null;
+        self.currDeclarant     = null;
         self.users        = [ ];
         self.selectUser   = selectUser;
-        self.toggleList   = toggleUsersList;
+        self.toggleSideNav   = toggleSideNav;
         self.makeContact  = makeContact;
 
         // Load all registered users
 
-        appService
+        userService
             .loadAllUsers()
             .then( function( users ) {
                 self.users    = [].concat(users);
-                self.selected = users[0];
+                self.currDeclarant = users[0];
             });
 
         // *********************************
@@ -80,7 +81,7 @@
         /**
          * Hide or Show the 'left' sideNav area
          */
-        function toggleUsersList() {
+        function toggleSideNav() {
             $mdSidenav('left').toggle();
         }
 
@@ -89,7 +90,7 @@
          * @param menuId
          */
         function selectUser ( user ) {
-            self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+            self.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
         }
 
         /**
