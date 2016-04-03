@@ -39,7 +39,7 @@
       md-is-locked-open="$mdMedia('gt-sm')">
 
     <md-toolbar class="md-whiteframe-z1">
-        <md-button style="text-align:left">
+        <md-button style="text-align:left" ui-sref="declarants">
             <md-icon md-svg-icon="{{appct.selected.avatar}}" class="avatar"></md-icon>
             {{appct.selected.name}}
         </md-button>
@@ -143,6 +143,10 @@
                       //
                       // Now set up the states
                       $stateProvider
+                              .state('declarants', {
+                                  url: "/declarants",
+                                  templateUrl: "partials/declarants.html"
+                              })
                               .state('payroll', {
                                   url: "/payroll",
                                   templateUrl: "partials/payroll.html"
