@@ -52,7 +52,7 @@
                 title   :   'Доходи ФОП'
             },
             {
-                sref    :   'taxct',
+                sref    :   'expenseexempt',
                 icon    :   '',
                 title   :   'Пільгові витрати'
             }
