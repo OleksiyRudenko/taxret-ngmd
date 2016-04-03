@@ -20,6 +20,44 @@
     function AppController( appService, $mdSidenav, $mdBottomSheet, $log) {
         var self = this;
 
+        self.states     = [
+            {
+                sref    :   'payroll',
+                icon    :   '',
+                title   :   'Доходи ФО'
+            },
+            {
+                sref    :   'transport',
+                icon    :   '',
+                title   :   'Транспортні засоби'
+            },
+            {
+                sref    :   'realestate',
+                icon    :   '',
+                title   :   'Нерухомість'
+            },
+            {
+                sref    :   'funds',
+                icon    :   '',
+                title   :   'Фондові активи'
+            },
+            {
+                sref    :   'foreignfee',
+                icon    :   '',
+                title   :   'Зарубіжні доходи'
+            },
+            {
+                sref    :   'entrepreneur',
+                icon    :   '',
+                title   :   'Доходи ФОП'
+            },
+            {
+                sref    :   'taxct',
+                icon    :   '',
+                title   :   'Пільгові витрати'
+            }
+        ];
+
         self.selected     = null;
         self.users        = [ ];
         self.selectUser   = selectUser;
