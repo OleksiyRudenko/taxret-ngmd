@@ -9,7 +9,14 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+
+    <!-- local dev fw/lib scripts/stylesheets references -->
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
+
+    <!-- remote production fw/lib scripts/stylesheets references >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.css"/ -->
+
+
     <link rel="stylesheet" href="assets/app.css"/>
 
     <style type="text/css">
@@ -37,7 +44,7 @@
 
       <md-list>
           <md-list-item ng-repeat="state in appct.states">
-              <md-button ui-sref="{{state.sref}}" void--ng-class="{'md-primary' : $state.current.url === '/' + state.sref }">
+              <md-button ui-sref="{{state.sref}}" void--ng-class="{'selected' : $state.current.url === '/' + state.sref }">
                   <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
               </md-button>
           </md-list-item>
@@ -80,12 +87,19 @@
       <!-- bottom-sheet show-up controlled by UserController::makeContact, which uses template './src/users/view/contactSheet.html' -->
   </div>
 
-  <script src="../node_modules/angular/angular.js"></script>
-  <script src="../node_modules/angular-animate/angular-animate.js"></script>
-  <script src="../node_modules/angular-aria/angular-aria.js"></script>
+  <!-- local dev fw/lib scripts references -->
+  <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+  <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="../node_modules/angular-aria/angular-aria.js"></script>
   <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
-  <!-- script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script -->
-  <script type="text/javascript" src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+  <!-- NOT AVAILABLE script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script -->
+
+  <!-- remote production fw/lib scripts references >
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-animate.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-aria.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.js"></script -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 
   <script src="./src/app/AppModule.js"></script>
   <script src="./src/app/AppController.js"></script>
