@@ -24,37 +24,37 @@
             {
                 sref    :   'payroll',
                 icon    :   '',
-                title   :   'Доходи ФО'
+                title   :   'Р”РѕС…РѕРґРё Р¤Рћ'
             },
             {
                 sref    :   'transport',
                 icon    :   '',
-                title   :   'Транспортні засоби'
+                title   :   'РўСЂР°РЅСЃРїРѕСЂС‚РЅС– Р·Р°СЃРѕР±Рё'
             },
             {
                 sref    :   'realestate',
                 icon    :   '',
-                title   :   'Нерухомість'
+                title   :   'РќРµСЂСѓС…РѕРјС–СЃС‚СЊ'
             },
             {
                 sref    :   'funds',
                 icon    :   '',
-                title   :   'Фондові активи'
+                title   :   'Р¤РѕРЅРґРѕРІС– Р°РєС‚РёРІРё'
             },
             {
                 sref    :   'foreignfee',
                 icon    :   '',
-                title   :   'Зарубіжні доходи'
+                title   :   'Р—Р°СЂСѓР±С–Р¶РЅС– РґРѕС…РѕРґРё'
             },
             {
                 sref    :   'entrepreneur',
                 icon    :   '',
-                title   :   'Доходи ФОП'
+                title   :   'Р”РѕС…РѕРґРё Р¤РћРџ'
             },
             {
                 sref    :   'expenseexempt',
                 icon    :   '',
-                title   :   'Пільгові витрати'
+                title   :   'РџС–Р»СЊРіРѕРІС– РІРёС‚СЂР°С‚Рё'
             }
         ];
 

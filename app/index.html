@@ -35,6 +35,12 @@
       <h3>Users</h3>
     </md-toolbar>
 
+      <md-list>
+          <md-list-item ng-repeat="state in appct.states">
+              <a ui-sref="{{state.sref}}">{{state.title}}</a>
+          </md-list-item>
+      </md-list>
+
     <md-list>
       <md-list-item ng-repeat="it in appct.users">
           <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.selected }">
@@ -105,6 +111,49 @@
                           .primaryPalette('yellow')
                           .accentPalette('amber')
                           .warnPalette('red');
+              })
+              .config(function($stateProvider, $urlRouterProvider) {
+                      //
+                      // For any unmatched url, redirect to /state1
+                      $urlRouterProvider.otherwise("/payroll");
+                      //
+                      // Now set up the states
+                      $stateProvider
+                              .state('payroll', {
+                                  url: "/payroll",
+                                  templateUrl: "partials/payroll.html"
+                              })
+                              /* .state('state1.list', {
+                                  url: "/list",
+                                  templateUrl: "partials/state1.list.html",
+                                  controller: function($scope) {
+                                      $scope.items = ["A", "List", "Of", "Items"];
+                                  }
+                              }) */
+                              .state('transport', {
+                                  url: "/transport",
+                                  templateUrl: "partials/transport.html"
+                              })
+                              .state('realestate', {
+                                  url: "/realestate",
+                                  templateUrl: "partials/realestate.html"
+                              })
+                              .state('funds', {
+                                  url: "/funds",
+                                  templateUrl: "partials/funds.html"
+                              })
+                              .state('foreignfee', {
+                                  url: "/foreignfee",
+                                  templateUrl: "partials/foreignfee.html"
+                              })
+                              .state('entrepreneur', {
+                                  url: "/entrepreneur",
+                                  templateUrl: "partials/entrepreneur.html"
+                              })
+                              .state('expenseexempt', {
+                                  url: "/expenseexempt",
+                                  templateUrl: "partials/expenseexempt.html"
+                              })
               });
 
     </script>
