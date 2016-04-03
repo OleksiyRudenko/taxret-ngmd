@@ -37,7 +37,9 @@
 
       <md-list>
           <md-list-item ng-repeat="state in appct.states">
-              <a ui-sref="{{state.sref}}">{{state.title}}</a>
+              <md-button ui-sref="{{state.sref}}" void--ng-class="{'md-primary' : $state.current.url === '/' + state.sref }">
+                  <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
+              </md-button>
           </md-list-item>
       </md-list>
 
