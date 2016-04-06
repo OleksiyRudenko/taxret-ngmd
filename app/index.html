@@ -147,9 +147,10 @@
                               .state('declarants', {
                                   url: "/declarants",
                                   templateUrl: "partials/declarants.html",
-                                  controller: function($scope) {
+                                  controller: 'AppController', /* function($scope) {
                                       $scope.items = ["A", "List", "Of", "Items"];
-                                  }
+                                  } */
+                                  controllerAs: 'userct'
                               })
                               .state('payroll', {
                                   url: "/payroll",

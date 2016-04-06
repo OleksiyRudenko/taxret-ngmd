@@ -29,7 +29,7 @@
           .loadAllUsers()
           .then( function( users ) {
             self.users    = [].concat(users);
-            self.selected = users[0];
+            self.selected = userService.getDeclarantCurrent();
           });
 
     // *********************************
