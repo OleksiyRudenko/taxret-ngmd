@@ -1,5 +1,6 @@
 /**
  * Created by oleksiy.rudenko on 03/04/2016.
+ *
  */
 (function(){
     'use strict';
@@ -16,6 +17,7 @@
      * @constructor
      */
     function AppService($q) {
+        /*
         var users = [
             {
                 name: 'Lia Lugo',
@@ -58,6 +60,8 @@
             // Simulate async nature of real remote calls
             return $q.when(users);
         };
+        */
+        return null;
     }
 
 })();

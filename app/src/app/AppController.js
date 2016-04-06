@@ -6,7 +6,8 @@
     angular
         .module('app')
         .controller('AppController', [
-            'appService', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
+            // 'appService',
+            'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
             AppController
         ]);
 
@@ -18,7 +19,8 @@
      * @param avatarsService
      * @constructor
      */
-    function AppController( appService, userService, $mdSidenav, $mdBottomSheet, $log) {
+    function AppController( // appService,
+                            userService, $mdSidenav, $mdBottomSheet, $log) {
         var self = this;
 
         self.states     = [
