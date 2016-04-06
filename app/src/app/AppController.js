@@ -71,7 +71,7 @@
             .loadAllUsers()
             .then( function( users ) {
                 self.users    = [].concat(users);
-                self.currDeclarant = users[0];
+                self.currDeclarant = userService.getDeclarantCurrent();
             });
 
         // *********************************
@@ -90,7 +90,9 @@
          * @param menuId
          */
         function selectUser ( user ) {
-            self.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
+            user = angular.isNumber(user) ? $scope.users[user] : user;
+            self.currDeclarant = user;
+            userService.setDeclarantCurrent(user);
         }
 
         /**
