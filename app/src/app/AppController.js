@@ -61,7 +61,7 @@
             }
         ];
 
-        self.currDeclarant     = null;
+        self.currDeclarant     = userService.getDeclarantCurrent(); // null
         self.users        = [ ];
         self.selectUser   = selectUser;
         self.toggleSideNav   = toggleSideNav;
@@ -73,7 +73,7 @@
             .loadAllUsers()
             .then( function( users ) {
                 self.users    = [].concat(users);
-                self.currDeclarant = userService.getDeclarantCurrent();
+                // self.currDeclarant = userService.getDeclarantCurrent();
             });
 
         // *********************************
