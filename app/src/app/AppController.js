@@ -7,7 +7,7 @@
         .module('app')
         .controller('AppController', [
             // 'appService',
-            'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
+            '$scope', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
             AppController
         ]);
 
@@ -20,8 +20,10 @@
      * @constructor
      */
     function AppController( // appService,
+                            $scope,
                             userService, $mdSidenav, $mdBottomSheet, $log) {
         var self = this;
+        $scope.userService = userService; // ?
 
         self.states     = [
             {
