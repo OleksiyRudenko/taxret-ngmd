@@ -13,6 +13,33 @@
    * @constructor
    */
   function UserService($q, $rootScope){
+    var ePersonStatusEnum = {
+      TAXAUTH   : 1,
+      LEGALP    : 2,
+      NATPERS   : 3,
+      PENTREP   : 4,
+      FREELANCE : 5,
+      properties : {
+        1 : { descr : "Податковий орган", isnatpers : false, },
+        2 : { descr : "Юридична особа",   isnatpers : false, },
+        3 : { descr : "Фізична особа",    isnatpers : true, },
+        4 : { descr : "ФО - підприємець", isnatpers : true, },
+        5 : { descr : "Самозайнята особа", isnatpers : true, },
+      },
+    };
+    if (Object.freeze())
+      Object.freeze(ePersonStatusEnum);
+    var ePersonAptTypeEnum = {
+      APT     : 1,
+      OFFICE  : 2,
+      properties : {
+        1 : { descr : "кв.", },
+        2 : { descr : "оф.",   },
+      },
+    };
+    if (Object.freeze())
+      Object.freeze(ePersonAptTypeEnum);
+
     var users = [
       {
         nameFull: 'Lia Lugo',
@@ -55,13 +82,15 @@
                   "+380504405758", "oleksiy.rudenko@gmail.com", 'svg-11', "No comment"
       )
     ];
-    var declarantCurrent = { user: users[1] };
+    var declarantCurrent = { user: users[6] };
 
     // Promise-based API
     return {
       loadAllUsers : loadAllUsers,
       getDeclarantCurrent : getDeclarantCurrent,
-      setDeclarantCurrent : setDeclarantCurrent
+      setDeclarantCurrent : setDeclarantCurrent,
+      ePersonStatusEnum   : ePersonStatusEnum,
+      ePersonAptTypeEnum  : ePersonAptTypeEnum,
     };
 
     function loadAllUsers() {
@@ -75,35 +104,13 @@
       declarantCurrent.user = user;
       $rootScope.$applyAsync();
     };
+
+
+
+
   }
 
-  var ePersonStatusEnum = {
-    TAXAUTH   : 1,
-    LEGALP    : 2,
-    NATPERS   : 3,
-    PENTREP   : 4,
-    FREELANCE : 5,
-    properties : {
-      1 : { descr : "Податковий орган", isnatpers : false, },
-      2 : { descr : "Юридична особа",   isnatpers : false, },
-      3 : { descr : "Фізична особа",    isnatpers : true, },
-      4 : { descr : "ФО - підприємець", isnatpers : true, },
-      5 : { descr : "Самозайнята особа", isnatpers : true, },
-    },
-  };
-  if (Object.freeze())
-    Object.freeze(ePersonStatusEnum);
-
-  var ePersonAptTypeEnum = {
-    APT     : 1,
-    OFFICE  : 2,
-    properties : {
-      1 : { descr : "кв.", },
-      2 : { descr : "оф.",   },
-    },
-  };
-  if (Object.freeze())
-    Object.freeze(ePersonAptTypeEnum);
+  // ==================================================================================================
 
   function ePerson(nameShort,
                    nameFull,
