@@ -2,6 +2,18 @@
 <!-- partials/declarants.html -->
 <h1>Декларанти</h1>
 <md-tabs md-dynamic-height md-border-bottom xxng-controller="UserController as userct">
+
+    <md-tab label="{{appct.userService.getDeclarantCurrent().name}}">
+        <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatar}}" class="avatar"></md-icon>
+        <h2>{{appct.userService.getDeclarantCurrent().name}}</h2>
+        <p>{{appct.userService.getDeclarantCurrent().content}}</p>
+        <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
+                   aria-label="Share with {{ appct.userService.getDeclarantCurrent().name }}">
+            <md-tooltip>Contact {{ appct.userService.getDeclarantCurrent().name }}</md-tooltip>
+            <md-icon md-svg-icon="share"></md-icon>
+        </md-button>
+    </md-tab>
+
     <md-tab label="Вибрати">
         <md-content class="md-padding">
             <md-list>
@@ -26,7 +38,6 @@
         </md-content>
     </md-tab>
 
-
 </md-tabs>
-<a ui-sref="declarants.list">Show List</a>
-<div ui-view></div>
+<!-- a ui-sref="declarants.list">Show List</a -->
+<!-- div ui-view></div -->
