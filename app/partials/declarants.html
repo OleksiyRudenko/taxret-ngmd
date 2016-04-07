@@ -3,25 +3,29 @@
 <h1>Декларанти</h1>
 <md-tabs md-dynamic-height md-border-bottom md-selected="selectedTab">
 
-    <md-tab label="{{appct.userService.getDeclarantCurrent().nameShort}}">
+    <md-tab label="{{appct.userService.getDeclarantCurrent().nameShort()}}">
         <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
-        <h2>{{appct.userService.getDeclarantCurrent().nameFull}}</h2>
+        <h2>{{appct.userService.getDeclarantCurrent().nameFull()}}</h2>
         <!-- p>{{appct.userService.getDeclarantCurrent().comment}}</p -->
         <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
-                   aria-label="Share with {{ appct.userService.getDeclarantCurrent().nameShort }}">
-            <md-tooltip>Contact {{appct.userService.getDeclarantCurrent().nameFull}}</md-tooltip>
+                   aria-label="Поділитись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
+            <md-tooltip>Contact {{appct.userService.getDeclarantCurrent().nameFull()}}</md-tooltip>
             <md-icon md-svg-icon="share"></md-icon>
         </md-button>
         <div layout="column" ng-cloak class="md-inline-form">
             <md-content layout-padding>
                 <form name="DeclarantCurrProfileEdit">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Повне ім'я</label>
-                        <input ng-model="appct.userService.getDeclarantCurrent().nameFull">
+                        <label>Прізвище</label>
+                        <input ng-model="appct.userService.getDeclarantCurrent().nameLast">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Скорочене ім'я</label>
-                        <input ng-model="appct.userService.getDeclarantCurrent().nameShort">
+                        <label>Ім'я</label>
+                        <input ng-model="appct.userService.getDeclarantCurrent().nameFirst">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>По батькові</label>
+                        <input ng-model="appct.userService.getDeclarantCurrent().namePat">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <md-checkbox ng-model="appct.userService.getDeclarantCurrent().isUAresident" aria-label="Resides in Ukraine">
@@ -122,7 +126,7 @@
                 <md-list-item ng-repeat="it in userct.users">
                     <md-button ng-click="userct.selectUser(it);" ng-class="{'selected' : it === userct.userService.getDeclarantCurrent() }">
                         <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
-                        {{it.nameFull}}
+                        {{it.nameLastInitials()}}
                     </md-button>
                 </md-list-item>
             </md-list>

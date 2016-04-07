@@ -42,42 +42,44 @@
 
     var users = [
       {
-        nameFull: 'Lia Lugo',
-        nameShort: 'Lia Lugo',
+        nameLast: 'Lugo',
+        nameFirst: 'Lia',
+        namePat: 'Petro',
         avatarid: 'svg-1',
         comment: 'I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly chalk and cheese. Lancashire.'
       },
       {
-        nameFull: 'George Duke',
-        nameShort: 'George Duke',
+        nameLast: 'Петренко',
+        nameFirst: 'Ірина',
+        namePat: 'Віталіївна',
         avatarid: 'svg-2',
         comment: 'Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.'
       },
       {
-        nameFull: 'Gener Delosreyes',
-        nameShort:   'Gener Delosreyes',
+        nameLast: 'Delosreyes',
+        nameFirst:   'Gener',
         avatarid: 'svg-3',
         comment: "Raw denim pour-over readymade Etsy Pitchfork. Four dollar toast pickled locavore bitters McSweeney's blog. Try-hard art party Shoreditch selfies. Odd Future butcher VHS, disrupt pop-up Thundercats chillwave vinyl jean shorts taxidermy master cleanse letterpress Wes Anderson mustache Helvetica. Schlitz bicycle rights chillwave irony lumberhungry Kickstarter next level sriracha typewriter Intelligentsia, migas kogi heirloom tousled. Disrupt 3 wolf moon lomo four loko. Pug mlkshk fanny pack literally hoodie bespoke, put a bird on it Marfa messenger bag kogi VHS."
       },
       {
-        nameFull:  'Lawrence Ray',
-        nameShort:  'Lawrence Ray',
+        nameLast:  'Ray',
+        nameFirst:  'Lawrence',
         avatarid: 'svg-4',
         comment: 'Scratch the furniture spit up on light gray carpet instead of adjacent linoleum so eat a plant, kill a hand pelt around the house and up and down stairs chasing phantoms run in circles, or claw drapes. Always hungry pelt around the house and up and down stairs chasing phantoms.'
       },
       {
-        nameFull: 'Ernesto Urbina',
-        nameShort: 'Ernesto Urbina',
+        nameLast: 'Urbina',
+        nameFirst: 'Ernesto',
         avatarid: 'svg-5',
         comment: 'Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Bubbli greplin stypi prezi mzinga heroku wakoopa, shopify airbnb dogster dopplr gooru jumo, reddit plickers edmodo stypi zillow etsy.'
       },
       {
-        nameFull: 'Gani Ferrer',
-        nameShort: 'Gani Ferrer',
+        nameLast: 'Ferrer',
+        nameFirst: 'Gani',
         avatarid: 'svg-10',
         comment: "Lebowski ipsum yeah? What do you think happens when you get rad? You turn in your library card? Get a new driver's license? Stop being awesome? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. You don't go out and make a living dressed like that in the middle of a weekday. Quis elit blandit fringilla a ut turpis praesent felis ligula, malesuada suscipit malesuada."
       },
-      new ePerson("Руденко Олексій", "Руденко Олексій Анатолійович", true, ePersonStatusEnum.NATPERS, "СН648208", "2695204236", "",
+      new ePerson("Руденко", "Олексій", "Анатолійович", true, ePersonStatusEnum.NATPERS, "СН648208", "2695204236", "",
                   "Україна", "(Київ)", "", "01021", "Київ", "Печерський р-н", "Кловський узвіз", 20, "", 4, ePersonAptTypeEnum.APT,
                   "+380504405758", "oleksiy.rudenko@gmail.com", 'svg-11', "No comment"
       )
@@ -112,8 +114,9 @@
 
   // ==================================================================================================
 
-  function ePerson(nameShort,
-                   nameFull,
+  function ePerson(nameLast,    // for legal entities: principal name
+                   nameFirst,   // for legal entities: abbreviated principal name
+                   namePat,     // for legal entities: incorporation form (Ltd, Inc. etc)
                    isUAresident,
                    status,
                    passportNr,
@@ -135,8 +138,9 @@
                    avatarid,
                    comment
     ) {
-    this.nameShort	=	nameShort;
-    this.nameFull	=	nameFull;
+    this.nameLast	=	nameLast;
+    this.nameFirst	=	nameFirst;
+    this.namePat	=	namePat;
     this.isUAresident	=	isUAresident;
     this.status	=	status;
     this.passportNr	=	passportNr;
@@ -157,6 +161,21 @@
     this.email	=	email;
     this.avatarid = avatarid;
     this.comment = comment;
+    this.nameFull = function() {
+      return this.nameLast + ' ' + this.nameFirst + ' ' + this.namePat;
+    };
+    this.nameShort = function() {
+      return this.nameFirst + ' ' + this.nameLast;
+    };
+    this.nameLastInitials = function() {
+      return this.nameLast + ' ' + this.nameFirst.charAt(0) + '.' + this.namePat.charAt(0) +'.';
+    };
+    this.nameFullCorp = function() {
+      return this.nameLast + ', ' + this.namePat;
+    };
+    this.nameShortCorp = function() {
+      return this.nameFirst + ', ' + this.namePat;
+    };
   }
 
 })();
