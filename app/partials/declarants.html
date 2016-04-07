@@ -9,7 +9,7 @@
         <!-- p>{{appct.userService.getDeclarantCurrent().comment}}</p -->
         <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
                    aria-label="Поділитись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
-            <md-tooltip>Contact {{appct.userService.getDeclarantCurrent().nameFull()}}</md-tooltip>
+            <md-tooltip>Зв'язатись з: {{appct.userService.getDeclarantCurrent().nameFull()}}</md-tooltip>
             <md-icon md-svg-icon="share"></md-icon>
         </md-button>
         <div layout="column" ng-cloak class="md-inline-form">
