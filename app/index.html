@@ -10,8 +10,11 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
 
-    <!-- local dev fw/lib scripts/stylesheets references SWITCH -->
-    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
+    <!-- local dev fw/lib scripts/stylesheets references SWITCH >
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/ -->
+
+    <!-- local production fw/lib scripts/stylesheets references SWITCH -->
+    <link rel="stylesheet" href="csslib/angular-material.1.0.6.min.css"/>
 
     <!-- remote production fw/lib scripts/stylesheets references SWITCH >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.css"/ -->
@@ -95,12 +98,20 @@
       <!-- bottom-sheet show-up controlled by UserController::makeContact, which uses template './src/users/view/contactSheet.html' -->
   </div>
 
-  <!-- local dev fw/lib scripts references SWITCH -->
+  <!-- local dev fw/lib scripts references SWITCH >
   <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
   <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
   <script type="text/javascript" src="../node_modules/angular-aria/angular-aria.js"></script>
   <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
   <!-- NOT AVAILABLE script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script -->
+
+  <!-- local production fw/lib scripts references SWITCH -->
+  <script type="text/javascript" src="jslib/angular.1.5.1.min.js"></script>
+  <script type="text/javascript" src="jslib/angular-animate.1.5.1.min.js"></script>
+  <script type="text/javascript" src="jslib/angular-aria.1.5.1.min.js"></script>
+  <script type="text/javascript" src="jslib/angular-material.1.0.6.min.js"></script -->
+  <script type="text/javascript" src="jslib/angular-ui-router.0.2.18.min.js"></script>
+
 
   <!-- remote production fw/lib scripts references SWITCH >
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular.min.js"></script>
@@ -108,7 +119,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-aria.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.js"></script -->
   <!-- remote production fw/lib scripts references PERMANENT -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+  <!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script -->
 
   <script src="./src/app/AppModule.js"></script>
   <script src="./src/app/AppController.js"></script>
