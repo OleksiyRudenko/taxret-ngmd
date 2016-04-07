@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('users')
-         .factory('userService', ['$q', UserService]);
+         .factory('userService', ['$q', '$rootScope', UserService]);
 
   /**
    * Users DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UserService($q){
+  function UserService($q, $rootScope){
     var users = [
       {
         name: 'Lia Lugo',
@@ -45,7 +45,7 @@
         content: "Lebowski ipsum yeah? What do you think happens when you get rad? You turn in your library card? Get a new driver's license? Stop being awesome? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. You don't go out and make a living dressed like that in the middle of a weekday. Quis elit blandit fringilla a ut turpis praesent felis ligula, malesuada suscipit malesuada."
       }
     ];
-    var declarantCurrent = users[0];
+    var declarantCurrent = { user: users[1] };
 
     // Promise-based API
     return {
@@ -59,10 +59,11 @@
       return $q.when(users);
     };
     function getDeclarantCurrent() {
-      return declarantCurrent;
+      return declarantCurrent.user;
     };
     function setDeclarantCurrent(user) {
-      declarantCurrent = user;
+      declarantCurrent.user = user;
+      $rootScope.$applyAsync();
     };
   }
 

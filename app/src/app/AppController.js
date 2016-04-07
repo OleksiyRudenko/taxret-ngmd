@@ -23,7 +23,7 @@
                             $scope,
                             userService, $mdSidenav, $mdBottomSheet, $log) {
         var self = this;
-        $scope.userService = userService; // ?
+        self.userService = userService; // ?
 
         self.states     = [
             {
@@ -63,7 +63,7 @@
             }
         ];
 
-        self.currDeclarant     = userService.getDeclarantCurrent(); // null
+        self.currDeclarant     = self.userService.getDeclarantCurrent(); // null
         self.users        = [ ];
         self.selectUser   = selectUser;
         self.toggleSideNav   = toggleSideNav;
@@ -71,7 +71,7 @@
 
         // Load all registered users
 
-        userService
+        self.userService
             .loadAllUsers()
             .then( function( users ) {
                 self.users    = [].concat(users);

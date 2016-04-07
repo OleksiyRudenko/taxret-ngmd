@@ -42,8 +42,8 @@
 
     <md-toolbar class="md-whiteframe-z1">
         <md-button style="text-align:left" ui-sref="declarants">
-            <md-icon md-svg-icon="{{appct.currDeclarant.avatar}}" class="avatar"></md-icon>
-            {{appct.currDeclarant.name}}
+            <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatar}}" class="avatar"></md-icon>
+            {{appct.userService.getDeclarantCurrent().name}}
         </md-button>
     </md-toolbar>
 
@@ -57,7 +57,7 @@
 
     <md-list>
       <md-list-item ng-repeat="it in appct.users">
-          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.currDeclarant }">
+          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.userService.getDeclarantCurrent() }">
             <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
             {{it.name}}
           </md-button>
@@ -83,13 +83,13 @@
 
     <md-content flex id="content">
         <div ui-view></div>
-        <md-icon md-svg-icon="{{appct.currDeclarant.avatar}}" class="avatar"></md-icon>
-        <h2>{{appct.currDeclarant.name}}</h2>
-        <p>{{appct.currDeclarant.content}}</p>
+        <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatar}}" class="avatar"></md-icon>
+        <h2>{{appct.userService.getDeclarantCurrent().name}}</h2>
+        <p>{{appct.userService.getDeclarantCurrent().content}}</p>
 
-        <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.currDeclarant)"
-                   aria-label="Share with {{ appct.currDeclarant.name }}">
-          <md-tooltip>Contact {{ appct.currDeclarant.name }}</md-tooltip>
+        <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
+                   aria-label="Share with {{ appct.userService.getDeclarantCurrent().name }}">
+          <md-tooltip>Contact {{ appct.userService.getDeclarantCurrent().name }}</md-tooltip>
           <md-icon md-svg-icon="share"></md-icon>
         </md-button>
       </md-content>
