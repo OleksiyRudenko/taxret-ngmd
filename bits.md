@@ -1,3 +1,4 @@
+## Services, Factories et al
 ### Service returns a promise
 Respect promise of async nature of data delivery.
 Inject (register) service via factory
@@ -81,3 +82,6 @@ See also [discussion](http://stackoverflow.com/questions/14324451/angular-servic
 See [explanation](https://gist.github.com/demisx/9605099)
 and also [in details](http://www.simplygoodcode.com/2015/11/the-difference-between-service-provider-and-factory-in-angularjs/)
 and on [docs.angularJS.org](https://docs.angularjs.org/guide/services)
+
+## $rootScope
+[broadcast/emit...](https://makeomatic.ru/blog/2014/10/07/Angular_scope_rootScope/)
