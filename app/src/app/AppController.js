@@ -24,6 +24,7 @@
                             userService, $mdSidenav, $mdBottomSheet, $log) {
         var self = this;
         self.userService = userService; // ?
+        $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
         self.states     = [
             {
@@ -97,6 +98,7 @@
             user = angular.isNumber(user) ? $scope.users[user] : user;
             self.currDeclarant = user;
             userService.setDeclarantCurrent(user);
+            $scope.selectedTab = 0;
         }
 
         /**
