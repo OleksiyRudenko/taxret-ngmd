@@ -10,6 +10,9 @@ angular
       title: "Svg-",
       background: ""
     });
+    $scope.AvaSelect = function() {
+      alert("Click!");
+    };
     function buildGridModel(tileTmpl){
       var it, results = [ ];
       for (var j=0; j<11; j++) {
