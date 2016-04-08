@@ -170,7 +170,9 @@ span.name {
 .userAvaGridTiles .pink {
   background: #ff80ab; }
 .userAvaGridTiles md-grid-tile {
-  transition: all 300ms ease-out 50ms; }
+  transition: all 300ms ease-out 50ms;
+  cursor: pointer;
+  }
 .userAvaGridTiles md-grid-tile md-icon {
   padding-bottom: 32px; }
 .userAvaGridTiles md-grid-tile md-grid-tile-footer {
