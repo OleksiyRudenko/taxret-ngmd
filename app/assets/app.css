@@ -131,58 +131,55 @@ span.name {
   background-color: transparent;
 } */
 
-/*
-
-.gridListdemoDynamicTiles md-icon {
+.userAvaGridTiles md-icon {
   width: 50%;
   height: 30%; }
-.gridListdemoDynamicTiles md-icon svg {
+.userAvaGridTiles md-icon svg {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%; }
-.gridListdemoDynamicTiles .s64 {
+.userAvaGridTiles .s64 {
   font-size: 64px; }
-.gridListdemoDynamicTiles .s32 {
+.userAvaGridTiles .s32 {
   font-size: 48px; }
-.gridListdemoDynamicTiles md-icon.fa {
+.userAvaGridTiles md-icon.fa {
   display: block;
   padding-left: 0; }
-.gridListdemoDynamicTiles md-icon.s32 span {
+.userAvaGridTiles md-icon.s32 span {
   padding-left: 8px; }
-.gridListdemoDynamicTiles md-grid-list {
+.userAvaGridTiles md-grid-list {
   margin: 8px; }
-.gridListdemoDynamicTiles .gray {
+.userAvaGridTiles .gray {
   background: #f5f5f5; }
-.gridListdemoDynamicTiles .green {
+.userAvaGridTiles .green {
   background: #b9f6ca; }
-.gridListdemoDynamicTiles .yellow {
+.userAvaGridTiles .yellow {
   background: #ffff8d; }
-.gridListdemoDynamicTiles .blue {
+.userAvaGridTiles .blue {
   background: #84ffff; }
-.gridListdemoDynamicTiles .darkBlue {
+.userAvaGridTiles .darkBlue {
   background: #80d8ff; }
-.gridListdemoDynamicTiles .deepBlue {
+.userAvaGridTiles .deepBlue {
   background: #448aff; }
-.gridListdemoDynamicTiles .purple {
+.userAvaGridTiles .purple {
   background: #b388ff; }
-.gridListdemoDynamicTiles .lightPurple {
+.userAvaGridTiles .lightPurple {
   background: #8c9eff; }
-.gridListdemoDynamicTiles .red {
+.userAvaGridTiles .red {
   background: #ff8a80; }
-.gridListdemoDynamicTiles .pink {
+.userAvaGridTiles .pink {
   background: #ff80ab; }
-.gridListdemoDynamicTiles md-grid-tile {
+.userAvaGridTiles md-grid-tile {
   transition: all 300ms ease-out 50ms; }
-.gridListdemoDynamicTiles md-grid-tile md-icon {
+.userAvaGridTiles md-grid-tile md-icon {
   padding-bottom: 32px; }
-.gridListdemoDynamicTiles md-grid-tile md-grid-tile-footer {
+.userAvaGridTiles md-grid-tile md-grid-tile-footer {
   background: rgba(0, 0, 0, 0.68);
   height: 36px; }
-.gridListdemoDynamicTiles md-grid-tile-footer figcaption {
+.userAvaGridTiles md-grid-tile-footer figcaption {
   width: 100%; }
-.gridListdemoDynamicTiles md-grid-tile-footer figcaption h3 {
+.userAvaGridTiles md-grid-tile-footer figcaption h3 {
   margin: 0;
   font-weight: 700;
   width: 100%;
   text-align: center; }
-*/
