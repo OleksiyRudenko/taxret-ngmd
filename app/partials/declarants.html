@@ -52,58 +52,61 @@
                     </div>
 
                     <md-content md-theme="form-shaded" class="md-accent">
+                        <h2>Адреса</h2>
                         <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: країна</label>
+                                <label>країна</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCountry">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: поштовий індекс</label>
+                                <label>поштовий індекс</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrPO">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: область/Київ/Севастополь</label>
+                                <label>область/Київ/Севастополь</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrRegion">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: район в області</label>
+                                <label>район в області</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrDistrict">
                             </md-input-container>
                         </div>
 
                         <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: населений пункт</label>
+                                <label>населений пункт</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCity">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: район у місті (для ідентифікації податкової інспекції)</label>
+                                <label>район у місті (для ідентифікації податкової інспекції)</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCityDistrict">
                             </md-input-container>
                         <!-- /div>
 
                         <div layout-gt-sm="row" -->
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: вулиця, провулок, проспект...</label>
+                                <label>вулиця, провулок, проспект...</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrStreet">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: номер будинку</label>
+                                <label>номер будинку</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrBuilding">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: корпус</label>
+                                <label>корпус</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrSubBuilding">
                             </md-input-container>
                             <div layout-gt-sm="column">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <md-radio-group ng-model="appct.userService.getDeclarantCurrent().addrAptType" class="md-primary">
-                                        <md-radio-button ng-repeat="(key,d) in appct.userService.ePersonAptTypeEnum.properties"
-                                                         ng-value="key">
-                                                         <!-- ng-class="{'md-align-top-left': $index==1}" >
-                                                        <!-- ng-disabled=" d.isDisabled " -->
-                                            {{d.descr}}<br/>
-                                        </md-radio-button>
+                                        <div ng-repeat="(key,d) in appct.userService.ePersonAptTypeEnum.properties">
+                                            <md-radio-button
+                                                             ng-value="key">
+                                                             <!-- ng-class="{'md-align-top-left': $index==1}" >
+                                                            <!-- ng-disabled=" d.isDisabled " -->
+                                                {{d.descr}}
+                                            </md-radio-button>
+                                        </div>
                                     </md-radio-group>
                                 </md-input-container>
                             </div>
@@ -112,7 +115,7 @@
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrAptType">
                             </md-input-container -->
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Адреса: номер помешкання</label>
+                                <label>номер помешкання</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrApt">
                             </md-input-container>
                         </div>

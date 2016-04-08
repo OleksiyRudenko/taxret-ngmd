@@ -101,6 +101,11 @@
             $scope.selectedTab = 0;
         }
 
+        function ChooseAvatar(avatarid) {
+            
+            return avatarid;
+        }
+
         /**
          * Show the Contact view in the bottom sheet
          */
