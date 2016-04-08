@@ -130,7 +130,7 @@
         };
 
         function DialogController($scope, $mdDialog) {
-          $scope.UserAvaGridCtrl = UserAvaGridCtrl;
+          // $scope.UserAvaGridCtrl = UserAvaGridCtrl;
           $scope.hide = function() {
             $mdDialog.hide();
           };

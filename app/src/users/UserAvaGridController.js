@@ -3,7 +3,7 @@
  */
 (function(){
 angular
-  .module('users', ['ngMaterial'])
+  .module('userAvaGrid', ['ngMaterial'])
   .controller('UserAvaGridCtrl', function($scope) {
     this.tiles = buildGridModel({
       icon : "avatarGrid:svg-",
@@ -44,8 +44,8 @@ angular
       return results;
     }
   })
-  /* .config( function( $mdIconProvider ){
+  .config( function( $mdIconProvider ){
     $mdIconProvider.iconSet("avatarGrid", './assets/svg/avatars.svg', 128); // see index.html
-  }) */;
+  });
 
 })();
