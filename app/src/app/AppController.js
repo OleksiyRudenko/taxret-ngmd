@@ -114,7 +114,7 @@
               templateUrl: 'partials/dialog.app.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
-              clickOutsideToClose:true,
+              clickOutsideToClose:false,
               fullscreen: useFullScreen
             })
             .then(function(answer) {
