@@ -85,6 +85,9 @@ md-list-item {
   transition: all 100ms ease-out 30ms;
 }
 
+.pointed {
+  cursor: pointer;
+}
 
 /* Utils */
 

@@ -6,14 +6,11 @@
 
     <md-tab label="{{appct.userService.getDeclarantCurrent().nameShort()}}">
 
-        <md-button md-no-ink
-                   ng-click="ChooseAvatarDialog($event,'{{appct.userService.getDeclarantCurrent().avatarid}}')"
-                   aria-label="Змінити аватар"
-                   id="chooseAvatarButton">
-                    <!-- ERR md-focused not removed after pop-up appearance -->
             <md-tooltip>Змінити аватар</md-tooltip>
-            <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
-        </md-button>
+            <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar pointed"
+                     ng-click="ChooseAvatarDialog($event,'{{appct.userService.getDeclarantCurrent().avatarid}}')">
+            </md-icon>
+
 
         <span class="name">{{appct.userService.getDeclarantCurrent().nameFull()}}</span>
         <div>{{status}}</div>
