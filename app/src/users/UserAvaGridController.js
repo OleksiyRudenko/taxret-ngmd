@@ -4,7 +4,7 @@
 (function(){
 angular
   .module('app')
-  .controller('UserAvaGridCtrl', function($scope,userService) {
+  .controller('UserAvaGridCtrl', function($scope,userService,$mdDialog) {
     this.tiles = buildGridModel({
       icon : "avatarGrid:svg-",
       title: "svg-",
@@ -13,6 +13,7 @@ angular
     $scope.avaSelect = function(avataridSelected) {
       // alert("Received " + avataridSelected + ". Current user " + userService.getDeclarantCurrent().avatarid);
       userService.getDeclarantCurrent().avatarid = avataridSelected;
+      $mdDialog.hide();
     };
     function buildGridModel(tileTmpl){
       var it, results = [ ];
