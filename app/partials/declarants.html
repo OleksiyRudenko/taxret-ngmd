@@ -6,10 +6,12 @@
 
     <md-tab label="{{appct.userService.getDeclarantCurrent().nameShort()}}">
 
-            <md-tooltip>Змінити аватар</md-tooltip>
-            <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar pointed"
+            <span>
+                <md-tooltip>Змінити аватар</md-tooltip>
+                <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar pointed"
                      ng-click="ChooseAvatarDialog($event,'{{appct.userService.getDeclarantCurrent().avatarid}}')">
-            </md-icon>
+                </md-icon>
+            </span>
 
 
         <span class="name">{{appct.userService.getDeclarantCurrent().nameFull()}}</span>
