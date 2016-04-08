@@ -133,10 +133,16 @@
                       .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
                       .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
-                      $mdThemingProvider.theme('default')
-                          .primaryPalette('indigo')
-                          .accentPalette('light-blue')
-                          .warnPalette('deep-orange');
+                  $mdThemingProvider.theme('default')
+                      .primaryPalette('indigo')
+                      .accentPalette('light-blue')
+                      .warnPalette('deep-orange');
+                  $mdThemingProvider.theme('form-shaded')
+                      .primaryPalette('orange')
+                      .accentPalette('yellow')
+                      .warnPalette('deep-orange')
+                      //.backgroundPalette('grey')
+                      .dark();
               })
               .config(function($stateProvider, $urlRouterProvider) {
                       //
