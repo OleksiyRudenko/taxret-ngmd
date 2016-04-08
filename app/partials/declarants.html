@@ -16,6 +16,7 @@
         </md-button>
 
         <span class="name">{{appct.userService.getDeclarantCurrent().nameFull()}}</span>
+        <div>{{status}}</div>
 
         <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
                    aria-label="Поділитись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
