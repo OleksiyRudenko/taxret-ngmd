@@ -4,14 +4,15 @@
 (function(){
 angular
   .module('app')
-  .controller('UserAvaGridCtrl', function($scope) {
+  .controller('UserAvaGridCtrl', function($scope,userService) {
     this.tiles = buildGridModel({
       icon : "avatarGrid:svg-",
-      title: "Svg-",
+      title: "svg-",
       background: ""
     });
-    $scope.AvaSelect = function() {
-      alert("Click!");
+    $scope.avaSelect = function(avataridSelected) {
+      // alert("Received " + avataridSelected + ". Current user " + userService.getDeclarantCurrent().avatarid);
+      userService.getDeclarantCurrent().avatarid = avataridSelected;
     };
     function buildGridModel(tileTmpl){
       var it, results = [ ];
