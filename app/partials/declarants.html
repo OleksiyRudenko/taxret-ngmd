@@ -1,12 +1,21 @@
 <!-- ui.router state -->
 <!-- partials/declarants.html -->
+<div id="popupContainer">
 <h1>Декларанти</h1>
 <md-tabs md-dynamic-height md-border-bottom md-selected="selectedTab">
 
     <md-tab label="{{appct.userService.getDeclarantCurrent().nameShort()}}">
-        <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
-        <h2>{{appct.userService.getDeclarantCurrent().nameFull()}}</h2>
-        <!-- p>{{appct.userService.getDeclarantCurrent().comment}}</p -->
+
+        <md-button md-no-ink
+                   ng-click="ChooseAvatarDialog($event,'{{appct.userService.getDeclarantCurrent().avatarid}}')"
+                   aria-label="Змінити аватар"
+                   id="chooseAvatarButton" >
+            <md-tooltip>Змінити аватар</md-tooltip>
+            <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
+        </md-button>
+
+        <span class="name">{{appct.userService.getDeclarantCurrent().nameFull()}}</span>
+
         <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
                    aria-label="Поділитись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
             <md-tooltip>Зв'язатись з: {{appct.userService.getDeclarantCurrent().nameFull()}}</md-tooltip>
@@ -174,3 +183,4 @@
 </md-tabs>
 <!-- a ui-sref="declarants.list">Show List</a -->
 <!-- div ui-view></div -->
+</div>

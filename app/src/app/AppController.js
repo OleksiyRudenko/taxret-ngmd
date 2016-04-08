@@ -7,7 +7,7 @@
         .module('app')
         .controller('AppController', [
             // 'appService',
-            '$scope', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
+            '$scope', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$mdDialog', '$mdMedia',
             AppController
         ]);
 
@@ -21,7 +21,8 @@
      */
     function AppController( // appService,
                             $scope,
-                            userService, $mdSidenav, $mdBottomSheet, $log) {
+                            userService, $mdSidenav, $mdBottomSheet, $log, $q,
+                            $mdDialog, $mdMedia) {
         var self = this;
         self.userService = userService; // ?
         $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
@@ -101,9 +102,44 @@
             $scope.selectedTab = 0;
         }
 
-        function ChooseAvatar(avatarid) {
-            
-            return avatarid;
+        // ================= Pop-up dialog fn set
+        $scope.status = '  ';
+        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+        $scope.ChooseAvatarDialog = function(ev,avatarid) {
+
+          var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+          // alert("Asked for me?");
+          $mdDialog.show({
+              controller: DialogController,
+              templateUrl: 'partials/dialog.app.ChooseAvatar.html',
+              parent: angular.element(document.body),
+              targetEvent: ev,
+              clickOutsideToClose:true,
+              fullscreen: useFullScreen
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+          $scope.$watch(function() {
+            return $mdMedia('xs') || $mdMedia('sm');
+          }, function(wantsFullScreen) {
+            $scope.customFullscreen = (wantsFullScreen === true);
+          });
+        };
+
+        function DialogController($scope, $mdDialog) {
+          $scope.UserAvaGridCtrl = UserAvaGridCtrl;
+          $scope.hide = function() {
+            $mdDialog.hide();
+          };
+          $scope.cancel = function() {
+            $mdDialog.cancel();
+          };
+          $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+          };
         }
 
         /**
