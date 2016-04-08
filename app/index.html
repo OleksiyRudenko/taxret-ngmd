@@ -41,7 +41,7 @@
       md-is-locked-open="$mdMedia('gt-sm')">
 
     <md-toolbar class="md-whiteframe-z1">
-        <md-button style="text-align:left" ui-sref="declarants">
+        <md-button style="text-align:left;" ui-sref="declarants">
             <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
             {{appct.userService.getDeclarantCurrent().nameShort()}}
         </md-button>
@@ -49,7 +49,9 @@
 
       <md-list>
           <md-list-item ng-repeat="state in appct.states">
-              <md-button ui-sref="{{state.sref}}" void--ng-class="{'selected' : $state.current.url === '/' + state.sref }">
+              <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : $state.current.url === '#/' + state.sref }"
+                      style="width:100%; text-align: left;"> <!-- ERR ng-class doesn't work -->
+                                                            <!-- ERR button isn't 100% wide w/out style -->
                   <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
               </md-button>
           </md-list-item>
@@ -58,8 +60,8 @@
     <!-- md-list>
       <md-list-item ng-repeat="it in appct.users">
           <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.userService.getDeclarantCurrent() }">
-            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-            {{it.name}}
+            <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
+            {{it.nameFirst+ ' ' +it.nameLast}}
           </md-button>
       </md-list-item>
     </md-list -->
