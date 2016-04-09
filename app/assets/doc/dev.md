@@ -72,13 +72,13 @@ boilerplate.
 ### RDBMS over IndexedDB
 Overview [2016-04-09]
 
-| RDBMS | Last commit | Commits |
-| :---    |   :---:   |    ---: |
-| [Lovefield](https://github.com/google/lovefield) | 2016-03-08 | 998 |
-| [yathit/YDN](https://github.com/yathit/ydn-db) | 2016-04-05 | 1,627 |
-| [TaffyDB](https://github.com/typicaljoe/taffydb) | 2015-11-28 | 95 |
-| [html5sql](https://github.com/KenCorbettJr/html5sql) [www](http://html5sql.com/guide.html) | 2012-06-05 | 12 |
-| [AlaSQL](https://github.com/agershun/alasql) [www](http://alasql.org/) | 2016-04-04 | 1,269 |
+| RDBMS | Last commit | Commits | NG-support |
+| :---    |   :---:   |    ---: | :---    |
+| [yathit/YDN](https://github.com/yathit/ydn-db) | 2016-04-05 | 1,627 | [example](http://dev.yathit.com/ydn-db/doc/example/feature-matrix.html)(ng v.1.2.0) |
+| [Lovefield](https://github.com/google/lovefield) | 2016-03-08 | 998 | [demo1(?)](https://github.com/google/lovefield/tree/master/demos/todo)[2015-10-07] [ionic-service](https://github.com/ben--wood/LoveField-Starter)[2016-01-16] [ng-wrapper](https://github.com/kutomer/ng-lovefield)[2016-03-01] |
+| [AlaSQL](https://github.com/agershun/alasql) [www](http://alasql.org/) | 2016-04-04 | 1,269 | [ng](https://github.com/agershun/alasql/wiki/Angular.js)[2015-09-16] |
+| [TaffyDB](https://github.com/typicaljoe/taffydb) | 2015-11-28 | 95 | [manual triggering ng-scope](http://stackoverflow.com/questions/20896762/data-storage-in-taffy-db)[2014-01-21] |
+| [html5sql](https://github.com/KenCorbettJr/html5sql) [www](http://html5sql.com/guide.html) | 2012-06-05 | 12 | not found |
 
 ## Secondary resources
 
