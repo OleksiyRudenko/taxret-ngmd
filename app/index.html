@@ -42,10 +42,17 @@
       md-is-locked-open="$mdMedia('gt-sm')">
 
     <md-toolbar class="md-whiteframe-z1">
-        <md-button style="text-align:left;" ui-sref="declarants">
-            <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
-            {{appct.userService.getDeclarantCurrent().nameShort()}}
-        </md-button>
+        <div layout-gt-sm="row">
+            <md-button style="text-align:left;" ui-sref="declarants">
+                <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
+                {{appct.userService.getDeclarantCurrent().nameShort()}}
+            </md-button>
+            <md-button class="md-fab md-mini md-primary" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
+                       aria-label="Зв'язатись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
+                <md-tooltip>Зв'язатись з: {{appct.userService.getDeclarantCurrent().nameShort()}}</md-tooltip>
+                <md-icon md-svg-icon="share"></md-icon>
+            </md-button>
+        </div>
     </md-toolbar>
 
       <div layout="column">
