@@ -15,6 +15,7 @@
 
 
         <span class="name">{{appct.userService.getDeclarantCurrent().nameFull()}}</span>
+        <span void--class="name">/ {{appct.userService.getDeclarantCurrent().nameShort()}} / {{appct.userService.getDeclarantCurrent().nameLastInitials()}}</span>
 
         <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
                    aria-label="Поділитись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
@@ -40,11 +41,11 @@
                             <label>По батькові</label>
                             <input ng-model="appct.userService.getDeclarantCurrent().namePat">
                         </md-input-container>
-                        <md-input-container class="md-block" flex-gt-sm>
+                        <!-- md-input-container class="md-block" flex-gt-sm>
                             <md-checkbox ng-model="appct.userService.getDeclarantCurrent().isUAresident" aria-label="Resides in Ukraine">
-                                Резидент України <!-- {{appct.userService.getDeclarantCurrent().isUAresident}} -->
+                                Резидент України <!-- {{appct.userService.getDeclarantCurrent().isUAresident}} - ->
                             </md-checkbox>
-                        </md-input-container>
+                        </md-input-container -->
                     <!-- /div>
 
                     <div layout-gt-sm="row" -->
@@ -57,19 +58,41 @@
                             <label>Ідентифікаційний код (Україна)</label>
                             <input ng-model="appct.userService.getDeclarantCurrent().idUAtaxCode">
                         </md-input-container>
-                        <md-input-container class="md-block" flex-gt-sm>
+                        <!-- md-input-container class="md-block" flex-gt-sm>
                             <label>Замінник ідентифікаційного коду</label>
                             <input ng-model="appct.userService.getDeclarantCurrent().idCodeSubst">
+                        </md-input-container -->
+                    </div>
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Номер телефону</label>
+                            <input ng-model="appct.userService.getDeclarantCurrent().telNr">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Електронна пошта</label>
+                            <input ng-model="appct.userService.getDeclarantCurrent().email">
                         </md-input-container>
                     </div>
 
-                    <md-content md-theme="form-shaded" class="md-accent" layout-padding>
-                        <h2>Адреса</h2>
+                    <!-- md-input-container class="md-block" flex-gt-sm>
+                        <label>Аватар</label>
+                        <input ng-model="appct.userService.getDeclarantCurrent().avatarid">
+                    </md-input-container -->
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Коментар для адміністратора</label>
+                        <textarea ng-model="appct.userService.getDeclarantCurrent().comment" md-maxlength="150" rows="5" md-select-on-focus>
+                            </textarea>
+                    </md-input-container>
+
+                    <md-content void--md-theme="form-shaded" class="md-accent" void--layout-padding>
+                        <h3>Адреса</h3>
                         <div layout-gt-sm="row">
-                            <md-input-container class="md-block" flex-gt-sm>
+                            <!-- md-input-container class="md-block" flex-gt-sm>
                                 <label>країна</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCountry">
-                            </md-input-container>
+                            </md-input-container -->
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>поштовий індекс</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrPO">
@@ -82,15 +105,15 @@
                                 <label>район в області</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrDistrict">
                             </md-input-container>
-                        </div>
-
-                        <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>населений пункт</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCity">
                             </md-input-container>
+                        </div>
+
+                        <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>район у місті (для ідентифікації податкової інспекції)</label>
+                                <label>назва податкової інспекції</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCityDistrict">
                             </md-input-container>
                         <!-- /div>
@@ -133,27 +156,6 @@
                         </div>
                     </md-content>
 
-                    <div layout-gt-sm="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Номер телефону</label>
-                            <input ng-model="appct.userService.getDeclarantCurrent().telNr">
-                        </md-input-container>
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Електронна пошта</label>
-                            <input ng-model="appct.userService.getDeclarantCurrent().email">
-                        </md-input-container>
-                    </div>
-
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Аватар</label>
-                        <input ng-model="appct.userService.getDeclarantCurrent().avatarid">
-                    </md-input-container>
-
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>Коментар для адміністратора</label>
-                        <textarea ng-model="appct.userService.getDeclarantCurrent().comment" md-maxlength="150" rows="5" md-select-on-focus>
-                            </textarea>
-                    </md-input-container>
                 </form>
             </md-content>
         </div>
