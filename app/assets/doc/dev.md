@@ -119,6 +119,7 @@ with [demo](http://row1.github.io/brunch-materialistic-arrogantular/#/)
 via [brunch.io/skeletons](http://brunch.io/skeletons).
 
 ## Builders and Package managers
+### Builders
 [Opinion re builders 2014-10-30](http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/)
 
 [`npm` as a build tool 2014-12-09](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)
@@ -129,3 +130,7 @@ via [brunch.io/skeletons](http://brunch.io/skeletons).
 Gulp (a better Grunt)
 
 Grunt
+### Package managers
+`npm`+`browserify` (to concatenate modules into bigger minified files)
+vs `bower`.
+
