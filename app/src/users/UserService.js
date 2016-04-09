@@ -41,7 +41,7 @@
       Object.freeze(ePersonAptTypeEnum);
 
     var users = [
-      {
+      /* {
         nameLast: 'Lugo',
         nameFirst: 'Lia',
         namePat: 'Petro',
@@ -78,13 +78,19 @@
         nameFirst: 'Gani',
         avatarid: 'svg-10',
         comment: "Lebowski ipsum yeah? What do you think happens when you get rad? You turn in your library card? Get a new driver's license? Stop being awesome? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. You don't go out and make a living dressed like that in the middle of a weekday. Quis elit blandit fringilla a ut turpis praesent felis ligula, malesuada suscipit malesuada."
-      },
-      new ePerson("Руденко", "Олексій", "Анатолійович", true, ePersonStatusEnum.NATPERS, "СН648208", "2695204236", "",
-                  "Україна", "м.Київ", "", "01021", "м.Київ", "ДПІ у Печерському р-ні", "Кловський узвіз", 20, "", 4, ePersonAptTypeEnum.APT,
-                  "+380504405758", "oleksiy.rudenko@gmail.com", 'svg-11', "No comment"
+      }, */
+      new ePerson("Руденко", "Олексій", "Анатолійович", true, ePersonStatusEnum.NATPERS, "CH788108", "2694204152", "",
+                  "Україна", "м.Київ", "", "02031", "м.Київ", "ДПІ у Шевченківському р-ні",
+                  "Кудрявський узвіз", 10, "", 1, ePersonAptTypeEnum.APT,
+                  "+380501112233", "oleksiy.rudenko@gmailx.com", 'svg-2', "Principal"
+      ),
+      new ePerson("Петренко", "Петро", "Петрович", true, ePersonStatusEnum.NATPERS, "CM888222", "2694203333", "",
+          "Україна", "м.Київ", "", "03033", "м.Київ", "ДПІ у Голосіївському р-ні",
+          "вул.Васильківська", 30, "", 3, ePersonAptTypeEnum.APT,
+          "+380503334455", "petro.petrenko@gmailx.com", 'svg-1', ""
       )
     ];
-    var declarantCurrent = { user: users[6] };
+    var declarantCurrent = { user: users[0] };
 
     // Promise-based API
     return {
