@@ -57,3 +57,13 @@ Primary dependency lib (required): [showdownjs/showdown](https://github.com/show
 
 ### Icon sets source
 [materialdesignicons](https://materialdesignicons.com/)
+
+## Other resources collection *(not used)*
+[angular/angular-seed](https://github.com/angular/angular-seed) (last commit 2015-06-15 [2016-04-09])
+
+The above is also a good source of information re (*while possibly
+outdated* [2016-04-09]):
+* installation instructions
+* testing instructions
+* package management
+* continuous integration
