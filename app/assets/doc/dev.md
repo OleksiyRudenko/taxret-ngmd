@@ -68,8 +68,9 @@ Primary dependency lib (required): [showdownjs/showdown](https://github.com/show
 ### Icon sets source
 [materialdesignicons](https://materialdesignicons.com/)
 
-## Other resources collection *(not used)*
-[angular/angular-seed](https://github.com/angular/angular-seed) (last commit 2015-06-15, uses ng-route [2016-04-09])
+## Other Angular related resources collection *(not used)*
+[angular/angular-seed](https://github.com/angular/angular-seed)
+(last commit 2015-06-15, uses ng-route [2016-04-09])
 
 The above is also a good source of information re (*while possibly
 outdated* [2016-04-09]):
@@ -77,3 +78,21 @@ outdated* [2016-04-09]):
 * testing instructions
 * package management
 * continuous integration
+
+Similar to above with ui.router [dok/angular-ui-seed](https://github.com/dok/angular-ui-seed)
+(last commit 2014-06-27, uses ng-ui.router [2016-04-09])
+
+A list of awesome AngularJS services, directives,
+utilities and
+resources @[gianarb/awesome-angularjs](https://github.com/gianarb/awesome-angularjs)
+(last commit 2016-04-08, uses ng-ui.router [2016-04-09])
+
+Generators @[yeoman.io](http://yeoman.io/generators/)
+
+ng+material+sass+ui.router
+@[row1/brunch-materialistic-arrogantular](https://github.com/row1/brunch-materialistic-arrogantular)
+(last commit 2015-09-06 [2016-04-09])
+for [brunch](http://brunch.io)
+with [demo](http://row1.github.io/brunch-materialistic-arrogantular/#/)
+via [brunch.io/skeletons](http://brunch.io/skeletons).
+
