@@ -102,8 +102,10 @@
   <script type="text/javascript" src="jslib/angular.1.5.1.min.js"></script>
   <script type="text/javascript" src="jslib/angular-animate.1.5.1.min.js"></script>
   <script type="text/javascript" src="jslib/angular-aria.1.5.1.min.js"></script>
-  <script type="text/javascript" src="jslib/angular-material.1.0.6.min.js"></script -->
+  <script type="text/javascript" src="jslib/angular-material.1.0.6.min.js"></script>
   <script type="text/javascript" src="jslib/angular-ui-router.0.2.18.min.js"></script>
+  <script type="text/javascript" src="jslib/marked.(150731).js"></script>
+  <script type="text/javascript" src="jslib/angular-marked.(151122).js"></script>
 
 
   <!-- remote production fw/lib scripts references SWITCH >
@@ -199,7 +201,15 @@
                                   url: "/expenseexempt",
                                   templateUrl: "partials/expenseexempt.html"
                               })
-              });
+              })
+              .app.config(['markedProvider', function (markedProvider) {
+                  markedProvider.setOptions({gfm: true});
+                  markedProvider.setRenderer({
+                      link: function (href, title, text) {
+                          return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank'>" + text + "</a>";
+                      }
+                  });
+              }]);
 
     </script>
 
