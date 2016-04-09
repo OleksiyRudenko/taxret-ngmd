@@ -138,6 +138,9 @@
                    avatarid,
                    comment
     ) {
+    this.id         =   0;
+    this.isActive   =   true;
+
     this.nameLast	=	nameLast;
     this.nameFirst	=	nameFirst;
     this.namePat	=	namePat;
