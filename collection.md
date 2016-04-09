@@ -12,6 +12,8 @@
 [Extra: newer ngNewRouter vs ui-router (150415)](https://medium.com/angularjs-meetup-south-london/angular-just-another-introduction-to-ngnewrouter-vs-ui-router-72bfcb228017#.iisvkvjab)
 
 [Extra: ngNewRouter example (150315)](http://chariotsolutions.com/blog/post/new-angular-router-simple-example/)
+## config
+[Controllers et al](https://github.com/angular-ui/ui-router/wiki#controllers)
 
 # Navigation
 [Build your own (150708)](http://blog.vizuri.com/creating-your-own-angular-material-navigation-menu)

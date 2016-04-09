@@ -1,11 +1,12 @@
 /**
  * Created by oleksiy.rudenko on 03/04/2016.
+ *
  */
 (function(){
     'use strict';
 
     angular.module('app')
-        .service('appService', ['$q', AppService]);
+        .factory('appService', ['$q', AppService]);
 
     /**
      * Users DataService
@@ -15,7 +16,8 @@
      * @returns {{loadAll: Function}}
      * @constructor
      */
-    function AppService($q){
+    function AppService($q) {
+        /*
         var users = [
             {
                 name: 'Lia Lugo',
@@ -51,11 +53,15 @@
 
         // Promise-based API
         return {
-            loadAllUsers : function() {
-                // Simulate async nature of real remote calls
-                return $q.when(users);
-            }
+            loadAllUsers: loadAllUsers
         };
+
+        function loadAllUsers() {
+            // Simulate async nature of real remote calls
+            return $q.when(users);
+        };
+        */
+        return null;
     }
 
 })();

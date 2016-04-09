@@ -6,19 +6,26 @@
     angular
         .module('app')
         .controller('AppController', [
-            'appService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
+            // 'appService',
+            '$scope', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$mdDialog', '$mdMedia',
             AppController
         ]);
 
     /**
-     * Main Controller for the Angular Material Starter App
+     * Main Controller for the TaxRet App
      * @param $scope
+     * @param userService
      * @param $mdSidenav
      * @param avatarsService
      * @constructor
      */
-    function AppController( appService, $mdSidenav, $mdBottomSheet, $log) {
+    function AppController( // appService,
+                            $scope,
+                            userService, $mdSidenav, $mdBottomSheet, $log, $q,
+                            $mdDialog, $mdMedia) {
         var self = this;
+        self.userService = userService; // ?
+        $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
         self.states     = [
             {
@@ -55,22 +62,37 @@
                 sref    :   'expenseexempt',
                 icon    :   '',
                 title   :   'Пільгові витрати'
+            },
+            {
+                sref    :   'docUserManual',
+                icon    :   '',
+                title   :   '-- Керівництво користувача'
+            },
+            {
+                sref    :   'docAbout',
+                icon    :   '',
+                title   :   '-- Про проект'
+            },
+            {
+                sref    :   'docDev',
+                icon    :   '',
+                title   :   '-- Розробникам'
             }
         ];
 
-        self.selected     = null;
+        self.currDeclarant     = self.userService.getDeclarantCurrent(); // null
         self.users        = [ ];
         self.selectUser   = selectUser;
-        self.toggleList   = toggleUsersList;
+        self.toggleSideNav   = toggleSideNav;
         self.makeContact  = makeContact;
 
         // Load all registered users
 
-        appService
+        self.userService
             .loadAllUsers()
             .then( function( users ) {
                 self.users    = [].concat(users);
-                self.selected = users[0];
+                // self.currDeclarant = userService.getDeclarantCurrent();
             });
 
         // *********************************
@@ -80,7 +102,7 @@
         /**
          * Hide or Show the 'left' sideNav area
          */
-        function toggleUsersList() {
+        function toggleSideNav() {
             $mdSidenav('left').toggle();
         }
 
@@ -89,8 +111,54 @@
          * @param menuId
          */
         function selectUser ( user ) {
-            self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+            user = angular.isNumber(user) ? $scope.users[user] : user;
+            self.currDeclarant = user;
+            userService.setDeclarantCurrent(user);
+            $scope.selectedTab = 0;
         }
+
+        // ================= Pop-up dialog fn set
+        $scope.status = '  ';
+        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+        $scope.ChooseAvatarDialog = function(ev,avatarid) {
+
+          var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+          // alert("Asked for me?");
+          $mdDialog.show({
+              controller: DialogController,
+              templateUrl: 'partials/dialog.app.ChooseAvatar.html',
+              parent: angular.element(document.body),
+              targetEvent: ev,
+              clickOutsideToClose:false,
+              fullscreen: useFullScreen
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+          $scope.$watch(function() {
+            return $mdMedia('xs') || $mdMedia('sm');
+          }, function(wantsFullScreen) {
+            $scope.customFullscreen = (wantsFullScreen === true);
+          });
+        };
+
+        function DialogController($scope, $mdDialog) {
+          // $scope.UserAvaGridCtrl = UserAvaGridCtrl;
+          $scope.hide = function() {
+            $mdDialog.hide();
+          };
+          $scope.cancel = function() {
+            $mdDialog.cancel();
+          };
+          $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+          };
+        }
+
+        // ================== AvaGrid
+
 
         /**
          * Show the Contact view in the bottom sheet

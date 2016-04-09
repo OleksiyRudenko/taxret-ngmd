@@ -8,14 +8,17 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
+    <!-- remote production fw/lib scripts/stylesheets references SWITCH -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
 
     <!-- local dev fw/lib scripts/stylesheets references SWITCH >
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/ -->
 
-    <!-- remote production fw/lib scripts/stylesheets references SWITCH -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.css"/>
+    <!-- local production fw/lib scripts/stylesheets references SWITCH -->
+    <link rel="stylesheet" href="csslib/angular-material.1.0.6.min.css"/>
 
+    <!-- remote production fw/lib scripts/stylesheets references SWITCH >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.css"/ -->
 
     <link rel="stylesheet" href="assets/app.css"/>
 
@@ -35,32 +38,34 @@
   <!-- A. Sidenav. Menu-button if port width > 960px (gt-sm) -->
   <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
       md-component-id="left"
-      ng-click="appct.toggleList()" aria-label="Show User List"
+      ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
       md-is-locked-open="$mdMedia('gt-sm')">
 
     <md-toolbar class="md-whiteframe-z1">
-        <md-button>
-            <md-icon md-svg-icon="{{appct.selected.avatar}}" class="avatar"></md-icon>
-            {{appct.selected.name}}
+        <md-button style="text-align:left;" ui-sref="declarants">
+            <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
+            {{appct.userService.getDeclarantCurrent().nameShort()}}
         </md-button>
     </md-toolbar>
 
       <md-list>
           <md-list-item ng-repeat="state in appct.states">
-              <md-button ui-sref="{{state.sref}}" void--ng-class="{'selected' : $state.current.url === '/' + state.sref }">
+              <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : $state.current.url === '#/' + state.sref }"
+                      style="width:100%; text-align: left;"> <!-- ERR ng-class doesn't work -->
+                                                            <!-- ERR button isn't 100% wide w/out style -->
                   <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
               </md-button>
           </md-list-item>
       </md-list>
 
-    <md-list>
+    <!-- md-list>
       <md-list-item ng-repeat="it in appct.users">
-          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.selected }">
-            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-            {{it.name}}
+          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.userService.getDeclarantCurrent() }">
+            <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
+            {{it.nameFirst+ ' ' +it.nameLast}}
           </md-button>
       </md-list-item>
-    </md-list>
+    </md-list -->
 
   </md-sidenav>
 
@@ -69,23 +74,19 @@
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
     <md-toolbar layout="row" class="md-whiteframe-z1">
-      <md-button id="main" class="menu" hide-gt-sm ng-click="appct.toggleList()" aria-label="Show User List">
+      <md-button id="main" class="menu" hide-gt-sm ng-click="appct.toggleSideNav()" aria-label="Show User List">
         <md-icon md-svg-icon="menu" ></md-icon>
       </md-button>
-      <h3>Angular Material - Starter App</h3>
+      <h3 class="md-display-1">
+          <a ng-href="http://oleksiyrudenko.github.io/taxret-ngmd/app/" class="nodecor" target="_blank">
+              Податкова декларація
+          </a>
+      </h3>
     </md-toolbar>
 
     <md-content flex id="content">
         <div ui-view></div>
-        <md-icon md-svg-icon="{{appct.selected.avatar}}" class="avatar"></md-icon>
-        <h2>{{appct.selected.name}}</h2>
-        <p>{{appct.selected.content}}</p>
-
-        <md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.selected)" aria-label="Share with {{ appct.selected.name }}">
-          <md-tooltip>Contact {{ appct.selected.name }}</md-tooltip>
-          <md-icon md-svg-icon="share"></md-icon>
-        </md-button>
-      </md-content>
+    </md-content>
 
       <!-- bottom-sheet show-up controlled by UserController::makeContact, which uses template './src/users/view/contactSheet.html' -->
   </div>
@@ -94,16 +95,26 @@
   <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
   <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
   <script type="text/javascript" src="../node_modules/angular-aria/angular-aria.js"></script>
-  <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script -->
+  <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
   <!-- NOT AVAILABLE script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script -->
 
-  <!-- remote production fw/lib scripts references SWITCH -->
+  <!-- local production fw/lib scripts references SWITCH -->
+  <script type="text/javascript" src="jslib/angular.1.5.1.min.js"></script>
+  <script type="text/javascript" src="jslib/angular-animate.1.5.1.min.js"></script>
+  <script type="text/javascript" src="jslib/angular-aria.1.5.1.min.js"></script>
+  <script type="text/javascript" src="jslib/angular-material.1.0.6.min.js"></script>
+  <script type="text/javascript" src="jslib/angular-ui-router.0.2.18.min.js"></script>
+  <script type="text/javascript" src="jslib/marked.(150731).js"></script>
+  <script type="text/javascript" src="jslib/angular-marked.(151122).js"></script>
+
+
+  <!-- remote production fw/lib scripts references SWITCH >
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-animate.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-aria.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.js"></script -->
   <!-- remote production fw/lib scripts references PERMANENT -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+  <!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script -->
 
   <script src="./src/app/AppModule.js"></script>
   <script src="./src/app/AppController.js"></script>
@@ -111,26 +122,34 @@
   <script src="./src/users/Users.js"></script>
   <script src="./src/users/UserController.js"></script>
   <script src="./src/users/UserService.js"></script>
+  <script src="./src/users/UserAvaGridController.js"></script>
 
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users'])
+              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
-                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .defaultIconSet(     "./assets/svg/avatars.svg", 128)
                       .icon("menu"       , "./assets/svg/menu.svg"        , 24)
                       .icon("share"      , "./assets/svg/share.svg"       , 24)
                       .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
                       .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
                       .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512)
+                      .iconSet("avatarGrid", './assets/svg/avatars.svg', 128); // for UserAvaGridController */
 
-                      $mdThemingProvider.theme('default')
-                          .primaryPalette('yellow')
-                          .accentPalette('amber')
-                          .warnPalette('red');
+                  $mdThemingProvider.theme('default')
+                      .primaryPalette('indigo')
+                      .accentPalette('light-blue')
+                      .warnPalette('deep-orange');
+                  $mdThemingProvider.theme('form-shaded')
+                      .primaryPalette('orange')
+                      .accentPalette('yellow')
+                      .warnPalette('deep-orange')
+                      //.backgroundPalette('grey')
+                      .dark();
               })
               .config(function($stateProvider, $urlRouterProvider) {
                       //
@@ -139,6 +158,14 @@
                       //
                       // Now set up the states
                       $stateProvider
+                              .state('declarants', {
+                                  url: "/declarants",
+                                  templateUrl: "partials/declarants.html",
+                                  controller: 'AppController', /* function($scope) {
+                                      $scope.items = ["A", "List", "Of", "Items"];
+                                  } */
+                                  controllerAs: 'userct'
+                              })
                               .state('payroll', {
                                   url: "/payroll",
                                   templateUrl: "partials/payroll.html"
@@ -174,7 +201,27 @@
                                   url: "/expenseexempt",
                                   templateUrl: "partials/expenseexempt.html"
                               })
-              });
+                              .state('docUserManual', {
+                                  url: "/docUserManual",
+                                  templateUrl: "partials/docUserManual.html"
+                              })
+                              .state('docAbout', {
+                                  url: "/docAbout",
+                                  templateUrl: "partials/docAbout.html"
+                              })
+                              .state('docDev', {
+                                  url: "/docDev",
+                                  templateUrl: "partials/docDev.html"
+                              })
+              })
+              .config(['markedProvider', function (markedProvider) {
+                  markedProvider.setOptions({gfm: true});
+                  markedProvider.setRenderer({
+                      link: function (href, title, text) {
+                          return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank'>" + text + "</a>";
+                      }
+                  });
+              }]);
 
     </script>
 

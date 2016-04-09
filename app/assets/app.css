@@ -14,6 +14,11 @@ md-toolbar h3 {
   font-weight: 500;
 }
 
+a.nodecor {
+  text-decoration: none;
+  color: White;
+}
+
 /* Sidenav area */
 
 md-list-item > button {
@@ -26,10 +31,9 @@ md-icon.avatar {
   margin-right: 20px;
 }
 
-  md-list .md-button.selected {
+md-list .md-button.selected {
     color: #03a9f4;
   }
-
 
 button#main {
   margin-bottom: 10px;
@@ -81,6 +85,9 @@ md-list-item {
   transition: all 100ms ease-out 30ms;
 }
 
+.pointed {
+  cursor: pointer;
+}
 
 /* Utils */
 
@@ -99,7 +106,6 @@ md-list-item {
 
 }
 
-
 md-bottom-sheet  md-icon {
   margin-right:20px;
 }
@@ -109,3 +115,76 @@ span.name {
   font-size:1.1em;
   padding-left:5px;
 }
+
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+/* .dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+.dialogdemoBasicUsage button {
+  width: 200px; }
+.dialogdemoBasicUsage div#status {
+  color: #c60008; } */
+
+/* .md-button:not([disabled]):hover {
+  background-color: transparent;
+} */
+
+.userAvaGridTiles md-icon {
+  width: 50%;
+  height: 30%; }
+.userAvaGridTiles md-icon svg {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+.userAvaGridTiles .s64 {
+  font-size: 64px; }
+.userAvaGridTiles .s32 {
+  font-size: 48px; }
+.userAvaGridTiles md-icon.fa {
+  display: block;
+  padding-left: 0; }
+.userAvaGridTiles md-icon.s32 span {
+  padding-left: 8px; }
+.userAvaGridTiles md-grid-list {
+  margin: 8px; }
+.userAvaGridTiles .gray {
+  background: #f5f5f5; }
+.userAvaGridTiles .green {
+  background: #b9f6ca; }
+.userAvaGridTiles .yellow {
+  background: #ffff8d; }
+.userAvaGridTiles .blue {
+  background: #84ffff; }
+.userAvaGridTiles .darkBlue {
+  background: #80d8ff; }
+.userAvaGridTiles .deepBlue {
+  background: #448aff; }
+.userAvaGridTiles .purple {
+  background: #b388ff; }
+.userAvaGridTiles .lightPurple {
+  background: #8c9eff; }
+.userAvaGridTiles .red {
+  background: #ff8a80; }
+.userAvaGridTiles .pink {
+  background: #ff80ab; }
+.userAvaGridTiles md-grid-tile {
+  transition: all 300ms ease-out 50ms;
+  cursor: pointer;
+  }
+.userAvaGridTiles md-grid-tile md-icon {
+  padding-bottom: 32px; }
+.userAvaGridTiles md-grid-tile md-grid-tile-footer {
+  background: rgba(0, 0, 0, 0.68);
+  height: 36px; }
+.userAvaGridTiles md-grid-tile-footer figcaption {
+  width: 100%; }
+.userAvaGridTiles md-grid-tile-footer figcaption h3 {
+  margin: 0;
+  font-weight: 700;
+  width: 100%;
+  text-align: center; }
