@@ -15,7 +15,7 @@ IndexedDB and some back-end support (non-principal data supply)
  * **huge** - large + high performance back-end support
 
 Well, I do not have yet experience beyond primitive tiny apps.
-This project is an attempt to build small yet valuable app.
+This project is an attempt to build a small yet valuable app.
 
 The app is focused on Ukrainian audience. Please, look at
 `about.md` for the idea behind and `user.md` for user's manual
@@ -36,7 +36,8 @@ is based on `dev` branch.
  - Angular material 1.0.6
  - Angular ui.router 0.2.18
 
-Project code is based on [ng-material-start](https://github.com/angular/material-start)
+This project code was initiated from
+[ng-material-start boilerplate](https://github.com/angular/material-start)
 
 ## Secondary resources engaged
 
