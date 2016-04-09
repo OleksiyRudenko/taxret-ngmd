@@ -1,3 +1,10 @@
+**Table of contents
+(wouldn't work properly being incorporated in app!)**
+* [Preface](#preface)
+* [Primary resources](#primary-resources)
+* [Secondary resources](#secondary-resources)
+* [Builders and Package managers](#builders-and-package-managers)
+
 ## Preface
 [2016-04-09]
 If I was asked to classify SPA's engaging AngularJS or similar
@@ -18,7 +25,8 @@ Well, I do not have yet experience beyond primitive tiny apps.
 This project is an attempt to build a small yet valuable app.
 
 The app is focused on Ukrainian audience. Please, look at
-`about.md` for the idea behind and `user.md` for user's manual
+`about.md` for the idea behind
+and `user.md` for user's manual
 (both documents are in Ukrainian).
 
 This document describes technical aspects of project implementation
@@ -39,7 +47,7 @@ far too long ago then related info most likely should be cross-checked.*
 [github](https://github.com/OleksiyRudenko), whenever you find
 any reference to external resource significantly outdated.*
 
-## Primary resources engaged
+## Primary resources
 
 ### Libs/frameworks
  - Angular + ng-animate + ng-aria 1.5.1
@@ -50,7 +58,7 @@ This project code was initiated from
 [angular/material-start](https://github.com/angular/material-start)
 boilerplate.
 
-## Secondary resources engaged
+## Secondary resources
 
 ### Markdown support
 Primary lib: [Hypercubed/angular-marked](https://github.com/Hypercubed/angular-marked) *(supports github markdown flavour)*
@@ -68,7 +76,10 @@ Primary dependency lib (required): [showdownjs/showdown](https://github.com/show
 ### Icon sets source
 [materialdesignicons](https://materialdesignicons.com/)
 
-## Other Angular related resources collection *(not used)*
+## Other related resources
+Here is collection of other Angular related resources collection
+*(however, not used in this project)* worth to note are:
+
 [angular/angular-seed](https://github.com/angular/angular-seed)
 (last commit 2015-06-15, uses ng-route [2016-04-09])
 
@@ -96,7 +107,7 @@ for [brunch](http://brunch.io)
 with [demo](http://row1.github.io/brunch-materialistic-arrogantular/#/)
 via [brunch.io/skeletons](http://brunch.io/skeletons).
 
-## Builders, Package managers
+## Builders and Package managers
 [brunch.io](http://brunch.io/) - a better Gulp
 (last commit 2016-04-08 [2016-04-09])
 
