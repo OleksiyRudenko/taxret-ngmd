@@ -31,52 +31,54 @@
             {
                 sref    :   'payroll',
                 icon    :   '',
-                title   :   'Доходи ФО'
+                title   :   'Доходи ФО',
             },
             {
                 sref    :   'transport',
                 icon    :   '',
-                title   :   'Транспортні засоби'
+                title   :   'Транспортні засоби',
             },
             {
                 sref    :   'realestate',
                 icon    :   '',
-                title   :   'Нерухомість'
+                title   :   'Нерухомість',
             },
             {
                 sref    :   'funds',
                 icon    :   '',
-                title   :   'Фондові активи'
+                title   :   'Фондові активи',
             },
             {
                 sref    :   'foreignfee',
                 icon    :   '',
-                title   :   'Зарубіжні доходи'
+                title   :   'Зарубіжні доходи',
             },
             {
                 sref    :   'entrepreneur',
                 icon    :   '',
-                title   :   'Доходи ФОП'
+                title   :   'Доходи ФОП',
             },
             {
                 sref    :   'expenseexempt',
                 icon    :   '',
-                title   :   'Пільгові витрати'
+                title   :   'Пільгові витрати',
+                hr      :   true,
             },
             {
                 sref    :   'docUserManual',
                 icon    :   '',
-                title   :   '-- Керівництво користувача'
+                title   :   'Керівництво користувача',
             },
             {
                 sref    :   'docAbout',
                 icon    :   '',
-                title   :   '-- Про проект'
+                title   :   'Про проект',
+                hr      :   true,
             },
             {
                 sref    :   'docDev',
                 icon    :   '',
-                title   :   '-- Розробникам'
+                title   :   'Розробникам',
             }
         ];
 

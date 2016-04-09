@@ -40,11 +40,11 @@
                             <label>По батькові</label>
                             <input ng-model="appct.userService.getDeclarantCurrent().namePat">
                         </md-input-container>
-                        <md-input-container class="md-block" flex-gt-sm>
+                        <!-- md-input-container class="md-block" flex-gt-sm>
                             <md-checkbox ng-model="appct.userService.getDeclarantCurrent().isUAresident" aria-label="Resides in Ukraine">
-                                Резидент України <!-- {{appct.userService.getDeclarantCurrent().isUAresident}} -->
+                                Резидент України <!-- {{appct.userService.getDeclarantCurrent().isUAresident}} - ->
                             </md-checkbox>
-                        </md-input-container>
+                        </md-input-container -->
                     <!-- /div>
 
                     <div layout-gt-sm="row" -->
@@ -66,10 +66,10 @@
                     <md-content md-theme="form-shaded" class="md-accent" layout-padding>
                         <h2>Адреса</h2>
                         <div layout-gt-sm="row">
-                            <md-input-container class="md-block" flex-gt-sm>
+                            <!-- md-input-container class="md-block" flex-gt-sm>
                                 <label>країна</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCountry">
-                            </md-input-container>
+                            </md-input-container -->
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>поштовий індекс</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrPO">
@@ -82,13 +82,13 @@
                                 <label>район в області</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrDistrict">
                             </md-input-container>
-                        </div>
-
-                        <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>населений пункт</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCity">
                             </md-input-container>
+                        </div>
+
+                        <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>район у місті (для ідентифікації податкової інспекції)</label>
                                 <input ng-model="appct.userService.getDeclarantCurrent().addrCityDistrict">
