@@ -167,9 +167,19 @@
     this.nameShort = function() {
       return this.nameFirst + ' ' + this.nameLast;
     };
-    this.nameLastInitials = function() {
-      return this.nameLast + ' ' + this.nameFirst.charAt(0) + '.' + this.namePat.charAt(0) +'.';
+    this.nameFirstInitial = function() {
+      return this.nameFirst.charAt(0);
     };
+    this.namePatInitial = function() {
+      return this.namePat.charAt(0);
+    };
+    this.nameInitials = function() {
+      return this.nameFirstInitial() + '.' + this.namePatInitial() +'.';
+    };
+    this.nameLastInitials = function() {
+      return this.nameLast + ' ' + this.nameInitials();
+    };
+
     this.nameFullCorp = function() {
       return this.nameLast + ', ' + this.namePat;
     };
