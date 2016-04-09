@@ -110,6 +110,8 @@ via [brunch.io/skeletons](http://brunch.io/skeletons).
 ## Builders and Package managers
 [Opinion re builders 2014-10-30](http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/)
 
+[`npm` as a build tool 2014-12-09](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)
+
 [brunch.io](http://brunch.io/) - a better Gulp
 (last commit 2016-04-08 [2016-04-09])
 
