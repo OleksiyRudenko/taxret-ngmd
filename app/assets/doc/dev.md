@@ -60,7 +60,7 @@ any reference to external resource significantly outdated.*
 
 ## Primary resources
 
-### Libs/frameworks
+### MV* Libs/frameworks
  - Angular + ng-animate + ng-aria 1.5.1
  - Angular material 1.0.6
  - Angular ui.router 0.2.18
@@ -68,6 +68,16 @@ any reference to external resource significantly outdated.*
 This project code was initiated from
 [angular/material-start](https://github.com/angular/material-start)
 boilerplate.
+
+### RDBMS over IndexedDB
+Overview [2016-04-09]
+| RDBMS | Last commit | Commits |
+| :---    |   :---:   |    ---: |
+| [Lovefield](https://github.com/google/lovefield) | 2016-03-08 | 998 |
+| [yathit/YDN](https://github.com/yathit/ydn-db) | 2016-04-05 | 1,627 |
+| [TaffyDB](https://github.com/typicaljoe/taffydb) | 2015-11-28 | 95 |
+| [html5sql](https://github.com/KenCorbettJr/html5sql) [www](http://html5sql.com/guide.html) | 2012-06-05 | 12 |
+| [AlaSQL](https://github.com/agershun/alasql) [www](http://alasql.org/) | 2016-04-04 | 1,269 |
 
 ## Secondary resources
 
@@ -89,8 +99,9 @@ Primary dependency lib (required): [showdownjs/showdown](https://github.com/show
 
 ## Other related resources
 Here is collection of other Angular related resources collection
-*(however, not used in this project)* worth to note are:
+*(however, not used in this project)* worth attention.
 
+### Seed apps
 [angular/angular-seed](https://github.com/angular/angular-seed)
 (last commit 2015-06-15, uses ng-route [2016-04-09])
 
@@ -117,6 +128,11 @@ ng+material+sass+ui.router
 for [brunch](http://brunch.io)
 with [demo](http://row1.github.io/brunch-materialistic-arrogantular/#/)
 via [brunch.io/skeletons](http://brunch.io/skeletons).
+
+### non-RDBMS IndexedDB libs
+*not used*
+[angular-IndexedDB service](https://github.com/bramski/angular-indexedDB)
+
 
 ## Builders and Package managers
 ### Builders
