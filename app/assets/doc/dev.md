@@ -83,9 +83,10 @@ Overview [2016-04-09]
 ## Secondary resources
 
 ### Markdown support
-Primary lib: [Hypercubed/angular-marked](https://github.com/Hypercubed/angular-marked) *(supports github markdown flavour)*
+Primary lib: [Hypercubed/angular-marked](https://github.com/Hypercubed/angular-marked) *(supports [github markdown flavour](https://help.github.com/categories/writing-on-github/))*
 
 Primary dependency lib (required): [chjj/marked](https://github.com/chjj/marked)
+with `chjj/marked` options [explained](http://assemble.io/docs/options-marked.html).
 
 Secondary dependency lib (optional, not used): [isagalaev/highlight.js](https://github.com/isagalaev/highlight.js)
 
