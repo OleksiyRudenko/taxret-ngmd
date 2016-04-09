@@ -37,16 +37,22 @@ is based on `dev` branch.
  - Angular ui.router 0.2.18
 
 This project code was initiated from
-[ng-material-start boilerplate](https://github.com/angular/material-start)
+[angular/material-start boilerplate](https://github.com/angular/material-start)
 
 ## Secondary resources engaged
 
 ### Markdown support
-Primary lib: [Hypercubed/angular-marked](https://github.com/Hypercubed/angular-marked)
+Primary lib: [Hypercubed/angular-marked](https://github.com/Hypercubed/angular-marked) *(supports github markdown flavour)*
 
 Primary dependency lib (required): [chjj/marked](https://github.com/chjj/marked)
 
 Secondary dependency lib (optional, not used): [isagalaev/highlight.js](https://github.com/isagalaev/highlight.js)
+
+**Possible alternatives:**
+Primary lib: [btford/angular-markdown-directive](https://github.com/btford/angular-markdown-directive)
+
+Primary dependency lib (required): [showdownjs/showdown](https://github.com/showdownjs/showdown)
+
 
 ### Icon sets source
 [Source of icons](https://materialdesignicons.com/)
