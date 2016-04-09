@@ -80,7 +80,7 @@
         comment: "Lebowski ipsum yeah? What do you think happens when you get rad? You turn in your library card? Get a new driver's license? Stop being awesome? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. You don't go out and make a living dressed like that in the middle of a weekday. Quis elit blandit fringilla a ut turpis praesent felis ligula, malesuada suscipit malesuada."
       },
       new ePerson("Руденко", "Олексій", "Анатолійович", true, ePersonStatusEnum.NATPERS, "СН648208", "2695204236", "",
-                  "Україна", "(Київ)", "", "01021", "Київ", "Печерський р-н", "Кловський узвіз", 20, "", 4, ePersonAptTypeEnum.APT,
+                  "Україна", "м.Київ", "", "01021", "м.Київ", "ДПІ у Печерському р-ні", "Кловський узвіз", 20, "", 4, ePersonAptTypeEnum.APT,
                   "+380504405758", "oleksiy.rudenko@gmail.com", 'svg-11', "No comment"
       )
     ];
