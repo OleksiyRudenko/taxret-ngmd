@@ -127,7 +127,7 @@
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users'])
+              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
@@ -201,8 +201,20 @@
                                   url: "/expenseexempt",
                                   templateUrl: "partials/expenseexempt.html"
                               })
+                              .state('docUserManual', {
+                                  url: "/docUserManual",
+                                  templateUrl: "partials/docUserManual.html"
+                              })
+                              .state('docAbout', {
+                                  url: "/docAbout",
+                                  templateUrl: "partials/docAbout.html"
+                              })
+                              .state('docDev', {
+                                  url: "/docDev",
+                                  templateUrl: "partials/docDev.html"
+                              })
               })
-              .app.config(['markedProvider', function (markedProvider) {
+              .config(['markedProvider', function (markedProvider) {
                   markedProvider.setOptions({gfm: true});
                   markedProvider.setRenderer({
                       link: function (href, title, text) {

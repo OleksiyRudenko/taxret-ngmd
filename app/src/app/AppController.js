@@ -62,6 +62,21 @@
                 sref    :   'expenseexempt',
                 icon    :   '',
                 title   :   'Пільгові витрати'
+            },
+            {
+                sref    :   'docUserManual',
+                icon    :   '',
+                title   :   '-- Керівництво користувача'
+            },
+            {
+                sref    :   'docAbout',
+                icon    :   '',
+                title   :   '-- Про проект'
+            },
+            {
+                sref    :   'docDev',
+                icon    :   '',
+                title   :   '-- Розробникам'
             }
         ];
 
