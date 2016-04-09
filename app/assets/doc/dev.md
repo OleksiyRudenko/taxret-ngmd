@@ -26,6 +26,8 @@ and designed for developer's quick reference.
 
 See `README.md` for project set-up reference.
 
+[Demo](http://oleksiyrudenko.github.io/taxret-ngmd/app/#/declarants)
+is based on `dev` branch.
 
 ## Primary resources engaged
 
@@ -34,7 +36,7 @@ See `README.md` for project set-up reference.
  - Angular material 1.0.6
  - Angular ui.router 0.2.18
 
-Project initialized from [ng-material-start](https://github.com/angular/material-start)
+Project code is based on [ng-material-start](https://github.com/angular/material-start)
 
 ## Secondary resources engaged
 
