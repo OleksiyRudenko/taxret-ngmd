@@ -43,6 +43,17 @@ since reader's' last visit (if one can remember) or the period of
 time related information was up-to-date. So, if `[YYYY-MM-DD]` is
 far too long ago then related info most likely should be cross-checked.*
 
+*If `[YYYY-MM-DD]` precedes a block then it refers to the block
+(at least). If it is put on separate line, then it for sure
+refers to a number of blocks. If it comes after some text, then it
+refers to preceding block or part of sentence.*
+
+*Hmm... seriously thinking of html tag style... Like
+`[YYYY-MM-DD]...[/YYYY-MM-DD]` for blocks, extracts
+and long sentences, or `[YYYY-MM-DD]...[/]` for a part of
+block/sentence, or single `[YYYY-MM-DD/]` in the end of referred
+part of sentence.*
+
 *Please, do not hesitate contacting me via
 [github](https://github.com/OleksiyRudenko), whenever you find
 any reference to external resource significantly outdated.*
