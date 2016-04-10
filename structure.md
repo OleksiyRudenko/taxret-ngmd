@@ -47,6 +47,14 @@ track the reasoning.
 ## Outcome
 ###### [Structure [S100](#structure-s100)]
 
+The resulting structure template is a bit excessive, offering for example sub-folder
+`assets` to keep component-specific images and alike under component folder, which
+is definitely unnecessary in many cases. Feel free removing those. We keep it for
+to not to forget that should we need to store component specific imagery or other assets,
+which normally go into app's `assets/img` folder, it should be nevertheless stored
+under component folder.
+
+
 **[Back to top](#table-of-contents)**
 
 ## Major factors to consider
@@ -115,6 +123,9 @@ such assets like images, specific solely to a component should also be incapsula
 ### Critical discrepancies
 ###### [Structure [S302](#structure-s302)]
 
+
+
+## Draft bits
 
 app/client/src?
 src/app/client?
