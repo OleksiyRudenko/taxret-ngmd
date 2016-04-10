@@ -13,8 +13,8 @@ adhering to best practices available.
 ## Credits
 
 Not only [Angular 1 Style Guide](https://github.com/johnpapa/angular-styleguide)
-
-
+by John Papa is a good source of development style but also a source of good
+practices on organizing documents and references.
 
 ## Table of Contents
 1. [Input](#input)
