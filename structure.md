@@ -214,3 +214,13 @@ Even more interesting question: which path is preferred - `src/client/app` or
 `src/app/client`? We tried to reason the solution.
 
 **[Back to top](#table-of-contents)**
+
+## Apx
+### Folder Tree export tool (windows)
+
+`tree <folder> /A /f > tree.txt`
+
+ * `/A` - uses ASCII chars to draw branches instead of pseudo-graphics
+ * `/f` - shows files in folders
+
+**[Back to top](#table-of-contents)**
