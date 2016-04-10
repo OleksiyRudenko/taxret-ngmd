@@ -110,9 +110,9 @@ Follow the links in the extracts to read full source.
 More or less there is common understanding of structure in general: project
 root folder contains:
 
-* appication folder
+* application folder (either `app` or `src`)
 * folder for third-party (vendor) components like libraries and frameworks such as AngularJS
-* build management tools' files and folders
+* build management (`grunt`, `gulp`, `bower`, `npm`) tools' files and folders
 * general project documentation (purpose, intro, installation etc)
 
 The most of authors advocate folder-by-feature structure. I.e. each component has its own
@@ -123,12 +123,25 @@ such assets like images, specific solely to a component should also be incapsula
 ### Critical discrepancies
 ###### [Structure [S302](#structure-s302)]
 
+There is no common understanding as to how to name folders storing imagery and alike.
+Some suggest `assests`, while others suggest `content`. Sometimes this folder located
+in `app` meaning assests are common for server and client ends, other times in `client`.
+
+Should exclusive app's views be located under related components or collected in a
+common storage?
+
+Should exclusive app's components' folders mixed with a folder for copy-pastable components
+or grouped under `core` folder?
+
+No definite answers. But the rule of thumb is: whenever you have 7+ items (files, folders)
+of similar type group them in a sub-folder. For e.g. if your component has 10 controllers,
+3 directives and a couple of views, group controllers into `controllers` folder.
+
+Even more interesting question: which path is preferred - `src/client/app` or
+`src/app/client`? We tried to reason the solution.
 
 
 ## Draft bits
-
-app/client/src?
-src/app/client?
 
 local development: client, server, external services and resources (temporarily kept local)
 for development phase.
