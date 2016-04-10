@@ -96,6 +96,24 @@ Follow the links in the extracts to read full source.
 
 **[Back to top](#table-of-contents)**
 
+### Common points
+###### [Structure [S301](#structure-s301)]
+
+More or less there is common understanding of structure in general: project
+root folder contains:
+
+* appication folder
+* folder for third-party (vendor) components like libraries and frameworks such as AngularJS
+* build management tools' files and folders
+* general project documentation (purpose, intro, installation etc)
+
+The most of authors advocate folder-by-feature structure. I.e. each component has its own
+folder containing all files required and attributed specifically to given component.
+Reusable (in various projects) components should be "copy-pastable". It means that even
+such assets like images, specific solely to a component should also be incapsulated therein.
+
+### Critical discrepancies
+###### [Structure [S302](#structure-s302)]
 
 
 app/client/src?

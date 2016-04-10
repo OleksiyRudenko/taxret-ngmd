@@ -19,29 +19,31 @@ See Original source extract below. Not so much to extrapolate.
 
 # Original Source
 ```
-app
-  about
+index.html
+app/
+  about/
     about.html
     about.js      # module
     about.spec.js
-  home
+  home/
     home.html
     home.js       # module
     home.spec.js
   app.js
   app.spec.js
-assets
+assets/
   (images etc.)
-common
+common/
   directives
-  resources (or models)
-  services
-styles
+  resources/ (or models)
+  services/
+styles/
   (sass/less/css files)
-index.html
 ```
+
 It’s a good practice to use dot notation in the module name as a namespace and
 to indicate a relationship (but not a dependency):
+
 ```
 angular.module('myApp.home', [ ])
 
