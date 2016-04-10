@@ -63,10 +63,15 @@ under component folder.
 ### Software architecture
 ###### [Structure [S201](#structure-s201)]
 
+client+server
+
 **[Back to top](#table-of-contents)**
 
 ### Application structure
 ###### [Structure [S202](#structure-s202)]
+
+app/client|server|vendor
+app/client/common/component/assets/README.md|logo.svg
 
 **[Back to top](#table-of-contents)**
 
@@ -152,9 +157,10 @@ More or less there is common understanding of structure in general: project
 root folder contains:
 
 * application folder (either `app` or `src`)
+* general project documentation (purpose, intro, installation etc)
 * folder for third-party (vendor) components like libraries and frameworks such as AngularJS
 * build management (`grunt`, `gulp`, `bower`, `npm`) tools' files and folders
-* general project documentation (purpose, intro, installation etc)
+* Version Control System files and folders
 
 The most of authors advocate folder-by-feature structure. I.e. each component has its own
 folder containing all files required and attributed specifically to given component.
@@ -167,7 +173,7 @@ such assets like images, specific solely to a component should also be incapsula
 ###### [Structure [S302](#structure-s302)]
 
 There is no common understanding as to how to name folders storing imagery and alike.
-Some suggest `assests`, while others suggest `content`. Sometimes this folder located
+Some suggest `assets`, while others suggest `content`. Sometimes this folder located
 in `app` meaning assests are common for server and client ends, other times in `client`.
 
 Should exclusive app's views be located under related components or collected in a
