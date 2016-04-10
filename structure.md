@@ -63,7 +63,7 @@ grunt, gulp, [brunch.io](http://brunch.io/skeletons), [et al](google/ref)
 ### F.A.Q.
 ###### [Structure [S101](#structure-s101)]
 
-**What if I have cloned a project and its structure is quite different?
+**What if I have cloned a project and its structure is quite different?**
 
 Of course, there is no need to refactor the entire project. Especially if you
 plan fetching updates from the remote repo.
