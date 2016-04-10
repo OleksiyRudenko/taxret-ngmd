@@ -69,25 +69,46 @@ under component folder.
 ### Scalability
 ###### [Structure [S203](#structure-s203)]
 
-If I was asked to classify SPA's engaging AngularJS or similar
+If I was asked to classify [SPAs](https://en.wikipedia.org/wiki/Single-page_application)
+engaging AngularJS or similar
 lightweight frameworks or extensive libraries, I would then offer
 following definitions:
 
  * **tiny** - single-view front-end app. Nothing more complex than single
-controller, probably no services and very few actions
+      controller, probably no services and very few actions. Deserves lightweight
+      development cycle, nothing more complex than 'code+refresh-browser'.
+      May be launched by opening `index.html` file directly in browser.
  * **small** - routed front-end app with a number of controllers, quite
-developed services, engaging local persistent storages like
-IndexedDB and some back-end support (non-principal data supply)
+      developed services, engaging local persistent storages like
+      IndexedDB and some back-end support (non-principal data supply).
+      Local http server is used during development. Still may not need build tools
+      avoid thus build overheads.
  * **medium** - bigger share of back-end support and shared data
- supplied by back-end, possibly with third-party services integration
+      supplied by back-end, possibly with third-party services integration.
+      Here we definitely want to employ build tools.
  * **large** - even more of back-end, possibly with cloud-storage and
- hundreds if not thousands concurrent client
- * **huge** - large + high performance back-end support
+      hundreds if not thousands concurrent client.
+ * **huge** - like large but with high performance back-end support. Employs
+      full stack of building and collaboration technologies.
 
+Some further notes related to tiny and small apps development:
+
+ 1. Local http server should serve both front and back ends.
+ 2. Third-party resources should be accessible under server root.
+ 3. Referring the resource as `/...path...` meaning a route from server root
+      may become an issue when app is loaded into browser directly from file system.
+      So, use relative addressing like `../../../vendor/angular/angular.1.5.0.min.js`
+ 4. Find a way automating addressing vendors' resources externally when deployed.
+
+In either case the structure should be able to support scalability from the earliest
+stage of development. You never know when tiny idea becomes a ~~facebook~~ huge app.
+
+**[Back to top](#table-of-contents)**
 
 ### Development process
 ###### [Structure [S204](#structure-s204)]
 
+Coding when no internet connection.
 
 **[Back to top](#table-of-contents)**
 
@@ -135,6 +156,8 @@ The most of authors advocate folder-by-feature structure. I.e. each component ha
 folder containing all files required and attributed specifically to given component.
 Reusable (in various projects) components should be "copy-pastable". It means that even
 such assets like images, specific solely to a component should also be incapsulated therein.
+
+**[Back to top](#table-of-contents)**
 
 ### Critical discrepancies
 ###### [Structure [S302](#structure-s302)]
