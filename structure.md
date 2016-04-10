@@ -108,6 +108,8 @@ Some further notes related to tiny and small apps development:
       may become an issue when app is loaded into browser directly from file system.
       So, use relative addressing like `../../../vendor/angular/angular.1.5.0.min.js`
  4. Find a way automating addressing vendors' resources externally when deployed.
+      For e.g. how to make deployment on github pages painless?
+      Well, builders do the job, but in a lightweight dev cycle we need quick-solutions.
 
 In either case the structure should be able to support scalability from the earliest
 stage of development. You never know when tiny idea becomes a ~~facebook~~ huge app.
@@ -193,25 +195,5 @@ the entire folders structure - where the documented features are?
 
 Even more interesting question: which path is preferred - `src/client/app` or
 `src/app/client`? We tried to reason the solution.
-
-**[Back to top](#table-of-contents)**
-
-## Draft bits
-
-local development: client, server, external services and resources (temporarily kept local)
-for development phase.
-
-
-Project development supportive infrastructure: builders, git, intro doc
-client+server
-documentation: project, dev guides, user guides
-
-tiny: standalone run for tiny apps (open index.html in browser and that's it)
-      local copies of vendor libs
-      keep in mind possible growth to small, medium & even large
-      `/...` vs `../../../...` reference style - serve both http://localhost/ and file:/// patterns
-      gh-pages roll-out issue (use redir script in app root)
-
-
 
 **[Back to top](#table-of-contents)**
