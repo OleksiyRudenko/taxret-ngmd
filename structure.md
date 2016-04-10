@@ -27,7 +27,7 @@ by John Papa is a good source of development style but also a source of good
 practices on organizing documents and references.
 
 ## Table of Contents
-1. [Outcome](#input)
+1. [Outcome](#outcome)
 1. [Input](#input)
 1. [Major factors to consider](#major-factors-to-consider)
 1.
