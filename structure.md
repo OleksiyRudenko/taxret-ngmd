@@ -64,6 +64,7 @@ full-scale development environment and scaling pitfalls to take proper decisions
 project file structure.
 
 [2016-04-10] Here are the extracts from various sources used:
+
 | extract author | original source as of |
 | :---:  | :---: |
 | [John Papa](./structure.johnpapa.md) | 2016-03-27 |
