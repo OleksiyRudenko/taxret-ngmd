@@ -116,7 +116,7 @@ stage of development. You never know when tiny idea becomes a ~~facebook~~ huge 
 
 **[Back to top](#table-of-contents)**
 
-### Development process
+### Development cycle
 ###### [Structure [S204](#structure-s204)]
 
 Coding when no internet connection.
