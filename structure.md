@@ -188,7 +188,8 @@ No definite answers. But the rule of thumb is: whenever you have 7+ items (files
 of similar type group them in a sub-folder. For e.g. if your component has 10 controllers,
 3 directives and a couple of views, group controllers into `controllers` folder.
 
-Where to locate `index.html` for client? It was seen couple of times under `app/assets/`.
+Where to locate `index.html` for client? It was seen couple of times under
+[`app/assets/`](https://github.com/row1/brunch-materialistic-arrogantular/tree/master/app/assets)[2015-09-06].
 
 Where to place developer's docs? All files in project root? Or have them scattered across
 the entire folders structure - where the documented features are?
