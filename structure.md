@@ -10,6 +10,8 @@ This is an attempt to elaborate the folder structure for a project, which would
 serve developer's needs keeping in mind scalability from tiny to huge while yet
 adhering to best practices available.
 
+
+
 ## Credits
 
 Not only [Angular 1 Style Guide](https://github.com/johnpapa/angular-styleguide)
@@ -24,6 +26,8 @@ practices on organizing documents and references.
 
 ## Input
 ###### [Structure [S100](#structure-s100)]
+
+
 
 
 app/client/src?
