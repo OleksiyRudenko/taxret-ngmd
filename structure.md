@@ -43,7 +43,6 @@ In finance it is normally said *This is our technical result, which comprises of
 So, we just employ the same approach: the outcome and then explanation helping
 track the reasoning.
 
-
 ## Outcome
 ###### [Structure [S100](#structure-s100)]
 
@@ -54,17 +53,22 @@ to not to forget that should we need to store component specific imagery or othe
 which normally go into app's `assets/img` folder, it should be nevertheless stored
 under component folder.
 
-
 **[Back to top](#table-of-contents)**
 
 ## Major factors to consider
 ###### [Structure [S200](#structure-s200)]
 
+**[Back to top](#table-of-contents)**
+
 ### Software architecture
 ###### [Structure [S201](#structure-s201)]
 
+**[Back to top](#table-of-contents)**
+
 ### Application structure
 ###### [Structure [S202](#structure-s202)]
+
+**[Back to top](#table-of-contents)**
 
 ### Scalability
 ###### [Structure [S203](#structure-s203)]
@@ -180,6 +184,8 @@ Where to locate `index.html` for client? It was seen couple of times under `app/
 
 Even more interesting question: which path is preferred - `src/client/app` or
 `src/app/client`? We tried to reason the solution.
+
+**[Back to top](#table-of-contents)**
 
 ## Draft bits
 
