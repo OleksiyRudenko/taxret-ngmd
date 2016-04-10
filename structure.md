@@ -30,7 +30,6 @@ practices on organizing documents and references.
 1. [Outcome](#outcome)
 1. [Input](#input)
 1. [Major factors to consider](#major-factors-to-consider)
-1.
 
 **Why outcome comes first?**
 
