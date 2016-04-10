@@ -33,11 +33,12 @@ The `x` modifier can give some hints.
 
 |  x  | Meaning |
 |:---:|:---     |
-| !   | It is unlikely that referred resource ever change. Usual for blog posts. |
-| 6m  | Resource wasn't updated for at least 6 month as of the date the author referred to it |
-| 2y  | Resource wasn't updated for at least 2 years as of the date the author referred to it |
-| +   | As of the date resource was last checked it was updated recently |
-| *   | As of the date resource was last checked it was updated recently & multiple times |
+|  !  | It is unlikely that referred resource ever change. Usual for blog posts. |
+| -6m | Resource wasn't updated for at least 6 month as of the date the author referred to it |
+| -2y | Resource wasn't updated for at least 2 years as of the date the author referred to it |
+| -2y! | Resource wasn't updated for at least 2 years and unlike ever will be |
+|  +  | As of the date resource was last checked it was updated recently |
+|  *  | As of the date resource was last checked it was updated recently & multiple times |
 
 ## Tagging documents
 
