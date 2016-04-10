@@ -53,6 +53,13 @@ to not to forget that should we need to store component specific imagery or othe
 which normally go into app's `assets/img` folder, it should be nevertheless stored
 under component folder.
 
+
+app/client|server|vendor
+app/client/common/component/assets/README.md|logo.svg
+
+npm, bower
+grunt, gulp, [brunch.io](http://brunch.io/skeletons), [et al](google/ref)
+
 **[Back to top](#table-of-contents)**
 
 ## Major factors to consider
@@ -70,8 +77,6 @@ client+server
 ### Application structure
 ###### [Structure [S202](#structure-s202)]
 
-app/client|server|vendor
-app/client/common/component/assets/README.md|logo.svg
 
 **[Back to top](#table-of-contents)**
 
