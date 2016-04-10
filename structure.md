@@ -28,7 +28,7 @@ practices on organizing documents and references.
 
 ## Table of Contents
 1. [Outcome](#outcome)
-1. [Major factors to consider](#major-factors-to-consider)
+1. [Major factors considered](#major-factors-considered)
 1. [Input](#input)
 
 **Why outcome comes first?**
@@ -38,10 +38,10 @@ reasoning behind, briefly:...* and *What part of reasoning would you like us
 to unveil in more details?*
 
 In finance it is normally said *This is our technical result, which comprises of ...
-[1000 accounts drilling down to every single transaction] ...*
+1000 accounts drilling down to every single transaction...*
 
-So, we just employ the same approach: the outcome and then explanation helping
-track the reasoning.
+So, we just employ the same approach: the outcome followed by explanations and
+reasoning.
 
 ## Outcome
 ###### [Structure [S100](#structure-s100)]
@@ -73,7 +73,7 @@ folder tree - it will help you structuring your further work.
 
 **[Back to top](#table-of-contents)**
 
-## Major factors to consider
+## Major factors considered
 ###### [Structure [S200](#structure-s200)]
 
 **[Back to top](#table-of-contents)**
