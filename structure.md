@@ -69,6 +69,22 @@ under component folder.
 ### Scalability
 ###### [Structure [S203](#structure-s203)]
 
+If I was asked to classify SPA's engaging AngularJS or similar
+lightweight frameworks or extensive libraries, I would then offer
+following definitions:
+
+ * **tiny** - single-view front-end app. Nothing more complex than single
+controller, probably no services and very few actions
+ * **small** - routed front-end app with a number of controllers, quite
+developed services, engaging local persistent storages like
+IndexedDB and some back-end support (non-principal data supply)
+ * **medium** - bigger share of back-end support and shared data
+ supplied by back-end, possibly with third-party services integration
+ * **large** - even more of back-end, possibly with cloud-storage and
+ hundreds if not thousands concurrent client
+ * **huge** - large + high performance back-end support
+
+
 ### Development process
 ###### [Structure [S204](#structure-s204)]
 
