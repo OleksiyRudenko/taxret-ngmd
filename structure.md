@@ -47,6 +47,8 @@ track the reasoning.
 ## Outcome
 ###### [Structure [S100](#structure-s100)]
 
+**[Back to top](#table-of-contents)**
+
 ## Input
 ###### [Structure [S200](#structure-s200)]
 
@@ -74,6 +76,8 @@ project file structure.
 
 Follow the links in the extracts to read full source.
 
+**[Back to top](#table-of-contents)**
+
 ## Major factors to consider
 ###### [Structure [S300](#structure-s300)]
 
@@ -90,7 +94,7 @@ Follow the links in the extracts to read full source.
 ###### [Structure [S304](#structure-s304)]
 
 
-
+**[Back to top](#table-of-contents)**
 
 app/client/src?
 src/app/client?
@@ -112,3 +116,4 @@ tiny: standalone run for tiny apps (open index.html in browser and that's it)
 small: use local server for development, serving both front and back ends; no build
 middle+: +build overheads
 
+**[Back to top](#table-of-contents)**
