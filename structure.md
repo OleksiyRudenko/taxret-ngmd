@@ -182,6 +182,9 @@ of similar type group them in a sub-folder. For e.g. if your component has 10 co
 
 Where to locate `index.html` for client? It was seen couple of times under `app/assets/`.
 
+Where to place developer's docs? All files in project root? Or have them scattered across
+the entire folders structure - where the documented features are?
+
 Even more interesting question: which path is preferred - `src/client/app` or
 `src/app/client`? We tried to reason the solution.
 
@@ -203,7 +206,6 @@ tiny: standalone run for tiny apps (open index.html in browser and that's it)
       `/...` vs `../../../...` reference style - serve both http://localhost/ and file:/// patterns
       gh-pages roll-out issue (use redir script in app root)
 
-small: use local server for development, serving both front and back ends; no build
-middle+: +build overheads
+
 
 **[Back to top](#table-of-contents)**
