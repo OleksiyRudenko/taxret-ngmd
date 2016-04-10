@@ -7,7 +7,7 @@
 The `[YYYY-MM-DD x]` tag denotes, unless otherwise implicitly indicated, that some
 piece of information was actual on the date specified in brackets,
 where `YYYY`, `MM` and `DD` stand for year, month and day respectively and optional
-modifier `x` gives hints on the date.
+modifier `x` may give some helpuf clues.
 
 ## Table of contents
 
