@@ -70,12 +70,10 @@ There are couple conventions in place that you should follow:
   `server/routeHandler` with the appropriate url path.
 
 
-
 *This README.md structure is taken from
 [DmitryEfimenko/ng-boilerplate](https://github.com/DmitryEfimenko/ng-boilerplate)*
 
-
-=== ===================================
+* * *
 
 # Angular Material-Start
 

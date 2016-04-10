@@ -1,4 +1,4 @@
-*Latest significant amendment:* [2016-04-10]
+*Latest significant update:* [2016-04-10]
 
 Project file structure based on extract from
 [DmitryEfimenko/ng-boilerplate/blob/master/README.md](https://github.com/DmitryEfimenko/ng-boilerplate/blob/master/README.md)

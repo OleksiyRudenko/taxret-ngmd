@@ -1,4 +1,4 @@
-*Latest significant amendment:* [2016-04-10]
+*Latest significant update:* [2016-04-10]
 
 Project file structure based on extracts from
 [Scalable code organization in AngularJS](https://medium.com/opinionated-angularjs/scalable-code-organization-in-angularjs-9f01b594bf06#.savwdvmcq)[2013-11-20]

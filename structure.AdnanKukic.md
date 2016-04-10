@@ -1,4 +1,4 @@
-*Latest significant amendment:* [2016-04-10]
+*Latest significant update:* [2016-04-10]
 
 Project file structure based on extracts from
 [AngularJS Best Practices: Directory Structure](https://scotch.io/tutorials/angularjs-best-practices-directory-structure)[2014-10-09]

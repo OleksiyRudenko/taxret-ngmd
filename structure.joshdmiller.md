@@ -1,4 +1,4 @@
-*Latest significant amendment:* [2016-04-10]
+*Latest significant uppdate:* [2016-04-10]
 
 Project file structure based on extracts from
 [ngbp/ngbp](https://github.com/ngbp/ngbp)[2015-01-25]
