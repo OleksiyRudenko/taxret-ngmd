@@ -1,7 +1,7 @@
 *Latest significant amendment:* [2016-04-10]
 
 Project file structure based on extract from
-[johnpapa/angular-styleguide/blob/master/a1/README.md](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y144)
+[johnpapa/angular-styleguide/blob/master/a1/README.md](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#application-structure-lift-principle)
 [2016-03-27]
 
 The original source follows Extrapolation results for quick reference.
