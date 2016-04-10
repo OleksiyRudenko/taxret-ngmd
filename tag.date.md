@@ -59,7 +59,6 @@ the date context **ends** on the tag.
 
 The pair of tag and its closing counterpart `[YYYY-MM-DD]...[/YYYY-MM-DD]`
 can be used. Meaning behind is obvious.
-
 For shorter parts of text `[YYYY-MM-DD]...[/]` can be used.
 
 ## Conclusion
