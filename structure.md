@@ -28,8 +28,8 @@ practices on organizing documents and references.
 
 ## Table of Contents
 1. [Outcome](#outcome)
-1. [Input](#input)
 1. [Major factors to consider](#major-factors-to-consider)
+1. [Input](#input)
 
 **Why outcome comes first?**
 
@@ -49,8 +49,26 @@ track the reasoning.
 
 **[Back to top](#table-of-contents)**
 
-## Input
+## Major factors to consider
 ###### [Structure [S200](#structure-s200)]
+
+### Software architecture
+###### [Structure [S201](#structure-s201)]
+
+### Application structure
+###### [Structure [S202](#structure-s202)]
+
+### Scalability
+###### [Structure [S203](#structure-s203)]
+
+### Development process
+###### [Structure [S204](#structure-s204)]
+
+
+**[Back to top](#table-of-contents)**
+
+## Input
+###### [Structure [S300](#structure-s300)]
 
 There is a number of overviews, guidelines and best practices described on the topic.
 There is even more projects employing that or other file structure.
@@ -78,23 +96,7 @@ Follow the links in the extracts to read full source.
 
 **[Back to top](#table-of-contents)**
 
-## Major factors to consider
-###### [Structure [S300](#structure-s300)]
 
-### Software architecture
-###### [Structure [S301](#structure-s301)]
-
-### Application structure
-###### [Structure [S302](#structure-s302)]
-
-### Scalability
-###### [Structure [S303](#structure-s303)]
-
-### Development process
-###### [Structure [S304](#structure-s304)]
-
-
-**[Back to top](#table-of-contents)**
 
 app/client/src?
 src/app/client?
