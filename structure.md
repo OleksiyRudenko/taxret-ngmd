@@ -137,9 +137,10 @@ No definite answers. But the rule of thumb is: whenever you have 7+ items (files
 of similar type group them in a sub-folder. For e.g. if your component has 10 controllers,
 3 directives and a couple of views, group controllers into `controllers` folder.
 
+Where to locate `index.html` for client? It was seen couple of times under `app/assets/`.
+
 Even more interesting question: which path is preferred - `src/client/app` or
 `src/app/client`? We tried to reason the solution.
-
 
 ## Draft bits
 
