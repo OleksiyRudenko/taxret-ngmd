@@ -14,7 +14,7 @@ modifier `x` gives hints on the date.
 1. [Tagging external references](#tagging-external-references)
 1. [Tagging documents](#tagging-documents)
 1. [Tagging text blocks](#tagging-text-blocks)
-1. [Conclusion](#comclusion)
+1. [Conclusion](#conclusion)
 
 ## Tagging external references
 
