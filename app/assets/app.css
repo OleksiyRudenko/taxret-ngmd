@@ -1,3 +1,9 @@
+a {
+  color: dodgerblue;
+  text-decoration-style: dashed;
+  text-decoration-color: mediumaquamarine;
+}
+
 /* Toolbar area */
 
 .menu {
