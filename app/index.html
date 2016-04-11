@@ -8,18 +8,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <!-- remote production fw/lib scripts/stylesheets references SWITCH -->
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <!-- SWITCH fw/lib css -->
+      <!-- fonts.googleapis -->
+          <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+      <!-- angular-material.css -->
+          <!-- local dev  >
+          <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/ -->
+          <!-- local dev manual -->
+          <link rel="stylesheet" href="../vendor/angular-material.1.0.6.min.css"/>
+          <!-- local production >
+          <link rel="stylesheet" href="csslib/angular-material.1.0.6.min.css"/>
+          <!-- remote production >
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.css"/ -->
 
-    <!-- local dev fw/lib scripts/stylesheets references SWITCH >
-    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/ -->
-
-    <!-- local production fw/lib scripts/stylesheets references SWITCH -->
-    <link rel="stylesheet" href="csslib/angular-material.1.0.6.min.css"/>
-
-    <!-- remote production fw/lib scripts/stylesheets references SWITCH >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.css"/ -->
-
+    <!-- local dev/prduction -->
     <link rel="stylesheet" href="assets/app.css"/>
 
     <style type="text/css">
