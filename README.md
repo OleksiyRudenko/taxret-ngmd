@@ -1,13 +1,18 @@
 # Tax Return
-## Goal
- This project uses Angular, Angular Material, UI.Router, Lovefield
- libraries to build a single page application with IndexedDB-based
- local storage to assist users in completion of tax returns under
- Ukrainian tax regulations.
 
- This application is also might be used as a skeleton application.
+## Table of contents
+
+## Goal
+
+This project uses Angular, Angular Material, UI.Router, Lovefield
+libraries to build a single page application with IndexedDB-based
+local storage to assist users in completion of tax returns under
+Ukrainian tax regulations.
+
+This application is also might be used as a skeleton application.
 
  ## Structure
+
  ```bash
 ng-boilerplate/
   |- src/
