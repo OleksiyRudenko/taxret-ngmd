@@ -70,6 +70,20 @@ There are couple conventions in place that you should follow:
   `server/routeHandler` with the appropriate url path.
 
 
+## Stack
+
+### Core & UI
+
+| [AngularJS 1.5]() | [angular-material]() | [angular-ui.router]() |
+[angular-xeditable](https://vitalets.github.io/angular-xeditable/)
+| --- | --- | --- | --- |
+
+### Data Storage
+
+[IndexedDB]()
+[Lovefield]()
+
+
 *This README.md structure is taken from
 [DmitryEfimenko/ng-boilerplate](https://github.com/DmitryEfimenko/ng-boilerplate)*
 
