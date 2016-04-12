@@ -11,7 +11,7 @@ Ukrainian tax regulations.
 
 This application is also might be used as a skeleton application.
 
- ## Structure
+## Structure
 
  ```bash
 ng-boilerplate/
