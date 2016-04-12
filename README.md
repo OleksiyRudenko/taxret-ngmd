@@ -12,6 +12,8 @@ This application is also might be used as a skeleton application.
 ## Table of Contents
 
 1. [Stack](#stack)
+    * [Core and UI](#core-and-ui)
+    * [Data Storage](#data-storage)
 1. [Structure](#structure)
 
 ## Stack
