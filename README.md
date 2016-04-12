@@ -5,9 +5,9 @@
 ## Goal
 
 This project uses Angular, Angular Material, UI.Router, Lovefield
-libraries to build a single page application with IndexedDB-based
-local storage to assist users in completion of tax returns under
-Ukrainian tax regulations.
+and [few other libraries](#stack) to build a single page application
+with IndexedDB-based local storage to assist users in completion
+of tax returns under Ukrainian tax regulations.
 
 This application is also might be used as a skeleton application.
 
@@ -40,6 +40,7 @@ ng-boilerplate/
   |  |- ui-router/
   |- gulpfile.js
  ```
+
 This app groups code by feature but not to the point of grouping
 the templates/tests/css inside it (it's really easy to change
 that in the gulpfile if you want to do that though).
