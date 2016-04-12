@@ -1,7 +1,5 @@
 # Tax Return
 
-## Table of contents
-
 ## Goal
 
 This project uses Angular, Angular Material, UI.Router, Lovefield
@@ -10,6 +8,27 @@ with IndexedDB-based local storage to assist users in completion
 of tax returns under Ukrainian tax regulations.
 
 This application is also might be used as a skeleton application.
+
+## Table of Contents
+
+1. [Stack](#stack)
+1. [Structure](#structure)
+
+## Stack
+
+### Core & UI
+
+| [AngularJS 1.5.1](https://angularjs.org/) [more](https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM) | [angular-material 1.0.6](https://material.angularjs.org/1.0.6/) | [angular-ui.router 0.2.18](http://angular-ui.github.io/ui-router/) |
+| --- | --- | --- |
+| ?[angular-ui](http://angular-ui.github.io/) | ?[angular-xeditable](https://vitalets.github.io/angular-xeditable/) | ?[angular-formly](http://angular-formly.com/#/) |
+| ?[ngmd-data-table](https://github.com/daniel-nagy/md-data-table) |. | . |
+
+### Data Storage
+
+| [IndexedDB 0.0](https://www.w3.org/TR/IndexedDB/) | [Lovefield 0.0](https://github.com/google/lovefield) | . |
+| --- | --- | --- |
+
+[**[back-to-top](#table-of-contents)**]
 
 ## Structure
 
@@ -75,21 +94,7 @@ There are couple conventions in place that you should follow:
   `server/routes/api`. It also should be registered in
   `server/routeHandler` with the appropriate url path.
 
-
-## Stack
-
-### Core & UI
-
-| [AngularJS 1.5.1](https://angularjs.org/) [more](https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM) | [angular-material 1.0.6](https://material.angularjs.org/1.0.6/) | [angular-ui.router 0.2.18](http://angular-ui.github.io/ui-router/) |
-| --- | --- | --- |
-| ?[angular-ui](http://angular-ui.github.io/) | ?[angular-xeditable](https://vitalets.github.io/angular-xeditable/) | ?[angular-formly](http://angular-formly.com/#/) |
-| ?[ngmd-data-table](https://github.com/daniel-nagy/md-data-table) |. | . |
-
-### Data Storage
-
-| [IndexedDB 0.0](https://www.w3.org/TR/IndexedDB/) | [Lovefield 0.0](https://github.com/google/lovefield) | . |
-| --- | --- | --- |
-
+[**[back-to-top](#table-of-contents)**]
 
 *This README.md structure is taken from
 [DmitryEfimenko/ng-boilerplate](https://github.com/DmitryEfimenko/ng-boilerplate)*
