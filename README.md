@@ -74,19 +74,15 @@ There are couple conventions in place that you should follow:
 
 ### Core & UI
 
-| [AngularJS 1.5.1](https://angularjs.org/) [more](https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM) |
- [angular-material 1.0.6](https://material.angularjs.org/1.0.6/) |
- [angular-ui.router 0.2.18](http://angular-ui.github.io/ui-router/) |
+| [AngularJS 1.5.1](https://angularjs.org/) [more](https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM) | [angular-material 1.0.6](https://material.angularjs.org/1.0.6/) | [angular-ui.router 0.2.18](http://angular-ui.github.io/ui-router/) |
 | --- | --- | --- |
-| ?[angular-ui](http://angular-ui.github.io/) | ?[angular-xeditable](https://vitalets.github.io/angular-xeditable/) |
-?[angular-formly](http://angular-formly.com/#/) |
-| ?[ngmd-data-table](https://github.com/daniel-nagy/md-data-table) |
-. | . |
+| ?[angular-ui](http://angular-ui.github.io/) | ?[angular-xeditable](https://vitalets.github.io/angular-xeditable/) | ?[angular-formly](http://angular-formly.com/#/) |
+| ?[ngmd-data-table](https://github.com/daniel-nagy/md-data-table) |. | . |
 
 ### Data Storage
 
-[IndexedDB 0.0](https://www.w3.org/TR/IndexedDB/)
-[Lovefield 0.0](https://github.com/google/lovefield)
+| [IndexedDB 0.0](https://www.w3.org/TR/IndexedDB/) | [Lovefield 0.0](https://github.com/google/lovefield) | . |
+| --- | --- | --- |
 
 
 *This README.md structure is taken from
