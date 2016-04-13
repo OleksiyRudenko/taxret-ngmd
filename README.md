@@ -1,13 +1,42 @@
 # Tax Return
+
 ## Goal
- This project uses Angular, Angular Material, UI.Router, Lovefield
- libraries to build a single page application with IndexedDB-based
- local storage to assist users in completion of tax returns under
- Ukrainian tax regulations.
 
- This application is also might be used as a skeleton application.
+This project uses Angular, Angular Material, UI.Router, Lovefield
+and [few other libraries](#stack) to build a single page application
+with IndexedDB-based local storage to assist users in completion
+of tax returns under Ukrainian tax regulations.
 
- ## Structure
+This application is also might be used as a skeleton application.
+
+## Table of Contents
+
+1. [Stack](#stack)
+    * [Core and UI](#core-and-ui)
+    * [Data Storage](#data-storage)
+1. [Structure](#structure)
+
+## Stack
+
+[Angular Material Start](https://github.com/angular/material-start)<sup>[2016-02-03]</sup>
+was used as a boilerplate for this project.
+
+### Core and UI
+
+| [AngularJS 1.5.1](https://angularjs.org/) [more](https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM) | [angular-material 1.0.6](https://material.angularjs.org/1.0.6/) | [angular-ui.router 0.2.18](http://angular-ui.github.io/ui-router/) |
+| --- | --- | --- |
+| ?[angular-ui](http://angular-ui.github.io/) | ?[angular-xeditable](https://vitalets.github.io/angular-xeditable/) | ?[angular-formly](http://angular-formly.com/#/) |
+| ?[ngmd-data-table](https://github.com/daniel-nagy/md-data-table) |. | . |
+
+### Data Storage
+
+| [IndexedDB 0.0](https://www.w3.org/TR/IndexedDB/) | [Lovefield 0.0](https://github.com/google/lovefield) | . |
+| --- | --- | --- |
+
+[**[back-to-top](#table-of-contents)**]
+
+## Structure
+
  ```bash
 ng-boilerplate/
   |- src/
@@ -35,6 +64,7 @@ ng-boilerplate/
   |  |- ui-router/
   |- gulpfile.js
  ```
+
 This app groups code by feature but not to the point of grouping
 the templates/tests/css inside it (it's really easy to change
 that in the gulpfile if you want to do that though).
@@ -69,6 +99,7 @@ There are couple conventions in place that you should follow:
   `server/routes/api`. It also should be registered in
   `server/routeHandler` with the appropriate url path.
 
+[**[back-to-top](#table-of-contents)**]
 
 *This README.md structure is taken from
 [DmitryEfimenko/ng-boilerplate](https://github.com/DmitryEfimenko/ng-boilerplate)*
