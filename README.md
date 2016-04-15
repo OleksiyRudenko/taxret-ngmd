@@ -30,7 +30,7 @@ was used as a boilerplate for this project.
 
 ### Data Storage
 
-| [IndexedDB 0.0](https://www.w3.org/TR/IndexedDB/) | [Lovefield 0.0](https://github.com/kutomer/ng-lovefield) | [ng-lovefield <sup>[2016-03-01]</sup>](https://github.com/kutomer/ng-lovefield) |
+| [IndexedDB 0.0](https://www.w3.org/TR/IndexedDB/) | [Lovefield <sup>[2016-04-11]</sup>](https://github.com/kutomer/ng-lovefield) | [ng-lovefield <sup>[2016-03-01]</sup>](https://github.com/kutomer/ng-lovefield) |
 | --- | --- | --- |
 
 [**[back-to-top](#table-of-contents)**]
