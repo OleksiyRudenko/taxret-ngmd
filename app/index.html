@@ -132,8 +132,8 @@
           <!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script -->
 
   <!-- VENDOR fw/lib - LOCAL ON PRODUCTION -->
-      <script type="text/javascript" src="./vendor/lovefield.(160411).js"></script>
-      <script type="text/javascript" src="./vendor/ng-lovefield.(160301).js"></script>
+      <script type="text/javascript" src="./vendor/lovefield.(160411).min.js"></script>
+      <script type="text/javascript" src="./vendor/ng-lovefield.(160301).min.js"></script>
       <script type="text/javascript" src="./vendor/marked.(150731).js"></script>
       <script type="text/javascript" src="./vendor/angular-marked.(151122).js"></script>
 
@@ -149,7 +149,7 @@
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked'])
+              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
