@@ -3,6 +3,7 @@
 Project-Root-Folder 
 |
 +---app                 # app core
+|   |
 |   |   index.html          # app core entry point
 |   |   
 |   +---assets              # app assets
@@ -12,6 +13,7 @@ Project-Root-Folder
 |   |   \---svg             # icons and miscellaneous imagery
 |   |
 |   +---src
+|   |   |
 |   |   +---app             # app core
 |   |   |   |
 |   |   |   \---view        # app core views
