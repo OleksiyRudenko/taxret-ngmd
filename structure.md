@@ -2,37 +2,37 @@
 ``` 
 Project-Root-Folder 
 |
-+---app                 # app core
++---app/                # app core
 |   |
 |   |   index.html          # app core entry point
 |   |   
-|   +---assets              # app assets
+|   +---assets/             # app assets
 |   |   |
-|   |   +---doc             # use references and manuals
+|   |   +---doc/            # use references and manuals
 |   |   |
-|   |   \---svg             # icons and miscellaneous imagery
+|   |   \---svg/            # icons and miscellaneous imagery
 |   |
-|   +---src
+|   +---src/
 |   |   |
-|   |   +---app             # app core
+|   |   +---app/            # app core
 |   |   |   |
-|   |   |   \---view        # app core views
+|   |   |   \---view/       # app core views
 |   |   |
-|   |   +---manuals         # documents views
+|   |   +---manuals/        # documents views
 |   |   |
-|   |   +---users           # users feature
+|   |   +---users/          # users feature
 |   |   |   |
-|   |   |   \---view        # users feature views
+|   |   |   \---view/       # users feature views
 |   |   |
-|   |   \---workflowMain    # main workflow features (major options at left sidenav menu)
+|   |   \---workflowMain/   # main workflow features (major options at left sidenav menu)
 |   |
-|   \---vendor          # external libraries to be hosted along with app
+|   \---vendor/         # external libraries to be hosted along with app
 |
-+---node_modules        # project builder files; inherited from angular-material, not in use
++---node_modules/       # project builder files; inherited from angular-material, not in use
 |
-+---test                # project tests files; inherited from angular-material, not in use
++---test/               # project tests files; inherited from angular-material, not in use
 |
-\---vendor              # external libraries used in development phase; to be replaced with CDN references on production
+\---vendor/             # external libraries used in development phase; to be replaced with CDN references on production
 ```
 
 * * *
