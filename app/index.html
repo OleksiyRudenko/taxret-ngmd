@@ -111,10 +111,12 @@
           <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script -->
           <!-- NOT AVAILABLE - USE REMOTE PRODUCTION: script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script -->
       <!-- local dev manual -->
+          <!-- source : https://cdnjs.com/libraries/angular.js/1.5.1 -->
           <script type="text/javascript" src="../vendor/angular.1.5.1.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-animate.1.5.1.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-aria.1.5.1.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-resource.1.5.1.min.js"></script>
+          <script type="text/javascript" src="../vendor/angular-messages.1.5.1.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-material.1.0.6.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-ui-router.0.2.18.min.js"></script>
       <!-- local production >
@@ -149,7 +151,7 @@
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield'])
+              .module('taxretApp', ['ngMessages', 'ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
