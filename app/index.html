@@ -280,6 +280,9 @@
                       }
                   });
               }])
+              // !!!! formlyMaterial seems to be not working, at least with Angular 1.5.1
+              // The following code is taken from http://jsbin.com/ximiheweka/edit?html,js,output
+              // which is referred by author of https://github.com/formly-js/angular-formly-templates-material
               .run(function(formlyConfig) {
                   formlyConfig.setType({
                       name: 'input',
