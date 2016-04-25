@@ -6,11 +6,12 @@
 
 ## Implement libs
 
-- [ ] ng-formly-material
+- [ ] [angular-formly](http://angular-formly.com/#/) -- material!
+- [ ] [angular-xeditable](https://vitalets.github.io/angular-xeditable/)
 - [ ] REST user:id
-- [ ] lovefield/ng-lovefield
+- [ ] [Lovefield](https://github.com/google/lovefield) / [ng-lovefield](https://github.com/kutomer/ng-lovefield)
 
 ## Master technologies/techniques
 
-- [ ] Gulp
-- [ ] TypeScript
+- [ ] [Gulp](http://gulpjs.com/)
+- [ ] [TypeScript](https://www.typescriptlang.org/)
