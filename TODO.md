@@ -3,6 +3,8 @@
 ## Invent or find ready-made solution to
 
 - [ ] design a model so it is DRY to view, user input, data storage
+- [ ] auto-update field on blur if field validated OK
+- [ ] new entry : insert a new record upon all required fields validated OK
 
 ## Implement libs
 
