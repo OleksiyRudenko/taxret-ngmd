@@ -21,6 +21,9 @@ This application is also might be used as a skeleton application.
 [Angular Material Start](https://github.com/angular/material-start)<sup>[2016-02-03]</sup>
 was used as a boilerplate for this project.
 
+NB! Please, do not rely on `node_modules` & `test` as these are inherited from
+Material Start project but not currently in use.
+
 ### Core and UI
 
 | [AngularJS 1.5.1](https://angularjs.org/) [more](https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM) | [angular-material 1.0.6](https://material.angularjs.org/1.0.6/) | [angular-ui.router 0.2.18](http://angular-ui.github.io/ui-router/) |
