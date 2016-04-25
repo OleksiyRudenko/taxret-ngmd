@@ -15,5 +15,6 @@
 
 ## Master technologies/techniques
 
+- [ ] [LESS](http://lesscss.org/)
 - [ ] [Gulp](http://gulpjs.com/)
 - [ ] [TypeScript](https://www.typescriptlang.org/)
