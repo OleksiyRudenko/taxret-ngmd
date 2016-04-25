@@ -138,6 +138,7 @@
       <script type="text/javascript" src="./vendor/ng-lovefield.(160301).min.js"></script>
       <script type="text/javascript" src="./vendor/marked.(150731).js"></script>
       <script type="text/javascript" src="./vendor/angular-marked.(151122).js"></script>
+      <script type="text/javascript" src="./vendor/formly-material.0.14.1.min.js"></script>
 
   <!-- APP - LOCAL ON PRODUCTION -->
       <script src="./src/app/AppModule.js"></script>
@@ -151,7 +152,7 @@
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield', 'formly'])
+              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield', 'formly', 'formlyMaterial'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
