@@ -21,7 +21,7 @@ This application is also might be used as a skeleton application.
 [Angular Material Start](https://github.com/angular/material-start)<sup>[2016-02-03]</sup>
 was used as a boilerplate for this project.
 
-NB! Please, do not rely on `node_modules` & `test` as these are inherited from
+NB! Please, do not rely on `node_modules\` & `test\` as these are inherited from
 Material Start project but not currently in use.
 
 ### Core and UI
