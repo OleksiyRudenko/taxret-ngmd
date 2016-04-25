@@ -8,7 +8,10 @@
 
 ## Implement libs
 
-- [ ] [angular-formly](http://angular-formly.com/#/) -- material!
+- [ ] [angular-formly](http://angular-formly.com/#/)
+- [ ] [angular-formly-material](https://github.com/formly-js/angular-formly-templates-material) /
+        [example](http://jsbin.com/ximiheweka/edit?html,js,output) // NB! Possibly not compatible
+        with Angular 1.5.1
 - [ ] [angular-xeditable](https://vitalets.github.io/angular-xeditable/)
 - [ ] REST user:id
 - [ ] [Lovefield](https://github.com/google/lovefield) / [ng-lovefield](https://github.com/kutomer/ng-lovefield)
