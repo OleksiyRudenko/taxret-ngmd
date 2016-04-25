@@ -24,7 +24,7 @@ Project-Root-Folder
 |   |   |   |
 |   |   |   \---view        # users feature views
 |   |   |
-|   |   \---workflowMain    # main workflow features
+|   |   \---workflowMain    # main workflow features (major options at left sidenav menu)
 |   |
 |   \---vendor          # external libraries to be hosted along with app
 |
