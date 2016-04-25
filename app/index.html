@@ -152,7 +152,7 @@
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield', 'formly', 'formlyMaterial'])
+              .module('taxretApp', ['ngFormlyMaterial', 'ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield']) // , 'formlyMaterial'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
@@ -279,7 +279,39 @@
                           return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank'>" + text + "</a>";
                       }
                   });
-              }]);
+              }])
+              .run(function(formlyConfig) {
+                  formlyConfig.setType({
+                      name: 'input',
+                      template: '<input ng-model="model[options.key]">'
+                  });
+
+                  formlyConfig.setType({
+                      name: 'checkbox',
+                      template: '<md-checkbox ng-model="model[options.key]">{{to.label}}</md-checkbox>'
+                  });
+
+                  formlyConfig.setWrapper({
+                      name: 'mdLabel',
+                      types: ['input'],
+                      template: '<label>{{to.label}}</label><formly-transclude></formly-transclude>'
+                  });
+
+                  formlyConfig.setWrapper({
+                      name: 'mdInputContainer',
+                      types: ['input'],
+                      template: '<md-input-container><formly-transclude></formly-transclude></md-input-container>'
+                  });
+
+                  // having trouble getting icons to work.
+                  // Feel free to clone this jsbin, fix it, and make a PR to the website repo: https://github.com/formly-js/angular-formly-website
+                  formlyConfig.templateManipulators.preWrapper.push(function(template, options) {
+                      if (!options.data.icon) {
+                          return template;
+                      }
+                      return '<md-icon class="step" md-font-icon="icon-' + options.data.icon + '"></md-icon>' + template;
+                  });
+              });  // eof formlyConfig
 
     </script>
 
