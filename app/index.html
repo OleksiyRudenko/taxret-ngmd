@@ -114,6 +114,7 @@
           <script type="text/javascript" src="../vendor/angular.1.5.1.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-animate.1.5.1.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-aria.1.5.1.min.js"></script>
+          <script type="text/javascript" src="../vendor/angular-resource.1.5.1.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-material.1.0.6.min.js"></script>
           <script type="text/javascript" src="../vendor/angular-ui-router.0.2.18.min.js"></script>
       <!-- local production >
@@ -126,12 +127,13 @@
           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular.min.js"></script>
           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-animate.min.js"></script>
           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-aria.min.js"></script>
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.1/angular-resource.min.js"></script>
           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.min.js"></script -->
           <!-- script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script -->
 
   <!-- VENDOR fw/lib - LOCAL ON PRODUCTION -->
-      <script type="text/javascript" src="./vendor/lovefield.(160411).js"></script>
-      <script type="text/javascript" src="./vendor/ng-lovefield.(160301).js"></script>
+      <script type="text/javascript" src="./vendor/lovefield.(160411).min.js"></script>
+      <script type="text/javascript" src="./vendor/ng-lovefield.(160301).min.js"></script>
       <script type="text/javascript" src="./vendor/marked.(150731).js"></script>
       <script type="text/javascript" src="./vendor/angular-marked.(151122).js"></script>
 
@@ -147,7 +149,7 @@
   <script type="text/javascript">
 
           angular
-              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked'])
+              .module('taxretApp', ['ngMaterial', 'ui.router', 'app', 'users', 'hc.marked', 'kutomer.ng-lovefield'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
@@ -234,6 +236,39 @@
                                   templateUrl: "src/manuals/docDev.html"
                               })
               })
+              .config(['lovefieldProvider',
+                  function(lovefieldProvider) {
+                      var schemaBuilder = lovefieldProvider.create('taxret', 1); // DataBase
+
+                      schemaBuilder.createTable('ePerson').
+                          addColumn('id', lovefieldProvider.Type.INTEGER).
+                          addColumn('isActive', lovefieldProvider.Type.BOOLEAN).
+                          addColumn('nameLast', lovefieldProvider.Type.STRING).
+                          addColumn('nameFirst', lovefieldProvider.Type.STRING).
+                          addColumn('namePat', lovefieldProvider.Type.STRING).
+                          addColumn('isUAresident', lovefieldProvider.Type.BOOLEAN).
+                          addColumn('status', lovefieldProvider.Type.STRING).
+                          addColumn('passportNr', lovefieldProvider.Type.STRING).
+                          addColumn('idUAtaxCode', lovefieldProvider.Type.INTEGER).
+                          addColumn('idCodeSubst', lovefieldProvider.Type.STRING).
+                          addColumn('addrCountry', lovefieldProvider.Type.STRING).
+                          addColumn('addrRegion', lovefieldProvider.Type.STRING).
+                          addColumn('addrDistrict', lovefieldProvider.Type.STRING).
+                          addColumn('addrPO', lovefieldProvider.Type.STRING).
+                          addColumn('addrCity', lovefieldProvider.Type.STRING).
+                          addColumn('addrCityDistrict', lovefieldProvider.Type.STRING).
+                          addColumn('addrStreet', lovefieldProvider.Type.STRING).
+                          addColumn('addrBuilding', lovefieldProvider.Type.STRING).
+                          addColumn('addrSubBuilding', lovefieldProvider.Type.STRING).
+                          addColumn('addrApt', lovefieldProvider.Type.STRING).
+                          addColumn('addrAptType', lovefieldProvider.Type.STRING).
+                          addColumn('telNr', lovefieldProvider.Type.STRING).
+                          addColumn('email', lovefieldProvider.Type.STRING).
+                          addColumn('avatarid', lovefieldProvider.Type.STRING).
+                          addColumn('comment', lovefieldProvider.Type.STRING).
+                          addPrimaryKey(['id']);
+                  }]
+              )
               .config(['markedProvider', function (markedProvider) {
                   markedProvider.setOptions({gfm: true, tables: true, });
                   markedProvider.setRenderer({
