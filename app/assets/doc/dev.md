@@ -25,7 +25,7 @@ and designed for developer's quick reference.
 See `README.md` for project set-up reference.
 
 [Demo](http://oleksiyrudenko.github.io/taxret-ngmd/app/#/declarants)
-is based on `dev` branch. [2016-04-09]
+is based on `dev` branch. [2016-04-25]
 
 *Please, do not hesitate contacting me via
 [github](https://github.com/OleksiyRudenko), whenever you find
