@@ -2,10 +2,9 @@
 
   angular
        .module('users')
-       .controller('UserController', [
-          'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
-          UserController
-       ]);
+       .controller('UserController',  UserController);
+
+  UserController.$inject = ['userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
 
   /**
    * User List Controller for the TaxRet App
@@ -15,21 +14,21 @@
    * @constructor
    */
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log) {
-    var self = this;
+    var vm = this;
 
-    self.selected     = null;
-    self.users        = [ ];
-    self.selectUser   = selectUser;
-    self.toggleList   = toggleUsersList;
-    self.makeContact  = makeContact;
+    vm.selected     = null;
+    vm.users        = [ ];
+    vm.selectUser   = selectUser;
+    vm.toggleList   = toggleUsersList;
+    vm.makeContact  = makeContact;
 
     // Load all registered users
 
     userService
           .loadAllUsers()
           .then( function( users ) {
-            self.users    = [].concat(users);
-            self.selected = userService.getDeclarantCurrent();
+            vm.users    = [].concat(users);
+            vm.selected = userService.getDeclarantCurrent();
           });
 
     // *********************************
@@ -48,7 +47,7 @@
        * @param user
        */
     function selectUser ( user ) {
-      self.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
+      vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
     }
 
     /**
@@ -59,7 +58,7 @@
         $mdBottomSheet.show({
           controllerAs  : "cp",
           templateUrl   : './src/users/view/contactSheet.html',
-          controller    : [ '$mdBottomSheet', ContactSheetController],
+          controller    : [ '$mdBottomSheet', ContactSheetController ],
           parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {
           $log.debug( clickedItem.name + ' clicked!');

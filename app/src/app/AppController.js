@@ -5,29 +5,35 @@
 
     angular
         .module('app')
-        .controller('AppController', [
-            // 'appService',
-            '$scope', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$mdDialog', '$mdMedia',
-            AppController
-        ]);
+        .controller('AppController', AppController);
+    
+    AppController.$inject=[ // 'appService',
+        '$scope', 'userService', '$mdSidenav', 
+        '$mdBottomSheet', '$log', '$q', 
+        '$mdDialog', '$mdMedia', 
+    ];
 
     /**
      * Main Controller for the TaxRet App
      * @param $scope
      * @param userService
      * @param $mdSidenav
-     * @param avatarsService
+     * @param $mdBottomSheet
+     * @param $log
+     * @param $q
+     * @param $mdDialog
+     * @param $mdMedia
      * @constructor
      */
     function AppController( // appService,
                             $scope,
                             userService, $mdSidenav, $mdBottomSheet, $log, $q,
                             $mdDialog, $mdMedia) {
-        var self = this;
-        self.userService = userService; // ?
+        var vm = this;
+        vm.userService = userService; // ?
         $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
-        self.states     = [
+        vm.states     = [
             {
                 sref    :   'payroll',
                 icon    :   '',
@@ -82,19 +88,19 @@
             }
         ];
 
-        self.currDeclarant     = self.userService.getDeclarantCurrent(); // null
-        self.users        = [ ];
-        self.selectUser   = selectUser;
-        self.toggleSideNav   = toggleSideNav;
-        self.makeContact  = makeContact;
+        vm.currDeclarant     = vm.userService.getDeclarantCurrent(); // null
+        vm.users        = [ ];
+        vm.selectUser   = selectUser;
+        vm.toggleSideNav   = toggleSideNav;
+        vm.makeContact  = makeContact;
 
         // Load all registered users
 
-        self.userService
+        vm.userService
             .loadAllUsers()
             .then( function( users ) {
-                self.users    = [].concat(users);
-                // self.currDeclarant = userService.getDeclarantCurrent();
+                vm.users    = [].concat(users);
+                // vm.currDeclarant = userService.getDeclarantCurrent();
             });
 
         // *********************************
@@ -110,11 +116,11 @@
 
         /**
          * Select the current avatars
-         * @param menuId
+         * @param user
          */
         function selectUser ( user ) {
             user = angular.isNumber(user) ? $scope.users[user] : user;
-            self.currDeclarant = user;
+            vm.currDeclarant = user;
             userService.setDeclarantCurrent(user);
             $scope.selectedTab = 0;
         }
@@ -147,7 +153,7 @@
         };
 
         function DialogController($scope, $mdDialog) {
-          // $scope.UserAvaGridCtrl = UserAvaGridCtrl;
+          // $scope.UserAvaGridController = UserAvaGridController;
           $scope.hide = function() {
             $mdDialog.hide();
           };
