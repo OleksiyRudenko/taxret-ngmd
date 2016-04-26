@@ -21,3 +21,5 @@
 - [ ] [LESS](http://lesscss.org/)
 - [ ] [Gulp](http://gulpjs.com/)
 - [ ] [TypeScript](https://www.typescriptlang.org/)
+- [ ] npm - for back-end support
+- [ ] bower - for front-end dependencies
