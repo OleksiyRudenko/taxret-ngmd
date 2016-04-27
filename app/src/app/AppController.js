@@ -89,11 +89,11 @@
             }
         ];
 
-        vm.currDeclarant     = vm.userService.getDeclarantCurrent(); // null
-        vm.users        = [ ];
-        vm.selectUser   = selectUser;
-        vm.toggleSideNav   = toggleSideNav;
-        vm.makeContact  = makeContact;
+        vm.currDeclarant    = vm.userService.getDeclarantCurrent(); // null
+        vm.users            = [ ];
+        vm.selectUser       = selectUser;
+        vm.toggleSideNav    = toggleSideNav;
+        vm.makeContact      = makeContact;
 
         // Load all registered users
 
