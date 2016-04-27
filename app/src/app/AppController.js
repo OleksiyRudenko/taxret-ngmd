@@ -14,9 +14,9 @@
     ];
 
     /**
-     * Main Controller for the TaxRet App
-     * NB! Uses $watch
-     *
+     * @name AppController 
+     * @desc Main Controller for the TaxRet App
+     * @decs NB! Uses $watch
      * @param $scope
      * @param userService
      * @param $mdSidenav
@@ -111,14 +111,16 @@
         // *********************************
 
         /**
-         * Hide or Show the 'left' sideNav area
+         * @name toggleSideNav
+         * @desc Hide or Show the 'left' sideNav area
          */
         function toggleSideNav() {
             $mdSidenav('left').toggle();
         }
 
         /**
-         * Select the current avatars
+         * @name selectUser
+         * @desc Set current user/declarant
          * @param user
          */
         function selectUser ( user ) {
@@ -134,7 +136,8 @@
         $scope.ChooseAvatarDialog =   ChooseAvatarDialog;
 
         /**
-         * Make Dialog to Choose Avatar on event and using currently chosen avatar id
+         * @name ChooseAvatarDialog
+         * @desc Make Dialog to Choose Avatar on event and using currently chosen avatar id
          * @param ev
          * @param avatarid
          */
@@ -162,7 +165,8 @@
         };
 
         /**
-         * Dialog Controller
+         * @name DialogController
+         * @desc Dialog Controller
          * @param $scope
          * @param $mdDialog
          */
@@ -183,7 +187,8 @@
 
 
         /**
-         * Show the Contact view in the bottom sheet
+         * @name makeContact
+         * @desc Show the Contact view in the bottom sheet
          * @param selectedUser
          */
         function makeContact(selectedUser) {
@@ -198,7 +203,8 @@
             });
 
             /**
-             * User ContactSheet controller
+             * @name ContactSheetController
+             * @desc User ContactSheet controller
              * @param $mdBottomSheet
              */
             function ContactSheetController( $mdBottomSheet ) {

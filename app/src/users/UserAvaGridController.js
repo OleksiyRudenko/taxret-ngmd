@@ -15,7 +15,8 @@
   // console.log(mod._invokeQueue.toString());
 
   /**
-   * User Avatars Controller for the TaxRet App
+   * @name UserAvaGridController
+   * @desc User Avatars Controller for the TaxRet App
    * @param $scope
    * @param userService
    * @param $mdDialog
@@ -38,8 +39,10 @@
         };
 
         /**
-         * Build Grid Model using template
+         * @name buildGridModel
+         * @desc Build Grid Model using template
          * @param tileTmpl
+         * @returns {Array} results - styled tiles
          */
         function buildGridModel(tileTmpl){
           var it, results = [ ];
