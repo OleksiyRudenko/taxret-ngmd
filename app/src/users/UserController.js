@@ -14,6 +14,7 @@
    * @constructor
    */
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log) {
+    /* jshint validthis: true */
     var vm = this;
 
     vm.selected     = null;

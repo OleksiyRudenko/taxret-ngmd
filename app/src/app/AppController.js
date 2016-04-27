@@ -29,6 +29,7 @@
                             $scope,
                             userService, $mdSidenav, $mdBottomSheet, $log, $q,
                             $mdDialog, $mdMedia) {
+        /* jshint validthis: true */
         var vm = this;
         vm.userService = userService; // ?
         $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
