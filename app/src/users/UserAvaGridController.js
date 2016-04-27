@@ -14,6 +14,13 @@
   // console.log(var_dump(mod._invokeQueue));
   // console.log(mod._invokeQueue.toString());
 
+  /**
+   * User Avatars Controller for the TaxRet App
+   * @param $scope
+   * @param userService
+   * @param $mdDialog
+   * @constructor
+   */
   function UserAvaGridController($scope,userService,$mdDialog) {
         // console.log("UserAvaGridController has been invoked");
         /* jshint validthis: true */
@@ -30,6 +37,10 @@
           $mdDialog.hide();
         };
 
+        /**
+         * Build Grid Model using template
+         * @param tileTmpl
+         */
         function buildGridModel(tileTmpl){
           var it, results = [ ];
           for (var j=0; j<11; j++) {

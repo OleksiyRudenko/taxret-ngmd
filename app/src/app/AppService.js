@@ -14,6 +14,7 @@
      * Uses embedded, hard-coded data model; acts asynchronously to simulate
      * remote data service call(s).
      *
+     * @param $q
      * @returns {{loadAll: Function}}
      * @constructor
      */

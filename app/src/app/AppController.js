@@ -131,6 +131,11 @@
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
         $scope.ChooseAvatarDialog =   ChooseAvatarDialog;
 
+        /**
+         * Make Dialog to Choose Avatar on event and using currently chosen avatar id
+         * @param ev
+         * @param avatarid
+         */
         function ChooseAvatarDialog(ev,avatarid) {
           var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
           // alert("Asked for me?");
@@ -154,6 +159,11 @@
           });
         };
 
+        /**
+         * Dialog Controller
+         * @param $scope
+         * @param $mdDialog
+         */
         function DialogController($scope, $mdDialog) {
           // $scope.UserAvaGridController = UserAvaGridController;
           $scope.hide = function() {
@@ -172,6 +182,7 @@
 
         /**
          * Show the Contact view in the bottom sheet
+         * @param selectedUser
          */
         function makeContact(selectedUser) {
 
@@ -186,6 +197,7 @@
 
             /**
              * User ContactSheet controller
+             * @param $mdBottomSheet
              */
             function ContactSheetController( $mdBottomSheet ) {
                 this.user = selectedUser;

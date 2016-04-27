@@ -54,6 +54,7 @@
 
     /**
      * Show the Contact view in the bottom sheet
+     * @param selectedUser
      */
     function makeContact(selectedUser) {
 
@@ -68,6 +69,7 @@
 
         /**
          * User ContactSheet controller
+         * @param $mdBottomSheet
          */
         function ContactSheetController( $mdBottomSheet ) {
           this.user = selectedUser;

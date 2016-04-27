@@ -10,6 +10,8 @@
    * Uses embedded, hard-coded data model; acts asynchronously to simulate
    * remote data service call(s).
    *
+   * @param $q
+   * @param $rootScope
    * @returns {{loadAll: Function}}
    * @constructor
    */
@@ -110,6 +112,9 @@
     function getDeclarantCurrent() {
       return declarantCurrent.user;
     };
+    /* Sets user as current declarant
+     * @param user
+     */
     function setDeclarantCurrent(user) {
       declarantCurrent.user = user;
       $rootScope.$applyAsync();
