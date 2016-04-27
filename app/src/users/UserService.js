@@ -15,6 +15,33 @@
    * @constructor
    */
   function UserService($q, $rootScope){
+    var ePersonStatusEnum = {
+      TAXAUTH   : 1,
+      LEGALP    : 2,
+      NATPERS   : 3,
+      PENTREP   : 4,
+      FREELANCE : 5,
+      properties : {
+        1 : { descr : "Податковий орган",  isnatpers : false, },
+        2 : { descr : "Юридична особа",    isnatpers : false, },
+        3 : { descr : "Фізична особа",     isnatpers : true,  },
+        4 : { descr : "ФО - підприємець",  isnatpers : true,  },
+        5 : { descr : "Самозайнята особа", isnatpers : true,  },
+      },
+    };
+    if (Object.freeze())
+      Object.freeze(ePersonStatusEnum);
+
+    var ePersonAptTypeEnum = {
+      APT     : 1,
+      OFFICE  : 2,
+      properties : {
+        1 : { descr : "кв.", },
+        2 : { descr : "оф.", },
+      },
+    };
+    if (Object.freeze())
+      Object.freeze(ePersonAptTypeEnum);
 
     var users = [
       /* {
@@ -105,34 +132,6 @@
       $rootScope.$applyAsync();
     };
 
-    // ==================== Enums ===========================
-    var ePersonStatusEnum = {
-      TAXAUTH   : 1,
-      LEGALP    : 2,
-      NATPERS   : 3,
-      PENTREP   : 4,
-      FREELANCE : 5,
-      properties : {
-        1 : { descr : "Податковий орган",  isnatpers : false, },
-        2 : { descr : "Юридична особа",    isnatpers : false, },
-        3 : { descr : "Фізична особа",     isnatpers : true,  },
-        4 : { descr : "ФО - підприємець",  isnatpers : true,  },
-        5 : { descr : "Самозайнята особа", isnatpers : true,  },
-      },
-    };
-    if (Object.freeze())
-      Object.freeze(ePersonStatusEnum);
-
-    var ePersonAptTypeEnum = {
-      APT     : 1,
-      OFFICE  : 2,
-      properties : {
-        1 : { descr : "кв.", },
-        2 : { descr : "оф.", },
-      },
-    };
-    if (Object.freeze())
-      Object.freeze(ePersonAptTypeEnum);
 
 
 
