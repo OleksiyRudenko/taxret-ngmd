@@ -46,11 +46,11 @@
       $mdSidenav('left').toggle();
     }
 
-      /**
-       * @name selectUser
-       * @desc Select the current avatars
-       * @param user
-       */
+    /**
+     * @name selectUser
+     * @desc Select the current avatars
+     * @param user
+     */
     function selectUser( user ) {
       vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
     }
