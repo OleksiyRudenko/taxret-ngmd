@@ -6,10 +6,9 @@
   UserService.$inject=['$q', '$rootScope'];
 
   /**
-   * Users DataService
-   * Uses embedded, hard-coded data model; acts asynchronously to simulate
-   * remote data service call(s).
-   *
+   * @name Users DataService
+   * @desc Uses embedded, hard-coded data model; acts asynchronously to simulate
+   * @desc remote data service call(s).
    * @param $q
    * @param $rootScope
    * @returns {{loadAll: Function}}
@@ -105,14 +104,27 @@
       ePersonAptTypeEnum  : ePersonAptTypeEnum,
     };
 
+    /**
+     * @name loadAllUsers
+     * @desc Loads all users
+     * @returns {Array}
+     */
     function loadAllUsers() {
       // Simulate async nature of real remote calls
       return $q.when(users);
     };
+
+    /**
+     * @name getDeclarantCurrent
+     * @desc Returns current decalarant (user selected or default)
+     * @returns {Object}
+     */
     function getDeclarantCurrent() {
       return declarantCurrent.user;
     };
-    /* Sets user as current declarant
+    /**
+     * @name setDeclarantCurrent
+     * @desc Sets user as current declarant
      * @param user
      */
     function setDeclarantCurrent(user) {
@@ -126,7 +138,13 @@
   }
 
   // ==================================================================================================
-
+  /**
+   * @name ePerson
+   * @desc Person Entity object constructor
+   * @param *
+   * @returns {Object}
+   * @constructor
+   */
   function ePerson(nameLast,    // for legal entities: principal name
                    nameFirst,   // for legal entities: abbreviated principal name
                    namePat,     // for legal entities: incorporation form (Ltd, Inc. etc)

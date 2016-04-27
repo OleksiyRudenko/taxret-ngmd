@@ -15,6 +15,8 @@
 
     /**
      * Main Controller for the TaxRet App
+     * NB! Uses $watch
+     *
      * @param $scope
      * @param userService
      * @param $mdSidenav
