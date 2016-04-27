@@ -2,6 +2,7 @@
   'use strict';
 
   // Prepare the 'taxretApp' module for subsequent registration of configuration, controllers and delegates
+  // TODO: rename 'taxretApp' => 'app' and 'app' => 'smthElse' for the sake of style compliance
 angular
   .module('taxretApp', [
 
