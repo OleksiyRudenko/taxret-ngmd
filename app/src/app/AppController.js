@@ -129,8 +129,9 @@
         // ================= Pop-up dialog fn set
         $scope.status = '  ';
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $scope.ChooseAvatarDialog = function(ev,avatarid) {
+        $scope.ChooseAvatarDialog =   ChooseAvatarDialog;
 
+        function ChooseAvatarDialog(ev,avatarid) {
           var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
           // alert("Asked for me?");
           $mdDialog.show({
