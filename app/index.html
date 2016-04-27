@@ -63,8 +63,8 @@
           <md-list-item ng-repeat="state in appct.states">
               <md-divider ng-if="state.hr===true"></md-divider>
               <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : $state.current.url === '#/' + state.sref }"
-                      style="width:100%; text-align: left;"> <!-- ERR ng-class doesn't work -->
-                                                            <!-- ERR button isn't 100% wide w/out style -->
+                      style="width:100%; text-align: left;"> <!-- TODO: ERR ng-class doesn't work -->
+                                                            <!-- TODO: ERR button isn't 100% wide w/out inline style -->
                   <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
               </md-button>
           </md-list-item>
