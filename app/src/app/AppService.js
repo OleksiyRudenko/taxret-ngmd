@@ -6,7 +6,8 @@
     'use strict';
 
     angular.module('app')
-        .factory('appService', ['$q', AppService]);
+        .factory('appService', AppService);
+    AppService.$inject=['$q'];
 
     /**
      * Users DataService
