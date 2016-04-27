@@ -32,7 +32,14 @@
           background: ""
         });
 
-        $scope.avaSelect = function(avataridSelected) {
+        $scope.avaSelect = avaSelect;
+
+        /**
+         * @name avaSelect
+         * @desc Assigns avatar to current user/declarant
+         * @param avataridSelected
+         */
+        function avaSelect(avataridSelected) {
           // alert("Received " + avataridSelected + ". Current user " + userService.getDeclarantCurrent().avatarid);
           userService.getDeclarantCurrent().avatarid = avataridSelected;
           $mdDialog.hide();
