@@ -8,9 +8,10 @@
 
   /**
    * User List Controller for the TaxRet App
-   * @param $scope
+   * @param userService
    * @param $mdSidenav
-   * @param avatarsService
+   * @param $mdBottomSheet
+   * @param $log
    * @constructor
    */
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log) {
