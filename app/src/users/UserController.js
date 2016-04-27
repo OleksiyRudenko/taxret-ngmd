@@ -7,7 +7,8 @@
   UserController.$inject = ['userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
 
   /**
-   * User List Controller for the TaxRet App
+   * @name UserController
+   * @desc User List Controller for the TaxRet App
    * @param userService
    * @param $mdSidenav
    * @param $mdBottomSheet
@@ -38,22 +39,25 @@
     // *********************************
 
     /**
-     * Hide or Show the 'left' sideNav area
+     * @name toggleUsersList
+     * @desc Hide or Show the 'left' sideNav area
      */
     function toggleUsersList() {
       $mdSidenav('left').toggle();
     }
 
       /**
-       * Select the current avatars
+       * @name selectUser
+       * @desc Select the current avatars
        * @param user
        */
-    function selectUser ( user ) {
+    function selectUser( user ) {
       vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
     }
 
     /**
-     * Show the Contact view in the bottom sheet
+     * @name makeContact
+     * @desc Show the Contact view in the bottom sheet
      * @param selectedUser
      */
     function makeContact(selectedUser) {
@@ -68,7 +72,8 @@
         });
 
         /**
-         * User ContactSheet controller
+         * @name ContactSheetController
+         * @desc User ContactSheet controller
          * @param $mdBottomSheet
          */
         function ContactSheetController( $mdBottomSheet ) {
