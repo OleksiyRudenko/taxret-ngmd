@@ -10,12 +10,10 @@
     AppService.$inject=['$q'];
 
     /**
-     * Users DataService
-     * Uses embedded, hard-coded data model; acts asynchronously to simulate
-     * remote data service call(s).
-     *
+     * @name AppService
+     * @desc Former users service. Deprecated. To be removed.
      * @param $q
-     * @returns {{loadAll: Function}}
+     * @returns null // {{loadAll: Function}}
      * @constructor
      */
     function AppService($q) {
