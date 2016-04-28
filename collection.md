@@ -17,6 +17,10 @@
 
 [Collection<sup>[~150401]</sup>](http://www.hongkiat.com/blog/free-angular-ebooks/)
 
+[JS by kottans.org](http://kottans.org/js-slides/)
+
+[codeschool[ru]](https://habrahabr.ru/post/244925/)
+
 # Angular extras
 
 ## ng UI router
