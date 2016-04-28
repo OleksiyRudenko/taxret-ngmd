@@ -5,29 +5,38 @@
 
     angular
         .module('app')
-        .controller('AppController', [
-            // 'appService',
-            '$scope', 'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$mdDialog', '$mdMedia',
-            AppController
-        ]);
+        .controller('AppController', AppController);
+    
+    AppController.$inject=[ // 'appService',
+        '$scope', 'userService', '$mdSidenav', 
+        '$mdBottomSheet', '$log', '$q', 
+        '$mdDialog', '$mdMedia', 
+    ];
 
     /**
-     * Main Controller for the TaxRet App
+     * @name AppController 
+     * @desc Main Controller for the TaxRet App
+     * @decs NB! Uses $watch
      * @param $scope
      * @param userService
      * @param $mdSidenav
-     * @param avatarsService
+     * @param $mdBottomSheet
+     * @param $log
+     * @param $q
+     * @param $mdDialog
+     * @param $mdMedia
      * @constructor
      */
     function AppController( // appService,
                             $scope,
                             userService, $mdSidenav, $mdBottomSheet, $log, $q,
                             $mdDialog, $mdMedia) {
-        var self = this;
-        self.userService = userService; // ?
+        /* jshint validthis: true */
+        var vm = this;
+        vm.userService = userService; // ?
         $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
-        self.states     = [
+        vm.states     = [
             {
                 sref    :   'payroll',
                 icon    :   '',
@@ -82,19 +91,19 @@
             }
         ];
 
-        self.currDeclarant     = self.userService.getDeclarantCurrent(); // null
-        self.users        = [ ];
-        self.selectUser   = selectUser;
-        self.toggleSideNav   = toggleSideNav;
-        self.makeContact  = makeContact;
+        vm.currDeclarant    = vm.userService.getDeclarantCurrent(); // null
+        vm.users            = [ ];
+        vm.selectUser       = selectUser;
+        vm.toggleSideNav    = toggleSideNav;
+        vm.makeContact      = makeContact;
 
         // Load all registered users
 
-        self.userService
+        vm.userService
             .loadAllUsers()
             .then( function( users ) {
-                self.users    = [].concat(users);
-                // self.currDeclarant = userService.getDeclarantCurrent();
+                vm.users    = [].concat(users);
+                // vm.currDeclarant = userService.getDeclarantCurrent();
             });
 
         // *********************************
@@ -102,19 +111,21 @@
         // *********************************
 
         /**
-         * Hide or Show the 'left' sideNav area
+         * @name toggleSideNav
+         * @desc Hide or Show the 'left' sideNav area
          */
         function toggleSideNav() {
             $mdSidenav('left').toggle();
         }
 
         /**
-         * Select the current avatars
-         * @param menuId
+         * @name selectUser
+         * @desc Set current user/declarant
+         * @param user
          */
         function selectUser ( user ) {
             user = angular.isNumber(user) ? $scope.users[user] : user;
-            self.currDeclarant = user;
+            vm.currDeclarant = user;
             userService.setDeclarantCurrent(user);
             $scope.selectedTab = 0;
         }
@@ -122,13 +133,20 @@
         // ================= Pop-up dialog fn set
         $scope.status = '  ';
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $scope.ChooseAvatarDialog = function(ev,avatarid) {
+        $scope.ChooseAvatarDialog =   ChooseAvatarDialog;
 
+        /**
+         * @name ChooseAvatarDialog
+         * @desc Make Dialog to Choose Avatar on event and using currently chosen avatar id
+         * @param ev
+         * @param avatarid
+         */
+        function ChooseAvatarDialog(ev,avatarid) {
           var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
           // alert("Asked for me?");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: 'partials/dialog.app.ChooseAvatar.html',
+              templateUrl: 'src/users/view/dialog.app.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
@@ -146,8 +164,14 @@
           });
         };
 
+        /**
+         * @name DialogController
+         * @desc Dialog Controller
+         * @param $scope
+         * @param $mdDialog
+         */
         function DialogController($scope, $mdDialog) {
-          // $scope.UserAvaGridCtrl = UserAvaGridCtrl;
+          // $scope.UserAvaGridController = UserAvaGridController;
           $scope.hide = function() {
             $mdDialog.hide();
           };
@@ -163,7 +187,9 @@
 
 
         /**
-         * Show the Contact view in the bottom sheet
+         * @name makeContact
+         * @desc Show the Contact view in the bottom sheet
+         * @param selectedUser
          */
         function makeContact(selectedUser) {
 
@@ -177,7 +203,9 @@
             });
 
             /**
-             * User ContactSheet controller
+             * @name ContactSheetController
+             * @desc User ContactSheet controller
+             * @param $mdBottomSheet
              */
             function ContactSheetController( $mdBottomSheet ) {
                 this.user = selectedUser;

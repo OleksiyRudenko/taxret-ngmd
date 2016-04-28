@@ -12,12 +12,12 @@
         <md-dialog-content>
             <div class="md-dialog-content">
                 <!-- h2>stub content</h2 -->
-                <div ng-controller="UserAvaGridCtrl as vm" flex ng-cloak class="userAvaGridTiles">
+                <div ng-controller="UserAvaGridCtrl as uag" flex ng-cloak class="userAvaGridTiles"> <!-- TODO: move class to attr -->
                     <md-grid-list
                             md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
                             md-row-height-gt-md="1:1" md-row-height="4:3"
                             md-gutter="8px" md-gutter-gt-sm="4px" >
-                        <md-grid-tile ng-repeat="tile in vm.tiles"
+                        <md-grid-tile ng-repeat="tile in uag.tiles"
                                       md-rowspan="{{tile.span.row}}"
                                       md-colspan="{{tile.span.col}}"
                                       md-colspan-sm="1"
@@ -33,7 +33,7 @@
 
             </div>
         </md-dialog-content>
-        <md-dialog-actions layout="row">
+        <!-- md-dialog-actions layout="row">
             <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
                 More on Wikipedia
             </md-button>
@@ -44,6 +44,6 @@
             <md-button ng-click="answer('useful')" style="margin-right:20px;">
                 Useful
             </md-button>
-        </md-dialog-actions>
+        </md-dialog-actions -->
     </form>
 </md-dialog>

@@ -1,79 +1,52 @@
 # Tax Return
+
 ## Goal
- This project uses Angular, Angular Material, UI.Router, Lovefield
- libraries to build a single page application with IndexedDB-based
- local storage to assist users in completion of tax returns under
- Ukrainian tax regulations.
 
- This application is also might be used as a skeleton application.
+This project uses Angular, Angular Material, UI.Router, Lovefield
+and [few other libraries](#stack) to build a single page application
+with IndexedDB-based local storage to assist users in completion
+of tax returns under Ukrainian tax regulations.
 
- ## Structure
- ```bash
-ng-boilerplate/
-  |- src/
-  |  |- client/
-  |  |  |- _module.ts
-  |  |  |- component1/
-  |  |  |- |- component.ts
-  |  |  |- |- component.html
-  |  |  |- |- component.scss
-  |  |- server/
-  |  |  |- <server code>
-  |  |- assets/
-  |  |  |- <static files>
-  |  |- tests/
-  |  |  |- unit
-  |  |  |  |- **/*.js
-  |  |  |- integration
-  |  |  |  |- **/*.js
-  |  |- types/
-  |  |  |  |- **/*.d.ts
-  |- vendor/
-  |  |- angular/
-  |  |- angular-mocks/
-  |  |- lodash/
-  |  |- ui-router/
-  |- gulpfile.js
- ```
-This app groups code by feature but not to the point of grouping
-the templates/tests/css inside it (it's really easy to change
-that in the gulpfile if you want to do that though).
+This application is also might be used as a skeleton application.
 
-Look at the home module present in the boilerplate to see how
-you can integrate a module in the angular app and.
-There's also an exemple service and directive.
+## Table of Contents
 
-There are couple conventions in place that you should follow:
+1. [Stack](#stack)
+    * [Core and UI](#core-and-ui)
+    * [Data Storage](#data-storage)
+1. [Structure](#structure)
 
-**Client**
-* Each feature folder should have file `_module.ts` declaring
-  new angular module, which should be referenced in the
-  `client/_module.ts`.
-  I decided to avoid things like `ocLazyLoad` or `angularAMD`
-  due to introduced complexity. That's why main _module.ts has
-  dependency on feature modules. This means that all `_module`
-  files (not any other files from a given feature) will be
-  loaded on initial load, but that's OK since they are small.
-* Each `angular.module` should have this:
-  `ngAmdProvider.configure(app);` in its configuration function.
-  This allows angular controllers, services, directive, and
-  the rest to be registered asynchronously - when the file loads.
-* Each ui.router state options should be wrapped in
-  `ngAmdProvider.resolve('client/home/home', {...})`.
-  See example in `client/_module.ts`.
-  We need to load code for the component that is used in
-  the `template` option when we navigate to a state.
+## Stack
 
-**Server**
-* Each api route should be placed in a separate file under
-  `server/routes/api`. It also should be registered in
-  `server/routeHandler` with the appropriate url path.
+[Angular Material Start](https://github.com/angular/material-start)<sup>[2016-02-03]</sup>
+was used as a boilerplate for this project.
 
+NB! Please, do not rely on `node_modules\` & `test\` as these are inherited from
+Material Start project but not currently in use.
 
-*This README.md structure is taken from
-[DmitryEfimenko/ng-boilerplate](https://github.com/DmitryEfimenko/ng-boilerplate)*
+### Core and UI
+
+| [AngularJS 1.5.1](https://angularjs.org/) / [More...](https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM) / [CDN](https://cdnjs.com/libraries/angular.js/1.5.1) | [angular-material 1.0.6](https://material.angularjs.org/1.0.6/) | [angular-ui.router 0.2.18](http://angular-ui.github.io/ui-router/) |
+| --- | --- | --- |
+| ?[angular-ui](http://angular-ui.github.io/) | ?[angular-xeditable](https://vitalets.github.io/angular-xeditable/) | ?[angular-formly](http://angular-formly.com/#/) |
+| ?[ngmd-data-table](https://github.com/daniel-nagy/md-data-table) |. | . |
+
+### Data Storage
+
+| [IndexedDB](https://www.w3.org/TR/IndexedDB/) | [Lovefield <sup>[2016-04-11]</sup>](https://github.com/google/lovefield) | [ng-lovefield <sup>[2016-03-01]</sup>](https://github.com/kutomer/ng-lovefield) |
+| --- | --- | --- |
+
+[**[back-to-top](#table-of-contents)**]
+
+## Structure
+
+Please refer to [structure.md](structure.md) for more details.
+
+[**[back-to-top](#table-of-contents)**]
 
 * * *
+
+### *Ignore the following remainder of the document!*
 
 # Angular Material-Start
 

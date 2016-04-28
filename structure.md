@@ -1,205 +1,102 @@
-[2016-04-10] Created
+# Project Directory Layout
+``` 
+Project-Root-Folder 
+|
++---app/                # app core
+|   |
+|   |   index.html          # app core entry point
+|   |   
+|   +---assets/             # app assets
+|   |   |
+|   |   +---doc/            # use references and manuals
+|   |   |
+|   |   \---svg/            # icons and miscellaneous imagery
+|   |
+|   +---src/
+|   |   |
+|   |   +---app/            # app core
+|   |   |   |
+|   |   |   \---view/       # app core views
+|   |   |
+|   |   +---manuals/        # documents views
+|   |   |
+|   |   +---users/          # users feature
+|   |   |   |
+|   |   |   \---view/       # users feature views
+|   |   |
+|   |   \---workflowMain/   # main workflow features (major options at left sidenav menu)
+|   |
+|   \---vendor/         # external libraries to be hosted along with app
+|
++---node_modules/       # project builder files; inherited from angular-material, not in use
+|
++---test/               # project tests files; inherited from angular-material, not in use
+|
+\---vendor/             # external libraries used in development phase; to be replaced with CDN references on production
+```
 
-[2016-04-10] Latest major update
+* * *
 
-> [Learn what stays behind [2016-04-10]](./tag.date.md)
+### *Ignore the following remainder of the document!*
 
-# Project Structure
+```bash
+ng-boilerplate/
+  |- src/
+  |  |- client/
+  |  |  |- _module.ts
+  |  |  |- component1/
+  |  |  |- |- component.ts
+  |  |  |- |- component.html
+  |  |  |- |- component.scss
+  |  |- server/
+  |  |  |- <server code>
+  |  |- assets/
+  |  |  |- <static files>
+  |  |- tests/
+  |  |  |- unit
+  |  |  |  |- **/*.js
+  |  |  |- integration
+  |  |  |  |- **/*.js
+  |  |- types/
+  |  |  |  |- **/*.d.ts
+  |- vendor/
+  |  |- angular/
+  |  |- angular-mocks/
+  |  |- lodash/
+  |  |- ui-router/
+  |- gulpfile.js
+ ```
 
-## Purpose
+This app groups code by feature but not to the point of grouping
+the templates/tests/css inside it (it's really easy to change
+that in the gulpfile if you want to do that though).
 
-This is an attempt to elaborate the folder structure for a project, which would
-serve developer's needs keeping in mind scalability from tiny to huge while yet
-adhering to best practices available.
+Look at the home module present in the boilerplate to see how
+you can integrate a module in the angular app and.
+There's also an exemple service and directive.
 
-While folder structure should be kept as
-[flat](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y143)[2016-04-10]
-as possible the proper initial set up is also important especially for novice
-developers. Often the pre-set form helps keeping adherent to structure during
-development cycle and on scaling saving efforts on migration and refactoring.
+There are couple conventions in place that you should follow:
 
-So we are trying to develop optimum folder structure.
+**Client**
+* Each feature folder should have file `_module.ts` declaring
+  new angular module, which should be referenced in the
+  `client/_module.ts`.
+  I decided to avoid things like `ocLazyLoad` or `angularAMD`
+  due to introduced complexity. That's why main _module.ts has
+  dependency on feature modules. This means that all `_module`
+  files (not any other files from a given feature) will be
+  loaded on initial load, but that's OK since they are small.
+* Each `angular.module` should have this:
+  `ngAmdProvider.configure(app);` in its configuration function.
+  This allows angular controllers, services, directive, and
+  the rest to be registered asynchronously - when the file loads.
+* Each ui.router state options should be wrapped in
+  `ngAmdProvider.resolve('client/home/home', {...})`.
+  See example in `client/_module.ts`.
+  We need to load code for the component that is used in
+  the `template` option when we navigate to a state.
 
-## Credits
-
-Not only [Angular 1 Style Guide](https://github.com/johnpapa/angular-styleguide)
-by John Papa is a good source of development style but also a source of good
-practices on organizing documents and references.
-
-## Table of Contents
-1. [Outcome](#outcome)
-1. [Major factors to consider](#major-factors-to-consider)
-1. [Input](#input)
-
-**Why outcome comes first?**
-
-In business it often happens that we say *Here is the solution: .... Here is
-reasoning behind, briefly:...* and *What part of reasoning would you like us
-to unveil in more details?*
-
-In finance it is normally said *This is our technical result, which comprises of ...
-[1000 accounts drilling down to every single transaction] ...*
-
-So, we just employ the same approach: the outcome and then explanation helping
-track the reasoning.
-
-## Outcome
-###### [Structure [S100](#structure-s100)]
-
-The resulting structure template is a bit excessive, offering for example sub-folder
-`assets` to keep component-specific images and alike under component folder, which
-is definitely unnecessary in many cases. Feel free removing those. We keep it for
-to not to forget that should we need to store component specific imagery or other assets,
-which normally go into app's `assets/img` folder, it should be nevertheless stored
-under component folder.
-
-
-app/client|server|vendor
-app/client/common/component/assets/README.md|logo.svg
-
-npm, bower
-grunt, gulp, [brunch.io](http://brunch.io/skeletons), [et al](google/ref)
-
-**[Back to top](#table-of-contents)**
-
-## Major factors to consider
-###### [Structure [S200](#structure-s200)]
-
-**[Back to top](#table-of-contents)**
-
-### Software architecture
-###### [Structure [S201](#structure-s201)]
-
-client+server
-
-**[Back to top](#table-of-contents)**
-
-### Application structure
-###### [Structure [S202](#structure-s202)]
-
-
-**[Back to top](#table-of-contents)**
-
-### Scalability
-###### [Structure [S203](#structure-s203)]
-
-If I was asked to classify [SPAs](https://en.wikipedia.org/wiki/Single-page_application)
-engaging AngularJS or similar
-lightweight frameworks or extensive libraries, I would then offer
-following definitions:
-
- * **tiny** - single-view front-end app. Nothing more complex than single
-      controller, probably no services and very few actions. Deserves lightweight
-      development cycle, nothing more complex than 'code+refresh-browser'.
-      May be launched by opening `index.html` file directly in browser.
- * **small** - routed front-end app with a number of controllers, quite
-      developed services, engaging local persistent storages like
-      IndexedDB and some back-end support (non-principal data supply).
-      Local http server is used during development. Still may not need build tools
-      avoid thus build overheads.
- * **medium** - bigger share of back-end support and shared data
-      supplied by back-end, possibly with third-party services integration.
-      Here we definitely want to employ build tools.
- * **large** - even more of back-end, possibly with cloud-storage and
-      hundreds if not thousands concurrent client.
- * **huge** - like large but with high performance back-end support. Employs
-      full stack of building and collaboration technologies.
-
-Some further notes related to tiny and small apps development:
-
- 1. Local http server should serve both front and back ends.
- 2. Third-party resources should be accessible under server root.
- 3. Referring the resource as `/...path...` meaning a route from server root
-      may become an issue when app is loaded into browser directly from file system.
-      So, use relative addressing like `../../../vendor/angular/angular.1.5.0.min.js`
- 4. Find a way automating addressing vendors' resources externally when deployed.
-      For e.g. how to make deployment on github pages painless?
-      Well, builders do the job, but in a lightweight dev cycle we need quick-solutions.
-
-In either case the structure should be able to support scalability from the earliest
-stage of development. You never know when tiny idea becomes a ~~facebook~~ huge app.
-
-**[Back to top](#table-of-contents)**
-
-### Development cycle
-###### [Structure [S204](#structure-s204)]
-
-Coding when no internet connection.
-
-**[Back to top](#table-of-contents)**
-
-## Input
-###### [Structure [S300](#structure-s300)]
-
-There is a number of overviews, guidelines and best practices described on the topic.
-There is even more projects employing that or other file structure.
-
-While it is clear that folders-by-feature structure has its significant advantages over
-[file and folder patterns](https://medium.com/opinionated-angularjs/scalable-code-organization-in-angularjs-9f01b594bf06)[2013-11-20]
-in many cases such factors as development cycle using build management tools and application
-scale often stay beyond the scope.
-
-Again, novice developer focused on development itself often knowing a little about
-full-scale development environment and scaling pitfalls to take proper decisions on
-project file structure.
-
-[2016-04-10] Here are the extracts from various sources used:
-
-| extract author | original source as of |
-| :---:  | :---: |
-| [John Papa](./structure.johnpapa.md) | 2016-03-27 |
-| [DmitryEfimenko](./structure.DmitryEfimenko.md) | 2016-03-11 |
-| [Josh D. Miller](./structure.joshdmiller.md) | 2015-01-25 |
-| [Adnan Kukic](./structure.AdnanKukic.md) | 2014-10-09 |
-| [Gert Hengeveld](./structure.GertHengeveld.md) | 2013-11-20 |
-
-Follow the links in the extracts to read full source.
-
-**[Back to top](#table-of-contents)**
-
-### Common points
-###### [Structure [S301](#structure-s301)]
-
-More or less there is common understanding of structure in general: project
-root folder contains:
-
-* application folder (either `app` or `src`)
-* general project documentation (purpose, intro, installation etc)
-* folder for third-party (vendor) components like libraries and frameworks such as AngularJS
-* build management (`grunt`, `gulp`, `bower`, `npm`) tools' files and folders
-* Version Control System files and folders
-
-The most of authors advocate folder-by-feature structure. I.e. each component has its own
-folder containing all files required and attributed specifically to given component.
-Reusable (in various projects) components should be "copy-pastable". It means that even
-such assets like images, specific solely to a component should also be incapsulated therein.
-
-**[Back to top](#table-of-contents)**
-
-### Critical discrepancies
-###### [Structure [S302](#structure-s302)]
-
-There is no common understanding as to how to name folders storing imagery and alike.
-Some suggest `assets`, while others suggest `content`. Sometimes this folder located
-in `app` meaning assests are common for server and client ends, other times in `client`.
-
-Should exclusive app's views be located under related components or collected in a
-common storage?
-
-Should exclusive app's components' folders mixed with a folder for copy-pastable components
-or grouped under `core` folder?
-
-No definite answers. But the rule of thumb is: whenever you have 7+ items (files, folders)
-of similar type group them in a sub-folder. For e.g. if your component has 10 controllers,
-3 directives and a couple of views, group controllers into `controllers` folder.
-
-Where to locate `index.html` for client? It was seen couple of times under
-[`app/assets/`](https://github.com/row1/brunch-materialistic-arrogantular/tree/master/app/assets)[2015-09-06].
-
-Where to place developer's docs? All files in project root? Or have them scattered across
-the entire folders structure - where the documented features are?
-
-Even more interesting question: which path is preferred - `src/client/app` or
-`src/app/client`? We tried to reason the solution.
-
-**[Back to top](#table-of-contents)**
+**Server**
+* Each api route should be placed in a separate file under
+  `server/routes/api`. It also should be registered in
+  `server/routeHandler` with the appropriate url path.

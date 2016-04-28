@@ -2,13 +2,15 @@
   'use strict';
 
   angular.module('users')
-         .factory('userService', ['$q', '$rootScope', UserService]);
+         .factory('userService', UserService);
+  UserService.$inject=['$q', '$rootScope'];
 
   /**
-   * Users DataService
-   * Uses embedded, hard-coded data model; acts asynchronously to simulate
-   * remote data service call(s).
-   *
+   * @name Users DataService
+   * @desc Uses embedded, hard-coded data model; acts asynchronously to simulate
+   * @desc remote data service call(s).
+   * @param $q
+   * @param $rootScope
    * @returns {{loadAll: Function}}
    * @constructor
    */
@@ -20,21 +22,22 @@
       PENTREP   : 4,
       FREELANCE : 5,
       properties : {
-        1 : { descr : "Податковий орган", isnatpers : false, },
-        2 : { descr : "Юридична особа",   isnatpers : false, },
-        3 : { descr : "Фізична особа",    isnatpers : true, },
-        4 : { descr : "ФО - підприємець", isnatpers : true, },
-        5 : { descr : "Самозайнята особа", isnatpers : true, },
+        1 : { descr : "Податковий орган",  isnatpers : false, },
+        2 : { descr : "Юридична особа",    isnatpers : false, },
+        3 : { descr : "Фізична особа",     isnatpers : true,  },
+        4 : { descr : "ФО - підприємець",  isnatpers : true,  },
+        5 : { descr : "Самозайнята особа", isnatpers : true,  },
       },
     };
     if (Object.freeze())
       Object.freeze(ePersonStatusEnum);
+
     var ePersonAptTypeEnum = {
       APT     : 1,
       OFFICE  : 2,
       properties : {
         1 : { descr : "кв.", },
-        2 : { descr : "оф.",   },
+        2 : { descr : "оф.", },
       },
     };
     if (Object.freeze())
@@ -79,15 +82,15 @@
         avatarid: 'svg-10',
         comment: "Lebowski ipsum yeah? What do you think happens when you get rad? You turn in your library card? Get a new driver's license? Stop being awesome? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo pellentesque ac lectus. You don't go out and make a living dressed like that in the middle of a weekday. Quis elit blandit fringilla a ut turpis praesent felis ligula, malesuada suscipit malesuada."
       }, */
-      new ePerson("Руденко", "Олексій", "Анатолійович", true, ePersonStatusEnum.NATPERS, "CH788108", "2694204152", "",
-                  "Україна", "м.Київ", "", "02031", "м.Київ", "ДПІ у Шевченківському р-ні",
-                  "Кудрявський узвіз", 10, "", 1, ePersonAptTypeEnum.APT,
-                  "+380501112233", "oleksiy.rudenko@gmailx.com", 'svg-2', "Principal"
+      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "CH788108", "2694204152", "",
+                  "Україна",  "м.Київ",   "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
+                  "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,
+                  "+380501112233",        "oleksiy.rudenko@gmailx.com",     'svg-2',  "Principal"
       ),
-      new ePerson("Петренко", "Петро", "Петрович", true, ePersonStatusEnum.NATPERS, "CM888222", "2694203333", "",
-          "Україна", "м.Київ", "", "03033", "м.Київ", "ДПІ у Голосіївському р-ні",
-          "вул.Васильківська", 30, "", 3, ePersonAptTypeEnum.APT,
-          "+380503334455", "petro.petrenko@gmailx.com", 'svg-1', ""
+      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NATPERS,    "CM888222", "2694203333", "",
+                  "Україна",  "м.Київ",   "", "03033",    "м.Київ", "ДПІ у Голосіївському р-ні",
+                  "вул.Васильківська",    30, "", 3,      ePersonAptTypeEnum.APT,
+                  "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
       )
     ];
     var declarantCurrent = { user: users[0] };
@@ -101,13 +104,29 @@
       ePersonAptTypeEnum  : ePersonAptTypeEnum,
     };
 
+    /**
+     * @name loadAllUsers
+     * @desc Loads all users
+     * @returns {Array}
+     */
     function loadAllUsers() {
       // Simulate async nature of real remote calls
       return $q.when(users);
     };
+
+    /**
+     * @name getDeclarantCurrent
+     * @desc Returns current decalarant (user selected or default)
+     * @returns {Object}
+     */
     function getDeclarantCurrent() {
       return declarantCurrent.user;
     };
+    /**
+     * @name setDeclarantCurrent
+     * @desc Sets user as current declarant
+     * @param user
+     */
     function setDeclarantCurrent(user) {
       declarantCurrent.user = user;
       $rootScope.$applyAsync();
@@ -119,7 +138,13 @@
   }
 
   // ==================================================================================================
-
+  /**
+   * @name ePerson
+   * @desc Person Entity object constructor
+   * @param *
+   * @returns {Object}
+   * @constructor
+   */
   function ePerson(nameLast,    // for legal entities: principal name
                    nameFirst,   // for legal entities: abbreviated principal name
                    namePat,     // for legal entities: incorporation form (Ltd, Inc. etc)
@@ -144,32 +169,33 @@
                    avatarid,
                    comment
     ) {
-    this.id         =   0;
-    this.isActive   =   true;
+    this.id           = 0;
+    this.isActive     = true;
 
-    this.nameLast	=	nameLast;
-    this.nameFirst	=	nameFirst;
-    this.namePat	=	namePat;
+    this.nameLast	    =	nameLast;
+    this.nameFirst	  =	nameFirst;
+    this.namePat	    =	namePat;
     this.isUAresident	=	isUAresident;
-    this.status	=	status;
-    this.passportNr	=	passportNr;
+    this.status	      =	status;
+    this.passportNr	  =	passportNr;
     this.idUAtaxCode	=	idUAtaxCode;
     this.idCodeSubst	=	idCodeSubst;
     this.addrCountry	=	addrCountry;
-    this.addrRegion	=	addrRegion;
+    this.addrRegion	  =	addrRegion;
     this.addrDistrict	=	addrDistrict;
-    this.addrPO	=	addrPO;
-    this.addrCity	=	addrCity;
+    this.addrPO	      =	addrPO;
+    this.addrCity	    =	addrCity;
     this.addrCityDistrict	=	addrCityDistrict;
-    this.addrStreet	=	addrStreet;
+    this.addrStreet	  =	addrStreet;
     this.addrBuilding	=	addrBuilding;
     this.addrSubBuilding	=	addrSubBuilding;
-    this.addrApt	=	addrApt;
+    this.addrApt	    =	addrApt;
     this.addrAptType	=	addrAptType;
-    this.telNr	=	telNr;
-    this.email	=	email;
-    this.avatarid = avatarid;
-    this.comment = comment;
+    this.telNr	      =	telNr;
+    this.email	      =	email;
+    this.avatarid     = avatarid;
+    this.comment      = comment;
+
     this.nameFull = function() {
       return this.nameLast + ' ' + this.nameFirst + ' ' + this.namePat;
     };

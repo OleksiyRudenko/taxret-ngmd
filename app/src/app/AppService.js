@@ -6,14 +6,14 @@
     'use strict';
 
     angular.module('app')
-        .factory('appService', ['$q', AppService]);
+        .factory('appService', AppService);
+    AppService.$inject=['$q'];
 
     /**
-     * Users DataService
-     * Uses embedded, hard-coded data model; acts asynchronously to simulate
-     * remote data service call(s).
-     *
-     * @returns {{loadAll: Function}}
+     * @name AppService
+     * @desc Former users service. Deprecated. To be removed.
+     * @param $q
+     * @returns null // {{loadAll: Function}}
      * @constructor
      */
     function AppService($q) {
