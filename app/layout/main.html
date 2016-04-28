@@ -1,0 +1,18 @@
+<!-- Major content block -->
+
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+        <md-button id="main" class="menu" hide-gt-sm ng-click="appct.toggleSideNav()" aria-label="Show User List">
+            <md-icon md-svg-icon="menu" ></md-icon>
+        </md-button>
+        <h3 class="md-display-1">
+            <a ng-href="http://oleksiyrudenko.github.io/taxret-ngmd/app/" class="nodecor" target="_blank">
+                Податкова декларація
+            </a>
+        </h3>
+    </md-toolbar>
+
+    <md-content flex id="content">
+        <div ui-view></div>
+    </md-content>
+
+    <!-- bottom-sheet show-up controlled by UserController::makeContact, which uses template './src/users/view/contactSheet.html' -->

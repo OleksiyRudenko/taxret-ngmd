@@ -1,5 +1,29 @@
-[2016-04-15]
-# ng UI router
+[2016-04-15] - created
+[2016-04-28] - latest significant update
+
+# Angular learning resources
+
+*Resources provided on Angular v.1.5.1, whenever its is possible*
+
+[Official Tutorial](https://code.angularjs.org/1.5.1/docs/tutorial)
+
+[John Papa](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
+
+[Todd Motto](https://github.com/toddmotto/angular-styleguide)
+
+[Levi Botelho](http://www.learn-angular.org/)
+
+[AngularJS book<sup>1.4.2</sup>](http://www.angularjsbook.com/angular-basics/chapters/introduction/)
+
+[Collection<sup>[~150401]</sup>](http://www.hongkiat.com/blog/free-angular-ebooks/)
+
+[JS by kottans.org](http://kottans.org/js-slides/)
+
+[codeschool[ru]](https://habrahabr.ru/post/244925/)
+
+# Angular extras
+
+## ng UI router
 [Docs](http://angular-ui.github.io/ui-router/)
 
 [API](http://angular-ui.github.io/ui-router/site/#/api/ui.router)
@@ -13,13 +37,13 @@
 [Extra: newer ngNewRouter vs ui-router (150415)](https://medium.com/angularjs-meetup-south-london/angular-just-another-introduction-to-ngnewrouter-vs-ui-router-72bfcb228017#.iisvkvjab)
 
 [Extra: ngNewRouter example (150315)](http://chariotsolutions.com/blog/post/new-angular-router-simple-example/)
-## config
+### config
 [Controllers et al](https://github.com/angular-ui/ui-router/wiki#controllers)
 
-# Navigation
+## Navigation
 [Build your own (150708)](http://blog.vizuri.com/creating-your-own-angular-material-navigation-menu)
 
-# ng-md Icons
+## ng-md Icons
 [ng-md-icon-directive](https://material.angularjs.org/latest/api/directive/mdIcon)
 
 [Icon set](https://design.google.com/icons/)

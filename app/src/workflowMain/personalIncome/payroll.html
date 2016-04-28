@@ -2,5 +2,6 @@
 <!-- partials/payroll.html -->
 <h1>Доходи фізичної особи</h1>
 <hr/>
-<a ui-sref="payroll.list">Show List</a>
+<!-- see https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-prevent-nested-ui-sref-objects-from-all-firingtriggering -->
+<a ui-sref="payroll.list" ng-click="$event.stopPropagation()">Show List</a>
 <div ui-view></div>

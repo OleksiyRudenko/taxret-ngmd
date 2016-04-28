@@ -102,3 +102,7 @@ Avoid binding to primitives, even those produced by `ng-repeat`:
 
 ## $rootScope
 [broadcast/emit...](https://makeomatic.ru/blog/2014/10/07/Angular_scope_rootScope/)
+
+## misc
+
+2read: [$apply/safeApply](http://ts-soft.ru/blog/angular-cheatsheet)
