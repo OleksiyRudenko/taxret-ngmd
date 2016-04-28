@@ -44,6 +44,28 @@ Please refer to [structure.md](structure.md) for more details.
 
 [**[back-to-top](#table-of-contents)**]
 
+## Branching convention
+
+Branch naming:
+
+ * `master` - major branch
+ * `dev` - development branch
+ * `gh-pages` - latest development roll-out
+ * `release-X.Y` - release v.X.Y
+ * `hotfix-X.Y.Z` - hotfix Z for release v.X.Y
+ * Other types of branches:
+
+   _Branch name template:_ `typeYYMMDDdescr` _where_
+
+     * `type` is one of
+        - `bf` - bugfix
+        - `rf` - refactoring
+        - `fea` - feature
+     * `YYMMDD` - date the branch was initialized on
+     * `descr` - single-word description; use `-` to employ more words
+
+Normally, `bf` and `rf` discontinued as soon as merged back.
+
 * * *
 
 ### *Ignore the following remainder of the document!*
