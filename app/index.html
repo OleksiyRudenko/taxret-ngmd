@@ -38,19 +38,7 @@
 
   <body ng-app="taxretApp" layout="row" ng-controller="AppController as appct" ng-cloak>
 
-  <!-- A. Sidenav. Menu-button if port width > 960px (gt-sm) -->
-  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-              md-component-id="left"
-              ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
-              md-is-locked-open="$mdMedia('gt-sm')"
-              ng-include="'./layout/sidebar-left.html'">
-  </md-sidenav>
-  <!-- A. Major content block -->
-  <div flex layout="column"
-       tabIndex="-1" role="main" class="md-whiteframe-z2"
-       ng-include="'./layout/main.html'"
-       >
-  </div>
+  <ng-include src="'./layout/shell.html'" layout="row" flex></ng-include> <!-- Load global view -->
 
   <!-- SWITCH VENDOR fw/lib - EXTERNAL ON PRODUCTION -->
     <!-- angular family -->
