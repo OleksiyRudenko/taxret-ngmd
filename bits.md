@@ -83,5 +83,22 @@ See [explanation](https://gist.github.com/demisx/9605099)
 and also [in details](http://www.simplygoodcode.com/2015/11/the-difference-between-service-provider-and-factory-in-angularjs/)
 and on [docs.angularJS.org](https://docs.angularjs.org/guide/services)
 
+## vm vs $scope
+
+[AngularJS's Controller As and the vm Variable<sup>[2014-06-24]</sup>](http://www.johnpapa.net/angularjss-controller-as-and-the-vm-variable/)
+
+[Digging into Angular’s “Controller as” syntax<sup>[2014-05-26]</sup>](https://toddmotto.com/digging-into-angulars-controller-as-syntax/)
+-- NB! $watchers
+
+[A better way to $scope, angular.extend, no more “vm = this”<sup>[2015-04-20]</sup>](https://toddmotto.com/a-better-way-to-scope-angular-extend-no-more-vm-this/)
+
+Avoid binding to primitives, even those produced by `ng-repeat`:
+```javascript
+  <div ng-repeat="value in model.values">     // model.values = [ primitives, ...]
+    <input type="text" ng-model="value" />                  // avoid
+    <input type="text" ng-model="model.values[$index]" />   // recommended
+  </div>
+```
+
 ## $rootScope
 [broadcast/emit...](https://makeomatic.ru/blog/2014/10/07/Angular_scope_rootScope/)
