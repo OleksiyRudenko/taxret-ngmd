@@ -36,72 +36,20 @@
 
   </head>
 
-  <body ng-app="taxretApp" layout="row" ng-controller="AppController as appct" ng-cloak >
+  <body ng-app="taxretApp" layout="row" ng-controller="AppController as appct" ng-cloak>
 
   <!-- A. Sidenav. Menu-button if port width > 960px (gt-sm) -->
   <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-      md-component-id="left"
-      ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
-      md-is-locked-open="$mdMedia('gt-sm')">
-
-    <md-toolbar class="md-whiteframe-z1">
-        <div layout-gt-sm="row">
-            <md-button style="text-align:left;" ui-sref="declarants">
-                <md-icon md-svg-icon="{{appct.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
-                {{appct.userService.getDeclarantCurrent().nameShort()}}
-            </md-button>
-            <md-button class="md-fab md-mini md-primary" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
-                       aria-label="Зв'язатись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
-                <md-tooltip>Зв'язатись з: {{appct.userService.getDeclarantCurrent().nameShort()}}</md-tooltip>
-                <md-icon md-svg-icon="share"></md-icon>
-            </md-button>
-        </div>
-    </md-toolbar>
-
-      <div layout="column">
-      <md-list>
-          <md-list-item ng-repeat="state in appct.states">
-              <md-divider ng-if="state.hr===true"></md-divider>
-              <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : $state.current.url === '#/' + state.sref }"
-                      style="width:100%; text-align: left;"> <!-- TODO: ERR ng-class doesn't work -->
-                                                            <!-- TODO: ERR button isn't 100% wide w/out inline style -->
-                  <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
-              </md-button>
-          </md-list-item>
-      </md-list>
-      </div>
-
-    <!-- md-list>
-      <md-list-item ng-repeat="it in appct.users">
-          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.userService.getDeclarantCurrent() }">
-            <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
-            {{it.nameFirst+ ' ' +it.nameLast}}
-          </md-button>
-      </md-list-item>
-    </md-list -->
-
+              md-component-id="left"
+              ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
+              md-is-locked-open="$mdMedia('gt-sm')"
+              ng-include="'./layout/sidebar-left.html'">
   </md-sidenav>
-
-
   <!-- A. Major content block -->
-  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
-
-    <md-toolbar layout="row" class="md-whiteframe-z1">
-      <md-button id="main" class="menu" hide-gt-sm ng-click="appct.toggleSideNav()" aria-label="Show User List">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
-      <h3 class="md-display-1">
-          <a ng-href="http://oleksiyrudenko.github.io/taxret-ngmd/app/" class="nodecor" target="_blank">
-              Податкова декларація
-          </a>
-      </h3>
-    </md-toolbar>
-
-    <md-content flex id="content">
-        <div ui-view></div>
-    </md-content>
-
-      <!-- bottom-sheet show-up controlled by UserController::makeContact, which uses template './src/users/view/contactSheet.html' -->
+  <div flex layout="column"
+       tabIndex="-1" role="main" class="md-whiteframe-z2"
+       ng-include="'./layout/main.html'"
+       >
   </div>
 
   <!-- SWITCH VENDOR fw/lib - EXTERNAL ON PRODUCTION -->
