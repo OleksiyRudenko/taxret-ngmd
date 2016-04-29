@@ -44,7 +44,7 @@ Please refer to [structure.md](structure.md) for more details.
 
 [**[back-to-top](#table-of-contents)**]
 
-## Branching convention
+## Local branching conventions in use
 
 Branch naming:
 
