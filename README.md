@@ -15,6 +15,7 @@ This application is also might be used as a skeleton application.
     * [Core and UI](#core-and-ui)
     * [Data Storage](#data-storage)
 1. [Structure](#structure)
+1. [Project branching conventions](#project-branching-conventions)
 
 ## Stack
 
@@ -44,7 +45,30 @@ Please refer to [structure.md](structure.md) for more details.
 
 [**[back-to-top](#table-of-contents)**]
 
-## Local branching conventions in use
+## Project branching conventions
+
+### To be implemented (recommended)
+
+[A successful Git branching model<sup>[2010-01-05]</sup>](http://nvie.com/posts/a-successful-git-branching-model/)
+by Vincent Driessen
+
+[Using git-flow to automate your git branching workflow<sup>[2010-08-19]</sup>](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/)
+by Jeff Kreeftmeijer
+
+[git-flow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/)
+by Daniel Kummer
+
+[Git extensions<sup>[2016-04-17]</sup>](https://github.com/petervanderdoes/gitflow-avh)
+by [Peter Vanderdoes](https://github.com/petervanderdoes)
+
+IDE plugins:
+* [JetBrains](https://plugins.jetbrains.com/plugin/7315)
+
+Suggested extension:
+* `document/` branches -- for documentation, which is not tied to
+   particular code, features etc.
+
+### Currently in use
 
 Branch naming:
 
@@ -61,10 +85,18 @@ Branch naming:
         - `bf` - bugfix
         - `rf` - refactoring
         - `fea` - feature
+        - `doc` - documentation
      * `YYMMDD` - date the branch was initialized on
      * `descr` - single-word description; use `-` to employ more words
 
 Normally, `bf` and `rf` discontinued as soon as merged back.
+
+Prefix `doc` is used for documentation, which is not tied to particular
+code, features etc.
+
+### Prior to 28-Apr-2016
+
+None reasonable
 
 * * *
 
