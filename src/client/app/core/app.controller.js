@@ -148,7 +148,7 @@
           // console.log("$mdDialog == ( " + $mdDialog + " ;");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: './app/users/view/dialog.app.ChooseAvatar.html',
+              templateUrl: './app/users/view/dialog.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
