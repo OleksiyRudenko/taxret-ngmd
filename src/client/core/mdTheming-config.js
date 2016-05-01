@@ -7,14 +7,14 @@
       .config(function($mdThemingProvider, $mdIconProvider){
   
         $mdIconProvider
-          .defaultIconSet(     "./assets/svg/avatars.svg", 128)
-          .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-          .icon("share"      , "./assets/svg/share.svg"       , 24)
-          .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-          .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-          .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-          .icon("phone"      , "./assets/svg/phone.svg"       , 512)
-          .iconSet("avatarGrid", './assets/svg/avatars.svg', 128); // for UserAvaGridController */
+          .defaultIconSet(     "./content/svg/avatars.svg", 128)
+          .icon("menu"       , "./content/svg/menu.svg"        , 24)
+          .icon("share"      , "./content/svg/share.svg"       , 24)
+          .icon("google_plus", "./content/svg/google_plus.svg" , 512)
+          .icon("hangouts"   , "./content/svg/hangouts.svg"    , 512)
+          .icon("twitter"    , "./content/svg/twitter.svg"     , 512)
+          .icon("phone"      , "./content/svg/phone.svg"       , 512)
+          .iconSet("avatarGrid", './content/svg/avatars.svg', 128); // for UserAvaGridController */
   
         $mdThemingProvider.theme('default')
           .primaryPalette('indigo')
