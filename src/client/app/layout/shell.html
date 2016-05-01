@@ -4,12 +4,12 @@
             md-component-id="left"
             ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
             md-is-locked-open="$mdMedia('gt-sm')"
-            ng-include="'./layout/sidebar-left.html'">
+            ng-include="'./app/layout/sidebar-left.html'">
 </md-sidenav>
 
 <!-- B. Major content block -->
 <div flex layout="column"
      tabIndex="-1" role="main" class="md-whiteframe-z2"
-     ng-include="'./layout/main.html'"
+     ng-include="'./app/layout/main.html'"
 >
 </div>

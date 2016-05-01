@@ -225,7 +225,7 @@ angular.module('hc.marked', [])
 })
 
   // TODO: filter and tests */
-  // app.filter('marked', ['marked', function(marked) {
+  // src.filter('marked', ['marked', function(marked) {
   //   return marked;
   // }]);
 

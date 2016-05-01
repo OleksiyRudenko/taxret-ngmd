@@ -1,0 +1,2 @@
+## Folder designation
+Server side
