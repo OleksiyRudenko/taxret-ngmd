@@ -13,7 +13,7 @@
           $stateProvider
             .state('declarants', {
               url: "/declarants",
-              templateUrl: "./src/users/view/declarants.html",
+              templateUrl: "./users/view/declarants.html",
               controller: 'AppController', /* function($scope) {
                $scope.items = ["A", "List", "Of", "Items"];
                } */
@@ -21,7 +21,7 @@
             })
             .state('payroll', {
               url: "/payroll",
-              templateUrl: "./src/workflowMain/personalIncome/payroll.html"
+              templateUrl: "./workflowMain/personalIncome/payroll.html"
             })
             /* .state('state1.list', {
              url: "/list",
@@ -32,39 +32,39 @@
              }) */
             .state('transport', {
               url: "/transport",
-              templateUrl: "./src/workflowMain/transportationMeans/transport.html"
+              templateUrl: "./workflowMain/transportationMeans/transport.html"
             })
             .state('realestate', {
               url: "/realestate",
-              templateUrl: "./src/workflowMain/realEstate/realestate.html"
+              templateUrl: "./workflowMain/realEstate/realestate.html"
             })
             .state('funds', {
               url: "/funds",
-              templateUrl: "./src/workflowMain/stocks/stocks.html"
+              templateUrl: "./workflowMain/stocks/stocks.html"
             })
             .state('foreignfee', {
               url: "/foreignfee",
-              templateUrl: "./src/workflowMain/foreignIncome/foreignfee.html"
+              templateUrl: "./workflowMain/foreignIncome/foreignfee.html"
             })
             .state('entrepreneur', {
               url: "/entrepreneur",
-              templateUrl: "./src/workflowMain/entrepreneuralIncome/entrepreneur.html"
+              templateUrl: "./workflowMain/entrepreneuralIncome/entrepreneur.html"
             })
             .state('expenseexempt', {
               url: "/expenseexempt",
-              templateUrl: "./src/workflowMain/taxExempt/expenseexempt.html"
+              templateUrl: "./workflowMain/taxExempt/expenseexempt.html"
             })
             .state('docUserManual', {
               url: "/docUserManual",
-              templateUrl: "./src/manuals/docUserManual.html"
+              templateUrl: "./manuals/docUserManual.html"
             })
             .state('docAbout', {
               url: "/docAbout",
-              templateUrl: "./src/manuals/docAbout.html"
+              templateUrl: "./manuals/docAbout.html"
             })
             .state('docDev', {
               url: "/docDev",
-              templateUrl: "./src/manuals/docDev.html"
+              templateUrl: "./manuals/docDev.html"
             })
       });
 
