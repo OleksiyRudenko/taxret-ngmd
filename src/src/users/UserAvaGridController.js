@@ -10,7 +10,7 @@
 
   UserAvaGridController.$inject=['$scope', 'userService', '$mdDialog'];
 
-  // var mod = angular.module('app');
+  // var mod = angular.module('src');
   // console.log(var_dump(mod._invokeQueue));
   // console.log(mod._invokeQueue.toString());
 

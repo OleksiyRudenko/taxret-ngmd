@@ -10,9 +10,9 @@ module.exports = function (config) {
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-material/angular-material.js',
 
-      'app/src/users/Users.js',
-      'app/src/users/UserService.js',
-      'app/src/users/UserController.js',
+      '../src/src/users/Users.js',
+      '../src/src/users/UserService.js',
+      '../src/src/users/UserController.js',
 
       'test/unit/**/*.js'
     ],

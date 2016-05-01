@@ -146,7 +146,7 @@
           // alert("Asked for me?");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: 'src/users/view/dialog.app.ChooseAvatar.html',
+              templateUrl: 'src/users/view/dialog.src.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
