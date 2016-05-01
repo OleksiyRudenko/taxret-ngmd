@@ -1,5 +1,7 @@
 # Tax Return
 
+[Demo](http://oleksiyrudenko.github.io/taxret-ngmd/src/client/#/declarants)
+
 ## Goal
 
 This project uses Angular, Angular Material, UI.Router, Lovefield
