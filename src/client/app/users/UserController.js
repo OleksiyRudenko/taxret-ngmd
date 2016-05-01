@@ -62,7 +62,7 @@
      * @param selectedUser
      */
     function makeContact(selectedUser) {
-        console.log('UserController::makeContact() has been invoked');
+        // console.log('UserController::makeContact() has been invoked');
         $mdBottomSheet.show({
           controllerAs  : "cp",
           templateUrl   : './app/users/view/contactSheet.html',
