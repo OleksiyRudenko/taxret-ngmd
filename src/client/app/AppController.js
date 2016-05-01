@@ -143,10 +143,11 @@
          */
         function ChooseAvatarDialog(ev,avatarid) {
           var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-          // alert("Asked for me?");
+          // alert("ChooseAvatarDialog(" + ev + ", " + avatarid + ")");
+          console.log("ChooseAvatarDialog( " + ev + ", " + avatarid + " );");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: 'src/users/view/dialog.src.ChooseAvatar.html',
+              templateUrl: './users/view/dialog.src.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
@@ -195,7 +196,7 @@
 
             $mdBottomSheet.show({
                 controllerAs  : "cp",
-                templateUrl   : './src/users/view/contactSheet.html',
+                templateUrl   : './users/view/contactSheet.html',
                 controller    : [ '$mdBottomSheet', ContactSheetController],
                 parent        : angular.element(document.getElementById('content'))
             }).then(function(clickedItem) {
