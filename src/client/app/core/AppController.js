@@ -148,7 +148,7 @@
           // console.log("$mdDialog == ( " + $mdDialog + " ;");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: './users/view/dialog.app.ChooseAvatar.html',
+              templateUrl: './app/users/view/dialog.app.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
@@ -197,7 +197,7 @@
             console.log('AppController::makeContact() has been invoked');
             $mdBottomSheet.show({
                 controllerAs  : "cp",
-                templateUrl   : './users/view/contactSheet.html',
+                templateUrl   : './app/users/view/contactSheet.html',
                 controller    : [ '$mdBottomSheet', ContactSheetController],
                 parent        : angular.element(document.getElementById('content'))
             }).then(function(clickedItem) {

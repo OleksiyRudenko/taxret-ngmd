@@ -38,7 +38,7 @@
 
   <body ng-app="taxretApp" layout="row" ng-controller="AppController as appct" ng-cloak>
 
-  <ng-include src="'./layout/shell.html'" layout="row" flex></ng-include> <!-- Load global view -->
+  <ng-include src="'./app/layout/shell.html'" layout="row" flex></ng-include> <!-- Load global view -->
 
   <!-- SWITCH VENDOR fw/lib - EXTERNAL ON PRODUCTION -->
     <!-- angular family -->
@@ -78,23 +78,23 @@
       <script type="text/javascript" src="./vendor/angular-marked.(151122).js"></script>
 
   <!-- APP - LOCAL ON PRODUCTION -->
-      <script type="text/javascript" src="./app/AppModule.js"></script>
-      <script type="text/javascript" src="./app/AppController.js"></script>
-      <script type="text/javascript" src="./app/AppService.js"></script>
-      <script type="text/javascript" src="./users/Users.js"></script>
-      <script type="text/javascript" src="./users/UserController.js"></script>
-      <script type="text/javascript" src="./users/UserService.js"></script>
-      <script type="text/javascript" src="./users/UserAvaGridController.js"></script>
+      <script type="text/javascript" src="./app/core/AppModule.js"></script>
+      <script type="text/javascript" src="./app/core/AppController.js"></script>
+      <script type="text/javascript" src="./app/core/AppService.js"></script>
+      <script type="text/javascript" src="./app/users/Users.js"></script>
+      <script type="text/javascript" src="./app/users/UserController.js"></script>
+      <script type="text/javascript" src="./app/users/UserService.js"></script>
+      <script type="text/javascript" src="./app/users/UserAvaGridController.js"></script>
 
   <!-- APP - DEFINE, CONFIG, RUN -->
-      <script type="text/javascript" src="./core/taxretApp.js"></script> <!-- angular.module setter -->
+      <script type="text/javascript" src="./app/core/taxretApp.js"></script> <!-- angular.module setter -->
       <!-- configs -->
-        <script type="text/javascript" src="./core/mdTheming-config.js"></script>
-        <script type="text/javascript" src="./core/route-config.js"></script>
-        <script type="text/javascript" src="./core/database-config.js"></script>
-        <script type="text/javascript" src="./core/markupMarked-config.js"></script>
+        <script type="text/javascript" src="./app/core/mdTheming-config.js"></script>
+        <script type="text/javascript" src="./app/core/route-config.js"></script>
+        <script type="text/javascript" src="./app/core/database-config.js"></script>
+        <script type="text/javascript" src="./app/core/markupMarked-config.js"></script>
       <!-- runs -->
-        <script type="text/javascript" src="./core/route-run.js"></script> <!-- enforce initial state show up -->
+        <script type="text/javascript" src="./app/core/route-run.js"></script> <!-- enforce initial state show up -->
 
   </body>
 </html>
