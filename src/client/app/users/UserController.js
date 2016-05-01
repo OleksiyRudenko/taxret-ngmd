@@ -65,7 +65,7 @@
         console.log('UserController::makeContact() has been invoked');
         $mdBottomSheet.show({
           controllerAs  : "cp",
-          templateUrl   : './src/users/view/contactSheet.html',
+          templateUrl   : './app/users/view/contactSheet.html',
           controller    : [ '$mdBottomSheet', ContactSheetController ],
           parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {
