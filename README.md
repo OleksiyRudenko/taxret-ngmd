@@ -14,7 +14,7 @@ This application is also might be used as a skeleton application.
 1. [Stack](#stack)
     * [Core and UI](#core-and-ui)
     * [Data Storage](#data-storage)
-1. [Structure](#structure)
+1. [Project Directory Layout](#project-directory-layout)
 1. [Project branching conventions](#project-branching-conventions)
 
 ## Stack
@@ -39,9 +39,9 @@ Material Start project but not currently in use.
 
 [**[back-to-top](#table-of-contents)**]
 
-## Structure
+## Project Directory Layout
 
-Please refer to [structure.md](structure.md) for more details.
+Please refer to [directoryLayout.md](directoryLayout.md) for more details.
 
 [**[back-to-top](#table-of-contents)**]
 
