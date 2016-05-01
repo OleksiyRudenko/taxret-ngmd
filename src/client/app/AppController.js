@@ -144,10 +144,11 @@
         function ChooseAvatarDialog(ev,avatarid) {
           var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
           // alert("ChooseAvatarDialog(" + ev + ", " + avatarid + ")");
-          console.log("ChooseAvatarDialog( " + ev + ", " + avatarid + " );");
+          // console.log("ChooseAvatarDialog( " + ev + ", " + avatarid + " );");
+          // console.log("$mdDialog == ( " + $mdDialog + " ;");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: './users/view/dialog.src.ChooseAvatar.html',
+              templateUrl: './users/view/dialog.app.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
@@ -193,7 +194,7 @@
          * @param selectedUser
          */
         function makeContact(selectedUser) {
-
+            console.log('AppController::makeContact() has been invoked');
             $mdBottomSheet.show({
                 controllerAs  : "cp",
                 templateUrl   : './users/view/contactSheet.html',
@@ -211,10 +212,10 @@
             function ContactSheetController( $mdBottomSheet ) {
                 this.user = selectedUser;
                 this.actions = [
-                    { name: 'Phone'       , icon: 'phone'       , icon_url: 'content/svg/phone.svg'},
-                    { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'content/svg/twitter.svg'},
-                    { name: 'Google+'     , icon: 'google_plus' , icon_url: 'content/svg/google_plus.svg'},
-                    { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'content/svg/hangouts.svg'}
+                    { name: 'Phone'       , icon: 'phone'       , icon_url: './content/svg/phone.svg'},
+                    { name: 'Twitter'     , icon: 'twitter'     , icon_url: './content/svg/twitter.svg'},
+                    { name: 'Google+'     , icon: 'google_plus' , icon_url: './content/svg/google_plus.svg'},
+                    { name: 'Hangout'     , icon: 'hangouts'    , icon_url: './content/svg/hangouts.svg'}
                 ];
                 this.contactUser = function(action) {
                     // The actually contact process has not been implemented...

@@ -23,7 +23,7 @@
    * @constructor
    */
   function UserAvaGridController($scope,userService,$mdDialog) {
-        console.log('UserAvaGridController has been invoked');
+        // console.log('UserAvaGridController has been invoked');
         /* jshint validthis: true */
         var vm = this;
         vm.tiles = buildGridModel({

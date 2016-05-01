@@ -55,13 +55,14 @@
       vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
     }
 
+    // The method below not in use! Instead AppController::makeContact() in use
     /**
      * @name makeContact
      * @desc Show the Contact view in the bottom sheet
      * @param selectedUser
      */
     function makeContact(selectedUser) {
-
+        console.log('UserController::makeContact() has been invoked');
         $mdBottomSheet.show({
           controllerAs  : "cp",
           templateUrl   : './src/users/view/contactSheet.html',
