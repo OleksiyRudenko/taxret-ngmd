@@ -67,6 +67,7 @@ IDE plugins:
 Suggested extension:
 * `document/` branches -- for documentation, which is not tied to
    particular code, features etc.
+* `refactor/` branches -- for refactoring project layout or code
 
 ### Currently in use
 
