@@ -55,16 +55,17 @@
       vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
     }
 
+    // The method below not in use! Instead AppController::makeContact() in use
     /**
      * @name makeContact
      * @desc Show the Contact view in the bottom sheet
      * @param selectedUser
      */
     function makeContact(selectedUser) {
-
+        // console.log('UserController::makeContact() has been invoked');
         $mdBottomSheet.show({
           controllerAs  : "cp",
-          templateUrl   : './src/users/view/contactSheet.html',
+          templateUrl   : './app/users/view/contactSheet.html',
           controller    : [ '$mdBottomSheet', ContactSheetController ],
           parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {
@@ -79,10 +80,10 @@
         function ContactSheetController( $mdBottomSheet ) {
           this.user = selectedUser;
           this.actions = [
-            { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
-            { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
-            { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
-            { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
+            { name: 'Phone'       , icon: 'phone'       , icon_url: 'content/svg/phone.svg'},
+            { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'content/svg/twitter.svg'},
+            { name: 'Google+'     , icon: 'google_plus' , icon_url: 'content/svg/google_plus.svg'},
+            { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'content/svg/hangouts.svg'}
           ];
           this.contactUser = function(action) {
             // The actually contact process has not been implemented...
