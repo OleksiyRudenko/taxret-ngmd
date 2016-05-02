@@ -43,6 +43,11 @@ Material Start project but not currently in use.
 
 ## Project Directory Layout
 
+Initial boilerplate directory layout has been refactored based on
+[John Papa's recommendations](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#application-structure-lift-principle)
+and particularly
+[this demo project](https://github.com/johnpapa/ng-demos/tree/master/modular).
+
 Please refer to [directoryLayout.md](directoryLayout.md) for more details.
 
 [**[back-to-top](#table-of-contents)**]
