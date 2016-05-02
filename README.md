@@ -87,7 +87,7 @@ Branch naming:
  * `hotfix-X.Y.Z` - hotfix Z for release v.X.Y
  * Other types of branches:
 
-   _Branch name template:_ `typeYYMMDDdescr` _where_
+   _Branch name template:_ `type-YYMMDD-descr` _where_
 
      * `type` is one of
         - `bf` - bugfix
