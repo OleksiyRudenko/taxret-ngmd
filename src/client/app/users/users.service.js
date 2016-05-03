@@ -58,13 +58,15 @@
     var declarantCurrent = { user: users[0] };
 
     // Promise-based API
-    return {
-      loadAllUsers : loadAllUsers,
+    var service = {
+      loadAllUsers        : loadAllUsers,
       getDeclarantCurrent : getDeclarantCurrent,
       setDeclarantCurrent : setDeclarantCurrent,
       ePersonStatusEnum   : ePersonStatusEnum,
       ePersonAptTypeEnum  : ePersonAptTypeEnum,
     };
+
+    return service;
 
     /**
      * @name loadAllUsers
