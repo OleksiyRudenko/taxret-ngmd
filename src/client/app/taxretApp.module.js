@@ -20,6 +20,7 @@ angular
     // App Features
     'app',
     'users',
+    'app.layout',
 
   ]);
   

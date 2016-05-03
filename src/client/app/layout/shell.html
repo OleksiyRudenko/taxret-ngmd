@@ -1,10 +1,10 @@
-<!-- not used due to inconsistencies when using ng-material
-  <!-- A. Sidenav. Menu-button if port width > 960px (gt-sm) -->
+<!-- A. Sidenav. Menu-button if port width > 960px (gt-sm) -->
 <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
             md-component-id="left"
             ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
             md-is-locked-open="$mdMedia('gt-sm')"
-            ng-include="'./app/layout/sidebar-left.html'">
+            ng-include="'./app/layout/sidebar-left.html'"
+            ng-controller="SidebarLeftController as sidebar">
 </md-sidenav>
 
 <!-- B. Major content block -->
