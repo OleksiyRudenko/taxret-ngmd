@@ -12,6 +12,7 @@
     '$mdBottomSheet',
     'userService',
     '$log',
+    '$state',
     // '$route', 'routehelper'
   ];
 
@@ -22,13 +23,15 @@
    * @param $mdBottomSheet
    * @param userService
    * @param $log
+   * @param $state            -- router state
    * @constructor
    */
   function SidebarLeftController(
                         $mdSidenav,
                         $mdBottomSheet,
                         userService,
-                        $log
+                        $log,
+                        $state
                         // $route, routehelper
                       ) {
     /*jshint validthis: true */
@@ -37,6 +40,7 @@
     // vm.isCurrent = isCurrent;
     //vm.sidebarReady = function(){console.log('done animating menu')}; // example
     vm.userService = userService;
+    vm.routingState = $state;
     vm.states     = [
       {
         sref    :   'payroll',
