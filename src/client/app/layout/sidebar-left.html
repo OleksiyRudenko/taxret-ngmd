@@ -3,12 +3,12 @@
     <md-toolbar class="md-whiteframe-z1">
         <div layout-gt-sm="row">
             <md-button style="text-align:left;" ui-sref="declarants">
-                <md-icon md-svg-icon="{{sb.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
-                {{appct.userService.getDeclarantCurrent().nameShort()}}
+                <md-icon md-svg-icon="{{sidebar.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
+                {{sidebar.userService.getDeclarantCurrent().nameShort()}}
             </md-button>
-            <md-button class="md-fab md-mini md-primary" md-no-ink ng-click="appct.makeContact(appct.userService.getDeclarantCurrent())"
-                       aria-label="Зв'язатись з {{ appct.userService.getDeclarantCurrent().nameShort()}}">
-                <md-tooltip>Зв'язатись з: {{appct.userService.getDeclarantCurrent().nameShort()}}</md-tooltip>
+            <md-button class="md-fab md-mini md-primary" md-no-ink ng-click="sidebar.makeContact(appct.userService.getDeclarantCurrent())"
+                       aria-label="Зв'язатись з {{ sidebar.userService.getDeclarantCurrent().nameShort()}}">
+                <md-tooltip>Зв'язатись з: {{sidebar.userService.getDeclarantCurrent().nameShort()}}</md-tooltip>
                 <md-icon md-svg-icon="share"></md-icon>
             </md-button>
         </div>
@@ -16,7 +16,7 @@
 
     <div layout="column">
         <md-list>
-            <md-list-item ng-repeat="state in appct.states">
+            <md-list-item ng-repeat="state in sidebar.states">
                 <md-divider ng-if="state.hr===true"></md-divider>
                 <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : $state.current.url === '#/' + state.sref }"
                            style="width:100%; text-align: left;"> <!-- TODO: ERR ng-class doesn't work -->
