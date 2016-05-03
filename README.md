@@ -43,6 +43,11 @@ Material Start project but not currently in use.
 
 ## Project Directory Layout
 
+Initial boilerplate directory layout has been refactored based on
+[John Papa's recommendations](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#application-structure-lift-principle)
+and particularly
+[this demo project](https://github.com/johnpapa/ng-demos/tree/master/modular).
+
 Please refer to [directoryLayout.md](directoryLayout.md) for more details.
 
 [**[back-to-top](#table-of-contents)**]
@@ -82,7 +87,7 @@ Branch naming:
  * `hotfix-X.Y.Z` - hotfix Z for release v.X.Y
  * Other types of branches:
 
-   _Branch name template:_ `typeYYMMDDdescr` _where_
+   _Branch name template:_ `type-YYMMDD-descr` _where_
 
      * `type` is one of
         - `bf` - bugfix
