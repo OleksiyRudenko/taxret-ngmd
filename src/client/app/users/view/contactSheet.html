@@ -1,13 +1,13 @@
 <md-bottom-sheet class="md-list md-has-header">
-
     <md-subheader>
         Зв'язатись з: <span class="name">{{ cp.user.nameFull() }}</span>:
     </md-subheader>
+    <div style="color:Red;"> This is a stub for future functionality. Buttons take no action. <span style="font-style:italic;">-- Rudenko</span></div>
 
     <md-list>
       <md-item ng-repeat="item in cp.actions">
         <md-button ng-click="cp.contactUser(item)" id="item_{{$index}}">
-            <md-icon md-svg-icon="{{ item.icon_url }}"></md-icon>
+            <md-icon md-svg-icon="{{item.icon_url}}"></md-icon>
             {{item.name}}
         </md-button>
       </md-item>

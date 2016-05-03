@@ -6,8 +6,8 @@
                 <md-icon md-svg-icon="{{sidebar.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
                 {{sidebar.userService.getDeclarantCurrent().nameShort()}}
             </md-button>
-            <md-button class="md-fab md-mini md-primary" md-no-ink ng-click="sidebar.makeContact(appct.userService.getDeclarantCurrent())"
-                       aria-label="Зв'язатись з {{ sidebar.userService.getDeclarantCurrent().nameShort()}}">
+            <md-button class="md-fab md-mini md-primary" md-no-ink ng-click="sidebar.makeContact(sidebar.userService.getDeclarantCurrent())"
+                       aria-label="Зв'язатись з {{sidebar.userService.getDeclarantCurrent().nameShort()}}">
                 <md-tooltip>Зв'язатись з: {{sidebar.userService.getDeclarantCurrent().nameShort()}}</md-tooltip>
                 <md-icon md-svg-icon="share"></md-icon>
             </md-button>
@@ -19,7 +19,7 @@
             <md-list-item ng-repeat="state in sidebar.states">
                 <md-divider ng-if="state.hr===true"></md-divider>
                 <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : sidebar.routingState.current.url === '/' + state.sref}"
-                           style="width:100%; text-align: left;"> <!-- TODO: ERR ng-class doesn't work -->
+                           style="width:100%; text-align:left;">
                     <!-- TODO: ERR button isn't 100% wide w/out inline style -->
                     <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
                 </md-button>

@@ -13,6 +13,7 @@
     'userService',
     '$log',
     '$state',
+    // 'UserController',
     // '$route', 'routehelper'
   ];
 
@@ -24,6 +25,7 @@
    * @param userService
    * @param $log
    * @param $state            -- router state
+    //* @param UserController
    * @constructor
    */
   function SidebarLeftController(
@@ -32,6 +34,7 @@
                         userService,
                         $log,
                         $state
+                        // UserController
                         // $route, routehelper
                       ) {
     /*jshint validthis: true */
@@ -142,14 +145,16 @@
      * @param selectedUser
      */
     function makeContact(selectedUser) {
-      console.log('AppController::makeContact() has been invoked');
+      console.log('SidebarLeftController::makeContact() has been invoked');
       $mdBottomSheet.show({
         controllerAs  : "cp",
-        templateUrl   : './app/users/view/contactSheet.html',
+        // TODO: DEV remove  timestamp on production
+        templateUrl   : './app/users/view/contactSheet.html?nd=' + Date.now(),
         controller    : [ '$mdBottomSheet', ContactSheetController],
         parent        : angular.element(document.getElementById('content'))
       }).then(function(clickedItem) {
         $log.debug( clickedItem.name + ' clicked!');
+        // TODO: ERR invokes error when other button clicked (e.g. Share button once again)
       });
 
       /**
@@ -158,14 +163,16 @@
        * @param $mdBottomSheet
        */
       function ContactSheetController( $mdBottomSheet ) {
-        this.user = selectedUser;
-        this.actions = [
+        var vm = this;
+        vm.user = selectedUser;
+        vm.actions = [
           { name: 'Phone'       , icon: 'phone'       , icon_url: './content/svg/phone.svg'},
           { name: 'Twitter'     , icon: 'twitter'     , icon_url: './content/svg/twitter.svg'},
           { name: 'Google+'     , icon: 'google_plus' , icon_url: './content/svg/google_plus.svg'},
-          { name: 'Hangout'     , icon: 'hangouts'    , icon_url: './content/svg/hangouts.svg'}
+          { name: 'Hangout'     , icon: 'hangouts'    , icon_url: './content/svg/hangouts.svg'},
+          { name: 'Extra'       , icon: 'phone'       , icon_url: './content/svg/phone.svg'},
         ];
-        this.contactUser = function(action) {
+        vm.contactUser = function(action) {
           // The actually contact process has not been implemented...
           // so just hide the bottomSheet
 
