@@ -4,7 +4,8 @@
             md-component-id="left"
             ng-click="appct.toggleSideNav()" aria-label="Show Side Navigation"
             md-is-locked-open="$mdMedia('gt-sm')"
-            ng-include="'./app/layout/sidebar-left.html'">
+            ng-include="'./app/layout/sidebar-left.html'"
+            ng-controller="SidebarLeft as sidebar">
 </md-sidenav>
 
 <!-- B. Major content block -->
