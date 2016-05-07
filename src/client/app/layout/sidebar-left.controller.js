@@ -154,7 +154,7 @@
         parent        : angular.element(document.getElementById('content'))
       }).then(function(clickedItem) {
         $log.debug( clickedItem.name + ' clicked!');
-        // TODO: ERR invokes error when other button clicked (e.g. Share button once again)
+        // FIXME: ERR invokes error when other button clicked (e.g. Share button once again)
       });
 
       /**
