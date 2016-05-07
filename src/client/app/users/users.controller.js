@@ -61,6 +61,7 @@
      * @desc Show the Contact view in the bottom sheet
      * @param selectedUser
      */
+    /*
     function makeContact(selectedUser) {
         console.log('UserController::makeContact() has been invoked');
         $mdBottomSheet.show({
@@ -78,7 +79,7 @@
          * @name ContactSheetController
          * @desc User ContactSheet controller
          * @param $mdBottomSheet
-         */
+         /
         function ContactSheetController( $mdBottomSheet ) {
           var vm = this;
           vm.user = selectedUser;
@@ -95,7 +96,7 @@
             $mdBottomSheet.hide(action);
           };
         }
-    }
+    } */
 
   }
 

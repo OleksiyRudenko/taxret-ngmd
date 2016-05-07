@@ -7,6 +7,6 @@
   // configuration for routing 
   angular
     .module('app')
-    .run(function ($state) {
+    .run(function ($state) { // force $state due to ui-view includes 
     });
 })();

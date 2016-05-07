@@ -38,7 +38,7 @@
         /* jshint validthis: true */
         var vm = this;
         vm.userService = userService; // ?
-        $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
+        vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
         vm.currDeclarant    = vm.userService.getDeclarantCurrent(); // null
         vm.users            = [ ];
@@ -66,7 +66,7 @@
             user = angular.isNumber(user) ? $scope.users[user] : user;
             vm.currDeclarant = user;
             userService.setDeclarantCurrent(user);
-            $scope.selectedTab = 0;
+            vm.UItab.Selected = 0;
         }
 
         // ================= Pop-up dialog fn set
