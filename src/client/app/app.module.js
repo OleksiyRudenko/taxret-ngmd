@@ -1,10 +1,10 @@
 (function(){
   'use strict';
 
-  // Prepare the 'taxretApp' module for subsequent registration of configuration, controllers and delegates
-  // TODO: rename 'taxretApp' => 'src' and 'src' => 'smthElse' for the sake of style compliance
+  // Prepare the 'app' module for subsequent registration of configuration, controllers and delegates
+  // TODO: rename 'app' => 'src' and 'src' => 'smthElse' for the sake of style compliance
 angular
-  .module('taxretApp', [
+  .module('app', [
 
     // Global dependencies
       // -- Angular & Angular Material helpers
@@ -18,7 +18,7 @@ angular
       'kutomer.ng-lovefield',
 
     // App Features
-      'app',
+      'app.core',
       'users',
       'app.layout',
 

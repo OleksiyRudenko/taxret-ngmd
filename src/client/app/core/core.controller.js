@@ -4,7 +4,7 @@
 (function(){
 
     angular
-        .module('app')
+        .module('app.core')
         .controller('AppController', AppController);
     
     AppController.$inject=[
@@ -38,7 +38,7 @@
         /* jshint validthis: true */
         var vm = this;
         vm.userService = userService; // ?
-        $scope.selectedTab = 0; // to use in tabbed context -- switch to initial tab, where selected item expected to be
+        vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
         vm.currDeclarant    = vm.userService.getDeclarantCurrent(); // null
         vm.users            = [ ];
@@ -63,16 +63,18 @@
          * @param user
          */
         function selectUser ( user ) {
-            user = angular.isNumber(user) ? $scope.users[user] : user;
+            user = angular.isNumber(user) ? vm.users[user] : user;
             vm.currDeclarant = user;
             userService.setDeclarantCurrent(user);
-            $scope.selectedTab = 0;
+            vm.UItab.Selected = 0;
         }
 
         // ================= Pop-up dialog fn set
-        $scope.status = '  ';
-        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $scope.ChooseAvatarDialog =   ChooseAvatarDialog;
+        vm.dialog = {
+            status : '  ',
+            customFullscreen : $mdMedia('xs') || $mdMedia('sm'),
+            ChooseAvatarDialog : ChooseAvatarDialog,
+        };
 
         /**
          * @name ChooseAvatarDialog
@@ -81,7 +83,7 @@
          * @param avatarid
          */
         function ChooseAvatarDialog(ev,avatarid) {
-          var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+          var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && vm.dialog.customFullscreen;
           // alert("ChooseAvatarDialog(" + ev + ", " + avatarid + ")");
           // console.log("ChooseAvatarDialog( " + ev + ", " + avatarid + " );");
           // console.log("$mdDialog == ( " + $mdDialog + " ;");
@@ -91,17 +93,17 @@
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
-              fullscreen: useFullScreen
+              fullscreen: useFullScreen,
             })
             .then(function(answer) {
-              $scope.status = 'You said the information was "' + answer + '".';
+              vm.dialog.status = 'You said the information was "' + answer + '".';
             }, function() {
-              $scope.status = 'You cancelled the dialog.';
+              vm.dialog.status = 'You cancelled the dialog.';
             });
           $scope.$watch(function() {
             return $mdMedia('xs') || $mdMedia('sm');
           }, function(wantsFullScreen) {
-            $scope.customFullscreen = (wantsFullScreen === true);
+            vm.dialog.customFullscreen = (wantsFullScreen === true);
           });
         };
 

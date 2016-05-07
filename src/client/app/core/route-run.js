@@ -6,7 +6,7 @@
 
   // configuration for routing 
   angular
-    .module('taxretApp')
-    .run(function ($state) {
+    .module('app')
+    .run(function ($state) { // force $state due to ui-view includes 
     });
 })();

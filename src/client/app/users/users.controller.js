@@ -42,18 +42,20 @@
      * @name toggleUsersList
      * @desc Hide or Show the 'left' sideNav area
      */
+    /*
     function toggleUsersList() {
       $mdSidenav('left').toggle();
-    }
+    }*/
 
     /**
      * @name selectUser
      * @desc Select the current avatars
      * @param user
      */
+    /*
     function selectUser( user ) {
       vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
-    }
+    } */
 
     // The method below not in use! Instead AppController::makeContact() in use
     /**
@@ -61,6 +63,7 @@
      * @desc Show the Contact view in the bottom sheet
      * @param selectedUser
      */
+    /*
     function makeContact(selectedUser) {
         console.log('UserController::makeContact() has been invoked');
         $mdBottomSheet.show({
@@ -78,7 +81,7 @@
          * @name ContactSheetController
          * @desc User ContactSheet controller
          * @param $mdBottomSheet
-         */
+         /
         function ContactSheetController( $mdBottomSheet ) {
           var vm = this;
           vm.user = selectedUser;
@@ -95,7 +98,7 @@
             $mdBottomSheet.hide(action);
           };
         }
-    }
+    } */
 
   }
 

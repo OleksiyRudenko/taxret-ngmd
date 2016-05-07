@@ -3,7 +3,7 @@
 
   // configuration for database support
   angular
-    .module('taxretApp')
+    .module('app')
       .config(['lovefieldProvider',
         function(lovefieldProvider) {
           var schemaBuilder = lovefieldProvider.create('taxret', 1); // DataBase

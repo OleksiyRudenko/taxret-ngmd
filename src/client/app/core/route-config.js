@@ -3,7 +3,7 @@
 
   // configuration for routing 
   angular
-    .module('taxretApp')
+    .module('app')
       .config(function($stateProvider, $urlRouterProvider) {
           //
           // For any unmatched url, redirect to /state1
