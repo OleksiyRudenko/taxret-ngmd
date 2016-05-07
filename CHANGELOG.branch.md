@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 However, here branches instead of versions described.
 
+## [rf-160507-controllers] - 2016-05-07
+Refactor controllers to follow app logic.
+
 ## [fea-160507-app] - 2016-05-07
 Should be `rf-...` for main purpose was to refactor `taxretApp`
 and `app` modules.
@@ -14,7 +17,7 @@ and `app` modules.
 
 * * *
 
-Skip following remainder of the file, which is a cheatsheet.
+**Skip following remainder of the file, which is a cheatsheet.**
 
 See [CHANGELOG example](https://github.com/olivierlacan/keep-a-changelog/blob/master/CHANGELOG.md)
 
