@@ -6,7 +6,7 @@
 
   // configuration for routing 
   angular
-    .module('taxretApp')
+    .module('app')
     .run(function ($state) {
     });
 })();

@@ -5,7 +5,7 @@
 (function(){
     'use strict';
 
-    angular.module('app')
+    angular.module('app.core')
         .factory('appService', AppService);
     AppService.$inject=['$q'];
 

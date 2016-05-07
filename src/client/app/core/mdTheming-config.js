@@ -3,7 +3,7 @@
 
   // configuration for mdTheming and mdIcon 
   angular
-    .module('taxretApp')
+    .module('app')
       .config(function($mdThemingProvider, $mdIconProvider){
   
         $mdIconProvider

@@ -4,7 +4,7 @@
 (function(){
 
     angular
-        .module('app')
+        .module('app.core')
         .controller('AppController', AppController);
     
     AppController.$inject=[
