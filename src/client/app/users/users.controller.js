@@ -1,7 +1,7 @@
 (function(){
 
   angular
-       .module('users')
+       .module('app.users')
        .controller('UserController',  UserController);
 
   UserController.$inject = ['userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];

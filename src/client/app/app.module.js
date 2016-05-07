@@ -18,7 +18,7 @@ angular
 
     // App Features
       'app.core',
-      'users',
+      'app.users',
       'app.layout',
 
   ]);

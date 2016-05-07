@@ -5,7 +5,7 @@
 (function(){
 
     angular
-      .module('users')
+      .module('app.users')
       .controller('UserAvaGridCtrl', UserAvaGridController);
 
   UserAvaGridController.$inject=['$scope', 'userService', '$mdDialog'];
