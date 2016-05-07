@@ -42,18 +42,20 @@
      * @name toggleUsersList
      * @desc Hide or Show the 'left' sideNav area
      */
+    /*
     function toggleUsersList() {
       $mdSidenav('left').toggle();
-    }
+    }*/
 
     /**
      * @name selectUser
      * @desc Select the current avatars
      * @param user
      */
+    /*
     function selectUser( user ) {
       vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
-    }
+    } */
 
     // The method below not in use! Instead AppController::makeContact() in use
     /**
