@@ -70,9 +70,11 @@
         }
 
         // ================= Pop-up dialog fn set
-        $scope.status = '  ';
-        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $scope.ChooseAvatarDialog =   ChooseAvatarDialog;
+        vm.dialog = {
+            status : '  ',
+            customFullscreen : $mdMedia('xs') || $mdMedia('sm'),
+            ChooseAvatarDialog : ChooseAvatarDialog,
+        };
 
         /**
          * @name ChooseAvatarDialog
@@ -81,7 +83,7 @@
          * @param avatarid
          */
         function ChooseAvatarDialog(ev,avatarid) {
-          var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+          var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && vm.dialog.customFullscreen;
           // alert("ChooseAvatarDialog(" + ev + ", " + avatarid + ")");
           // console.log("ChooseAvatarDialog( " + ev + ", " + avatarid + " );");
           // console.log("$mdDialog == ( " + $mdDialog + " ;");
@@ -91,17 +93,17 @@
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
-              fullscreen: useFullScreen
+              fullscreen: useFullScreen,
             })
             .then(function(answer) {
-              $scope.status = 'You said the information was "' + answer + '".';
+              vm.dialog.status = 'You said the information was "' + answer + '".';
             }, function() {
-              $scope.status = 'You cancelled the dialog.';
+              vm.dialog.status = 'You cancelled the dialog.';
             });
           $scope.$watch(function() {
             return $mdMedia('xs') || $mdMedia('sm');
           }, function(wantsFullScreen) {
-            $scope.customFullscreen = (wantsFullScreen === true);
+            vm.dialog.customFullscreen = (wantsFullScreen === true);
           });
         };
 
