@@ -63,7 +63,7 @@
          * @param user
          */
         function selectUser ( user ) {
-            user = angular.isNumber(user) ? $scope.users[user] : user;
+            user = angular.isNumber(user) ? vm.users[user] : user;
             vm.currDeclarant = user;
             userService.setDeclarantCurrent(user);
             vm.UItab.Selected = 0;
