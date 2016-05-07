@@ -20,7 +20,7 @@
                 <md-divider ng-if="state.hr===true"></md-divider>
                 <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : sidebar.routingState.current.url === '/' + state.sref}"
                            style="width:100%; text-align:left;">
-                    <!-- TODO: ERR button isn't 100% wide w/out inline style -->
+                    <!-- FIXME: ERR button isn't 100% wide w/out inline style -->
                     <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
                 </md-button>
             </md-list-item>
