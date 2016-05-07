@@ -148,8 +148,8 @@
       console.log('SidebarLeftController::makeContact() has been invoked');
       $mdBottomSheet.show({
         controllerAs  : "cp",
-        // TODO: DEV remove  timestamp on production
-        templateUrl   : './app/users/view/contactSheet.html?nd=' + Date.now(),
+        // TODO: DEV-PROD remove  timestamp on production
+        templateUrl   : './app/users/view/contactSheet.html?nd=' + Date.now(), // used to get template cache refreshed
         controller    : [ '$mdBottomSheet', ContactSheetController],
         parent        : angular.element(document.getElementById('content'))
       }).then(function(clickedItem) {
