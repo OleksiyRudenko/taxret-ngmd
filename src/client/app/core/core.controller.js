@@ -94,6 +94,9 @@
               targetEvent: ev,
               clickOutsideToClose:false,
               fullscreen: useFullScreen,
+              // locals : { importedValue: vm.value, }, // TODO: study this
+              // preserveScope: true, // TODO: study this -- Does it allow using vm.* in template?
+              // scope : $scope, // TODO: study this -- Will `scope: vm` be valid equivalent?
             })
             .then(function(answer) {
               vm.dialog.status = 'You said the information was "' + answer + '".';
