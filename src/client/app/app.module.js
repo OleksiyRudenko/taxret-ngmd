@@ -1,8 +1,7 @@
 (function(){
   'use strict';
 
-  // Prepare the 'app' module for subsequent registration of configuration, controllers and delegates
-  // TODO: rename 'app' => 'src' and 'src' => 'smthElse' for the sake of style compliance
+// Prepare the 'app' module for subsequent registration of configuration, controllers and delegates
 angular
   .module('app', [
 
@@ -19,7 +18,7 @@ angular
 
     // App Features
       'app.core',
-      'users',
+      'app.persons',
       'app.layout',
 
   ]);

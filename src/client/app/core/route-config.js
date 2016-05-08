@@ -13,11 +13,11 @@
           $stateProvider
             .state('declarants', {
               url: "/declarants",
-              templateUrl: "./app/users/view/declarants.html",
-              controller: 'AppController', /* function($scope) {
+              templateUrl: "./app/persons/view/declarants.html",
+              controller: 'DeclarantsController', /* function($scope) {
                $scope.items = ["A", "List", "Of", "Items"];
                } */
-              controllerAs: 'userct'
+              controllerAs: 'declarantct'
             })
             .state('payroll', {
               url: "/payroll",

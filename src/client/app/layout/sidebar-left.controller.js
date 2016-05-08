@@ -10,10 +10,10 @@
   SidebarLeftController.$inject = [
     '$mdSidenav',
     '$mdBottomSheet',
-    'userService',
+    'dataLPSservice',
     '$log',
     '$state',
-    // 'UserController',
+    // 'DeclarantsController',
     // '$route', 'routehelper'
   ];
 
@@ -22,19 +22,19 @@
    * @desc Controller for the left sidenav
    * @param $mdSidenav
    * @param $mdBottomSheet
-   * @param userService
+   * @param dataLPSservice
    * @param $log
    * @param $state            -- router state
-    //* @param UserController
+    //* @param DeclarantsController
    * @constructor
    */
   function SidebarLeftController(
                         $mdSidenav,
                         $mdBottomSheet,
-                        userService,
+                        dataLPSservice,
                         $log,
                         $state
-                        // UserController
+                        // DeclarantsController
                         // $route, routehelper
                       ) {
     /*jshint validthis: true */
@@ -42,7 +42,7 @@
     // var routes = routehelper.getRoutes();
     // vm.isCurrent = isCurrent;
     //vm.sidebarReady = function(){console.log('done animating menu')}; // example
-    vm.userService = userService;
+    vm.dataLPSservice = dataLPSservice;
     vm.routingState = $state;
     vm.states     = [
       {
@@ -148,13 +148,13 @@
       console.log('SidebarLeftController::makeContact() has been invoked');
       $mdBottomSheet.show({
         controllerAs  : "cp",
-        // TODO: DEV remove  timestamp on production
-        templateUrl   : './app/users/view/contactSheet.html?nd=' + Date.now(),
+        // TODO: DEV-PROD remove  timestamp on production
+        templateUrl   : './app/persons/view/contactSheet.html?nd=' + Date.now(), // used to get template cache refreshed
         controller    : [ '$mdBottomSheet', ContactSheetController],
         parent        : angular.element(document.getElementById('content'))
       }).then(function(clickedItem) {
         $log.debug( clickedItem.name + ' clicked!');
-        // TODO: ERR invokes error when other button clicked (e.g. Share button once again)
+        // FIXME: ERR invokes error when other button clicked (e.g. Share button once again)
       });
 
       /**

@@ -36,7 +36,7 @@
 
   </head>
 
-  <body ng-app="app" layout="row" ng-controller="AppController as appct" ng-cloak>
+  <body ng-app="app" layout="row" ng-controller="CoreController as appct" ng-cloak>
 
   <ng-include src="'./app/layout/shell.html'" layout="row" flex></ng-include> <!-- Load global view -->
 
@@ -81,10 +81,10 @@
       <script type="text/javascript" src="app/core/core.module.js"></script>
       <script type="text/javascript" src="app/core/core.controller.js"></script>
       <script type="text/javascript" src="app/core/core.service.js"></script>
-      <script type="text/javascript" src="./app/users/users.module.js"></script>
-      <script type="text/javascript" src="./app/users/users.controller.js"></script>
-      <script type="text/javascript" src="./app/users/users.service.js"></script>
-      <script type="text/javascript" src="./app/users/userAvaGrid.controller.js"></script>
+      <script type="text/javascript" src="app/persons/persons.module.js"></script>
+      <script type="text/javascript" src="app/persons/declarants.controller.js"></script>
+      <script type="text/javascript" src="app/core/data.LPS.service.js"></script>
+      <script type="text/javascript" src="app/persons/personAvatarGrid.controller.js"></script>
       <!-- APP General View Layout -->
           <script type="text/javascript" src="./app/layout/layout.module.js"></script>
           <script type="text/javascript" src="./app/layout/sidebar-left.controller.js"></script>
@@ -94,7 +94,7 @@
       <!-- configs -->
         <script type="text/javascript" src="./app/core/mdTheming-config.js"></script>
         <script type="text/javascript" src="./app/core/route-config.js"></script>
-        <script type="text/javascript" src="./app/core/database-config.js"></script>
+        <script type="text/javascript" src="app/core/data.LPS-config.js"></script>
         <script type="text/javascript" src="./app/core/markup-config.js"></script>
       <!-- runs -->
         <script type="text/javascript" src="./app/core/route-run.js"></script> <!-- enforce initial state show up -->

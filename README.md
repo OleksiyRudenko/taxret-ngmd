@@ -6,7 +6,7 @@
 
 This project uses Angular, Angular Material, UI.Router, Lovefield
 and [few other libraries](#stack) to build a single page application
-with IndexedDB-based local storage to assist users in completion
+with IndexedDB-based local storage to assist declarants in completion
 of tax returns under Ukrainian tax regulations.
 
 This application is also might be used as a skeleton application.
@@ -217,7 +217,7 @@ You should find that you have one new folder in your project.
 app/                    --> all of the source files for the application
   assets/app.css        --> default stylesheet
   src/           		--> all app specific modules
-     users/             --> package for user features
+     declarants/             --> package for user features
   index.html            --> app layout file (the main html template file of the app)
 test/
   karma.conf.js         --> Karma-Jasmine config file (for unit tests)

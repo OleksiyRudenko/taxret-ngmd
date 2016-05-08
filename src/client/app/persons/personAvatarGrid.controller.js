@@ -1,29 +1,28 @@
 /**
  * Created by Rudenko on 08/04/2016.
- * TODO: rename file: dot notation
  */
 (function(){
 
     angular
-      .module('users')
-      .controller('UserAvaGridCtrl', UserAvaGridController);
+      .module('app.persons')
+      .controller('PersonAvaGridController', PersonAvatarGridController);
 
-  UserAvaGridController.$inject=['$scope', 'userService', '$mdDialog'];
+  PersonAvatarGridController.$inject=['$scope', 'dataLPSservice', '$mdDialog'];
 
   // var mod = angular.module('src');
   // console.log(var_dump(mod._invokeQueue));
   // console.log(mod._invokeQueue.toString());
 
   /**
-   * @name UserAvaGridController
+   * @name PersonAvatarGridController
    * @desc User Avatars Controller for the TaxRet App
    * @param $scope
-   * @param userService
+   * @param dataLPSservice
    * @param $mdDialog
    * @constructor
    */
-  function UserAvaGridController($scope,userService,$mdDialog) {
-        // console.log('UserAvaGridController has been invoked');
+  function PersonAvatarGridController($scope, dataLPSservice, $mdDialog) {
+        // console.log('PersonAvatarGridController has been invoked');
         /* jshint validthis: true */
         var vm = this;
         vm.tiles = buildGridModel({
@@ -36,12 +35,12 @@
 
         /**
          * @name avaSelect
-         * @desc Assigns avatar to current user/declarant
+         * @desc Assigns avatar to current declarant
          * @param avataridSelected
          */
         function avaSelect(avataridSelected) {
-          // alert("Received " + avataridSelected + ". Current user " + userService.getDeclarantCurrent().avatarid);
-          userService.getDeclarantCurrent().avatarid = avataridSelected;
+          // alert("Received " + avataridSelected + ". Current declarant " + dataLPSservice.declarants.getCurrent().avatarid);
+            dataLPSservice.declarants.getCurrent().avatarid = avataridSelected;
           $mdDialog.hide();
         };
 

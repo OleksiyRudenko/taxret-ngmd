@@ -1,20 +1,20 @@
+/* LPS = Local Persistent Storage */
 (function(){
   'use strict';
 
-  angular.module('users')
-         .factory('userService', UserService);
-  UserService.$inject=['$q', '$rootScope'];
+  angular.module('app.core')
+         .factory('dataLPSservice', DataLPSservice);
+  DataLPSservice.$inject=['$q', '$rootScope'];
 
   /**
-   * @name Users DataService
-   * @desc Uses embedded, hard-coded data model; acts asynchronously to simulate
-   * @desc remote data service call(s).
+   * @name DataLPSservice
+   * @desc Uses Local Persistent Storage (LPS) based on IndexedDB; acts asynchronously
    * @param $q
    * @param $rootScope
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UserService($q, $rootScope){
+  function DataLPSservice($q, $rootScope){
     var ePersonStatusEnum = {
       TAXAUTH   : 1,
       LEGALP    : 2,
@@ -43,7 +43,7 @@
     if (Object.freeze())
       Object.freeze(ePersonAptTypeEnum);
 
-    var users = [
+    var persons = [
       new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "CH788108", "2694204152", "",
                   "Україна",  "м.Київ",   "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
                   "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,
@@ -55,49 +55,55 @@
                   "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
       )
     ];
-    var declarantCurrent = { user: users[0] };
+
+    // session lifespan private vars
+    var session = {
+      declarantCurrent: persons[0],
+    };
 
     // Promise-based API
+    // Service interface
     var service = {
-      loadAllUsers        : loadAllUsers,
-      getDeclarantCurrent : getDeclarantCurrent,
-      setDeclarantCurrent : setDeclarantCurrent,
-      ePersonStatusEnum   : ePersonStatusEnum,
-      ePersonAptTypeEnum  : ePersonAptTypeEnum,
+      enums : {
+        ePersonStatus   : ePersonStatusEnum,
+        ePersonAptType  : ePersonAptTypeEnum,
+      },
+      declarants : {
+        loadAll     : declarantsLoadAll,
+        getCurrent  : declarantsGetCurrent,
+        setCurrent  : declarantsSetCurrent,
+      },
     };
 
     return service;
 
     /**
-     * @name loadAllUsers
-     * @desc Loads all users
+     * @name declarantsLoadAll
+     * @desc Loads all persons
      * @returns {Array}
      */
-    function loadAllUsers() {
+    function declarantsLoadAll() {
       // Simulate async nature of real remote calls
-      return $q.when(users);
+      return $q.when(persons);
     };
 
     /**
-     * @name getDeclarantCurrent
-     * @desc Returns current decalarant (user selected or default)
+     * @name declarantsGetCurrent
+     * @desc Returns current decalarant (declarantCurrent selected or default)
      * @returns {Object}
      */
-    function getDeclarantCurrent() {
-      return declarantCurrent.user;
+    function declarantsGetCurrent() {
+      return session.declarantCurrent;
     };
     /**
-     * @name setDeclarantCurrent
-     * @desc Sets user as current declarant
-     * @param user
+     * @name declarantsSetCurrent
+     * @desc Sets declarantCurrent as current declarant
+     * @param entity
      */
-    function setDeclarantCurrent(user) {
-      declarantCurrent.user = user;
+    function declarantsSetCurrent(entity) {
+      session.declarantCurrent = entity;
       $rootScope.$applyAsync();
     };
-
-
-
 
   }
 
