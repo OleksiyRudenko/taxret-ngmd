@@ -11,7 +11,7 @@ module.exports = function (config) {
       'node_modules/angular-material/angular-material.js',
 
       '../src/src/users/users.module.js',
-      '../src/src/users/users.service.js',
+      '../src/src/users/data.LPS.service.js',
       '../src/src/users/users.controller.js',
 
       'test/unit/**/*.js'

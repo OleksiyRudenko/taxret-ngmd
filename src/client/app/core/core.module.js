@@ -5,7 +5,7 @@
     'use strict';
 
     // Prepare the 'src' module for subsequent registration of controllers and delegates.
-    angular.module('app', [ 'ngMaterial' ]);
+    angular.module('app.core', [ 'ngMaterial' ]);
 
 
 })();
