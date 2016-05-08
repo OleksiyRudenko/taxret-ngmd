@@ -3,7 +3,7 @@
 
   // configuration for database support
   angular
-    .module('taxretApp')
+    .module('app')
       .config(['markedProvider', function (markedProvider) {
           markedProvider.setOptions({gfm: true, tables: true, });
           markedProvider.setRenderer({

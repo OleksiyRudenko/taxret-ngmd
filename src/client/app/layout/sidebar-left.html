@@ -3,12 +3,13 @@
     <md-toolbar class="md-whiteframe-z1">
         <div layout-gt-sm="row">
             <md-button style="text-align:left;" ui-sref="declarants">
-                <md-icon md-svg-icon="{{sidebar.userService.getDeclarantCurrent().avatarid}}" class="avatar"></md-icon>
-                {{sidebar.userService.getDeclarantCurrent().nameShort()}}
+                <md-icon md-svg-icon="{{sidebar.dataLPSservice.declarants.getCurrent().avatarid}}" class="avatar"></md-icon>
+                {{sidebar.dataLPSservice.declarants.getCurrent().nameShort()}}
             </md-button>
-            <md-button class="md-fab md-mini md-primary" md-no-ink ng-click="sidebar.makeContact(appct.userService.getDeclarantCurrent())"
-                       aria-label="Зв'язатись з {{ sidebar.userService.getDeclarantCurrent().nameShort()}}">
-                <md-tooltip>Зв'язатись з: {{sidebar.userService.getDeclarantCurrent().nameShort()}}</md-tooltip>
+            <md-button class="md-fab md-mini md-primary" md-no-ink
+                       ng-click="sidebar.makeContact(sidebar.dataLPSservice.declarants.getCurrent())"
+                       aria-label="Зв'язатись з {{sidebar.dataLPSservice.declarants.getCurrent().nameShort()}}">
+                <md-tooltip>Зв'язатись з: {{sidebar.dataLPSservice.declarants.getCurrent().nameShort()}}</md-tooltip>
                 <md-icon md-svg-icon="share"></md-icon>
             </md-button>
         </div>
@@ -19,8 +20,8 @@
             <md-list-item ng-repeat="state in sidebar.states">
                 <md-divider ng-if="state.hr===true"></md-divider>
                 <md-button ui-sref="{{state.sref}}" ng-class="{'selected' : sidebar.routingState.current.url === '/' + state.sref}"
-                           style="width:100%; text-align: left;"> <!-- TODO: ERR ng-class doesn't work -->
-                    <!-- TODO: ERR button isn't 100% wide w/out inline style -->
+                           style="width:100%; text-align:left;">
+                    <!-- FIXME: ERR button isn't 100% wide w/out inline style -->
                     <!-- a ui-sref="{{state.sref}}" -->{{state.title}}<!-- /a -->
                 </md-button>
             </md-list-item>
@@ -28,8 +29,8 @@
     </div>
 
     <!-- md-list>
-      <md-list-item ng-repeat="it in appct.users">
-          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.userService.getDeclarantCurrent() }">
+      <md-list-item ng-repeat="it in appct.persons">
+          <md-button ng-click="appct.selectUser(it)" ng-class="{'selected' : it === appct.dataLPSservice.declarants.getCurrent() }">
             <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
             {{it.nameFirst+ ' ' +it.nameLast}}
           </md-button>

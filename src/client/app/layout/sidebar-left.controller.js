@@ -10,9 +10,10 @@
   SidebarLeftController.$inject = [
     '$mdSidenav',
     '$mdBottomSheet',
-    'userService',
+    'dataLPSservice',
     '$log',
     '$state',
+    // 'DeclarantsController',
     // '$route', 'routehelper'
   ];
 
@@ -21,17 +22,19 @@
    * @desc Controller for the left sidenav
    * @param $mdSidenav
    * @param $mdBottomSheet
-   * @param userService
+   * @param dataLPSservice
    * @param $log
    * @param $state            -- router state
+    //* @param DeclarantsController
    * @constructor
    */
   function SidebarLeftController(
                         $mdSidenav,
                         $mdBottomSheet,
-                        userService,
+                        dataLPSservice,
                         $log,
                         $state
+                        // DeclarantsController
                         // $route, routehelper
                       ) {
     /*jshint validthis: true */
@@ -39,7 +42,7 @@
     // var routes = routehelper.getRoutes();
     // vm.isCurrent = isCurrent;
     //vm.sidebarReady = function(){console.log('done animating menu')}; // example
-    vm.userService = userService;
+    vm.dataLPSservice = dataLPSservice;
     vm.routingState = $state;
     vm.states     = [
       {
@@ -142,14 +145,16 @@
      * @param selectedUser
      */
     function makeContact(selectedUser) {
-      console.log('AppController::makeContact() has been invoked');
+      console.log('SidebarLeftController::makeContact() has been invoked');
       $mdBottomSheet.show({
         controllerAs  : "cp",
-        templateUrl   : './app/users/view/contactSheet.html',
+        // TODO: DEV-PROD remove  timestamp on production
+        templateUrl   : './app/persons/view/contactSheet.html?nd=' + Date.now(), // used to get template cache refreshed
         controller    : [ '$mdBottomSheet', ContactSheetController],
         parent        : angular.element(document.getElementById('content'))
       }).then(function(clickedItem) {
         $log.debug( clickedItem.name + ' clicked!');
+        // FIXME: ERR invokes error when other button clicked (e.g. Share button once again)
       });
 
       /**
@@ -158,14 +163,16 @@
        * @param $mdBottomSheet
        */
       function ContactSheetController( $mdBottomSheet ) {
-        this.user = selectedUser;
-        this.actions = [
+        var vm = this;
+        vm.user = selectedUser;
+        vm.actions = [
           { name: 'Phone'       , icon: 'phone'       , icon_url: './content/svg/phone.svg'},
           { name: 'Twitter'     , icon: 'twitter'     , icon_url: './content/svg/twitter.svg'},
           { name: 'Google+'     , icon: 'google_plus' , icon_url: './content/svg/google_plus.svg'},
-          { name: 'Hangout'     , icon: 'hangouts'    , icon_url: './content/svg/hangouts.svg'}
+          { name: 'Hangout'     , icon: 'hangouts'    , icon_url: './content/svg/hangouts.svg'},
+          { name: 'Extra'       , icon: 'phone'       , icon_url: './content/svg/phone.svg'},
         ];
-        this.contactUser = function(action) {
+        vm.contactUser = function(action) {
           // The actually contact process has not been implemented...
           // so just hide the bottomSheet
 
