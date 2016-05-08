@@ -169,7 +169,7 @@
         <md-content class="md-padding">
             <md-list>
                 <md-list-item ng-repeat="it in declarantct.declarants">
-                    <md-button ng-click="declarantct.selectUser(it);"
+                    <md-button ng-click="declarantct.selectDeclarant(it);"
                                ng-class="{'selected' : it === declarantct.dataLPSservice.declarants.getCurrent() }">
                         <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
                         {{it.nameLastInitials()}}

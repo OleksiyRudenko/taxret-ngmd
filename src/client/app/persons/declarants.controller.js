@@ -21,11 +21,11 @@
     vm.dataLPSservice = dataLPSservice;
     vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
-    vm.selected     = null;
-    vm.declarants   = [ ];
-    vm.selectUser   = selectUser;
-    vm.toggleList   = toggleUsersList;
-    vm.makeContact  = makeContact;
+    vm.selected         = null;
+    vm.declarants       = [ ];
+    vm.selectDeclarant  = selectDeclarant;
+    vm.toggleList       = toggleUsersList;
+    vm.makeContact      = makeContact;
 
     // Load all registered persons
 
@@ -55,7 +55,7 @@
      * @param user
      */
     /*
-    function selectUser( declarantCurrent ) {
+    function selectDeclarant( declarantCurrent ) {
       vm.currDeclarant = angular.isNumber(declarantCurrent) ? $scope.persons[declarantCurrent] : declarantCurrent;
     } */
 

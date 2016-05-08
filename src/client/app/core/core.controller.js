@@ -42,7 +42,7 @@
 
         vm.currDeclarant    = vm.dataLPSservice.declarants.getCurrent(); // null
         vm.declarants       = [ ];
-        vm.selectUser       = selectUser;
+        vm.selectDeclarant  = selectDeclarant;
 
         // Load all registered persons
 
@@ -58,14 +58,14 @@
         // *********************************
 
         /**
-         * @name selectUser
+         * @name selectDeclarant
          * @desc Set current declarant
          * @param user
          */
-        function selectUser ( user ) {
-            user = angular.isNumber(user) ? vm.declarants[user] : user;
-            vm.currDeclarant = user;
-            dataLPSservice.declarants.setCurrent(user);
+        function selectDeclarant ( declarant ) {
+            user = angular.isNumber(declarant) ? vm.declarants[declarant] : declarant;
+            vm.currDeclarant = declarant;
+            dataLPSservice.declarants.setCurrent(declarant);
             vm.UItab.Selected = 0;
         }
 
