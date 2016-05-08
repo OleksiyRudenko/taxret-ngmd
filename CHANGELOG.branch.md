@@ -9,7 +9,12 @@ Refactor controllers & a service to follow app logic.
 ### Refactored
 - globalize **users service** by converting into **persistent
   local storage data service (PLSdataService)**
-- users controller -> declarants controller
+- users module -> persons module
+- users -> declarants
+- move declarants related logic from core controller to declarants
+  controller
+- AppController -> CoreController (stubbed for future use)
+- AppService -> CoreService (stubbed for future use)
 
 ## [fea-160507-app] - 2016-05-07
 Should be `rf-...` for main purpose was to refactor `taxretApp`
