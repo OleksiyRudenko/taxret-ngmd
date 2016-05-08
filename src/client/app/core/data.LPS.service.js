@@ -55,7 +55,7 @@
       )
     ];
 
-    // session vars
+    // session lifespan private vars
     var session = {
       declarantCurrent: persons[0],
     };
