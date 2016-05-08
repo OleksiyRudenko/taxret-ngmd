@@ -89,7 +89,8 @@
           // console.log("$mdDialog == ( " + $mdDialog + " ;");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: './app/persons/view/dialog.ChooseAvatar.html',
+              // TODO: DEV-PROD remove  timestamp on production
+              templateUrl: './app/persons/view/dialog.ChooseAvatar.html?nd=' + Date.now(),
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,
