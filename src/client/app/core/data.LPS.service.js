@@ -42,7 +42,7 @@
     if (Object.freeze())
       Object.freeze(ePersonAptTypeEnum);
 
-    var users = [
+    var persons = [
       new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "CH788108", "2694204152", "",
                   "Україна",  "м.Київ",   "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
                   "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,
@@ -54,13 +54,27 @@
                   "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
       )
     ];
-    var declarantCurrent = { user: users[0] };
+
+    // session vars
+    var session = {
+      declarantCurrent: persons[0],
+    };
 
     // Promise-based API
+    // Service interface
     var service = {
-      loadAllUsers        : loadAllUsers,
-      getDeclarantCurrent : getDeclarantCurrent,
-      setDeclarantCurrent : setDeclarantCurrent,
+      enums : {
+        ePersonStatusEnum   : ePersonStatusEnum,
+        ePersonAptTypeEnum  : ePersonAptTypeEnum,
+      },
+      declarants : {
+        loadAll     : declarantsLoadAll,
+        getCurrent  : declarantsGetCurrent,
+        setCurrent  : declarantsSetCurrent,
+      },
+      loadAllUsers        : declarantsLoadAll,
+      getDeclarantCurrent : declarantsGetCurrent,
+      setDeclarantCurrent : declarantsSetCurrent,
       ePersonStatusEnum   : ePersonStatusEnum,
       ePersonAptTypeEnum  : ePersonAptTypeEnum,
     };
@@ -68,35 +82,32 @@
     return service;
 
     /**
-     * @name loadAllUsers
+     * @name declarantsLoadAll
      * @desc Loads all users
      * @returns {Array}
      */
-    function loadAllUsers() {
+    function declarantsLoadAll() {
       // Simulate async nature of real remote calls
-      return $q.when(users);
+      return $q.when(persons);
     };
 
     /**
-     * @name getDeclarantCurrent
-     * @desc Returns current decalarant (user selected or default)
+     * @name declarantsGetCurrent
+     * @desc Returns current decalarant (declarantCurrent selected or default)
      * @returns {Object}
      */
-    function getDeclarantCurrent() {
-      return declarantCurrent.user;
+    function declarantsGetCurrent() {
+      return session.declarantCurrent;
     };
     /**
-     * @name setDeclarantCurrent
-     * @desc Sets user as current declarant
-     * @param user
+     * @name declarantsSetCurrent
+     * @desc Sets declarantCurrent as current declarant
+     * @param entity
      */
-    function setDeclarantCurrent(user) {
-      declarantCurrent.user = user;
+    function declarantsSetCurrent(entity) {
+      session.declarantCurrent = entity;
       $rootScope.$applyAsync();
     };
-
-
-
 
   }
 

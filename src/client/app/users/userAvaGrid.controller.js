@@ -36,11 +36,11 @@
 
         /**
          * @name avaSelect
-         * @desc Assigns avatar to current user/declarant
+         * @desc Assigns avatar to current declarant
          * @param avataridSelected
          */
         function avaSelect(avataridSelected) {
-          // alert("Received " + avataridSelected + ". Current user " + dataLPSservice.getDeclarantCurrent().avatarid);
+          // alert("Received " + avataridSelected + ". Current declarant " + dataLPSservice.getDeclarantCurrent().avatarid);
             dataLPSservice.getDeclarantCurrent().avatarid = avataridSelected;
           $mdDialog.hide();
         };

@@ -18,7 +18,7 @@ describe('my app', function() {
     expect(users.count()).toBeGreaterThan(1);
   });
 
-  describe('selecting a user', function() {
+  describe('selecting a declarantCurrent', function() {
 
     beforeEach(function() {
       return details.contactUser();

@@ -53,8 +53,8 @@
      * @param user
      */
     /*
-    function selectUser( user ) {
-      vm.currDeclarant = angular.isNumber(user) ? $scope.users[user] : user;
+    function selectUser( declarantCurrent ) {
+      vm.currDeclarant = angular.isNumber(declarantCurrent) ? $scope.users[declarantCurrent] : declarantCurrent;
     } */
 
     // The method below not in use! Instead AppController::makeContact() in use
@@ -84,7 +84,7 @@
          /
         function ContactSheetController( $mdBottomSheet ) {
           var vm = this;
-          vm.user = selectedUser;
+          vm.declarantCurrent = selectedUser;
           vm.actions = [
             { name: 'Phone'       , icon: 'phone'       , icon_url: 'content/svg/phone.svg'},
             { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'content/svg/twitter.svg'},

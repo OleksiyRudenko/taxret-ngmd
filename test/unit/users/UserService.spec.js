@@ -2,7 +2,7 @@ describe('UserService', function () {
 
   beforeEach(module('users'));
 
-  it('should provide a valid user list', inject(function (userService, $timeout) {
+  it('should provide a valid declarantCurrent list', inject(function (userService, $timeout) {
     var list= [];
 
     userService

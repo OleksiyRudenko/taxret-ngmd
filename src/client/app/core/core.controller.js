@@ -59,7 +59,7 @@
 
         /**
          * @name selectUser
-         * @desc Set current user/declarant
+         * @desc Set current declarant
          * @param user
          */
         function selectUser ( user ) {
