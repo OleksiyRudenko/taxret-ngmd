@@ -40,8 +40,8 @@
          * @param avataridSelected
          */
         function avaSelect(avataridSelected) {
-          // alert("Received " + avataridSelected + ". Current declarant " + dataLPSservice.getDeclarantCurrent().avatarid);
-            dataLPSservice.getDeclarantCurrent().avatarid = avataridSelected;
+          // alert("Received " + avataridSelected + ". Current declarant " + dataLPSservice.declarants.getCurrent().avatarid);
+            dataLPSservice.declarants.getCurrent().avatarid = avataridSelected;
           $mdDialog.hide();
         };
 

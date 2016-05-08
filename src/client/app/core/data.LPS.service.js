@@ -64,19 +64,14 @@
     // Service interface
     var service = {
       enums : {
-        ePersonStatusEnum   : ePersonStatusEnum,
-        ePersonAptTypeEnum  : ePersonAptTypeEnum,
+        ePersonStatus   : ePersonStatusEnum,
+        ePersonAptType  : ePersonAptTypeEnum,
       },
       declarants : {
         loadAll     : declarantsLoadAll,
         getCurrent  : declarantsGetCurrent,
         setCurrent  : declarantsSetCurrent,
       },
-      loadAllUsers        : declarantsLoadAll,
-      getDeclarantCurrent : declarantsGetCurrent,
-      setDeclarantCurrent : declarantsSetCurrent,
-      ePersonStatusEnum   : ePersonStatusEnum,
-      ePersonAptTypeEnum  : ePersonAptTypeEnum,
     };
 
     return service;

@@ -40,17 +40,17 @@
         vm.dataLPSservice = dataLPSservice; // ?
         vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
-        vm.currDeclarant    = vm.dataLPSservice.getDeclarantCurrent(); // null
+        vm.currDeclarant    = vm.dataLPSservice.declarants.getCurrent(); // null
         vm.users            = [ ];
         vm.selectUser       = selectUser;
 
         // Load all registered users
 
         vm.dataLPSservice
-            .loadAllUsers()
+            .declarants.loadAll()
             .then( function( users ) {
                 vm.users    = [].concat(users);
-                // vm.currDeclarant = dataLPSservice.getDeclarantCurrent();
+                // vm.currDeclarant = dataLPSservice.declarants.getCurrent();
             });
 
         // *********************************
@@ -65,7 +65,7 @@
         function selectUser ( user ) {
             user = angular.isNumber(user) ? vm.users[user] : user;
             vm.currDeclarant = user;
-            dataLPSservice.setDeclarantCurrent(user);
+            dataLPSservice.declarants.setCurrent(user);
             vm.UItab.Selected = 0;
         }
 

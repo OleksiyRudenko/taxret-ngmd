@@ -28,10 +28,10 @@
     // Load all registered users
 
     dataLPSservice
-          .loadAllUsers()
+          .declarants.loadAll()
           .then( function( users ) {
             vm.users    = [].concat(users);
-            vm.selected = dataLPSservice.getDeclarantCurrent();
+            vm.selected = dataLPSservice.declarants.getCurrent();
           });
 
     // *********************************
