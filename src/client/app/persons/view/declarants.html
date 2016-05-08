@@ -168,7 +168,7 @@
     <md-tab label="Вибрати">
         <md-content class="md-padding">
             <md-list>
-                <md-list-item ng-repeat="it in declarantct.users">
+                <md-list-item ng-repeat="it in declarantct.declarants">
                     <md-button ng-click="declarantct.selectUser(it);"
                                ng-class="{'selected' : it === declarantct.dataLPSservice.declarants.getCurrent() }">
                         <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>

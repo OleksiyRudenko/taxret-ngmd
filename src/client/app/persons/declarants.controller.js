@@ -18,9 +18,11 @@
   function DeclarantsController(dataLPSservice, $mdSidenav, $mdBottomSheet, $log) {
     /* jshint validthis: true */
     var vm = this;
+    vm.dataLPSservice = dataLPSservice;
+    vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
     vm.selected     = null;
-    vm.users        = [ ];
+    vm.declarants   = [ ];
     vm.selectUser   = selectUser;
     vm.toggleList   = toggleUsersList;
     vm.makeContact  = makeContact;
@@ -29,8 +31,8 @@
 
     dataLPSservice
           .declarants.loadAll()
-          .then( function( users ) {
-            vm.users    = [].concat(users);
+          .then( function( declarants ) {
+            vm.declarants    = [].concat(declarants);
             vm.selected = dataLPSservice.declarants.getCurrent();
           });
 
