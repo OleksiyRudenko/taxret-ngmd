@@ -13,8 +13,8 @@
         '$log',
         '$q',
         '$mdDialog', 
-        '$mdMedia', */
-        '$mdSidenav',
+        '$mdMedia',
+        '$mdSidenav', */
     ];
 
     /**
@@ -26,7 +26,7 @@
      * @ param $q
      * @ param $mdDialog
      * @ param $mdMedia
-     * @param $mdSidenav
+     * @ param $mdSidenav
      * @constructor
      */
     function CoreController(
@@ -35,13 +35,13 @@
                             $log,
                             $q,
                             $mdDialog,
-                            $mdMedia */
-                            $mdSidenav
+                            $mdMedia,
+                            $mdSidenav */
                             ) {
         /* jshint validthis: true */
         var vm = this;
 
-        activate();
+        /* activate();
 
         function activate() {
             vm.toggleSideNav    = toggleSideNav;
@@ -53,7 +53,7 @@
 
         function toggleSideNav() {
             $mdSidenav('left').toggle();
-        }
+        } */
 
     }
 
