@@ -4,18 +4,18 @@
        .module('app.users')
        .controller('UserController',  UserController);
 
-  UserController.$inject = ['userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
+  UserController.$inject = ['dataLPSservice', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
 
   /**
    * @name UserController
    * @desc User List Controller for the TaxRet App
-   * @param userService
+   * @param dataLPSservice
    * @param $mdSidenav
    * @param $mdBottomSheet
    * @param $log
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $log) {
+  function UserController( dataLPSservice, $mdSidenav, $mdBottomSheet, $log) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -27,11 +27,11 @@
 
     // Load all registered users
 
-    userService
+    dataLPSservice
           .loadAllUsers()
           .then( function( users ) {
             vm.users    = [].concat(users);
-            vm.selected = userService.getDeclarantCurrent();
+            vm.selected = dataLPSservice.getDeclarantCurrent();
           });
 
     // *********************************

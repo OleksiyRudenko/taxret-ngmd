@@ -1,20 +1,19 @@
 (function(){
   'use strict';
 
-  angular.module('app.users')
-         .factory('userService', UserService);
-  UserService.$inject=['$q', '$rootScope'];
+  angular.module('app.core')
+         .factory('dataLPSservice', DataLPSservice);
+  DataLPSservice.$inject=['$q', '$rootScope'];
 
   /**
-   * @name Users DataService
-   * @desc Uses embedded, hard-coded data model; acts asynchronously to simulate
-   * @desc remote data service call(s).
+   * @name DataLPSservice
+   * @desc Uses Local Persistent Storage (LPS) based on IndexedDB; acts asynchronously
    * @param $q
    * @param $rootScope
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UserService($q, $rootScope){
+  function DataLPSservice($q, $rootScope){
     var ePersonStatusEnum = {
       TAXAUTH   : 1,
       LEGALP    : 2,

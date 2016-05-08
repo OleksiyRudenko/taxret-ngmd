@@ -10,7 +10,7 @@
   SidebarLeftController.$inject = [
     '$mdSidenav',
     '$mdBottomSheet',
-    'userService',
+    'dataLPSservice',
     '$log',
     '$state',
     // 'UserController',
@@ -22,7 +22,7 @@
    * @desc Controller for the left sidenav
    * @param $mdSidenav
    * @param $mdBottomSheet
-   * @param userService
+   * @param dataLPSservice
    * @param $log
    * @param $state            -- router state
     //* @param UserController
@@ -31,7 +31,7 @@
   function SidebarLeftController(
                         $mdSidenav,
                         $mdBottomSheet,
-                        userService,
+                        dataLPSservice,
                         $log,
                         $state
                         // UserController
@@ -42,7 +42,7 @@
     // var routes = routehelper.getRoutes();
     // vm.isCurrent = isCurrent;
     //vm.sidebarReady = function(){console.log('done animating menu')}; // example
-    vm.userService = userService;
+    vm.dataLPSservice = dataLPSservice;
     vm.routingState = $state;
     vm.states     = [
       {

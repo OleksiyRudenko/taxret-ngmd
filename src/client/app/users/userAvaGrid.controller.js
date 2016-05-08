@@ -8,7 +8,7 @@
       .module('app.users')
       .controller('UserAvaGridCtrl', UserAvaGridController);
 
-  UserAvaGridController.$inject=['$scope', 'userService', '$mdDialog'];
+  UserAvaGridController.$inject=['$scope', 'dataLPSservice', '$mdDialog'];
 
   // var mod = angular.module('src');
   // console.log(var_dump(mod._invokeQueue));
@@ -18,11 +18,11 @@
    * @name UserAvaGridController
    * @desc User Avatars Controller for the TaxRet App
    * @param $scope
-   * @param userService
+   * @param dataLPSservice
    * @param $mdDialog
    * @constructor
    */
-  function UserAvaGridController($scope,userService,$mdDialog) {
+  function UserAvaGridController($scope,dataLPSservice,$mdDialog) {
         // console.log('UserAvaGridController has been invoked');
         /* jshint validthis: true */
         var vm = this;
@@ -40,8 +40,8 @@
          * @param avataridSelected
          */
         function avaSelect(avataridSelected) {
-          // alert("Received " + avataridSelected + ". Current user " + userService.getDeclarantCurrent().avatarid);
-          userService.getDeclarantCurrent().avatarid = avataridSelected;
+          // alert("Received " + avataridSelected + ". Current user " + dataLPSservice.getDeclarantCurrent().avatarid);
+            dataLPSservice.getDeclarantCurrent().avatarid = avataridSelected;
           $mdDialog.hide();
         };
 

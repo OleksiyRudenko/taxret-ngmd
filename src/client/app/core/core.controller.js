@@ -9,7 +9,7 @@
     
     AppController.$inject=[
         '$scope',
-        'userService',
+        'dataLPSservice',
         '$log',
         '$q',
         '$mdDialog', '$mdMedia', 
@@ -20,7 +20,7 @@
      * @desc Main Controller for the TaxRet App
      * @decs NB! Uses $watch
      * @param $scope
-     * @param userService
+     * @param dataLPSservice
      * @param $log
      * @param $q
      * @param $mdDialog
@@ -29,7 +29,7 @@
      */
     function AppController(
                             $scope,
-                            userService,
+                            dataLPSservice,
                             $log,
                             $q,
                             $mdDialog,
@@ -37,20 +37,20 @@
                             ) {
         /* jshint validthis: true */
         var vm = this;
-        vm.userService = userService; // ?
+        vm.dataLPSservice = dataLPSservice; // ?
         vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
-        vm.currDeclarant    = vm.userService.getDeclarantCurrent(); // null
+        vm.currDeclarant    = vm.dataLPSservice.getDeclarantCurrent(); // null
         vm.users            = [ ];
         vm.selectUser       = selectUser;
 
         // Load all registered users
 
-        vm.userService
+        vm.dataLPSservice
             .loadAllUsers()
             .then( function( users ) {
                 vm.users    = [].concat(users);
-                // vm.currDeclarant = userService.getDeclarantCurrent();
+                // vm.currDeclarant = dataLPSservice.getDeclarantCurrent();
             });
 
         // *********************************
@@ -65,7 +65,7 @@
         function selectUser ( user ) {
             user = angular.isNumber(user) ? vm.users[user] : user;
             vm.currDeclarant = user;
-            userService.setDeclarantCurrent(user);
+            dataLPSservice.setDeclarantCurrent(user);
             vm.UItab.Selected = 0;
         }
 
