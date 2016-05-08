@@ -2,14 +2,14 @@
 <!-- persons/view/declarants.html -->
 <div id="popupContainer">
 <h1>Декларанти</h1>
-<md-tabs md-dynamic-height md-border-bottom md-selected="userct.UItab.Selected">
+<md-tabs md-dynamic-height md-border-bottom md-selected="declarantct.UItab.Selected">
 
     <md-tab label="{{appct.dataLPSservice.declarants.getCurrent().nameShort()}}">
 
             <span>
                 <md-tooltip>Змінити аватар</md-tooltip>
                 <md-icon md-svg-icon="{{appct.dataLPSservice.declarants.getCurrent().avatarid}}" class="avatar pointed"
-                     ng-click="userct.dialog.ChooseAvatarDialog($event,'{{appct.dataLPSservice.declarants.getCurrent().avatarid}}')">
+                     ng-click="declarantct.dialog.ChooseAvatarDialog($event,'{{appct.dataLPSservice.declarants.getCurrent().avatarid}}')">
                 </md-icon>
             </span>
 
@@ -168,9 +168,9 @@
     <md-tab label="Вибрати">
         <md-content class="md-padding">
             <md-list>
-                <md-list-item ng-repeat="it in userct.users">
-                    <md-button ng-click="userct.selectUser(it);"
-                               ng-class="{'selected' : it === userct.dataLPSservice.declarants.getCurrent() }">
+                <md-list-item ng-repeat="it in declarantct.users">
+                    <md-button ng-click="declarantct.selectUser(it);"
+                               ng-class="{'selected' : it === declarantct.dataLPSservice.declarants.getCurrent() }">
                         <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
                         {{it.nameLastInitials()}}
                     </md-button>
@@ -186,7 +186,7 @@
 
     <md-tab label="Всі ФО">
         <md-content class="md-padding">
-            {{userct.dataLPSservice.declarants.getCurrent()}}
+            {{declarantct.dataLPSservice.declarants.getCurrent()}}
         </md-content>
     </md-tab>
 

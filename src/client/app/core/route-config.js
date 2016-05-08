@@ -17,7 +17,7 @@
               controller: 'AppController', /* function($scope) {
                $scope.items = ["A", "List", "Of", "Items"];
                } */
-              controllerAs: 'userct'
+              controllerAs: 'declarantct'
             })
             .state('payroll', {
               url: "/payroll",
