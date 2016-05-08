@@ -1,3 +1,4 @@
+/* LPS = Local Persistent Storage */
 (function(){
   'use strict';
 
