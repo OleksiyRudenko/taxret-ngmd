@@ -13,7 +13,7 @@
     'dataLPSservice',
     '$log',
     '$state',
-    // 'UserController',
+    // 'DeclarantsController',
     // '$route', 'routehelper'
   ];
 
@@ -25,7 +25,7 @@
    * @param dataLPSservice
    * @param $log
    * @param $state            -- router state
-    //* @param UserController
+    //* @param DeclarantsController
    * @constructor
    */
   function SidebarLeftController(
@@ -34,7 +34,7 @@
                         dataLPSservice,
                         $log,
                         $state
-                        // UserController
+                        // DeclarantsController
                         // $route, routehelper
                       ) {
     /*jshint validthis: true */

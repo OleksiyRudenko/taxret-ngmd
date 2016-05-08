@@ -2,12 +2,12 @@
 
   angular
        .module('app.persons')
-       .controller('UserController',  UserController);
+       .controller('DeclarantsController',  DeclarantsController);
 
-  UserController.$inject = ['dataLPSservice', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
+  DeclarantsController.$inject = ['dataLPSservice', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
 
   /**
-   * @name UserController
+   * @name DeclarantsController
    * @desc User List Controller for the TaxRet App
    * @param dataLPSservice
    * @param $mdSidenav
@@ -15,7 +15,7 @@
    * @param $log
    * @constructor
    */
-  function UserController( dataLPSservice, $mdSidenav, $mdBottomSheet, $log) {
+  function DeclarantsController(dataLPSservice, $mdSidenav, $mdBottomSheet, $log) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -65,7 +65,7 @@
      */
     /*
     function makeContact(selectedUser) {
-        console.log('UserController::makeContact() has been invoked');
+        console.log('DeclarantsController::makeContact() has been invoked');
         $mdBottomSheet.show({
           controllerAs  : "cp",
           // TODO: DEV remove  timestamp on production
