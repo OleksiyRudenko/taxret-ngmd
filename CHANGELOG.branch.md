@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 However, here branches instead of versions described.
 
 ## [rf-160507-controllers] - 2016-05-07
-Refactor controllers to follow app logic.
+Refactor controllers & a service to follow app logic.
+### Refactored
+- globalize **users service** by converting into **persistent
+  local storage data service (PLSdataService)**
+- users controller -> declarants controller
 
 ## [fea-160507-app] - 2016-05-07
 Should be `rf-...` for main purpose was to refactor `taxretApp`
