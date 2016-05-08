@@ -14,7 +14,7 @@
           .icon("hangouts"   , "./content/svg/hangouts.svg"    , 512)
           .icon("twitter"    , "./content/svg/twitter.svg"     , 512)
           .icon("phone"      , "./content/svg/phone.svg"       , 512)
-          .iconSet("avatarGrid", './content/svg/avatars.svg', 128); // for UserAvaGridController */
+          .iconSet("avatarGrid", './content/svg/avatars.svg', 128); // for PersonAvatarGridController */
   
         $mdThemingProvider.theme('default')
           .primaryPalette('indigo')

@@ -5,24 +5,24 @@
 
     angular
       .module('app.persons')
-      .controller('UserAvaGridCtrl', UserAvaGridController);
+      .controller('UserAvaGridCtrl', PersonAvatarGridController);
 
-  UserAvaGridController.$inject=['$scope', 'dataLPSservice', '$mdDialog'];
+  PersonAvatarGridController.$inject=['$scope', 'dataLPSservice', '$mdDialog'];
 
   // var mod = angular.module('src');
   // console.log(var_dump(mod._invokeQueue));
   // console.log(mod._invokeQueue.toString());
 
   /**
-   * @name UserAvaGridController
+   * @name PersonAvatarGridController
    * @desc User Avatars Controller for the TaxRet App
    * @param $scope
    * @param dataLPSservice
    * @param $mdDialog
    * @constructor
    */
-  function UserAvaGridController($scope,dataLPSservice,$mdDialog) {
-        // console.log('UserAvaGridController has been invoked');
+  function PersonAvatarGridController($scope, dataLPSservice, $mdDialog) {
+        // console.log('PersonAvatarGridController has been invoked');
         /* jshint validthis: true */
         var vm = this;
         vm.tiles = buildGridModel({

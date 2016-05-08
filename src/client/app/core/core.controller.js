@@ -117,7 +117,7 @@
          * @param $mdDialog
          */
         function DialogController($scope, $mdDialog) {
-          // $scope.UserAvaGridController = UserAvaGridController;
+          // $scope.UserAvaGridController = PersonAvatarGridController;
           $scope.hide = function() {
             $mdDialog.hide();
           };
