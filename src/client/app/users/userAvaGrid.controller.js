@@ -1,6 +1,5 @@
 /**
  * Created by Rudenko on 08/04/2016.
- * TODO: rename file: dot notation
  */
 (function(){
 
