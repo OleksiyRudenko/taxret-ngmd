@@ -1,7 +1,7 @@
 (function(){
 
   angular
-       .module('app.users')
+       .module('app.persons')
        .controller('UserController',  UserController);
 
   UserController.$inject = ['dataLPSservice', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
@@ -25,7 +25,7 @@
     vm.toggleList   = toggleUsersList;
     vm.makeContact  = makeContact;
 
-    // Load all registered users
+    // Load all registered persons
 
     dataLPSservice
           .declarants.loadAll()
@@ -54,7 +54,7 @@
      */
     /*
     function selectUser( declarantCurrent ) {
-      vm.currDeclarant = angular.isNumber(declarantCurrent) ? $scope.users[declarantCurrent] : declarantCurrent;
+      vm.currDeclarant = angular.isNumber(declarantCurrent) ? $scope.persons[declarantCurrent] : declarantCurrent;
     } */
 
     // The method below not in use! Instead AppController::makeContact() in use
@@ -69,7 +69,7 @@
         $mdBottomSheet.show({
           controllerAs  : "cp",
           // TODO: DEV remove  timestamp on production
-          templateUrl   : './app/users/view/contactSheet.html?nd=' + Date.now(),
+          templateUrl   : './app/persons/view/contactSheet.html?nd=' + Date.now(),
           controller    : [ '$mdBottomSheet', ContactSheetController ],
           parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {

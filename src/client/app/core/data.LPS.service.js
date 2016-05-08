@@ -78,7 +78,7 @@
 
     /**
      * @name declarantsLoadAll
-     * @desc Loads all users
+     * @desc Loads all persons
      * @returns {Array}
      */
     function declarantsLoadAll() {

@@ -13,7 +13,7 @@
           $stateProvider
             .state('declarants', {
               url: "/declarants",
-              templateUrl: "./app/users/view/declarants.html",
+              templateUrl: "./app/persons/view/declarants.html",
               controller: 'AppController', /* function($scope) {
                $scope.items = ["A", "List", "Of", "Items"];
                } */

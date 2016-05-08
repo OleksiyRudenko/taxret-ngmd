@@ -44,7 +44,7 @@
         vm.users            = [ ];
         vm.selectUser       = selectUser;
 
-        // Load all registered users
+        // Load all registered persons
 
         vm.dataLPSservice
             .declarants.loadAll()
@@ -89,7 +89,7 @@
           // console.log("$mdDialog == ( " + $mdDialog + " ;");
           $mdDialog.show({
               controller: DialogController,
-              templateUrl: './app/users/view/dialog.ChooseAvatar.html',
+              templateUrl: './app/persons/view/dialog.ChooseAvatar.html',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose:false,

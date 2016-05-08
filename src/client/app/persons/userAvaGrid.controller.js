@@ -4,7 +4,7 @@
 (function(){
 
     angular
-      .module('app.users')
+      .module('app.persons')
       .controller('UserAvaGridCtrl', UserAvaGridController);
 
   UserAvaGridController.$inject=['$scope', 'dataLPSservice', '$mdDialog'];

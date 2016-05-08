@@ -11,14 +11,14 @@
 
     /**
      * @name AppService
-     * @desc Former users service. Deprecated. To be removed.
+     * @desc Former persons service. Deprecated. To be removed.
      * @param $q
      * @returns null // {{loadAll: Function}}
      * @constructor
      */
     function AppService($q) {
         /*
-        var users = [
+        var persons = [
             {
                 name: 'Lia Lugo',
                 avatar: 'svg-1',
@@ -58,7 +58,7 @@
 
         function loadAllUsers() {
             // Simulate async nature of real remote calls
-            return $q.when(users);
+            return $q.when(persons);
         };
         */
         return null;
