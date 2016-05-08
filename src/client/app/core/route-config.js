@@ -14,7 +14,7 @@
             .state('declarants', {
               url: "/declarants",
               templateUrl: "./app/persons/view/declarants.html",
-              controller: 'AppController', /* function($scope) {
+              controller: 'DeclarantsController', /* function($scope) {
                $scope.items = ["A", "List", "Of", "Items"];
                } */
               controllerAs: 'declarantct'

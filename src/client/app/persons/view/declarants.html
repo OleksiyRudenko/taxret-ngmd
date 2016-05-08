@@ -4,23 +4,23 @@
 <h1>Декларанти</h1>
 <md-tabs md-dynamic-height md-border-bottom md-selected="declarantct.UItab.Selected">
 
-    <md-tab label="{{appct.dataLPSservice.declarants.getCurrent().nameShort()}}">
+    <md-tab label="{{declarantct.dataLPSservice.declarants.getCurrent().nameShort()}}">
 
             <span>
                 <md-tooltip>Змінити аватар</md-tooltip>
-                <md-icon md-svg-icon="{{appct.dataLPSservice.declarants.getCurrent().avatarid}}" class="avatar pointed"
-                     ng-click="declarantct.dialog.ChooseAvatarDialog($event,'{{appct.dataLPSservice.declarants.getCurrent().avatarid}}')">
+                <md-icon md-svg-icon="{{declarantct.dataLPSservice.declarants.getCurrent().avatarid}}" class="avatar pointed"
+                     ng-click="declarantct.dialog.ChooseAvatarDialog($event,'{{declarantct.dataLPSservice.declarants.getCurrent().avatarid}}')">
                 </md-icon>
             </span>
 
 
-        <span class="name">{{appct.dataLPSservice.declarants.getCurrent().nameFull()}}</span>
-        <span void--class="name">/ {{appct.dataLPSservice.declarants.getCurrent().nameShort()}}
-            / {{appct.dataLPSservice.declarants.getCurrent().nameLastInitials()}}</span>
+        <span class="name">{{declarantct.dataLPSservice.declarants.getCurrent().nameFull()}}</span>
+        <span void--class="name">/ {{declarantct.dataLPSservice.declarants.getCurrent().nameShort()}}
+            / {{declarantct.dataLPSservice.declarants.getCurrent().nameLastInitials()}}</span>
 
-        <!-- md-button class="contact" md-no-ink ng-click="appct.makeContact(appct.dataLPSservice.declarants.getCurrent())"
-                   aria-label="Поділитись з {{ appct.dataLPSservice.declarants.getCurrent().nameShort()}}">
-            <md-tooltip>Зв'язатись з: {{appct.dataLPSservice.declarants.getCurrent().nameFull()}}</md-tooltip>
+        <!-- md-button class="contact" md-no-ink ng-click="declarantct.makeContact(declarantct.dataLPSservice.declarants.getCurrent())"
+                   aria-label="Поділитись з {{ declarantct.dataLPSservice.declarants.getCurrent().nameShort()}}">
+            <md-tooltip>Зв'язатись з: {{declarantct.dataLPSservice.declarants.getCurrent().nameFull()}}</md-tooltip>
             <md-icon md-svg-icon="share"></md-icon>
         </md-button -->
 
@@ -32,19 +32,19 @@
                     <div layout-gt-sm="row">
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Прізвище</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().nameLast">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().nameLast">
                         </md-input-container>
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Ім'я</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().nameFirst">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().nameFirst">
                         </md-input-container>
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>По батькові</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().namePat">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().namePat">
                         </md-input-container>
                         <!-- md-input-container class="md-block" flex-gt-sm>
-                            <md-checkbox ng-model="appct.dataLPSservice.declarants.getCurrent().isUAresident" aria-label="Resides in Ukraine">
-                                Резидент України <!-- {{appct.dataLPSservice.declarants.getCurrent().isUAresident}} - ->
+                            <md-checkbox ng-model="declarantct.dataLPSservice.declarants.getCurrent().isUAresident" aria-label="Resides in Ukraine">
+                                Резидент України <!-- {{declarantct.dataLPSservice.declarants.getCurrent().isUAresident}} - ->
                             </md-checkbox>
                         </md-input-container -->
                     <!-- /div>
@@ -52,38 +52,38 @@
                     <div layout-gt-sm="row" -->
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Паспорт (серія та номер)</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().passportNr">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().passportNr">
                         </md-input-container>
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Ідентифікаційний код (Україна)</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().idUAtaxCode">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().idUAtaxCode">
                         </md-input-container>
                         <!-- md-input-container class="md-block" flex-gt-sm>
                             <label>Замінник ідентифікаційного коду</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().idCodeSubst">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().idCodeSubst">
                         </md-input-container -->
                     </div>
 
                     <div layout-gt-sm="row">
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Номер телефону</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().telNr">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().telNr">
                         </md-input-container>
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Електронна пошта</label>
-                            <input ng-model="appct.dataLPSservice.declarants.getCurrent().email">
+                            <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().email">
                         </md-input-container>
                     </div>
 
                     <!-- md-input-container class="md-block" flex-gt-sm>
                         <label>Аватар</label>
-                        <input ng-model="appct.dataLPSservice.declarants.getCurrent().avatarid">
+                        <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().avatarid">
                     </md-input-container -->
 
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Коментар для адміністратора</label>
-                        <textarea ng-model="appct.dataLPSservice.declarants.getCurrent().comment"
+                        <textarea ng-model="declarantct.dataLPSservice.declarants.getCurrent().comment"
                                   md-maxlength="150" rows="5" md-select-on-focus>
                             </textarea>
                     </md-input-container>
@@ -93,52 +93,52 @@
                         <div layout-gt-sm="row">
                             <!-- md-input-container class="md-block" flex-gt-sm>
                                 <label>країна</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrCountry">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrCountry">
                             </md-input-container -->
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>поштовий індекс</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrPO">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrPO">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>область/Київ/Севастополь</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrRegion">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrRegion">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>район в області</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrDistrict">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrDistrict">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>населений пункт</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrCity">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrCity">
                             </md-input-container>
                         </div>
 
                         <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>назва податкової інспекції</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrCityDistrict">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrCityDistrict">
                             </md-input-container>
                         <!-- /div>
 
                         <div layout-gt-sm="row" -->
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>вулиця, провулок, проспект...</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrStreet">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrStreet">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>номер будинку</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrBuilding">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrBuilding">
                             </md-input-container>
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>корпус</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrSubBuilding">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrSubBuilding">
                             </md-input-container>
                             <div layout-gt-sm="column">
                                 <md-input-container class="md-block" flex-gt-sm>
                                     <md-radio-group
-                                            ng-model="appct.dataLPSservice.declarants.getCurrent().addrAptType"
+                                            ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrAptType"
                                             class="md-primary">
-                                        <div ng-repeat="(key,d) in appct.dataLPSservice.enums.ePersonAptType.properties">
+                                        <div ng-repeat="(key,d) in declarantct.dataLPSservice.enums.ePersonAptType.properties">
                                             <md-radio-button
                                                              ng-value="key">
                                                              <!-- ng-class="{'md-align-top-left': $index==1}" >
@@ -151,11 +151,11 @@
                             </div>
                             <!-- md-input-container class="md-block" flex-gt-sm>
                                 <label>Адреса: тип помешкання</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrAptType">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrAptType">
                             </md-input-container -->
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>номер помешкання</label>
-                                <input ng-model="appct.dataLPSservice.declarants.getCurrent().addrApt">
+                                <input ng-model="declarantct.dataLPSservice.declarants.getCurrent().addrApt">
                             </md-input-container>
                         </div>
                     </md-content>

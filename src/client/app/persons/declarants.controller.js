@@ -4,31 +4,40 @@
        .module('app.persons')
        .controller('DeclarantsController',  DeclarantsController);
 
-  DeclarantsController.$inject = ['dataLPSservice', '$mdSidenav', '$mdBottomSheet', '$log', '$q', ];
+  DeclarantsController.$inject = [
+    '$scope',
+    'dataLPSservice',
+    '$mdDialog',
+    '$mdMedia',
+    '$log',
+  ];
 
   /**
    * @name DeclarantsController
    * @desc User List Controller for the TaxRet App
+   * @param $scope
    * @param dataLPSservice
-   * @param $mdSidenav
-   * @param $mdBottomSheet
+   * @param $mdDialog
+   * @param $mdMedia
    * @param $log
    * @constructor
    */
-  function DeclarantsController(dataLPSservice, $mdSidenav, $mdBottomSheet, $log) {
+  function DeclarantsController(
+      $scope,
+      dataLPSservice,
+      $mdDialog,
+      $mdMedia,
+      $log
+      ) {
     /* jshint validthis: true */
     var vm = this;
     vm.dataLPSservice = dataLPSservice;
     vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
-    vm.selected         = null;
     vm.declarants       = [ ];
     vm.selectDeclarant  = selectDeclarant;
-    vm.toggleList       = toggleUsersList;
-    vm.makeContact      = makeContact;
 
     // Load all registered persons
-
     dataLPSservice
           .declarants.loadAll()
           .then( function( declarants ) {
@@ -39,68 +48,79 @@
     // *********************************
     // Internal methods
     // *********************************
-
+    
     /**
-     * @name toggleUsersList
-     * @desc Hide or Show the 'left' sideNav area
-     */
-    /*
-    function toggleUsersList() {
-      $mdSidenav('left').toggle();
-    }*/
-
-    /**
-     * @name selectUser
-     * @desc Select the current avatars
+     * @name selectDeclarant
+     * @desc Set current declarant
      * @param user
      */
-    /*
-    function selectDeclarant( declarantCurrent ) {
-      vm.currDeclarant = angular.isNumber(declarantCurrent) ? $scope.persons[declarantCurrent] : declarantCurrent;
-    } */
+    function selectDeclarant ( declarant ) {
+      user = angular.isNumber(declarant) ? vm.declarants[declarant] : declarant;
+      vm.currDeclarant = declarant;
+      dataLPSservice.declarants.setCurrent(declarant);
+      vm.UItab.Selected = 0;
+    }
 
-    // The method below not in use! Instead AppController::makeContact() in use
+    // ================= Pop-up dialog fn set
+    vm.dialog = {
+      status : '  ',
+      customFullscreen : $mdMedia('xs') || $mdMedia('sm'),
+      ChooseAvatarDialog : ChooseAvatarDialog,
+    };
+
     /**
-     * @name makeContact
-     * @desc Show the Contact view in the bottom sheet
-     * @param selectedUser
+     * @name ChooseAvatarDialog
+     * @desc Make Dialog to Choose Avatar on event and using currently chosen avatar id
+     * @param ev
+     * @param avatarid
      */
-    /*
-    function makeContact(selectedUser) {
-        console.log('DeclarantsController::makeContact() has been invoked');
-        $mdBottomSheet.show({
-          controllerAs  : "cp",
-          // TODO: DEV remove  timestamp on production
-          templateUrl   : './app/persons/view/contactSheet.html?nd=' + Date.now(),
-          controller    : [ '$mdBottomSheet', ContactSheetController ],
-          parent        : angular.element(document.getElementById('content'))
-        }).then(function(clickedItem) {
-          $log.debug( clickedItem.name + ' clicked!');
-          // TODO: ERR invokes error when other button clicked (e.g. Share button once again)
-        });
+    function ChooseAvatarDialog(ev,avatarid) {
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && vm.dialog.customFullscreen;
+      // alert("ChooseAvatarDialog(" + ev + ", " + avatarid + ")");
+      // console.log("ChooseAvatarDialog( " + ev + ", " + avatarid + " );");
+      // console.log("$mdDialog == ( " + $mdDialog + " ;");
+      $mdDialog.show({
+            controller: DialogController,
+            // TODO: DEV-PROD remove  timestamp on production
+            templateUrl: './app/persons/view/dialog.ChooseAvatar.html?nd=' + Date.now(),
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:false,
+            fullscreen: useFullScreen,
+            // locals : { importedValue: vm.value, }, // TODO: study this
+            // preserveScope: true, // TODO: study this -- Does it allow using vm.* in template?
+            // scope : $scope, // TODO: study this -- Will `scope: vm` be valid equivalent?
+          })
+          .then(function(answer) {
+            vm.dialog.status = 'You said the information was "' + answer + '".';
+          }, function() {
+            vm.dialog.status = 'You cancelled the dialog.';
+          });
+      $scope.$watch(function() {
+        return $mdMedia('xs') || $mdMedia('sm');
+      }, function(wantsFullScreen) {
+        vm.dialog.customFullscreen = (wantsFullScreen === true);
+      });
+    };
 
-        /**
-         * @name ContactSheetController
-         * @desc User ContactSheet controller
-         * @param $mdBottomSheet
-         /
-        function ContactSheetController( $mdBottomSheet ) {
-          var vm = this;
-          vm.declarantCurrent = selectedUser;
-          vm.actions = [
-            { name: 'Phone'       , icon: 'phone'       , icon_url: 'content/svg/phone.svg'},
-            { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'content/svg/twitter.svg'},
-            { name: 'Google+'     , icon: 'google_plus' , icon_url: 'content/svg/google_plus.svg'},
-            { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'content/svg/hangouts.svg'}
-          ];
-          vm.contactUser = function(action) {
-            // The actually contact process has not been implemented...
-            // so just hide the bottomSheet
-
-            $mdBottomSheet.hide(action);
-          };
-        }
-    } */
+    /**
+     * @name DialogController
+     * @desc Dialog Controller
+     * @param $scope
+     * @param $mdDialog
+     */
+    function DialogController($scope, $mdDialog) {
+      // $scope.UserAvaGridController = PersonAvatarGridController;
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
 
   }
 
