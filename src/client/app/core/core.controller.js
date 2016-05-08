@@ -5,9 +5,9 @@
 
     angular
         .module('app.core')
-        .controller('AppController', AppController);
+        .controller('CoreController', CoreController);
     
-    AppController.$inject=[
+    CoreController.$inject=[
         /*'$scope',
         'dataLPSservice',
         '$log',
@@ -17,7 +17,7 @@
     ];
 
     /**
-     * @name AppController 
+     * @name CoreController 
      * @desc Core Controller for the App
      * @ param $scope
      * @ param dataLPSservice
@@ -27,7 +27,7 @@
      * @ param $mdMedia
      * @constructor
      */
-    function AppController(
+    function CoreController(
                             /* $scope,
                             dataLPSservice
                             $log,
