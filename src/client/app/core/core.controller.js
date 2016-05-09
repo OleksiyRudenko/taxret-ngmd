@@ -13,7 +13,8 @@
         '$log',
         '$q',
         '$mdDialog', 
-        '$mdMedia', */
+        '$mdMedia',
+        '$mdSidenav', */
     ];
 
     /**
@@ -25,6 +26,7 @@
      * @ param $q
      * @ param $mdDialog
      * @ param $mdMedia
+     * @ param $mdSidenav
      * @constructor
      */
     function CoreController(
@@ -33,11 +35,25 @@
                             $log,
                             $q,
                             $mdDialog,
-                            $mdMedia */
+                            $mdMedia,
+                            $mdSidenav */
                             ) {
         /* jshint validthis: true */
         var vm = this;
-        
+
+        /* activate();
+
+        function activate() {
+            vm.toggleSideNav    = toggleSideNav;
+        }
+
+        // *********************************
+        // Internal methods
+        // *********************************
+
+        function toggleSideNav() {
+            $mdSidenav('left').toggle();
+        } */
 
     }
 

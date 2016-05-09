@@ -16,6 +16,16 @@ This application is also might be used as a skeleton application.
 1. [Stack](#stack)
     * [Core and UI](#core-and-ui)
     * [Data Storage](#data-storage)
+1. [Project Logical Structure](#project-logical-structure)
+    * [Client side](#client-side)
+      - [Entry point](#entry-point---indexhtml)
+      - [Application View Layout](#application-view-layout)
+      - [Main features](#main-features)
+        * [Declarants view](#declarants-view)
+        * [Main workflow features](#main-workflow-features)
+        * [Reference manuals views](#reference-manuals-views)
+      - [Supporting components](#supporting-components)
+    * [Server side](#server-side)
 1. [Project Directory Layout](#project-directory-layout)
 1. [Project branching conventions](#project-branching-conventions)
 
@@ -38,6 +48,223 @@ Material Start project but not currently in use.
 
 | [IndexedDB](https://www.w3.org/TR/IndexedDB/) | [Lovefield <sup>[2016-04-11]</sup>](https://github.com/google/lovefield) | [ng-lovefield <sup>[2016-03-01]</sup>](https://github.com/kutomer/ng-lovefield) |
 | --- | --- | --- |
+
+[**[back-to-top](#table-of-contents)**]
+
+
+## Project Logical Structure
+
+This section describes the logical structure of the project referring
+ to the files and directories containing relevant components.
+
+Legend:
+ * `/path/with-initial-slash/` - denotes path from the project root
+ * `path/without-initial-slash/` - denotes path relative to current
+    context (sub-section)
+ * `path/with-ending-slash/` - denotes directory
+ * `path/without-ending-slash.extension` - denotes files
+
+Designation of project root sub-directories:
+ * `/node_modules/` - NodeJS maintained installations;
+    currently **NOT IN USE!**; please, **IGNORE**
+ * `/src/` - project source files
+ * `/test/` - tests;
+    currently **NOT IN USE!**; please, **IGNORE**
+ * `/vendor/` - clones of 3rd party resources; should be replaced with external
+   references on production stage
+ * `/void/` - various non-essential resources; please, **IGNORE**
+ * asterisk (`*`) in a pathname denotes _any_ like a wildcard or
+   replaces non-essential part of filename for the sake of enhanced
+   readability
+
+Please, refer to [Project Directory Layout](#project-directory-layout)
+section for more details.
+
+Business logic terms:
+ * person - an entity; persons set comprises of legal entities and persons,
+   some of which may be assigned roles (like 'declarant'), others are used
+   to refer to from documents; each person may be assigned 0+ roles;
+ * declarant - a role; a natural person the Tax Return is produced
+   in the name of;
+
+[**[back-to-top](#table-of-contents)**]
+
+### Client side
+
+`/src/client/`
+
+Source files for client-side part of the application.
+
+Directory layout:
+ * `app/` - application codebase
+ * `content/` - static content files (imagery, documentation, css)
+ * `vendor/` - 3rd party resources (libraries, css) that will be hosted along
+    with the application on production stage
+ * `index.html` - application entry point
+
+Further file paths will be relative to `/src/client/` unless otherwise
+ explicitly expressed by context or by `/preceded-with-a-slash` notation.
+
+[**[back-to-top](#table-of-contents)**]
+
+#### Entry point - `index.html`
+
+`index.html` loads required resources and global view from
+`app/layout/shell.html`.
+
+[**[back-to-top](#table-of-contents)**]
+
+#### Application View Layout
+
+`app/layout/`
+
+`layout.module.js` declares `app.layout` module referred to by other
+components in `app/layout/`.
+
+User interface is driven and managed mainly by Angular Material library,
+ supporting responsive design, elements visualization and UI widgets.
+
+Global view container comprises of `shell.html` template supported with
+ `ShellController` (`shell.controller.js`) with a `toggleSideNav()` method
+ to hide/show left sidebar for smaller portview resolutions.
+
+Shell view includes:
+ * **left sidebar** view components and structure:
+   - `sidebar-left.html` is a template
+   - `sidebar-left.controller.js` provides `SidebarLeftController`, which
+     * provides interface for navigation bound with routing rules set with
+       Angular UI Router config (`app/core/route-config.js`)
+     * implements `makeContact()` method as an action for the 'Share' button
+       in the sidebar's toolbar, which uses `app/layout/contactSheet.html`
+       template (<span style="color:red;">stubbed for future use</span>).
+
+       Icons supplied by `$mdIconProvider`
+       (see `app/core/mdTheming-config.js`), which uses assets from
+       `content/svg/`.
+   - major sections of sidebar are:
+     * toolbar - contains (a) a button showing current declarant and navigating
+       to `declarants` main view, and (b) 'Share' button revealing
+       `contactSheet`
+     * main workflow components navigation
+     * on-site documentation navigation
+ * **main** view is an area where application core components views are
+   loaded in; its components and structure:
+   - `main.html` is a template where content is loaded by router in response
+     to user's navigation requests
+   - the structure is managed by loaded components
+
+[**[back-to-top](#table-of-contents)**]
+
+#### Main features
+
+Main features views are loaded into main view area as a result of user
+ navigational requests from left sidebar UI elements.
+
+Main features are supported by the following components:
+ * `app/persons/` - components to support person-related features
+    including declarants view
+ * `app/persons/views/` - person-related views templates
+ * `app/workflowMain/` - components for each main workflow stage distributed
+   across relevant sub-directories
+ * `app/manuals/` - documentation views templates; these also use assets from
+   `content/doc/`
+
+Navigation is driven by Angular UI Router
+ configured in `app/core/route-config.js`.
+
+##### Declarants view
+
+Actuated by click/tap on left sidebar toolbar button.
+
+| View: |   | `app/persons/view/declarants.html` |
+| :--- | :--- | :--- |
+| Controller: |  `DeclarantsController` | `app/persons/declarants.controller.js` |
+
+Implements tabbed view:
+ 1. Current declarant details (input form)
+    * click on avatar invokes modal dialog using
+      `app/persons/view/dialog.ChooseAvatar.html`
+      controlled by
+      `PersonAvaGridController` (`app/persons/personAvatarGrid.controller.js`);
+
+      Avatars (icons) supplied by `$mdIconProvider`
+      (see `app/core/mdTheming-config.js`), which uses assets from
+      `content/svg/`.
+     * ~~input form supported by `angular formFor` library~~
+ 1. List of declarants. Declarant set as current on click.
+ 1. List of natural persons with other roles (<span style="color:red;">stubbed for future use</span>)
+
+Data provided by `dataLPSservice` (`app/core/data.LPS.service.js`) configured
+ in `app/core/data.LPS-config.js`.
+
+[**[back-to-top](#table-of-contents)**]
+
+##### Main workflow features
+
+Actuated by click/tap on left sidebar navigation buttons.
+
+<span style="color:red;">_**NOT IMPLEMENTED YET, STUBBED**_</span>
+
+
+
+[**[back-to-top](#table-of-contents)**]
+
+##### Reference manuals views
+
+Actuated by click/tap on left sidebar navigation buttons.
+
+Requested view loaded from `app/manuals/`. Each view loads relevant
+ `.md`-file. Markdown mark-up is supported with `vendor/angular-marked.*.js`,
+ which uses `vendor/marked.*.js` library.
+
+[**[back-to-top](#table-of-contents)**]
+
+#### Supporting components
+
+**Markup**
+
+`app/core/markup-config.js` configures `vendor/angular-marked.*.js`
+(which uses `vendor/marked.*.js`) to be used in `marked` in directives
+to provide for Markdown support.
+
+Please, see [Reference manuals views](#reference-manuals-views) for further details.
+
+**Database support**
+
+`app/core/data.LPS.service.js`:
+<span style="color:red;">_**NOT IMPLEMENTED YET AS PLANNED;
+Supplies non-persistent mock data**_</span>
+  * ~~provides a Local Persistent Storage data service based on IndexedDB~~
+  * ~~uses `vendor/ng-lovefield.*.js`,~~
+    ~~which is a wrapper for `vendor/lovefield.*.js` library~~
+  * ~~configured in `app/core/data.LPS-config.js`;~~
+
+**Other components**
+
+Other components, not mentioned above are either
+ * self descriptive
+   - `app/core/core.module.js` - declares `app.core` module for other
+     components in `app/core/`
+ * better described by their authors; please refer to related resources
+   - `app/core/mdTheming-config.js`
+ * stubbed for future use
+   - `app/core/core.controller.js` - stubbed for global controller
+   - `app/core/core.service.js` - stubbed for global data service
+ * support workarounds for incompatibility issues or lack of
+   transparent native techniques
+   - `app/core/route-run.js` - enforces default view due to UI-Router view
+     include in-intransparability
+
+[**[back-to-top](#table-of-contents)**]
+
+
+### Server side
+
+`/src/server/`
+
+Source files for server-side part of the application.
+
+Currently is a stub for future possible use
 
 [**[back-to-top](#table-of-contents)**]
 
@@ -106,184 +333,3 @@ code, features etc.
 
 None reasonable
 
-* * *
-
-### *Ignore the following remainder of the document!*
-
-# Angular Material-Start
-
-This Material **start** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
-
-This sample application is intended to be useful as both a learning tool and a skeleton application
-for a typical [AngularJS Material](http://material.angularjs.org/) web app: comprised of a Side navigation
-area and a content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev
-environment for these projects.
-
-### What is the UX?
-
-Below is a snapshot of the Starter-App with the Users' *master-detail* view. Also shown is the user
-experience that will be displayed for smaller device sizes. The responsive layout changes to hide
-the user list, reveal the **menu** button. In the User Details view, you may also click the
-**share** button  to show the Contact &lt;User&gt; bottom sheet view.
-
-<br/>
-
-![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
-
-<br/>
-
-This Starter app demonstrates how:
-
-*  Angular Material `layout` and `flex` options can easily configure HTML containers
-*  Angular Material components `<md-toolbar>`, `<md-sidenav>`, `<md-icon>` can be quickly used
-*  Custom controllers can use and show `<md-bottomsheet>` with HTML templates
-*  Custom controller can easily, programmatically open & close the SideNav component.
-*  Responsive breakpoints and `$mdMedia` are used
-*  Theming can be altered/configured using `$mdThemingProvider`
-*  ARIA features are supported by Angular Material and warnings can be used to improve accessibility.
-
-### ES5 & ES6 Tutorials
-
-The repository contains both ES5 and ES6 versions of the application. Traditional development with
-ES5 standards and solutions are presented here by default. Tutorials are included: step-by-step
-instructions that clearly demonstrate how the Starter application can be created in minutes.
-
-![Wireframe](https://cloud.githubusercontent.com/assets/210413/6444676/c247c8f8-c0c4-11e4-8206-208f55cbceee.png)
-
-> These tutorials have been presented live, on-stage at **ng-conf 2015, Utah**.
-
-Developers should checkout the following repository branches for:
-
-* Branch [**master**](https://github.com/angular/material-start): contains the finished, ES5, material-starter application.
-* Branch [**Starter - ES5 Tutorials**](https://github.com/angular/material-start/tree/es5-tutorial):
-contains the ES5 tutorials with development Lession #1 - #7.
-* Branch [**Starter - ES6** ](https://github.com/angular/material-start/tree/es6): same completed application as shown in the **[master](https://github.com/angular/material-start)** branch, but implemented with ES6 and JSPM (instead of the ES5 in master).
-
-> The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
-and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/> 
-
-## Getting Started
-
-#### Prerequisites
-
-You will need **git** to clone the material-start repository. You can get git from
-[http://git-scm.com/](http://git-scm.com/).
-
-We also use a number of node.js tools to initialize and test material-start. You must have node.js and
-its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
-
-#### Clone material-start
-
-To get you started you can simply clone `master` branch from the
-[Material-Start](https://github.com/angular/material-start) repository and install the dependencies:
-
-> NOTE: The `master` branch contains the traditional, ES5 implementation familiar to Angular developers.
-
-Clone the material-start repository using [git][git]:
-
-```
-git clone https://github.com/angular/material-start.git
-cd material-start
-```
-
-If you just want to start a new project without the material-start commit history then you can do:
-
-```bash
-git clone --depth=1 https://github.com/angular/material-start.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
-#### Install Dependencies
-
-We have two kinds of dependencies in this project: tools and AngularJS framework code.  The tools help
-us manage and test the application.
-
-* We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We also get the AngularJS and Angular Material library code via `npm`
-
-```
-npm install
-```
-
-You should find that you have one new folder in your project.
-
-* `node_modules` - contains the npm packages for the tools we need
-
-
-## Directory Layout
-
-```
-app/                    --> all of the source files for the application
-  assets/app.css        --> default stylesheet
-  src/           		--> all app specific modules
-     declarants/             --> package for user features
-  index.html            --> app layout file (the main html template file of the app)
-test/
-  karma.conf.js         --> Karma-Jasmine config file (for unit tests)
-  protractor-conf.js    --> Protractor config file (for e2e tests)
-  unit/					--> Karma-Jasmine unit tests
-  e2e/ 			        --> end-to-end tests
-```
-
-
-## Serving the Application Files
-
-While AngularJS is client-side-only technology and it's possible to create AngularJS webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-web server during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
-
-### Running the App during Development
-
-The angular-seed project comes pre-configured with a local development web server. It is a node.js
-tool called [http-server][http-server].  You can install http-server globally:
-
-```
-npm install -g live-server
-```
-
-Then you can start your own development web server to serve static files from a folder by running:
-
->Run `live-server` in a Terminal window</br>
-Open browser to url `http://localhost:8080/app/`
-
-
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
-configure your server to serve the files under the `app/` directory.
-
-### Run UnitTests
-
-Simply open a Terminal window and run `npm run tests` to start all your Karma unit tests.
-
-
-## Updating Angular
-
-Previously we recommended that you merge in changes to angular-seed into your own fork of the
-project. Now that the AngularJS framework library code and tools are acquired through package managers
-(npm) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
-
-```
-npm update
-```
-
-This will find the latest versions that match the version ranges specified in the `package.json` file.
-
-
-## Contact
-
-For more information on AngularJS please check out http://angularjs.org/
-For more information on Angular Material, check out https://material.angularjs.org/
-
-[git]: http://git-scm.com/
-[bower]: http://bower.io
-[npm]: https://www.npmjs.org/
-[node]: http://nodejs.org
-[protractor]: https://github.com/angular/protractor
-[jasmine]: http://jasmine.github.io
-[karma]: http://karma-runner.github.io
-[travis]: https://travis-ci.org/
-[http-server]: https://github.com/nodeapps/http-server

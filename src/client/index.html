@@ -36,9 +36,10 @@
 
   </head>
 
-  <body ng-app="app" layout="row" ng-controller="CoreController as appct" ng-cloak>
+  <body ng-app="app" layout="row" ng-controller="CoreController as corect" ng-cloak>
 
-  <ng-include src="'./app/layout/shell.html'" layout="row" flex></ng-include> <!-- Load global view -->
+  <!-- Load global view -->
+  <ng-include src="'./app/layout/shell.html'" layout="row" ng-controller="ShellController as shellct" flex></ng-include>
 
   <!-- SWITCH VENDOR fw/lib - EXTERNAL ON PRODUCTION -->
     <!-- angular family -->
@@ -87,6 +88,7 @@
       <script type="text/javascript" src="app/persons/personAvatarGrid.controller.js"></script>
       <!-- APP General View Layout -->
           <script type="text/javascript" src="./app/layout/layout.module.js"></script>
+          <script type="text/javascript" src="./app/layout/shell.controller.js"></script>
           <script type="text/javascript" src="./app/layout/sidebar-left.controller.js"></script>
 
   <!-- APP - DEFINE, CONFIG, RUN -->
