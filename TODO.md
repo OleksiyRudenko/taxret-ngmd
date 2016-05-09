@@ -1,5 +1,7 @@
 # To Do
 
+General project todo's
+
 ## Invent or find ready-made solution to
 
 - [ ] design a model so it is DRY to view, user input, data storage

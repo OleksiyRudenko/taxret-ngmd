@@ -1,4 +1,8 @@
 # Project Directory Layout
+
+Please, note that files precede sibling sub-directories
+ for the sake of better files attribution to a directory.
+
 ```
 Project-Root-Folder
 |
@@ -16,9 +20,9 @@ Project-Root-Folder
 |   |   |   |
 |   |   |   +---manuals         # documents views
 |   |   |   |
-|   |   |   +---users           # users feature
+|   |   |   +---persons         # persons related features
 |   |   |   |   |
-|   |   |   |   \---view            # users feature views
+|   |   |   |   \---view            # persons related features views
 |   |   |   |
 |   |   |   \---workflowMain    # main workflow features (major options at left sidenav menu)
 |   |   |
