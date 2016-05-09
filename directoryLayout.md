@@ -20,9 +20,9 @@ Project-Root-Folder
 |   |   |   |
 |   |   |   +---manuals         # documents views
 |   |   |   |
-|   |   |   +---persons         # persons feature
+|   |   |   +---persons         # persons related features
 |   |   |   |   |
-|   |   |   |   \---view            # persons feature views
+|   |   |   |   \---view            # persons related features views
 |   |   |   |
 |   |   |   \---workflowMain    # main workflow features (major options at left sidenav menu)
 |   |   |
