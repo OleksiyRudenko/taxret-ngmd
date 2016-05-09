@@ -35,9 +35,10 @@
     var vm = this;
     vm.dataLPSservice = dataLPSservice;
 
-    // declarant data
-    vm.declarant = {
-
+    // form related data
+    vm.form = {
+      fields : {},
+      options : {},
     };
 
     // choose avatar dialog properties
@@ -60,6 +61,7 @@
      */
     function initialize() {
       ImportDeclarant();
+      ImportOptions();
     }
 
     /**
@@ -71,9 +73,30 @@
       // copy required data
       // TODO: 2READ: http://stackoverflow.com/questions/728360/most-elegant-way-to-clone-a-javascript-object
       for (var attr in declarant) {
-        if (declarant.hasOwnProperty(attr)) vm.declarant[attr] = declarant[attr]; // non-recursive cloning
+        if (declarant.hasOwnProperty(attr)) vm.form.fields[attr] = declarant[attr]; // non-recursive cloning
       }
     }
+
+    /**
+     * @name ImportOptions
+     * @desc Import enums from dataLPSservice as options
+     */
+    function ImportOptions() {
+      // import from collection
+      var enumSet = dataLPSservice.AddressRegionEnum;
+      vm.form.options.AddressRegion = [];
+      for (var attr in enumSet) {
+        if (enumSet.hasOwnProperty(attr)) vm.form.options.AddressRegion.push( { value: attr, label: enumSet[attr] });
+      }
+
+      // import from true enum
+      enumSet = dataLPSservice.ePersonAptTypeEnum.properties;
+      vm.form.options.AptType = [];
+      for (var attr in enumSet) {
+        if (enumSet.hasOwnProperty(attr)) vm.form.options.AptType.push( { value: attr, label: enumSet[attr].descr });
+      }
+    }
+
 
     // ================= Pop-up dialog fn set
 
