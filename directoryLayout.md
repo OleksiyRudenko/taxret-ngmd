@@ -1,4 +1,8 @@
 # Project Directory Layout
+
+Please, note that files precede sibling sub-directories
+ for the sake of better files attribution to a directory.
+
 ```
 Project-Root-Folder
 |
