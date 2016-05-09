@@ -35,8 +35,8 @@
                 views: {
                   'editCurrent' : {
                     templateUrl: "./app/persons/view/declarants.editCurrent.html",
-                    controller: 'DeclarantsController',
-                    controllerAs: 'declarantct'
+                    controller: 'DeclarantsEditCurrentController',
+                    controllerAs: 'declarantECct'
                   }
                 }
               })
