@@ -6,6 +6,7 @@
 
   DeclarantsController.$inject = [
     '$scope',
+    '$state',
     'dataLPSservice',
     '$mdDialog',
     '$mdMedia',
@@ -24,6 +25,7 @@
    */
   function DeclarantsController(
       $scope,
+      $state,
       dataLPSservice,
       $mdDialog,
       $mdMedia,
@@ -32,7 +34,7 @@
     /* jshint validthis: true */
     var vm = this;
     vm.dataLPSservice = dataLPSservice;
-    vm.UItab = { Selected : 0 }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
+    vm.UItab = { Selected : $state.current.data['UItab.Selected'] }; // to use in tabbed context -- switch to initial tab, where selected item expected to be
 
     vm.declarants       = [ ];
     vm.selectDeclarant  = selectDeclarant;
@@ -59,6 +61,7 @@
       vm.currDeclarant = declarant;
       dataLPSservice.declarants.setCurrent(declarant);
       vm.UItab.Selected = 0;
+      $state.go('declarants.editCurrent');
     }
 
     // ================= Pop-up dialog fn set

@@ -5,34 +5,16 @@
 <md-tabs md-dynamic-height md-border-bottom md-selected="declarantct.UItab.Selected">
 
     <md-tab label="{{declarantct.dataLPSservice.declarants.getCurrent().nameShort()}}"
-        ng-include="'./app/persons/view/declarants.editCurrent.html'"
-        xxx--ng-controller="DeclarantsController as declarantct"
-        xxx--flex xxx--layout="column"
-        ></md-tab>
-
-    <md-tab label="Вибрати">
-        <md-content class="md-padding">
-            <md-list>
-                <md-list-item ng-repeat="it in declarantct.declarants">
-                    <md-button ng-click="declarantct.selectDeclarant(it);"
-                               ng-class="{'selected' : it === declarantct.dataLPSservice.declarants.getCurrent() }">
-                        <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
-                        {{it.nameLastInitials()}}
-                    </md-button>
-                </md-list-item>
-            </md-list>
-        </md-content>
-        <!-- h3>List of State 1 Items</h3>
-        <ul>
-            <li ng-repeat="item in items">{{ item }}</li>
-        </ul -->
+            ui-sref="declarants.editCurrent">
+        <div ui-view="editCurrent"></div>
     </md-tab>
 
+    <md-tab label="Вибрати" ui-sref="declarants.selectAnother">
+        <div ui-view="selectAnother"></div>
+    </md-tab>
 
-    <md-tab label="Всі ФО">
-        <md-content class="md-padding">
-            {{declarantct.dataLPSservice.declarants.getCurrent()}}
-        </md-content>
+    <md-tab label="Всі ФО" ui-sref="declarants.selectFromOther">
+        <div ui-view="selectFromOther"></div>
     </md-tab>
 
 </md-tabs>
