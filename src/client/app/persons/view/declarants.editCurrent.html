@@ -1,156 +1,160 @@
-<span>
-    <md-tooltip>Змінити аватар</md-tooltip>
-    <md-icon md-svg-icon="{{declarantECct.form.fields.avatarid}}" class="avatar pointed"
-             ng-click="declarantECct.dialog.ChooseAvatarDialog($event,'{{declarantECct.form.fields.avatarid}}')">
-    </md-icon>
-</span>
+<form form-for="decct"
+      >
 
-<span class="name">{{declarantECct.form.fields.nameFull()}}</span>
-<span void--class="name">/ {{declarantECct.form.fields.nameShort()}}
-            / {{declarantECct.form.fields.nameLastInitials()}}</span>
+    <span>
+        <md-tooltip>Змінити аватар</md-tooltip>
+        <md-icon md-svg-icon="{{decct.form.fields.avatarid}}" class="avatar pointed"
+                 ng-click="decct.dialog.ChooseAvatarDialog($event,'{{decct.form.fields.avatarid}}')">
+        </md-icon>
+    </span>
+    
+    <span class="name">{{decct.form.fields.nameFull()}}</span>
+    <span void--class="name">/ {{decct.form.fields.nameShort()}}
+                / {{decct.form.fields.nameLastInitials()}}</span>
 
-<!-- md-button class="contact" md-no-ink ng-click="declarantECct.makeContact(declarantECct.form.fields)"
-           aria-label="Поділитись з {{ declarantECct.form.fields.nameShort()}}">
-    <md-tooltip>Зв'язатись з: {{declarantECct.form.fields.nameFull()}}</md-tooltip>
+<!-- md-button class="contact" md-no-ink ng-click="decct.makeContact(decct.form.fields)"
+           aria-label="Поділитись з {{ decct.form.fields.nameShort()}}">
+    <md-tooltip>Зв'язатись з: {{decct.form.fields.nameFull()}}</md-tooltip>
     <md-icon md-svg-icon="share"></md-icon>
 </md-button -->
 
 <!-- div>{{vm.dialog.status}} // from DeclarantsEditCurrentController::ChooseAvatarDialog</div -->
 
-<div layout="column" ng-cloak class="md-inline-form">
-    <md-content layout-padding>
-        <form name="DeclarantCurrProfileEdit">
-            <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Прізвище</label>
-                    <input ng-model="declarantECct.form.fields.nameLast">
-                </md-input-container>
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Ім'я</label>
-                    <input ng-model="declarantECct.form.fields.nameFirst">
-                </md-input-container>
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>По батькові</label>
-                    <input ng-model="declarantECct.form.fields.namePat">
-                </md-input-container>
-                <!-- md-input-container class="md-block" flex-gt-sm>
-                    <md-checkbox ng-model="declarantECct.form.fields.isUAresident" aria-label="Resides in Ukraine">
-                        Резидент України <!-- {{declarantECct.form.fields.isUAresident}} - ->
-                    </md-checkbox>
-                </md-input-container -->
-                <!-- /div>
-
-                <div layout-gt-sm="row" -->
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Паспорт (серія та номер)</label>
-                    <input ng-model="declarantECct.form.fields.passportNr">
-                </md-input-container>
-
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Ідентифікаційний код (Україна)</label>
-                    <input ng-model="declarantECct.form.fields.idUAtaxCode">
-                </md-input-container>
-                <!-- md-input-container class="md-block" flex-gt-sm>
-                    <label>Замінник ідентифікаційного коду</label>
-                    <input ng-model="declarantECct.form.fields.idCodeSubst">
-                </md-input-container -->
-            </div>
-
-            <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Номер телефону</label>
-                    <input ng-model="declarantECct.form.fields.telNr">
-                </md-input-container>
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Електронна пошта</label>
-                    <input ng-model="declarantECct.form.fields.email">
-                </md-input-container>
-            </div>
-
-            <!-- md-input-container class="md-block" flex-gt-sm>
-                <label>Аватар</label>
-                <input ng-model="declarantECct.form.fields.avatarid">
-            </md-input-container -->
-
-            <md-input-container class="md-block" flex-gt-sm>
-                <label>Коментар для адміністратора</label>
-                        <textarea ng-model="declarantECct.form.fields.comment"
-                                  md-maxlength="150" rows="5" md-select-on-focus>
-                            </textarea>
-            </md-input-container>
-
-            <md-content void--md-theme="form-shaded" class="md-accent" void--layout-padding>
-                <h3>Адреса</h3>
+    <div layout="column" ng-cloak class="md-inline-form">
+        <md-content layout-padding>
+            <form name="DeclarantCurrProfileEdit">
                 <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Прізвище</label>
+                        <input ng-model="decct.form.fields.nameLast">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Ім'я</label>
+                        <input ng-model="decct.form.fields.nameFirst">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>По батькові</label>
+                        <input ng-model="decct.form.fields.namePat">
+                    </md-input-container>
                     <!-- md-input-container class="md-block" flex-gt-sm>
-                        <label>країна</label>
-                        <input ng-model="declarantECct.form.fields.addrCountry">
+                        <md-checkbox ng-model="decct.form.fields.isUAresident" aria-label="Resides in Ukraine">
+                            Резидент України <!-- {{decct.form.fields.isUAresident}} - ->
+                        </md-checkbox>
                     </md-input-container -->
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>поштовий індекс</label>
-                        <input ng-model="declarantECct.form.fields.addrPO">
-                    </md-input-container>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>область/Київ/Севастополь</label>
-                        <input ng-model="declarantECct.form.fields.addrRegion">
-                    </md-input-container>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>район в області</label>
-                        <input ng-model="declarantECct.form.fields.addrDistrict">
-                    </md-input-container>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>населений пункт</label>
-                        <input ng-model="declarantECct.form.fields.addrCity">
-                    </md-input-container>
-                </div>
-
-                <div layout-gt-sm="row">
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>назва податкової інспекції</label>
-                        <input ng-model="declarantECct.form.fields.addrCityDistrict">
-                    </md-input-container>
                     <!-- /div>
-
+    
                     <div layout-gt-sm="row" -->
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>вулиця, провулок, проспект...</label>
-                        <input ng-model="declarantECct.form.fields.addrStreet">
+                        <label>Паспорт (серія та номер)</label>
+                        <input ng-model="decct.form.fields.passportNr">
                     </md-input-container>
+    
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>номер будинку</label>
-                        <input ng-model="declarantECct.form.fields.addrBuilding">
+                        <label>Ідентифікаційний код (Україна)</label>
+                        <input ng-model="decct.form.fields.idUAtaxCode">
                     </md-input-container>
-                    <md-input-container class="md-block" flex-gt-sm>
-                        <label>корпус</label>
-                        <input ng-model="declarantECct.form.fields.addrSubBuilding">
-                    </md-input-container>
-                    <div layout-gt-sm="column">
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <md-radio-group
-                                    ng-model="declarantECct.form.fields.addrAptType"
-                                    class="md-primary">
-                                <div ng-repeat="(key,d) in declarantECct.dataLPSservice.enums.ePersonAptType.properties">
-                                    <md-radio-button
-                                            ng-value="key">
-                                        <!-- ng-class="{'md-align-top-left': $index==1}" >
-                                       <!-- ng-disabled=" d.isDisabled " -->
-                                        {{d.descr}}
-                                    </md-radio-button>
-                                </div>
-                            </md-radio-group>
-                        </md-input-container>
-                    </div>
                     <!-- md-input-container class="md-block" flex-gt-sm>
-                        <label>Адреса: тип помешкання</label>
-                        <input ng-model="declarantECct.form.fields.addrAptType">
+                        <label>Замінник ідентифікаційного коду</label>
+                        <input ng-model="decct.form.fields.idCodeSubst">
                     </md-input-container -->
+                </div>
+    
+                <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>номер помешкання</label>
-                        <input ng-model="declarantECct.form.fields.addrApt">
+                        <label>Номер телефону</label>
+                        <input ng-model="decct.form.fields.telNr">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Електронна пошта</label>
+                        <input ng-model="decct.form.fields.email">
                     </md-input-container>
                 </div>
-            </md-content>
-
-        </form>
-    </md-content>
-</div>
+    
+                <!-- md-input-container class="md-block" flex-gt-sm>
+                    <label>Аватар</label>
+                    <input ng-model="decct.form.fields.avatarid">
+                </md-input-container -->
+    
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Коментар для адміністратора</label>
+                            <textarea ng-model="decct.form.fields.comment"
+                                      md-maxlength="150" rows="5" md-select-on-focus>
+                                </textarea>
+                </md-input-container>
+    
+                <md-content void--md-theme="form-shaded" class="md-accent" void--layout-padding>
+                    <h3>Адреса</h3>
+                    <div layout-gt-sm="row">
+                        <!-- md-input-container class="md-block" flex-gt-sm>
+                            <label>країна</label>
+                            <input ng-model="decct.form.fields.addrCountry">
+                        </md-input-container -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>поштовий індекс</label>
+                            <input ng-model="decct.form.fields.addrPO">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>область/Київ/Севастополь</label>
+                            <input ng-model="decct.form.fields.addrRegion">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>район в області</label>
+                            <input ng-model="decct.form.fields.addrDistrict">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>населений пункт</label>
+                            <input ng-model="decct.form.fields.addrCity">
+                        </md-input-container>
+                    </div>
+    
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>назва податкової інспекції</label>
+                            <input ng-model="decct.form.fields.addrCityDistrict">
+                        </md-input-container>
+                        <!-- /div>
+    
+                        <div layout-gt-sm="row" -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>вулиця, провулок, проспект...</label>
+                            <input ng-model="decct.form.fields.addrStreet">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>номер будинку</label>
+                            <input ng-model="decct.form.fields.addrBuilding">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>корпус</label>
+                            <input ng-model="decct.form.fields.addrSubBuilding">
+                        </md-input-container>
+                        <div layout-gt-sm="column">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <md-radio-group
+                                        ng-model="decct.form.fields.addrAptType"
+                                        class="md-primary">
+                                    <div ng-repeat="(key,d) in decct.dataLPSservice.enums.ePersonAptType.properties">
+                                        <md-radio-button
+                                                ng-value="key">
+                                            <!-- ng-class="{'md-align-top-left': $index==1}" >
+                                           <!-- ng-disabled=" d.isDisabled " -->
+                                            {{d.descr}}
+                                        </md-radio-button>
+                                    </div>
+                                </md-radio-group>
+                            </md-input-container>
+                        </div>
+                        <!-- md-input-container class="md-block" flex-gt-sm>
+                            <label>Адреса: тип помешкання</label>
+                            <input ng-model="decct.form.fields.addrAptType">
+                        </md-input-container -->
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>номер помешкання</label>
+                            <input ng-model="decct.form.fields.addrApt">
+                        </md-input-container>
+                    </div>
+                </md-content>
+    
+            </form>
+        </md-content>
+    </div>
+</form>

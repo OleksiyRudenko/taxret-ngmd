@@ -36,7 +36,7 @@
                   'editCurrent' : {
                     templateUrl: "./app/persons/view/declarants.editCurrent.html",
                     controller: 'DeclarantsEditCurrentController',
-                    controllerAs: 'declarantECct'
+                    controllerAs: 'decct',
                   }
                 }
               })
