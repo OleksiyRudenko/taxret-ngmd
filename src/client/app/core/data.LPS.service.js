@@ -100,7 +100,7 @@
       enums : {
         ePersonStatus     : ePersonStatusEnum,
         ePersonAptType    : ePersonAptTypeEnum,
-        AddressRegionEnum : AddressRegionEnum,
+        AddressRegion     : AddressRegionEnum,
       },
       declarants : {
         loadAll     : declarantsLoadAll,
