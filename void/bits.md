@@ -103,6 +103,10 @@ Avoid binding to primitives, even those produced by `ng-repeat`:
 ## $rootScope
 [broadcast/emit...](https://makeomatic.ru/blog/2014/10/07/Angular_scope_rootScope/)
 
+## Filters
+
+[Collection by a8m](https://github.com/a8m/angular-filter)
+
 ## misc
 
 2read: [$apply/safeApply](http://ts-soft.ru/blog/angular-cheatsheet)
