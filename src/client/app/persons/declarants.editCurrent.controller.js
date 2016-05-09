@@ -35,17 +35,45 @@
     var vm = this;
     vm.dataLPSservice = dataLPSservice;
 
-    // choose avatar dialog
+    // declarant data
+    vm.declarant = {
+
+    };
+
+    // choose avatar dialog properties
     vm.dialog = {
       status : '  ',
       customFullscreen : $mdMedia('xs') || $mdMedia('sm'),
       ChooseAvatarDialog : ChooseAvatarDialog,
     };
+    
+    initialize();
 
 
     // *********************************
     // Internal methods
     // *********************************
+
+    /**
+     * @name initialize
+     * @desc Initializes controller
+     */
+    function initialize() {
+      ImportDeclarant();
+    }
+
+    /**
+     * @name ImportDeclarant
+     * @desc Import current declarant data from dataLPSservice
+     */
+    function ImportDeclarant() {
+      var declarant = dataLPSservice.declarants.getCurrent();
+      // copy required data
+      // TODO: 2READ: http://stackoverflow.com/questions/728360/most-elegant-way-to-clone-a-javascript-object
+      for (var attr in declarant) {
+        if (declarant.hasOwnProperty(attr)) vm.declarant[attr] = declarant[attr]; // non-recursive cloning
+      }
+    }
 
     // ================= Pop-up dialog fn set
 
