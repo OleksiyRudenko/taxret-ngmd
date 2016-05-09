@@ -18,7 +18,7 @@ This application is also might be used as a skeleton application.
     * [Data Storage](#data-storage)
 1. [Project Logical Structure](#project-logical-structure)
     * [Client side](#client-side)
-      - [Entry point](#entry-point-index.html)
+      - [Entry point](#entry-point---indexhtml)
       - [Application View Layout](#application-view-layout)
       - [Main features](#main-features)
         * [Declarants view](#declarants-view)
