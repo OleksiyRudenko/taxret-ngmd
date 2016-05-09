@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 However, here branches instead of versions described.
 
+## [fea-160509-formfor] - 2016-05-09
+Use formFor library to support user input.
+
 ## [rf-160507-controllers] - 2016-05-07
 Refactor controllers & a service to follow app logic.
 ### Refactored
