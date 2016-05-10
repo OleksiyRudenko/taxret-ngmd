@@ -15,6 +15,9 @@ angular
       'hc.marked',
       // -- Database
       'kutomer.ng-lovefield',
+      // -- Directives
+      'ng-currency',
+      'ng-telephone',
 
     // App Features
       'app.core',
