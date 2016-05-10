@@ -3,7 +3,10 @@
  * http://alaguirre.com/
  * Version: 0.9.6 - 2016-04-04
  * License: MIT
+ * source repo: https://github.com/aguirrel/ng-currency
  */
+
+(function(){
 
 /*commonjs support*/
 if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports){
@@ -172,3 +175,5 @@ angular.module('ng-currency', [])
       }
     }
   }]);
+
+})();
