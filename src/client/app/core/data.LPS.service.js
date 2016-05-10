@@ -44,7 +44,7 @@
       Object.freeze(ePersonAptTypeEnum);
 
     var AddressRegionEnum = {
-      0: "?",
+      // 0: "?",
       1: "Київ",
       2: "Севастополь",
       3: "АРК",

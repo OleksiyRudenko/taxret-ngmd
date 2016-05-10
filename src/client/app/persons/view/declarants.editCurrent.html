@@ -42,7 +42,7 @@
 
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Ім'я</label>
-                        <input ng-model="decct.form.fields.nameFirst"  name="nameFirst" md-maxlength="30"
+                        <input ng-model="decct.form.fields.nameFirst" name="nameFirst" md-maxlength="30"
                                required minlength="2" maxlength="30"
                                ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-])+$/" />
                         <div ng-messages="DeclarantCurrProfileEdit.nameFirst.$error" multiple md-auto-hide="false">
@@ -114,22 +114,30 @@
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Номер телефону</label>
-                        <input ng-model="decct.form.fields.telNr" name="telNr" xxxtype="tel"
+                        <input ng-model="decct.form.fields.telNr" name="telNr" type="tel"
                                ng-telephone telephone-country="UA"
                                placeholder="+380 00 000 0000"
                                minlength="7" maxlength="18"
-                               void--ng-pattern="/^\+?[0-9 )(-]{12,17}$/" />
+                               ng-pattern="/^\+?[0-9 )(-]{12,17}$/" />
                         <div ng-messages="DeclarantCurrProfileEdit.telNr.$error" role="alert">
-                            <div ng-message-exp="['minlength','maxlength']">
+                            <div ng-message-exp="['minlength', 'maxlength', 'pattern']">
                                 Має складатись з щонайменше 7 цифр, опціонально розділених пробілами, дефісами та дужками. Може починатись знаком +.
                             </div>
                         </div>
                     </md-input-container>
-                    <!-- div>{{decct.form.fields.telNr}}</div -->
+                    <!-- div>{ {decct.form.fields.telNr} }</div -->
 
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Електронна пошта</label>
-                        <input ng-model="decct.form.fields.email">
+                        <input ng-model="decct.form.fields.email" name="email" type="email"
+                               placeholder="name@gmail.com"
+                               minlength="6" maxlength="100"
+                               ng-pattern="/^.+@.+\..+$/" />
+                        <div ng-messages="DeclarantCurrProfileEdit.email.$error" role="alert">
+                            <div ng-message-exp="['minlength', 'maxlength', 'pattern']">
+                                Має бути довжиною від 6 до 100 символів та схожим на адресу електронної пошти.
+                            </div>
+                        </div>
                     </md-input-container>
 
                 </div>
@@ -141,9 +149,15 @@
     
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Коментар для адміністратора</label>
-                            <textarea ng-model="decct.form.fields.comment"
-                                      md-maxlength="150" rows="5" md-select-on-focus>
-                                </textarea>
+                            <textarea ng-model="decct.form.fields.comment" name="comment"
+                                      md-maxlength="150" rows="5" md-select-on-focus
+                                      minlength="0" maxlength="150"
+                                ></textarea>
+                            <div ng-messages="DeclarantCurrProfileEdit.comment.$error" role="alert">
+                                <div ng-message-exp="['minlength', 'maxlength']">
+                                    Має бути довжиною до 150 символів.
+                                </div>
+                            </div>
                 </md-input-container>
     
                 <md-content void--md-theme="form-shaded" class="md-accent" void--layout-padding>
@@ -157,22 +171,51 @@
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>поштовий індекс</label>
-                            <input ng-model="decct.form.fields.addrPO">
+                            <input ng-model="decct.form.fields.addrPO" name="addrPO" void--type="number"
+                                   required placeholder="01001" md-maxlength="5"
+                                   minlength="5" maxlength="5"
+                                   ng-pattern="/^[0-9]{5}?$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrPO.$error" role="alert">
+                                <div ng-message-exp="['required','minlength','maxlength','pattern']">
+                                    Обов'язковий. Має складатись з 5 цифр.
+                                </div>
+                            </div>
                         </md-input-container>
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>область/Київ/Севастополь</label>
-                            <input ng-model="decct.form.fields.addrRegion">
+                            <md-select ng-model="decct.form.fields.addrRegion" name="addrRegion">
+                                <md-option ng-repeat="region in decct.form.options.AddressRegion" value="{{region.value}}">
+                                    {{region.label}}
+                                    </md-option>
+                                </md-select>
                         </md-input-container>
+                        <!-- div>{ {decct.form.fields.addrRegion} }</div -->
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>район в області</label>
-                            <input ng-model="decct.form.fields.addrDistrict">
+                            <input ng-model="decct.form.fields.addrDistrict" name="addrDistrict" md-maxlength="30"
+                                   minlength="5" maxlength="30"
+                                   void--placeholder="Н-ський р-н"
+                                   ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.,;])*$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrDistrict.$error" role="alert">
+                                <div ng-message-exp="['minlength','maxlength','pattern']">
+                                    Має містити 0 або від 5 до 30 символів, українською мовою.
+                                </div>
+                            </div>
                         </md-input-container>
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>населений пункт</label>
-                            <input ng-model="decct.form.fields.addrCity">
+                            <input ng-model="decct.form.fields.addrCity" name="addrCity" md-maxlength="40"
+                                   required minlength="3" maxlength="40"
+                                   placeholder="м.Київ"
+                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.])+$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrCity.$error" role="alert">
+                                <div ng-message-exp="['required','minlength','maxlength','pattern']">
+                                    Обов'язковий. Має містити від 3 до 40 символів, українською мовою.
+                                </div>
+                            </div>
                         </md-input-container>
 
                     </div>
@@ -181,7 +224,15 @@
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>назва податкової інспекції</label>
-                            <input ng-model="decct.form.fields.addrCityDistrict">
+                            <input ng-model="decct.form.fields.addrCityDistrict" name="addrCityDistrict" md-maxlength="40"
+                                   required minlength="3" maxlength="40"
+                                   placeholder="ДПІ у Шевченківському р-ні"
+                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.])+$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrCityDistrict.$error" role="alert">
+                                <div ng-message-exp="['required','minlength','maxlength','pattern']">
+                                    Обов'язковий. Має містити від 3 до 40 символів, українською мовою.
+                                </div>
+                            </div>
                         </md-input-container>
                         <!-- /div>
     
@@ -189,17 +240,41 @@
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>вулиця, провулок, проспект...</label>
-                            <input ng-model="decct.form.fields.addrStreet">
+                            <input ng-model="decct.form.fields.addrStreet" name="addrStreet" md-maxlength="40"
+                                   required minlength="3" maxlength="40"
+                                   placeholder="пр-т Брест-Литовський"
+                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.,])+$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrStreet.$error" role="alert">
+                                <div ng-message-exp="['required','minlength','maxlength','pattern']">
+                                    Обов'язковий. Має містити від 3 до 40 символів, українською мовою.
+                                </div>
+                            </div>
                         </md-input-container>
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>номер будинку</label>
-                            <input ng-model="decct.form.fields.addrBuilding">
+                            <input ng-model="decct.form.fields.addrBuilding" name="addrBuilding" md-maxlength="5"
+                                   required minlength="0" maxlength="5"
+                                   placeholder="10-А"
+                                   ng-pattern="/^([0-9\u0410-\u0429\u042C\u042E-\u042F\u0404\u0406\u0407\u0490\-])*$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrBuilding.$error" role="alert">
+                                <div ng-message-exp="['required','minlength','maxlength','pattern']">
+                                    Обов'язковий. Має містити до 5 символів, дозволені літери української мови.
+                                </div>
+                            </div>
                         </md-input-container>
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>корпус</label>
-                            <input ng-model="decct.form.fields.addrSubBuilding">
+                            <input ng-model="decct.form.fields.addrSubBuilding" name="addrSubBuilding" md-maxlength="3"
+                                   minlength="0" maxlength="3"
+                                   void--placeholder="5"
+                                   ng-pattern="/^([0-9\u0410-\u0429\u042C\u042E-\u042F\u0404\u0406\u0407\u0490\-])*$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrSubBuilding.$error" role="alert">
+                                <div ng-message-exp="['minlength','maxlength','pattern']">
+                                    Має містити до 3 символів, дозволені літери української мови.
+                                </div>
+                            </div>
                         </md-input-container>
 
                         <div layout-gt-sm="column">
@@ -226,7 +301,15 @@
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>номер помешкання</label>
-                            <input ng-model="decct.form.fields.addrApt">
+                            <input ng-model="decct.form.fields.addrApt" name="addrApt" md-maxlength="6"
+                                   minlength="0" maxlength="6"
+                                   void--placeholder="10-А"
+                                   ng-pattern="/^([0-9\u0410-\u0429\u042C\u042E-\u042F\u0404\u0406\u0407\u0490\-\.])*$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrApt.$error" role="alert">
+                                <div ng-message-exp="['required','minlength','maxlength','pattern']">
+                                    Має містити до 6 символів, дозволені літери української мови.
+                                </div>
+                            </div>
                         </md-input-container>
 
                     </div>
