@@ -207,13 +207,18 @@
       return this.nameFirst + ' ' + this.nameLast;
     };
     this.nameFirstInitial = function() {
-      return this.nameFirst.charAt(0);
+      return (((typeof this.nameFirst!=="undefined") && this.nameFirst.length>0) ? this.nameFirst.charAt(0) : '');
     };
     this.namePatInitial = function() {
-      return this.namePat.charAt(0);
+      return (((typeof this.namePat!=="undefined") && this.namePat.length>0) ? this.namePat.charAt(0) : '');
     };
     this.nameInitials = function() {
-      return this.nameFirstInitial() + '.' + this.namePatInitial() +'.';
+      return ((this.nameFirstInitial().length>0)
+          ? (this.nameFirstInitial() + '.')
+          : '' ) +
+        ((this.namePatInitial().length>0)
+          ? this.namePatInitial() + '.'
+          : '' );
     };
     this.nameLastInitials = function() {
       return this.nameLast + ' ' + this.nameInitials();

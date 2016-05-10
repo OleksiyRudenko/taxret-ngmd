@@ -30,8 +30,11 @@
       // country defaulted to UA
       country = 'UA';
 
-      if (isNumber(input))
-        input=input.toString();
+      if (angular.isNumber(input)) {
+        if (isNaN(input)) input = 0;
+        if (!isFinite(input)) input = 0;
+        input = input.toString();
+      }
 
       if (typeof input != 'string') return input;
 
@@ -48,15 +51,19 @@
         len+=groups[i];
       }
 
-      // prepend with prefix sequence so total digits will make
+      // output=settings[country].prefix+':'+output+'('+(len-output.length)+')';
+
+      // prepend with prefix sequence so total digits will make len
       var prefix = settings[country].prefix.substring(0,len-output.length);
-      output+=prefix;
+      output=prefix+output;
+
 
       // insert spaces
       var split = [];
       for (var i=0, n=groups.length, start=0; i<n; start+=groups[i++]) {
-        split.push(output.substring(start,groups[i]));
+        split.push(output.slice(start,start+groups[i]));
       }
+
       if (output.length>len) // push remainder
         split.push(output.substring(start,output.length));
       output=split.join(' ');
