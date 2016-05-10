@@ -17,6 +17,7 @@ angular
       'kutomer.ng-lovefield',
       // -- Directives
       'ng-currency',
+      'ng-telephone',
 
     // App Features
       'app.core',

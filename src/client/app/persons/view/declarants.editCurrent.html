@@ -115,7 +115,7 @@
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Номер телефону</label>
                         <input ng-model="decct.form.fields.telNr" name="telNr" xxxtype="tel"
-                               data-telephone-number
+                               ng-telephone telephone-country="UA"
                                placeholder="+380 00 000 0000"
                                minlength="7" maxlength="18"
                                void--ng-pattern="/^\+?[0-9 )(-]{12,17}$/" />
