@@ -5,7 +5,6 @@
     .controller('DeclarantsEditCurrentController',  DeclarantsEditCurrentController);
 
   DeclarantsEditCurrentController.$inject = [
-    'flashr',
     '$scope',
     '$state',
     'dataLPSservice',
@@ -25,7 +24,6 @@
    * @constructor
    */
   function DeclarantsEditCurrentController(
-    flashr,
     $scope,
     $state,
     dataLPSservice,
@@ -41,7 +39,7 @@
     vm.form = {
       fields : {},
       options : {},
-      submitFailed : FormSubmitFailed,
+      // submitFailed : FormSubmitFailed,
     };
 
     // choose avatar dialog properties
@@ -105,9 +103,9 @@
      * @desc Invoked on submit failure. Shows message
      * @param error
      */
-    function FormSubmitFailed(error) {
+    /* function FormSubmitFailed(error) {
       flashr.now.info(error);
-    }
+    } */
 
     // ================= Pop-up dialog fn set
 

@@ -1,7 +1,4 @@
 <form name="DeclarantCurrProfileEdit"
-      form-for="decct"
-      service="EditCurrentDeclarantService"
-      submit-error="decct.form.submitFailed(error)"
       >
 
     <span>
@@ -26,10 +23,20 @@
     <div layout="column" ng-cloak class="md-inline-form">
         <md-content layout-padding>
                 <div layout-gt-sm="row">
+
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Прізвище</label>
-                        <input ng-model="decct.form.fields.nameLast">
+                        <input ng-model="decct.form.fields.nameLast" name="nameLast" md-maxlength="30"
+                               required minlength="2" maxlength="30"
+                               ng-pattern="/^.+@.+\..+$/" />
+                        <div ng-messages="DeclarantCurrProfileEdit.nameLast.$error">
+                            <div ng-message="required">Це поле обов'язкове.</div>
+                            <div ng-message-exp="['minlength', 'maxlength']">
+                                Має містити від 2 до 30 літер.
+                            </div>
+                        </div>
                     </md-input-container>
+
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Ім'я</label>
                         <input ng-model="decct.form.fields.nameFirst">
