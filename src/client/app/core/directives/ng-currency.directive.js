@@ -13,8 +13,12 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
   module.exports = 'ng-currency';
 }
 
-angular.module('ng-currency', [])
-  .directive('ngCurrency', ['$filter', '$locale', function ($filter, $locale) {
+  angular.module('ng-currency', [])
+    .directive('ngCurrency', ngCurrency);
+
+  ngCurrency.$inject=['$filter', '$locale'];
+
+  function ngCurrency($filter, $locale) {
     return {
       require: 'ngModel',
       scope: {
@@ -174,6 +178,6 @@ angular.module('ng-currency', [])
         });
       }
     }
-  }]);
+  }
 
 })();
