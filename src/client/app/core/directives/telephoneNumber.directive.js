@@ -1,5 +1,7 @@
 /**
  * Created by oleksiy.rudenko on 2016-05-10.
+ * DEPRECATED
+ * TODO: Remove this directive
  */
 
 (function(){
