@@ -1,5 +1,6 @@
 <form name="DeclarantCurrProfileEdit"
-      >
+      ng-submit="decct.form.submitForm()"
+      novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
 
     <span>
         <md-tooltip>Змінити аватар</md-tooltip>
@@ -316,7 +317,11 @@
                 </md-content>
 
             <div layout="row" layout-align="end center">
-                <md-button class="md-raised md-primary" ng-disabled="DeclarantCurrProfileEdit.$invalid">Зберегти</md-button>
+                <md-button class="md-raised md-primary"
+                           type="submit"
+                           ng-disabled="DeclarantCurrProfileEdit.$invalid || DeclarantCurrProfileEdit.$pristine">
+                    Зберегти
+                </md-button>
             </div>
 
         </md-content>

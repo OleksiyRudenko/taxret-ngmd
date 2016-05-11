@@ -39,6 +39,7 @@
     vm.form = {
       fields : {},
       options : {},
+      submitForm : FormSubmit,
       // submitFailed : FormSubmitFailed,
     };
 
@@ -96,6 +97,21 @@
       for (var attr in enumSet) {
         if (enumSet.hasOwnProperty(attr)) vm.form.options.AptType.push( { value: attr, label: enumSet[attr].descr });
       }
+    }
+
+    /**
+     * @name FormSubmit
+     * @desc Invoked on submit. Updates data via dataLPS service
+     */
+    function FormSubmit() {
+      // check to make sure the form is completely valid
+      if (!$scope.DeclarantCurrProfileEdit.$valid) {
+        {
+          alert('Дані не коректі!');
+          return;
+        }
+      }
+      alert('Дані прийнято.');
     }
 
     /**
