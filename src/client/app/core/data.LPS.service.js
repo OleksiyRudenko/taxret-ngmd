@@ -77,12 +77,12 @@
       Object.freeze(AddressRegionEnum);
 
     var persons = [
-      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "CH788108", "2694204152", "",
+      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "СН788108", "2694204152", "",
                   "Україна",  1,          "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
                   "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,
                   "+380501112233",        "oleksiy.rudenko@gmailx.com",     'svg-2',  "Principal"
       ),
-      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NATPERS,    "CM888222", "2694203333", "",
+      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NATPERS,    "СМ888222", "2694203333", "",
                   "Україна",  1,          "", "03033",    "м.Київ", "ДПІ у Голосіївському р-ні",
                   "вул.Васильківська",    30, "", 3,      ePersonAptTypeEnum.APT,
                   "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
