@@ -3,7 +3,7 @@
       novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
 
     <div layout="column" layout-gt-sm="row">
-        <div layout="column" layout-gt-xs="row">
+        <div layout="column" layout-gt-sm="row">
             <div>
                 <md-tooltip>Змінити аватар</md-tooltip>
                 <md-icon md-svg-icon="{{decct.form.fields.avatarid}}" class="avatar pointed"
@@ -16,7 +16,7 @@
             <div void--class="name">&nbsp;/ {{decct.form.fields.nameLastInitials()}}</div>
         </div>
 
-        <div flex layout="column" layout-gt-xs="row" layout-align="end start">
+        <div flex layout="column" layout-gt-sm="row" layout-align="end start" layout-align-gt-sm="end start">
             <md-button class="md-raised md-primary"
                        type="submit"
                        ng-disabled="DeclarantCurrProfileEdit.$invalid || DeclarantCurrProfileEdit.$pristine">
