@@ -4,8 +4,19 @@ All notable changes to this project will be documented in this file.
 
 However, here branches instead of versions described.
 
+## [fea-160510-dbdeclarant] - 2016-05-10
+Syncronize user input form with database service
+
 ## [fea-160509-formfor] - 2016-05-09
-Use formFor library to support user input.
+### Added
+- `angular-locale_uk-ua`
+- `ng-currency` directive [by aguirrel](https://github.com/aguirrel/ng-currency)
+- `ng-telephone` directive
+- `telephoneNumber` directive stub (to be removed)
+### Changed
+- employ ng-Material features to validate user input.
+- `telephone*` filters
+
 
 ## [rf-160507-controllers] - 2016-05-07
 Refactor controllers & a service to follow app logic.

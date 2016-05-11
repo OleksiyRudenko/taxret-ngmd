@@ -4,6 +4,13 @@ a {
   text-decoration-color: mediumaquamarine;
 }
 
+/* mark required fields -- <input id="id1" /><label for="id1"></label>*/
+/* won't work with ng-Material
+input[required]+label:before {
+  content: " *";
+  color: red;
+} */
+
 /* Toolbar area */
 
 .menu {

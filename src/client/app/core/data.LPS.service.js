@@ -43,14 +43,47 @@
     if (Object.freeze())
       Object.freeze(ePersonAptTypeEnum);
 
+    var AddressRegionEnum = {
+      // 0: "?",
+      1: "Київ",
+      2: "Севастополь",
+      3: "АРК",
+      4: "Вінницька обл.",
+      5: "Волинська обл.",
+      6: "Дніпропетровська обл.",
+      7: "Донецька обл.",
+      8: "Житомирська обл.",
+      9: "Закарпатська обл.",
+      10: "Запорізька обл.",
+      11: "Івано-Франківська обл.",
+      12: "Київська обл.",
+      13: "Кіровоградська обл.",
+      14: "Луганська обл.",
+      15: "Львівська обл.",
+      16: "Миколаївська обл.",
+      17: "Одеська обл.",
+      18: "Полтавська обл.",
+      19: "Рівненська обл.",
+      20: "Сумська обл.",
+      21: "Тернопільська обл.",
+      22: "Харківська обл.",
+      23: "Херсонська обл.",
+      24: "Хмельницька обл.",
+      25: "Черкаська обл.",
+      26: "Чернівецька обл.",
+      27: "Чернігівська обл.",
+    };
+    if (Object.freeze())
+      Object.freeze(AddressRegionEnum);
+
     var persons = [
-      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "CH788108", "2694204152", "",
-                  "Україна",  "м.Київ",   "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
+      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "СН788108", "2694204152", "",
+                  "Україна",  1,          "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
                   "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,
                   "+380501112233",        "oleksiy.rudenko@gmailx.com",     'svg-2',  "Principal"
       ),
-      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NATPERS,    "CM888222", "2694203333", "",
-                  "Україна",  "м.Київ",   "", "03033",    "м.Київ", "ДПІ у Голосіївському р-ні",
+      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NATPERS,    "СМ888222", "2694203333", "",
+                  "Україна",  1,          "", "03033",    "м.Київ", "ДПІ у Голосіївському р-ні",
                   "вул.Васильківська",    30, "", 3,      ePersonAptTypeEnum.APT,
                   "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
       )
@@ -65,8 +98,9 @@
     // Service interface
     var service = {
       enums : {
-        ePersonStatus   : ePersonStatusEnum,
-        ePersonAptType  : ePersonAptTypeEnum,
+        ePersonStatus     : ePersonStatusEnum,
+        ePersonAptType    : ePersonAptTypeEnum,
+        AddressRegion     : AddressRegionEnum,
       },
       declarants : {
         loadAll     : declarantsLoadAll,
@@ -173,13 +207,18 @@
       return this.nameFirst + ' ' + this.nameLast;
     };
     this.nameFirstInitial = function() {
-      return this.nameFirst.charAt(0);
+      return (((typeof this.nameFirst!=="undefined") && this.nameFirst.length>0) ? this.nameFirst.charAt(0) : '');
     };
     this.namePatInitial = function() {
-      return this.namePat.charAt(0);
+      return (((typeof this.namePat!=="undefined") && this.namePat.length>0) ? this.namePat.charAt(0) : '');
     };
     this.nameInitials = function() {
-      return this.nameFirstInitial() + '.' + this.namePatInitial() +'.';
+      return ((this.nameFirstInitial().length>0)
+          ? (this.nameFirstInitial() + '.')
+          : '' ) +
+        ((this.namePatInitial().length>0)
+          ? this.namePatInitial() + '.'
+          : '' );
     };
     this.nameLastInitials = function() {
       return this.nameLast + ' ' + this.nameInitials();

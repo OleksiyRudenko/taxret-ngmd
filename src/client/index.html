@@ -33,6 +33,8 @@
             /* Since Angular needs to load this ensures proper behavior early */
             .ng-hide { display: none!important; }
         </style>
+    <!-- VENDOR - LOCAL ON PRODUCTION -->
+        <link rel="stylesheet" href="./vendor/formFor.(160412)/form-for.material.css"/>
 
   </head>
 
@@ -52,6 +54,7 @@
       <!-- local dev manual -->
           <!-- source : https://cdnjs.com/libraries/angular.js/1.5.1 -->
           <script type="text/javascript" src="../../vendor/angular.1.5.1.min.js"></script>
+          <script type="text/javascript" src="../../vendor/angular-locale_uk-ua.1.5.1.min.js"></script>
           <script type="text/javascript" src="../../vendor/angular-animate.1.5.1.min.js"></script>
           <script type="text/javascript" src="../../vendor/angular-aria.1.5.1.min.js"></script>
           <script type="text/javascript" src="../../vendor/angular-resource.1.5.1.min.js"></script>
@@ -77,13 +80,24 @@
       <script type="text/javascript" src="./vendor/ng-lovefield.(160301).min.js"></script>
       <script type="text/javascript" src="./vendor/marked.(150731).js"></script>
       <script type="text/javascript" src="./vendor/angular-marked.(151122).js"></script>
+      <script type="text/javascript" src="./vendor/formFor.(160412)/form-for.min.js"></script>
+      <script type="text/javascript" src="./vendor/formFor.(160412)/form-for.material-templates.js"></script>
 
   <!-- APP - LOCAL ON PRODUCTION -->
+      <!-- APP core -->
       <script type="text/javascript" src="app/core/core.module.js"></script>
       <script type="text/javascript" src="app/core/core.controller.js"></script>
       <script type="text/javascript" src="app/core/core.service.js"></script>
+          <!-- APP global filters & directives -->
+          <script type="text/javascript" src="app/core/filters/telephone.filter.js"></script>
+          <script type="text/javascript" src="app/core/filters/telephoneSanitize.filter.js"></script>
+          <!-- script type="text/javascript" src="app/core/directives/telephoneNumber.directive.js"></script -->
+          <script type="text/javascript" src="app/core/directives/ng-currency.directive.js"></script>
+          <script type="text/javascript" src="app/core/directives/ng-telephone.directive.js"></script>
+      <!-- APP features -->
       <script type="text/javascript" src="app/persons/persons.module.js"></script>
       <script type="text/javascript" src="app/persons/declarants.controller.js"></script>
+      <script type="text/javascript" src="app/persons/declarants.editCurrent.controller.js"></script>
       <script type="text/javascript" src="app/core/data.LPS.service.js"></script>
       <script type="text/javascript" src="app/persons/personAvatarGrid.controller.js"></script>
       <!-- APP General View Layout -->
