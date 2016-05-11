@@ -181,7 +181,7 @@ Actuated by click/tap on left sidebar toolbar button.
 | Controller: |  `DeclarantsController` | `app/persons/declarants.controller.js` |
 
 Implements tabbed view:
- 1. Current declarant details (input form)
+ 1. Current declarant details input form (`app/persons/view/declarants.editCurrent.html`)
     * click on avatar invokes modal dialog using
       `app/persons/view/dialog.ChooseAvatar.html`
       controlled by
@@ -190,9 +190,24 @@ Implements tabbed view:
       Avatars (icons) supplied by `$mdIconProvider`
       (see `app/core/mdTheming-config.js`), which uses assets from
       `content/svg/`.
-     * ~~input form supported by `angular formFor` library~~
- 1. List of declarants. Declarant set as current on click.
- 1. List of natural persons with other roles (<span style="color:red;">stubbed for future use</span>)
+    * input form employs `angular material` features as well as `ng-telephone` directive
+      (`app/core/directives/ng-telephone.directive.js`),
+      which in its turn depends on `telephone*` filters (`app/core/filters/telephone*.filter.js`)
+ 1. List of declarants (`app/persons/view/declarants.selectAnother.html`).
+    * on click declarant set as current
+    * ~~context 'exclude' button - excludes a person from the list of declarants~~
+        - ~~action not available for admin~~
+        - ~~reset curent declarant when excluded~~
+ 1. List of natural persons with other roles (`app/persons/view/declarants.selectFromOtherNatPers.html`) (<span style="color:red;">stubbed for future use</span>)
+    * on click person assigned role 'Declarant' and set as current declarant
+    * 'add' button - new natural person dialog, which
+        - requires full name input
+        - checks for uniquiness
+        - creates person stub record
+        - assigns person 'declarant' role
+        - redirects to first tab
+    * context 'remove' button - sets person's isActive property to `false`
+    * switch 'active/inactive' - shows active and/or inactive natural persons
 
 Data provided by `dataLPSservice` (`app/core/data.LPS.service.js`) configured
  in `app/core/data.LPS-config.js`.
