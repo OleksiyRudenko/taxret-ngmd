@@ -2,8 +2,8 @@
       ng-submit="decct.form.submitForm()"
       novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
 
-    <div layout="row" flex>
-        <div layout="row">
+    <div layout="column" layout-gt-sm="row">
+        <div flex layout="row">
             <span>
                 <md-tooltip>Змінити аватар</md-tooltip>
                 <md-icon md-svg-icon="{{decct.form.fields.avatarid}}" class="avatar pointed"
@@ -15,7 +15,7 @@
             <span void--class="name">&nbsp;/ {{decct.form.fields.nameShort()}}&nbsp;/ {{decct.form.fields.nameLastInitials()}}</span>
         </div>
 
-        <div flex layout="row" layout-align="end center">
+        <div flex layout="row" layout-align="end start">
             <md-button class="md-raised md-primary"
                        type="submit"
                        ng-disabled="DeclarantCurrProfileEdit.$invalid || DeclarantCurrProfileEdit.$pristine">
