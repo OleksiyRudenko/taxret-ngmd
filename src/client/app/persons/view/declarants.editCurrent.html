@@ -41,7 +41,7 @@
                         <label>Прізвище</label>
                         <input ng-model="decct.form.fields.nameLast" name="nameLast" md-maxlength="30"
                                required minlength="2" maxlength="30"
-                               ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-])+$/" />
+                               ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 `'-])+$/" />
                         <div ng-messages="DeclarantCurrProfileEdit.nameLast.$error" multiple md-auto-hide="false">
                             <div ng-message="required">Це поле обов'язкове.</div>
                             <div ng-message="pattern">
@@ -57,7 +57,7 @@
                         <label>Ім'я</label>
                         <input ng-model="decct.form.fields.nameFirst" name="nameFirst" md-maxlength="30"
                                required minlength="2" maxlength="30"
-                               ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-])+$/" />
+                               ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 '`-])+$/" />
                         <div ng-messages="DeclarantCurrProfileEdit.nameFirst.$error" multiple md-auto-hide="false">
                             <div ng-message="required">Це поле обов'язкове.</div>
                             <div ng-message="pattern">
@@ -73,7 +73,7 @@
                         <label>По батькові</label>
                         <input ng-model="decct.form.fields.namePat" name="namePat" md-maxlength="30"
                                minlength="5" maxlength="30"
-                               ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-])*$/" />
+                               ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 `'-])*$/" />
                         <div ng-messages="DeclarantCurrProfileEdit.namePat.$error" multiple md-auto-hide="false">
                             <div ng-message="pattern">
                                 Має бути українською.
@@ -210,7 +210,7 @@
                             <input ng-model="decct.form.fields.addrDistrict" name="addrDistrict" md-maxlength="30"
                                    minlength="5" maxlength="30"
                                    void--placeholder="Н-ський р-н"
-                                   ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.,;])*$/" />
+                                   ng-pattern="/^([\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \.,;`'-])*$/" />
                             <div ng-messages="DeclarantCurrProfileEdit.addrDistrict.$error" role="alert">
                                 <div ng-message-exp="['minlength','maxlength','pattern']">
                                     Має містити 0 або від 5 до 30 символів, українською мовою.
@@ -223,7 +223,7 @@
                             <input ng-model="decct.form.fields.addrCity" name="addrCity" md-maxlength="40"
                                    required minlength="3" maxlength="40"
                                    placeholder="м.Київ"
-                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.])+$/" />
+                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \.`'-])+$/" />
                             <div ng-messages="DeclarantCurrProfileEdit.addrCity.$error" role="alert">
                                 <div ng-message-exp="['required','minlength','maxlength','pattern']">
                                     Обов'язковий. Має містити від 3 до 40 символів, українською мовою.
@@ -240,7 +240,7 @@
                             <input ng-model="decct.form.fields.addrCityDistrict" name="addrCityDistrict" md-maxlength="40"
                                    required minlength="3" maxlength="40"
                                    placeholder="ДПІ у Шевченківському р-ні"
-                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.])+$/" />
+                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \.`'-])+$/" />
                             <div ng-messages="DeclarantCurrProfileEdit.addrCityDistrict.$error" role="alert">
                                 <div ng-message-exp="['required','minlength','maxlength','pattern']">
                                     Обов'язковий. Має містити від 3 до 40 символів, українською мовою.
@@ -256,7 +256,7 @@
                             <input ng-model="decct.form.fields.addrStreet" name="addrStreet" md-maxlength="40"
                                    required minlength="3" maxlength="40"
                                    placeholder="пр-т Брест-Литовський"
-                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \-\.,])+$/" />
+                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \.,`'-])+$/" />
                             <div ng-messages="DeclarantCurrProfileEdit.addrStreet.$error" role="alert">
                                 <div ng-message-exp="['required','minlength','maxlength','pattern']">
                                     Обов'язковий. Має містити від 3 до 40 символів, українською мовою.
