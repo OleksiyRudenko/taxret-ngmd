@@ -10,8 +10,8 @@
     |||| |||| |||| |\--- NPpeu Priv entrepr uniform tax
     |||| |||| |||| \---- NPflx Free-lancer (notary, lawyer etc)
     |||| |||| ||||
-    |||| |||| |||\------ NPres3 (reserved)
-    |||| |||| ||\------- NPres2 (reserved)
+    |||| |||| |||\------ RLDEC
+    |||| |||| ||\------- RLREP
     |||| |||| |\-------- NPres1 (reserved)
     |||| |||| \--------- NPres0 (reserved)
     |||| ||||
