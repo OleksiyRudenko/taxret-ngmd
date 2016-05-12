@@ -4,7 +4,11 @@
 
   angular.module('app.core')
          .factory('dataLPSservice', DataLPSservice);
-  DataLPSservice.$inject=['$q', '$rootScope'];
+  DataLPSservice.$inject=[
+    '$q',
+    '$rootScope',
+    'enumAptType',
+  ];
 
   /**
    * @name DataLPSservice
@@ -14,7 +18,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function DataLPSservice($q, $rootScope){
+  function DataLPSservice($q, $rootScope, enumAptType ){
     var ePersonStatusEnum = {
       NPemp :	0x0001,
       NPpeg	:	0x0002,
@@ -54,17 +58,6 @@
 
     if (Object.freeze())
       Object.freeze(ePersonStatusEnum);
-
-    var ePersonAptTypeEnum = {
-      APT     : 1,
-      OFFICE  : 2,
-      properties : {
-        1 : { descr : "кв.", },
-        2 : { descr : "оф.", },
-      },
-    };
-    if (Object.freeze())
-      Object.freeze(ePersonAptTypeEnum);
 
     var AddressRegionEnum = {
       // 0: "?",
@@ -122,7 +115,7 @@
     var service = {
       enums : {
         ePersonStatus     : ePersonStatusEnum,
-        ePersonAptType    : ePersonAptTypeEnum,
+        ePersonAptType    : enumAptType,
         AddressRegion     : AddressRegionEnum,
       },
       declarants : {
