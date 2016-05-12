@@ -18,7 +18,7 @@
     |||| |||\----------- LEcgn Commercial general
     |||| ||\------------ LEcu0 Commercial unitax #0
     |||| |\------------- LEcu1 Commercial unitax #1
-    |||| \-------------- LEcu1 Commercial unitax #2
+    |||| \-------------- LEcu2 Commercial unitax #2
     ||||
     |||\---------------- LEgvt Government - Tax authority
     ||\----------------- LEgvx Government - other
@@ -28,8 +28,9 @@
 NP = NATPERS = 0000 0000 1111 1111 - natural person
 LP = LEGENTY = 1111 1111 0000 0000 - legal entity
 
+
 ========================================================================
-v.2
+v.2 NOT APPROVED
     0000 0000 0000 0000
     |||| |||| |||| ||||
     |||| |||| |||| |||\- LSNATP Natural Person

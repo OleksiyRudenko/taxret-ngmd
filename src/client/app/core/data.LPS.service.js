@@ -16,17 +16,39 @@
    */
   function DataLPSservice($q, $rootScope){
     var ePersonStatusEnum = {
-      TAXAUTH   : 1,
-      LEGALP    : 2,
-      NATPERS   : 3,
-      PENTREP   : 4,
-      FREELANCE : 5,
+      NPemp 	:	0x0001,
+      NPpeg	  :	0x0002,
+      NPpeu	  :	0x0004,
+      NPflx	  :	0x0008,
+      RLDEC	  :	0x0010,
+      RLREP	  :	0x0020,
+      NPres1	:	0x0040,
+      NPres0	:	0x0080,
+      LEcgn	  :	0x0100,
+      LEcu0	  :	0x0200,
+      LEcu1	  :	0x0400,
+      LEcu2	  :	0x0800,
+      LEgvt	  :	0x1000,
+      LEgvx	  :	0x2000,
+      LEngo	  :	0x4000,
+      LEres0	:	0x8000,
       properties : {
-        1 : { descr : "Податковий орган",  isnatpers : false, },
-        2 : { descr : "Юридична особа",    isnatpers : false, },
-        3 : { descr : "Фізична особа",     isnatpers : true,  },
-        4 : { descr : "ФО - підприємець",  isnatpers : true,  },
-        5 : { descr : "Самозайнята особа", isnatpers : true,  },
+        0x0001	:	"ФО - найманий працівник",
+        0x0002	:	"ФОП на загальній системі",
+        0x0004	:	"ФОП на єдиному податку",
+        0x0008	:	"Самозайнята особа",
+        0x0010	:	"Декларант",
+        0x0020	:	"Представник",
+        0x0040	:	"--- Зарезервовано ---",
+        0x0080	:	"--- Зарезервовано ---",
+        0x0100	:	"Підприємство (загальне оподаткування)",
+        0x0200	:	"Підприємство (ЄП1)",
+        0x0400	:	"Підприємство (ЄП2)",
+        0x0800	:	"Підприємство (ЄП3)",
+        0x1000	:	"Податкова установа",
+        0x2000	:	"Інший державний орган",
+        0x4000	:	"Недержавна некомерційна організація",
+        0x8000	:	"--- Зарезервовано ---",
       },
     };
     if (Object.freeze())
@@ -149,7 +171,8 @@
    * @returns {Object}
    * @constructor
    */
-  function ePerson(nameLast,    // for legal entities: principal name
+  function ePerson(
+                   nameLast,    // for legal entities: principal name
                    nameFirst,   // for legal entities: abbreviated principal name
                    namePat,     // for legal entities: incorporation form (Ltd, Inc. etc)
                    isUAresident,
