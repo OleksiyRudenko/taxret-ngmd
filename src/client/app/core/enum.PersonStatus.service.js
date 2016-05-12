@@ -3,7 +3,7 @@
 
   angular.module('app.core')
     .factory('enumPersonStatus', EnumPersonStatusService);
-  EnumAptTypeService.$inject=[
+  EnumPersonStatusService.$inject=[
     '$q',
     // '$rootScope'
   ];

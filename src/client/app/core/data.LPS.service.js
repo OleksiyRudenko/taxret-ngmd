@@ -7,8 +7,9 @@
   DataLPSservice.$inject=[
     '$q',
     '$rootScope',
-    'enumAptType',
     'enumPersonStatus',
+    'enumCountryUARegionService',
+    'enumAptType',
   ];
 
   /**
@@ -16,59 +17,28 @@
    * @desc Uses Local Persistent Storage (LPS) based on IndexedDB; acts asynchronously
    * @param $q
    * @param $rootScope
-   * @param enumAptType
    * @param enumPersonStatus
+   * @param enumCountryUARegionService
+   * @param enumAptType
    * @returns {{loadAll: Function}}
    * @constructor
    */
   function DataLPSservice(
       $q, 
       $rootScope, 
-      enumAptType, 
-      enumPersonStatus
+      enumPersonStatus,
+      enumCountryUARegionService,
+      enumAptType
   ){
-    var AddressRegionEnum = {
-      // 0: "?",
-      1: "Київ",
-      2: "Севастополь",
-      3: "АРК",
-      4: "Вінницька обл.",
-      5: "Волинська обл.",
-      6: "Дніпропетровська обл.",
-      7: "Донецька обл.",
-      8: "Житомирська обл.",
-      9: "Закарпатська обл.",
-      10: "Запорізька обл.",
-      11: "Івано-Франківська обл.",
-      12: "Київська обл.",
-      13: "Кіровоградська обл.",
-      14: "Луганська обл.",
-      15: "Львівська обл.",
-      16: "Миколаївська обл.",
-      17: "Одеська обл.",
-      18: "Полтавська обл.",
-      19: "Рівненська обл.",
-      20: "Сумська обл.",
-      21: "Тернопільська обл.",
-      22: "Харківська обл.",
-      23: "Херсонська обл.",
-      24: "Хмельницька обл.",
-      25: "Черкаська обл.",
-      26: "Чернівецька обл.",
-      27: "Чернігівська обл.",
-    };
-    if (Object.freeze())
-      Object.freeze(AddressRegionEnum);
-
     var persons = [
-      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NPemp,    "СН788108", "2694204152", "",
+      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     enumPersonStatus.NPemp,    "СН788108", "2694204152", "",
                   "Україна",  1,          "", "02031",    "м.Київ", "",
-                  "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,     "ДПІ у Шевченківському р-ні",
+                  "Кудрявський узвіз",    10, "", 1,      enumAptType.APT,     "ДПІ у Шевченківському р-ні",
                   "+380501112233",        "oleksiy.rudenko@gmailx.com",     'svg-2',  "Principal"
       ),
-      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NPemp,    "СМ888222", "2694203333", "",
+      new ePerson("Петренко", "Петро",    "Петрович",     true,     enumPersonStatus.NPemp,    "СМ888222", "2694203333", "",
                   "Україна",  1,          "", "03033",    "м.Київ", "",
-                  "вул.Васильківська",    30, "", 3,      ePersonAptTypeEnum.APT,     "ДПІ у Голосіївському р-ні",
+                  "вул.Васильківська",    30, "", 3,      enumAptType.APT,     "ДПІ у Голосіївському р-ні",
                   "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
       )
     ];
@@ -84,7 +54,7 @@
       enums : {
         ePersonStatus     : enumPersonStatus,
         ePersonAptType    : enumAptType,
-        AddressRegion     : AddressRegionEnum,
+        AddressRegion     : enumCountryUARegionService,
       },
       declarants : {
         loadAll     : declarantsLoadAll,

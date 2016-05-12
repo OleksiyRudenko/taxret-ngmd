@@ -85,10 +85,10 @@
      */
     function ImportOptions() {
       // import from collection
-      var enumSet = dataLPSservice.enums.AddressRegion;
+      var enumSet = dataLPSservice.enums.AddressRegion.properties;
       vm.form.options.AddressRegion = [];
       for (var attr in enumSet) {
-        if (enumSet.hasOwnProperty(attr)) vm.form.options.AddressRegion.push( { value: attr, label: enumSet[attr] });
+        if (enumSet.hasOwnProperty(attr)) vm.form.options.AddressRegion.push( { value: attr, label: enumSet[attr].descr });
       }
 
       // import from true enum
