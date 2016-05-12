@@ -16,41 +16,42 @@
    */
   function DataLPSservice($q, $rootScope){
     var ePersonStatusEnum = {
-      NPemp 	:	0x0001,
-      NPpeg	  :	0x0002,
-      NPpeu	  :	0x0004,
-      NPflx	  :	0x0008,
+      NPemp :	0x0001,
+      NPpeg	:	0x0002,
+      NPpeu	:	0x0004,
+      NPflx	:	0x0008,
       RLDEC	  :	0x0010,
       RLREP	  :	0x0020,
       NPres1	:	0x0040,
       NPres0	:	0x0080,
-      LEcgn	  :	0x0100,
-      LEcu0	  :	0x0200,
-      LEcu1	  :	0x0400,
-      LEcu2	  :	0x0800,
+      LEcgn :	0x0100,
+      LEcu0	:	0x0200,
+      LEcu1	:	0x0400,
+      LEcu2	:	0x0800,
       LEgvt	  :	0x1000,
       LEgvx	  :	0x2000,
       LEngo	  :	0x4000,
       LEres0	:	0x8000,
       properties : {
-        0x0001	:	"ФО - найманий працівник",
-        0x0002	:	"ФОП на загальній системі",
-        0x0004	:	"ФОП на єдиному податку",
-        0x0008	:	"Самозайнята особа",
-        0x0010	:	"Декларант",
-        0x0020	:	"Представник",
-        0x0040	:	"--- Зарезервовано ---",
-        0x0080	:	"--- Зарезервовано ---",
-        0x0100	:	"Підприємство (загальне оподаткування)",
-        0x0200	:	"Підприємство (ЄП1)",
-        0x0400	:	"Підприємство (ЄП2)",
-        0x0800	:	"Підприємство (ЄП3)",
-        0x1000	:	"Податкова установа",
-        0x2000	:	"Інший державний орган",
-        0x4000	:	"Недержавна некомерційна організація",
-        0x8000	:	"--- Зарезервовано ---",
+        0x0001	: {	descr :	"ФО - найманий працівник",		},
+        0x0002	: {	descr :	"ФОП на загальній системі",		},
+        0x0004	: {	descr :	"ФОП на єдиному податку",		},
+        0x0008	: {	descr :	"Самозайнята особа",		},
+        0x0010	: {	descr :	"Декларант",		},
+        0x0020	: {	descr :	"Представник",		},
+        0x0040	: {	descr :	"--- Зарезервовано ---",		},
+        0x0080	: {	descr :	"--- Зарезервовано ---",		},
+        0x0100	: {	descr :	"Підприємство (загальне оподаткування)",		},
+        0x0200	: {	descr :	"Підприємство (ЄП1)",		},
+        0x0400	: {	descr :	"Підприємство (ЄП2)",		},
+        0x0800	: {	descr :	"Підприємство (ЄП3)",		},
+        0x1000	: {	descr :	"Податкова установа",		},
+        0x2000	: {	descr :	"Інший державний орган",		},
+        0x4000	: {	descr :	"Недержавна некомерційна організація",		},
+        0x8000	: {	descr :	"--- Зарезервовано ---",		},
       },
     };
+
     if (Object.freeze())
       Object.freeze(ePersonStatusEnum);
 
@@ -99,14 +100,14 @@
       Object.freeze(AddressRegionEnum);
 
     var persons = [
-      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "СН788108", "2694204152", "",
-                  "Україна",  1,          "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
-                  "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,
+      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NPemp,    "СН788108", "2694204152", "",
+                  "Україна",  1,          "", "02031",    "м.Київ", "",
+                  "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,     "ДПІ у Шевченківському р-ні",
                   "+380501112233",        "oleksiy.rudenko@gmailx.com",     'svg-2',  "Principal"
       ),
-      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NATPERS,    "СМ888222", "2694203333", "",
-                  "Україна",  1,          "", "03033",    "м.Київ", "ДПІ у Голосіївському р-ні",
-                  "вул.Васильківська",    30, "", 3,      ePersonAptTypeEnum.APT,
+      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NPemp,    "СМ888222", "2694203333", "",
+                  "Україна",  1,          "", "03033",    "м.Київ", "",
+                  "вул.Васильківська",    30, "", 3,      ePersonAptTypeEnum.APT,     "ДПІ у Голосіївському р-ні",
                   "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
       )
     ];
@@ -191,6 +192,7 @@
                    addrSubBuilding,
                    addrApt,
                    addrAptType,
+                   taxAuthName,
                    telNr,
                    email,
                    avatarid,
@@ -198,7 +200,6 @@
     ) {
     this.id           = 0;
     this.isActive     = true;
-
     this.nameLast	    =	nameLast;
     this.nameFirst	  =	nameFirst;
     this.namePat	    =	namePat;
@@ -218,6 +219,7 @@
     this.addrSubBuilding	=	addrSubBuilding;
     this.addrApt	    =	addrApt;
     this.addrAptType	=	addrAptType;
+    this.taxAuthName  = taxAuthName;
     this.telNr	      =	telNr;
     this.email	      =	email;
     this.avatarid     = avatarid;

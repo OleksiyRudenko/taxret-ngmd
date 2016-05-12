@@ -235,17 +235,31 @@
                             </div>
                         </md-input-container>
 
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>район в межах населеного пункту</label>
+                            <input ng-model="decct.form.fields.addrCityDistrict" name="addrCityDistrict" md-maxlength="40"
+                                   minlength="3" maxlength="40"
+                                   void--placeholder="Шевченківський р-н"
+                                   ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \.`'-])+$/" />
+                            <div ng-messages="DeclarantCurrProfileEdit.addrCityDistrict.$error" role="alert">
+                                <div ng-message-exp="['minlength','maxlength','pattern']">
+                                    Має містити від 3 до 40 символів, українською мовою.
+                                </div>
+                            </div>
+                        </md-input-container>
+
+
                     </div>
     
                     <div layout-gt-sm="row">
 
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>назва податкової інспекції</label>
-                            <input ng-model="decct.form.fields.addrCityDistrict" name="addrCityDistrict" md-maxlength="40"
+                            <input ng-model="decct.form.fields.taxAuthName" name="taxAuthName" md-maxlength="40"
                                    required minlength="3" maxlength="40"
                                    placeholder="ДПІ у Шевченківському р-ні"
                                    ng-pattern="/^([0-9\u0410-\u0429\u0430-\u0449\u042C\u044C\u042E-\u042F\u044E-\u044F\u0404\u0454\u0406\u0456\u0407\u0457\u0490\u0491 \.`'-])+$/" />
-                            <div ng-messages="DeclarantCurrProfileEdit.addrCityDistrict.$error" role="alert">
+                            <div ng-messages="DeclarantCurrProfileEdit.taxAuthName.$error" role="alert">
                                 <div ng-message-exp="['required','minlength','maxlength','pattern']">
                                     Обов'язковий. Має містити від 3 до 40 символів, українською мовою.
                                 </div>
