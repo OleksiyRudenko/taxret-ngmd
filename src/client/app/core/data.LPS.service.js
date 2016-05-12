@@ -8,6 +8,7 @@
     '$q',
     '$rootScope',
     'enumAptType',
+    'enumPersonStatus',
   ];
 
   /**
@@ -15,50 +16,17 @@
    * @desc Uses Local Persistent Storage (LPS) based on IndexedDB; acts asynchronously
    * @param $q
    * @param $rootScope
+   * @param enumAptType
+   * @param enumPersonStatus
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function DataLPSservice($q, $rootScope, enumAptType ){
-    var ePersonStatusEnum = {
-      NPemp :	0x0001,
-      NPpeg	:	0x0002,
-      NPpeu	:	0x0004,
-      NPflx	:	0x0008,
-      RLDEC	  :	0x0010,
-      RLREP	  :	0x0020,
-      NPres1	:	0x0040,
-      NPres0	:	0x0080,
-      LEcgn :	0x0100,
-      LEcu0	:	0x0200,
-      LEcu1	:	0x0400,
-      LEcu2	:	0x0800,
-      LEgvt	  :	0x1000,
-      LEgvx	  :	0x2000,
-      LEngo	  :	0x4000,
-      LEres0	:	0x8000,
-      properties : {
-        0x0001	: {	descr :	"ФО - найманий працівник",		},
-        0x0002	: {	descr :	"ФОП на загальній системі",		},
-        0x0004	: {	descr :	"ФОП на єдиному податку",		},
-        0x0008	: {	descr :	"Самозайнята особа",		},
-        0x0010	: {	descr :	"Декларант",		},
-        0x0020	: {	descr :	"Представник",		},
-        0x0040	: {	descr :	"--- Зарезервовано ---",		},
-        0x0080	: {	descr :	"--- Зарезервовано ---",		},
-        0x0100	: {	descr :	"Підприємство (загальне оподаткування)",		},
-        0x0200	: {	descr :	"Підприємство (ЄП1)",		},
-        0x0400	: {	descr :	"Підприємство (ЄП2)",		},
-        0x0800	: {	descr :	"Підприємство (ЄП3)",		},
-        0x1000	: {	descr :	"Податкова установа",		},
-        0x2000	: {	descr :	"Інший державний орган",		},
-        0x4000	: {	descr :	"Недержавна некомерційна організація",		},
-        0x8000	: {	descr :	"--- Зарезервовано ---",		},
-      },
-    };
-
-    if (Object.freeze())
-      Object.freeze(ePersonStatusEnum);
-
+  function DataLPSservice(
+      $q, 
+      $rootScope, 
+      enumAptType, 
+      enumPersonStatus
+  ){
     var AddressRegionEnum = {
       // 0: "?",
       1: "Київ",
@@ -114,7 +82,7 @@
     // Service interface
     var service = {
       enums : {
-        ePersonStatus     : ePersonStatusEnum,
+        ePersonStatus     : enumPersonStatus,
         ePersonAptType    : enumAptType,
         AddressRegion     : AddressRegionEnum,
       },
