@@ -11,16 +11,16 @@
                 </md-icon>
             </div>
 
-            <div layout="column">
-              <div><span class="name">{{decct.form.fields.nameFull()}}</span></div>
-              <div layout="column" layout-gt-xs="row">
-                  <div void--class="name">{{decct.form.fields.nameShort()}}</div>
-                  <div void--class="name">&nbsp;/ {{decct.form.fields.nameLastInitials()}}</div>
-              </div>
+            <div flex layout="column" layout-align="start">
+                  <div><span class="name">{{decct.form.fields.nameFull()}}</span></div>
+                  <div layout="column" layout-gt-xs="row" layout-align="start start">
+                      <div void--class="name">{{decct.form.fields.nameShort()}}</div>
+                      <div void--class="name">/ {{decct.form.fields.nameLastInitials()}}</div>
+                  </div>
             </div>
         </div>
 
-        <div flex layout="column" layout-gt-sm="row" layout-align="end start" layout-align-gt-sm="end start">
+        <div flex layout="column" layout-gt-sm="row" layout-align="end center">
             <md-button class="md-raised md-primary"
                        type="submit"
                        ng-disabled="DeclarantCurrProfileEdit.$invalid || DeclarantCurrProfileEdit.$pristine">
