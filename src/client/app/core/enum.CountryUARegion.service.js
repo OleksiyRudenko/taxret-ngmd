@@ -5,6 +5,8 @@
     .factory('enumCountryUARegionService', EnumCountryUARegionService);
   EnumCountryUARegionService.$inject=[
     '$q',
+    'enumBase',
+    '$log',
     // '$rootScope'
   ];
 
@@ -17,7 +19,9 @@
    * @constructor
    */
   function EnumCountryUARegionService(
-    $q
+    $q,
+    enumBase,
+    $log
     // $rootScope
   ){
     var service = {
@@ -80,8 +84,14 @@
         27: { descr: "Чернігівська обл.", },
       },
     };
+    enumBase._constructor.apply(service);
+
+    // $log.debug("=======================\n"+service.toSource());
+    // $log.debug("=======================\n"+service.selectOptions().toSource());
+
     if (Object.freeze())
       Object.freeze(service);
+
     return service;
   }
 })();

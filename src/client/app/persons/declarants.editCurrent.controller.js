@@ -85,11 +85,15 @@
      */
     function ImportOptions() {
       // import from collection
-      var enumSet = dataLPSservice.enums.AddressRegion.properties;
+      var enumSet;
+      /* enumSet = dataLPSservice.enums.AddressRegion.properties;
       vm.form.options.AddressRegion = [];
       for (var attr in enumSet) {
         if (enumSet.hasOwnProperty(attr)) vm.form.options.AddressRegion.push( { value: attr, label: enumSet[attr].descr });
       }
+      */
+
+      vm.form.options.AddressRegion = dataLPSservice.enums.AddressRegion.selectOptions().slice(0); // clone
 
       // import from true enum
       enumSet = dataLPSservice.enums.ePersonAptType.properties;

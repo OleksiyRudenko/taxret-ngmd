@@ -4,7 +4,8 @@
   angular.module('app.core')
     .factory('enumAptType', EnumAptTypeService);
   EnumAptTypeService.$inject=[
-    '$q', 
+    '$q',
+    'enumBase',
     // '$rootScope'
   ];
 
@@ -17,7 +18,8 @@
    * @constructor
    */
   function EnumAptTypeService(
-      $q 
+      $q,
+      enumBase
       // $rootScope
   ){
     var service = {
@@ -28,6 +30,7 @@
         2 : { descr : "оф.", },
       },
     };
+    enumBase._constructor.apply(service);
     if (Object.freeze())
       Object.freeze(service);
     return service;

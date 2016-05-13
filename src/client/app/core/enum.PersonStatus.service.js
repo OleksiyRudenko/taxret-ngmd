@@ -5,6 +5,7 @@
     .factory('enumPersonStatus', EnumPersonStatusService);
   EnumPersonStatusService.$inject=[
     '$q',
+    'enumBase',
     // '$rootScope'
   ];
 
@@ -17,7 +18,8 @@
    * @constructor
    */
   function EnumPersonStatusService(
-    $q
+    $q,
+    enumBase
     // $rootScope
   ){
     var service = {
@@ -62,6 +64,7 @@
         0x8000	: {	descr :	"--- Зарезервовано ---",		},
       },
     };
+    enumBase._constructor.apply(service);
     if (Object.freeze())
       Object.freeze(service);
     return service;
