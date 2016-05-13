@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 However, here branches instead of versions described.
 
 ## [fea-160510-dbdeclarant] - 2016-05-10
-Syncronize user input form with database service
+Synchronize user input form with Local Persistent Storage via dataLPS service.
 
 ## [fea-160509-formfor] - 2016-05-09
 ### Added
