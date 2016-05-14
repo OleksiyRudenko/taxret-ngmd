@@ -47,9 +47,9 @@
 
     /*
      * @name SelectOptions
-     * @desc Generates array to generate <SELECT> options
+     * @desc Generates array to generate <SELECT> options => .derivatives.selectOptions if inexistent or forced
      * @param forceRebuild optional
-     * @returns Array of objects { value: , label: }
+     * @returns Array .derivatives.selectOptions
      */
     function SelectOptions(forceRebuild) {
       if (typeof this.derivatives.selectOptions == 'undefined' || forceRebuild) {
