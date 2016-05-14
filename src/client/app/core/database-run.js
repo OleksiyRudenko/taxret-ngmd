@@ -39,7 +39,7 @@
               'namePat'	  :	'Замінити'	,
               'isUAresident'	:	true	,
               'passportNr'	  :	''	,
-              'idUAtaxCode'	  :	0	,
+              'idUAtaxCode'	  :	'0000000000'	,
               'addrCountry'	  :	'Україна'	,
               'addrRegion'	  :	1	,
               'addrDistrict'	:	''	,

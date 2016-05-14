@@ -19,7 +19,7 @@
               addColumn('namePat',    lovefieldProvider.Type.STRING).
               addColumn('isUAresident', lovefieldProvider.Type.BOOLEAN).
               addColumn('passportNr',   lovefieldProvider.Type.STRING).
-              addColumn('idUAtaxCode',  lovefieldProvider.Type.INTEGER).
+              addColumn('idUAtaxCode',  lovefieldProvider.Type.STRING).
               // addColumn('idCodeSubst',  lovefieldProvider.Type.STRING).
               addColumn('addrCountry',      lovefieldProvider.Type.STRING).
               addColumn('addrRegion',       lovefieldProvider.Type.INTEGER).
