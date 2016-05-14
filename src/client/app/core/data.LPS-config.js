@@ -20,9 +20,9 @@
               addColumn('isUAresident', lovefieldProvider.Type.BOOLEAN).
               addColumn('passportNr',   lovefieldProvider.Type.STRING).
               addColumn('idUAtaxCode',  lovefieldProvider.Type.INTEGER).
-              addColumn('idCodeSubst',  lovefieldProvider.Type.STRING).
+              // addColumn('idCodeSubst',  lovefieldProvider.Type.STRING).
               addColumn('addrCountry',      lovefieldProvider.Type.STRING).
-              addColumn('addrRegion',       lovefieldProvider.Type.STRING).
+              addColumn('addrRegion',       lovefieldProvider.Type.INTEGER).
               addColumn('addrDistrict',     lovefieldProvider.Type.STRING).
               addColumn('addrPO',           lovefieldProvider.Type.STRING).
               addColumn('addrCity',         lovefieldProvider.Type.STRING).
