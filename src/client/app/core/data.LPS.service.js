@@ -7,6 +7,7 @@
   DataLPSservice.$inject=[
     '$q',
     '$rootScope',
+    'lovefield',
     'enumPersonStatus',
     'enumCountryUARegionService',
     'enumAptType',
@@ -17,6 +18,7 @@
    * @desc Uses Local Persistent Storage (LPS) based on IndexedDB; acts asynchronously
    * @param $q
    * @param $rootScope
+   * @param lovefield
    * @param enumPersonStatus
    * @param enumCountryUARegionService
    * @param enumAptType
@@ -25,7 +27,8 @@
    */
   function DataLPSservice(
       $q, 
-      $rootScope, 
+      $rootScope,
+      lovefield,
       enumPersonStatus,
       enumCountryUARegionService,
       enumAptType
