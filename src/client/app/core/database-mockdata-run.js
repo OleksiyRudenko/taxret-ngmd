@@ -59,7 +59,7 @@
               'id'        : 0, // whatever for autoincrement
               'isActive'	:	true	,
               'status'	  :	0x21	, // declarant + employee
-              'avatarid'	:	'svg-1'	,
+              'avatarid'	:	'svg-4'	,
               'comment'	  :	''	,
               'nameLast'	:	'Петренко'	,
               'nameFirst'	:	'Петро'	,
