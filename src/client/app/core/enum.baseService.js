@@ -28,7 +28,7 @@
       // derivatives : {},      // populated by helper functions based on main properties or .properties
                             // normally, contains private secondary structures
       _constructor : function () {
-        this.derivatives = { }; // BuildProperties : BuildProperties, };
+        this.derivatives = this.properties || {}; //  BuildProperties : BuildProperties, };
         this.properties = this.properties || {}; // create unless exists
         if (Object.keys(this.properties).length == 0) {
           // build .properties
