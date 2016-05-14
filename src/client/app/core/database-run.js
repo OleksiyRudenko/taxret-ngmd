@@ -29,7 +29,7 @@
             $log.debug('--- Create admin record');
             // create admin's record
             var row = ePerson.createRow({
-              'id'        : 0, // whatever for autoincrement
+              'id'        : 1, // whatever for autoincrement
               'isActive'	:	true	,
               'status'	  :	0xF1	, // all roles + employee
               'avatarid'	:	'svg-2'	,

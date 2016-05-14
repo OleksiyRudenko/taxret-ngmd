@@ -29,7 +29,7 @@
             $log.debug('--- Create two mock declarants record');
             // create admin's record
             var row1 = ePerson.createRow({
-              'id'        : 0, // whatever for autoincrement
+              'id'        : 2, // whatever for autoincrement
               'isActive'	:	true	,
               'status'	  :	0x21	, // declarant + employee
               'avatarid'	:	'svg-1'	,
@@ -56,7 +56,7 @@
               'taxAuthName'	:	'ДПІ у Шевченківському р-ні'	,
             });
             var row2 = ePerson.createRow({
-              'id'        : 0, // whatever for autoincrement
+              'id'        : 3, // whatever for autoincrement
               'isActive'	:	true	,
               'status'	  :	0x21	, // declarant + employee
               'avatarid'	:	'svg-4'	,
