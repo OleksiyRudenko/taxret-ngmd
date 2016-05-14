@@ -4,7 +4,7 @@
   angular.module('app.core')
     .factory('enumPersonStatus', EnumPersonStatusService);
   EnumPersonStatusService.$inject=[
-    '$q',
+    '$log',
     'enumBase',
     // '$rootScope'
   ];
@@ -12,13 +12,13 @@
   /**
    * @name EnumPersonStatusService
    * @desc Provides static enumeration on Person Status
-   * @param $q
-   * @ param $rootScope
+   * @param $log
+   * @param enumBase
    * @returns enumeration
    * @constructor
    */
   function EnumPersonStatusService(
-    $q,
+    $log,
     enumBase
     // $rootScope
   ){
@@ -31,7 +31,7 @@
       RLADM	  :	0x0010,
       RLDEC	  :	0x0020,
       RLREP	  :	0x0040,
-      RLres0	:	0x0080,
+      RLres0  :	0x0080,
       LEcgn   :	0x0100,
       LEcu0	  :	0x0200,
       LEcu1	  :	0x0400,
@@ -39,7 +39,7 @@
       LEgvt	  :	0x1000,
       LEgvx	  :	0x2000,
       LEngo	  :	0x4000,
-      LEres0	:	0x8000,
+      LEres0  :	0x8000,
       // entity mask
       isNATPERS : 0x000F,
       isLEGENT  : 0xFF00,
@@ -65,6 +65,7 @@
       },
     };
     enumBase._constructor.apply(service);
+    // $log.debug(service.toSource());
     if (Object.freeze())
       Object.freeze(service);
     return service;
