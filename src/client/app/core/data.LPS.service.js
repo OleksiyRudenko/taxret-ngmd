@@ -11,6 +11,7 @@
     'enumPersonStatus',
     'enumCountryUARegionService',
     'enumAptType',
+    '$log',
   ];
 
   /**
@@ -22,6 +23,7 @@
    * @param enumPersonStatus
    * @param enumCountryUARegionService
    * @param enumAptType
+   * @param $log
    * @returns {{loadAll: Function}}
    * @constructor
    */
@@ -31,7 +33,8 @@
       lovefield,
       enumPersonStatus,
       enumCountryUARegionService,
-      enumAptType
+      enumAptType,
+      $log
   ){
     var persons = [
       new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     enumPersonStatus.NPemp,    "СН788108", "2694204152", "",
@@ -75,6 +78,19 @@
      */
     function declarantsLoadAll() {
       // Simulate async nature of real remote calls
+
+      lovefield.getDB().then(function (db) {
+        var ePerson = db.getSchema().table('ePerson');
+
+        $log.debug('-- With love from dataLPSservice');
+        db.select()
+          .from(ePerson)
+          .exec()
+          .then(function (results) {
+            $log.debug("--- SELECT * FROM ePerson = " + results.toSource());
+          });
+      });
+
       return $q.when(persons);
     };
 
