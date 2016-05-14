@@ -75,7 +75,7 @@
         if (self.hasOwnProperty(attr) && attr!='properties' && attr!='derivatives')
           self.properties[self[attr]] = { descr : attr };
       }
-      $log.debug(this.properties.toSource());
+      // $log.debug(this.properties.toSource());
     }
   }
 })();
