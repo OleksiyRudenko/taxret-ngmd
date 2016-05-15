@@ -87,7 +87,7 @@
           .from(ePerson)
           .exec()
           .then(function (results) {
-            $log.debug("--- SELECT * FROM ePerson = " + results.toSource());
+            $log.debug("--- SELECT * FROM ePerson = " + angular.toJson(results,true));
           });
       });
 
