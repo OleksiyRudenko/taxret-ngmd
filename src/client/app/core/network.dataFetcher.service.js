@@ -25,6 +25,22 @@
     $http,
     $log
   ) {
+    var service = {
+      http_           : $http,
+      queryTemplate_  : null,       // e.g. 'https://www.google.com/finance/historical?q={q}&authuser=0&output=csv'
+      FetchData       : FetchData,
+    };
+
+    return service;
+    
+    /**
+     * @name  FetchData
+     * @desc  Fetches data over http or from local file
+     * @param {boolean} [fromFile]
+     */
+    function FetchData(fromFile) {
+
+    }
 
   }
 
