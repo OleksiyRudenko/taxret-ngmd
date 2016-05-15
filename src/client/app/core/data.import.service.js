@@ -8,7 +8,7 @@
     '$http',
     'lovefield',
     '$log',
-    // 'NetworkDataFetcher',
+    'NetworkDataFetcher',
   ];
 
   /**
@@ -17,7 +17,7 @@
    * @param $http
    * @param lovefield
    * @param $log
-   * param NetworkDataFetcher
+   * @param NetworkDataFetcher
    * @returns {{Object}}
    */
   function DataImportService(
@@ -43,7 +43,7 @@
     return service;
 
     function initialize() {
-      // service.dataFetcher_ = new NetworkDataFetcher(service.http_);
+      service.dataFetcher_ = NetworkDataFetcher();
       service.whenInitialized_ = service.init_().then(
         function() {
           $log.debug('DB populated with data');
