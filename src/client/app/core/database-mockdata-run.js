@@ -25,7 +25,7 @@
         .from(ePerson)
         .exec()
         .then(function(results) {
-          if (results[0]['COUNT(id)']==1) {
+          if (results[0]['COUNT(id)']<2) {
             $log.debug('--- Create two mock declarants record');
             // create admin's record
             var row1 = ePerson.createRow({
