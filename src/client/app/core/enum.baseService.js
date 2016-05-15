@@ -13,13 +13,41 @@
    * @name EnumBaseService
    * @desc Provides public interface for enumerations. Used by enum.*.service
    * @param $log
-   * @returns interface
-   * @constructor
+   * @returns {Object}
    */
   function EnumBaseService(
     $log
     // $rootScope
   ){
+    /**
+     * @desc Base type for enums. Provides interfaces.
+     * @typedef enumBase
+     * @type {{_constructor: enumBase._constructor}}
+     * @property {Object} [properties]
+     * @property {Object} derivatives - Container for secondary/derivative properties
+     * @property {Function} selectOptions - Generates .derivatives.selectOptions[]
+     * @example
+     * // minimum
+     * var CountryEnum = { UA :1, US :2 };
+     * enumBase._constructor.apply(CountryEnum);
+     * // CountryEnum is now supplemented with additional properties
+     * //   properties: { 1: { descr: 'UA' }, 2: { descr: 'US' } }
+     * //   derivatives: {}
+     * //   selectOptions : Function
+     * CountryEnum.selectOptions();
+     * // CountryEnum.derivatives gets supplemented
+     * //   derivatives : { selectOptions: [ { value: 1, label: 'UA'}, { value:2, label: 'US'} ]}
+     * // .selectOptions() returns .derivatives.selectOptions[]
+     * // .selectOptions(true) forces rebuild of .derivatives.selectOptions[]
+     * @example
+     * // properties preset
+     * var CountryEnum = {
+     *    UA: 1, US: 2,
+     *    properties: { 1: { descr: 'Ukraine' }, 2: { descr: 'US' } }
+     *   };
+     * enumBase._constructor.apply(CountryEnum); // this time .properties is not built since it's already exist
+     * CountryEnum.selectOptions(); // builds .derivatives.selectOptions[] using properties.<key>.descr
+     */
     var enumBase = {
       // properties : ...,  // maps principal properties' values to anything else, e.g. human readable descriptions or
                             // those multilingual;
@@ -28,7 +56,7 @@
       // derivatives : {},      // populated by helper functions based on main properties or .properties
                             // normally, contains private secondary structures
       _constructor : function () {
-        this.derivatives = this.properties || {}; //  BuildProperties : BuildProperties, };
+        this.derivatives = this.derivatives || {}; //  BuildProperties : BuildProperties, };
         this.properties = this.properties || {}; // create unless exists
         if (Object.keys(this.properties).length == 0) {
           // build .properties
@@ -36,6 +64,7 @@
           // this.derivatives.
           BuildProperties.call(this);
         }
+        /** @method */
         this.selectOptions = SelectOptions;
       }
     };
