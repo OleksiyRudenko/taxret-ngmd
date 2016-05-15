@@ -85,6 +85,9 @@
         $log.debug('-- With love from dataLPSservice');
         db.select()
           .from(ePerson)
+          .where(lf.op.and(
+            ePerson.isNatPers.eq(true),
+            ePerson.isDeclarant.eq(true)))
           .exec()
           .then(function (results) {
             $log.debug("--- SELECT * FROM ePerson = " + angular.toJson(results,true));
