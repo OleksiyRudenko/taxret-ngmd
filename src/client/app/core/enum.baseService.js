@@ -48,9 +48,9 @@
 
     /*
      * @name SelectOptions
-     * @desc Generates array to generate <SELECT> options => .derivatives.selectOptions if inexistent or forced
-     * @param forceRebuild optional
-     * @returns Array .derivatives.selectOptions
+     * @desc Generates array to build <SELECT> options if inexistent or returns existent
+     * @param {boolean} [forceRebuild=false] - Force rebuild .derivative.selectOptions
+     * @returns {Array} - .derivatives.selectOptions
      */
     function SelectOptions(forceRebuild) {
       if (typeof this.derivatives.selectOptions == 'undefined' || forceRebuild) {
@@ -68,6 +68,7 @@
     /*
      * @name BuildProperties
      * @desc Generates .properties if empty or inexistent
+     * @private
      */
     function BuildProperties() {
       var self = this;
