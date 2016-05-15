@@ -66,7 +66,7 @@
 
             db.insertOrReplace().into(ePerson).values([row]).exec()
               .then(function(response){
-                $log.debug("--- Response: " + response.toSource());
+                $log.debug("--- Response: " + angular.toJson(response,true));
               });
 
           } else {

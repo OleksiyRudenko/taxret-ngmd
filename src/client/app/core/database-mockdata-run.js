@@ -96,7 +96,7 @@
             
             db.insertOrReplace().into(ePerson).values([row1,row2]).exec()
               .then(function(response){
-                $log.debug("--- Response for mock data insert query: " + response.toSource());
+                $log.debug("--- Response for mock data insert query: " + angular.toJson(response,true));
               });
             
           } else {
