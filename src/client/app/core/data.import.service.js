@@ -38,11 +38,11 @@
       insertData_ : insertData_,
     };
 
-    initialize();
+    initializeService();
     
     return service;
 
-    function initialize() {
+    function initializeService() {
       service.dataFetcher_ = NetworkDataFetcher();
       service.whenInitialized_ = service.init_().then(
         function() {
@@ -56,7 +56,7 @@
      * @return {!IThenable}
      */
     function init() {
-      return service.whenInitialized_;
+      return this.whenInitialized_;
     };
 
     // Private methods
@@ -68,23 +68,23 @@
      * @private
      */
     function init_() {
-      return service.lovefield_.getDB()
+      return this.lovefield_.getDB()
         .then(
           function(db) {
-            service.db_ = db;
+            this.db_ = db;
             // window.db = db;
 
-            return service.checkForExistingData_();
+            return this.checkForExistingData_();
           }
-          .bind(service)
+          .bind(this)
         )
         .then(
           (function(dataExist) {
             return dataExist
               ? Promise.resolve()
-              : service.insertData_();
+              : this.insertData_();
           })
-            .bind(service)
+            .bind(this)
         );
     }
   
@@ -95,8 +95,8 @@
      * @private
      */
     function checkForExistingData_() {
-      var indicatorTable = service.db_.getSchema().table(service.indicatorTable);
-      return service.db_.select().from(indicatorTable).exec().then(
+      var indicatorTable = this.db_.getSchema().table(this.indicatorTable);
+      return this.db_.select().from(indicatorTable).exec().then(
         function(rows) {
           return rows.length > 0;
         });
@@ -117,7 +117,7 @@
           var stockInfoRaw = rawData[1];
           return service.lovefield_.insertData(
             historicalDataRaw, stockInfoRaw); */
-        }.bind(service));
+        }.bind(this));
     };
   
 
