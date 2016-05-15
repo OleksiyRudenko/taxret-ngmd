@@ -3,7 +3,8 @@
 
   angular.module('app.core')
     .factory('DataImportService', DataImportService);
-  DataLPSservice.$inject=[
+
+  DataImportService.$inject=[
     '$http',
     'lovefield',
     '$log',
