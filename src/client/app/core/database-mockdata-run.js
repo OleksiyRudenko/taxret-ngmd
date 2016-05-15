@@ -31,7 +31,12 @@
             var row1 = ePerson.createRow({
               'id'        : 2, // whatever for autoincrement
               'isActive'	:	true	,
-              'status'	  :	0x21	, // declarant + employee
+              'isNatPers'	:	true	,
+              'isAdmin'	:	false	,
+              'isDeclarant'	:	true	,
+              'isHirer'	:	false	,
+              'isTaxAgent'	:	false	,
+              'isTaxAuthority'	:	false	,
               'avatarid'	:	'svg-1'	,
               'comment'	  :	''	,
               'nameLast'	:	'Сидоренко'	,
@@ -58,7 +63,12 @@
             var row2 = ePerson.createRow({
               'id'        : 3, // whatever for autoincrement
               'isActive'	:	true	,
-              'status'	  :	0x21	, // declarant + employee
+              'isNatPers'	:	true	,
+              'isAdmin'	:	false	,
+              'isDeclarant'	:	true	,
+              'isHirer'	:	false	,
+              'isTaxAgent'	:	false	,
+              'isTaxAuthority'	:	false	,
               'avatarid'	:	'svg-4'	,
               'comment'	  :	''	,
               'nameLast'	:	'Петренко'	,

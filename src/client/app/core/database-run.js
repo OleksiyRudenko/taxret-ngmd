@@ -29,31 +29,37 @@
             $log.debug('--- Create admin record');
             // create admin's record
             var row = ePerson.createRow({
-              'id'        : 1, // whatever for autoincrement
+              'id'	:	1	,
               'isActive'	:	true	,
-              'status'	  :	0xF1	, // all roles + employee
+              'isNatPers'	:	true	,
+              'isAdmin'	:	true	,
+              'isDeclarant'	:	true	,
+              'isHirer'	:	false	,
+              'isTaxAgent'	:	false	,
+              'isTaxAuthority'	:	false	,
               'avatarid'	:	'svg-2'	,
-              'comment'	  :	'Це - запис адміністратора. Його не можна деактивувати.'	,
+              'comment'	:	'Це - запис адміністратора. Його не можна деактивувати.'	,
               'nameLast'	:	'Замінити'	,
               'nameFirst'	:	'Замінити'	,
-              'namePat'	  :	'Замінити'	,
+              'namePat'	:	'Замінити'	,
               'isUAresident'	:	true	,
-              'passportNr'	  :	''	,
-              'idUAtaxCode'	  :	'0000000000'	,
-              'addrCountry'	  :	'Україна'	,
-              'addrRegion'	  :	1	,
+              'passportNr'	:	''	,
+              'idUAtaxCode'	:	'0000000000'	,
+              'addrCountry'	:	'Україна'	,
+              'addrRegion'	:	1	,
               'addrDistrict'	:	''	,
-              'addrPO'	      :	''	,
-              'addrCity'	    :	''	,
+              'addrPO'	:	''	,
+              'addrCity'	:	''	,
               'addrCityDistrict'	:	''	,
-              'addrStreet'	  :	''	,
+              'addrStreet'	:	''	,
               'addrBuilding'	:	''	,
               'addrSubBuilding'	:	''	,
-              'addrApt'	    :	''	,
+              'addrApt'	:	''	,
               'addrAptType'	:	1	,
-              'telNr'	      :	''	,
-              'email'	      :	''	,
+              'telNr'	:	''	,
+              'email'	:	''	,
               'taxAuthName'	:	''	,
+  
             });
 
             // $log.debug("--- ePerson: " + ePerson.toSource());
