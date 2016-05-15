@@ -117,6 +117,7 @@
           var stockInfoRaw = rawData[1];
           return service.lovefield_.insertData(
             historicalDataRaw, stockInfoRaw); */
+          $log.debug("DataImportService::insertData_ rawData = " + angular.toJson(rawData,true));
         }.bind(this));
     };
   
