@@ -108,6 +108,7 @@
      */
     function insertData_() {
       return Promise.all([
+        this.dataFetcher_.FetchData()
         /* service.dataFetcher_.fetchHistoricalData(),
         service.dataFetcher_.fetchStockInfo() */
       ]).then(
