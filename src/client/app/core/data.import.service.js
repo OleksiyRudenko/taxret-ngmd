@@ -23,13 +23,13 @@
   function DataImportService(
     $http,
     lovefield,
-    $log
-    // NetworkDataFetcher
+    $log,
+    NetworkDataFetcher
   ){
     var service = {
       indicatorTable : 'ePerson', // if this table is empty then DB needs to be initialized with initial and mock data
       http_       : $http,
-      dataFetcher_ : null,
+      dataFetcher_ : NetworkDataFetcher,
       lovefield_  : lovefield,
       db_         : null,
       init        : init,
@@ -43,7 +43,6 @@
     return service;
 
     function initializeService() {
-      service.dataFetcher_ = NetworkDataFetcher();
       service.whenInitialized_ = service.init_().then(
         function() {
           $log.debug('DB populated with data');
