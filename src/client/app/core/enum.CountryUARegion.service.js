@@ -14,9 +14,9 @@
    * @name EnumCountryUARegionService
    * @desc Provides static enumeration of UA Regions
    * @param $q
-   * @ param $rootScope
-   * @returns enumeration
-   * @constructor
+   * @param {enumBase} enumBase
+   * @param $log
+   * @returns {Object}
    */
   function EnumCountryUARegionService(
     $q,
@@ -24,6 +24,11 @@
     $log
     // $rootScope
   ){
+    /**
+     * @enum
+     * @extends enumBase
+     * @readonly
+     */
     var service = {
       1	:	1	,
       2	:	2	,

@@ -80,8 +80,8 @@
       <script type="text/javascript" src="./vendor/ng-lovefield.(160301).min.js"></script>
       <script type="text/javascript" src="./vendor/marked.(150731).js"></script>
       <script type="text/javascript" src="./vendor/angular-marked.(151122).js"></script>
-      <script type="text/javascript" src="./vendor/formFor.(160412)/form-for.min.js"></script>
-      <script type="text/javascript" src="./vendor/formFor.(160412)/form-for.material-templates.js"></script>
+      <!-- script type="text/javascript" src="./vendor/formFor.(160412)/form-for.min.js"></script>
+      <script type="text/javascript" src="./vendor/formFor.(160412)/form-for.material-templates.js"></script --><!-- TODO: Remove formFor support and lib -->
 
   <!-- APP - LOCAL ON PRODUCTION -->
       <!-- APP core -->
@@ -95,11 +95,13 @@
           <script type="text/javascript" src="app/core/enum.CountryUARegion.service.js"></script>
           <script type="text/javascript" src="app/core/enum.AptType.service.js"></script>
           <script type="text/javascript" src="app/core/data.LPS.service.js"></script>
+          <script type="text/javascript" src="app/core/data.import.service.js"></script>
+          <script type="text/javascript" src="app/core/network.dataFetcher.service.js"></script>
 
           <!-- APP global filters & directives -->
           <script type="text/javascript" src="app/core/filters/telephone.filter.js"></script>
           <script type="text/javascript" src="app/core/filters/telephoneSanitize.filter.js"></script>
-          <!-- script type="text/javascript" src="app/core/directives/telephoneNumber.directive.js"></script -->
+          <!-- script type="text/javascript" src="app/core/directives/telephoneNumber.directive.js"></script --><!-- TODO: Remove file from repo -->
           <script type="text/javascript" src="app/core/directives/ng-currency.directive.js"></script>
           <script type="text/javascript" src="app/core/directives/ng-telephone.directive.js"></script>
 
@@ -120,9 +122,11 @@
         <script type="text/javascript" src="./app/core/compileProvider-config.js"></script>
         <script type="text/javascript" src="./app/core/mdTheming-config.js"></script>
         <script type="text/javascript" src="./app/core/route-config.js"></script>
-        <script type="text/javascript" src="app/core/data.LPS-config.js"></script>
+        <script type="text/javascript" src="./app/core/data.LPS-config.js"></script>
         <script type="text/javascript" src="./app/core/markup-config.js"></script>
       <!-- runs -->
+        <script type="text/javascript" src="./app/core/database-run.js"></script> <!-- create admin -->
+        <script type="text/javascript" src="./app/core/database-mockdata-run.js"></script> <!-- create mock declarants -->
         <script type="text/javascript" src="./app/core/route-run.js"></script> <!-- enforce initial state show up -->
 
   </body>

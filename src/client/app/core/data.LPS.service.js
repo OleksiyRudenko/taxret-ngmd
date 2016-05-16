@@ -7,9 +7,11 @@
   DataLPSservice.$inject=[
     '$q',
     '$rootScope',
+    'lovefield',
     'enumPersonStatus',
     'enumCountryUARegionService',
     'enumAptType',
+    '$log',
   ];
 
   /**
@@ -17,18 +19,22 @@
    * @desc Uses Local Persistent Storage (LPS) based on IndexedDB; acts asynchronously
    * @param $q
    * @param $rootScope
+   * @param lovefield
    * @param enumPersonStatus
    * @param enumCountryUARegionService
    * @param enumAptType
+   * @param $log
    * @returns {{loadAll: Function}}
    * @constructor
    */
   function DataLPSservice(
       $q, 
-      $rootScope, 
+      $rootScope,
+      lovefield,
       enumPersonStatus,
       enumCountryUARegionService,
-      enumAptType
+      enumAptType,
+      $log
   ){
     var persons = [
       new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     enumPersonStatus.NPemp,    "СН788108", "2694204152", "",
@@ -72,6 +78,22 @@
      */
     function declarantsLoadAll() {
       // Simulate async nature of real remote calls
+
+      lovefield.getDB().then(function (db) {
+        var ePerson = db.getSchema().table('ePerson');
+
+        $log.debug('-- With love from dataLPSservice');
+        db.select()
+          .from(ePerson)
+          .where(lf.op.and(
+            ePerson.isNatPers.eq(true),
+            ePerson.isDeclarant.eq(true)))
+          .exec()
+          .then(function (results) {
+            $log.debug("--- SELECT * FROM ePerson = " + angular.toJson(results,true));
+          });
+      });
+
       return $q.when(persons);
     };
 
