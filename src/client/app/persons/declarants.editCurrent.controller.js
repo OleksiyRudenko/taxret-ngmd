@@ -75,6 +75,7 @@
       // copy required data
       // TODO: 2READ: http://stackoverflow.com/questions/728360/most-elegant-way-to-clone-a-javascript-object
       for (var attr in declarant) {
+        // use ({}).hasOwnProperty.call(declarant,attr) ?
         if (declarant.hasOwnProperty(attr)) vm.form.fields[attr] = declarant[attr]; // non-recursive cloning
       }
     }
@@ -99,6 +100,7 @@
       enumSet = dataLPSservice.enums.ePersonAptType.properties;
       vm.form.options.AptType = [];
       for (var attr in enumSet) {
+        // use ({}).hasOwnProperty.call(enumSet,attr) ?
         if (enumSet.hasOwnProperty(attr)) vm.form.options.AptType.push( { value: attr, label: enumSet[attr].descr });
       }
     }
