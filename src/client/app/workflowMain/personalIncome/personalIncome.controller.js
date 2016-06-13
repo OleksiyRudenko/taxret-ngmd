@@ -26,9 +26,11 @@
   ) {
     /* jshint validthis: true */
     var vm = this;
-    
-    // define tbv = table view 
-    vm.tbv.options = {       // view options
+
+    // ================ define tbv == table view
+    vm.tbv = {};
+    // view options
+    vm.tbv.options = {
       rowSelection:     true,
       multiSelect:      true,
       autoSelect:       true,
@@ -38,19 +40,23 @@
       limitSelect:      true,
       pageSelect:       true
     };
-    vm.tbv.selected = [];   // selected rows
-    vm.tbv.limitOptions = [5, 10, 15, {       // rows per page
+    // selected rows storage
+    vm.tbv.selected = [];
+    // rows per page selector set-up
+    vm.tbv.limitOptions = [5, 10, 15, {
       label: 'All',
       value: function () {
         return vm.data ? vm.data.count : 0;
       }
     }];
-    vm.tbv.query = {        // initial query
+    // initial query
+    vm.tbv.query = {
       order:  'name',
       limit:  5,
       page:   1
     };
-    vm.tbv.columns = [{     // table columns mapping
+    // table columns mapping
+    vm.tbv.columns = [{
  
     }];
 
