@@ -57,7 +57,47 @@
     };
     // table columns mapping
     vm.tbv.columns = [{
- 
+      name    : "Роботодавець",
+      orderBy : "employer"
+    }, {
+      name    : "Основне місце роботи",
+      orderBy : "isMainJob"
+    }, {
+      name    : "Рік",
+      orderBy : "year",
+      numeric : true
+    }, {
+      name    : "з",
+      orderBy : "monthBegin",
+      numeric : true
+    }, {
+      name    : "до",
+      orderBy : "monthEnd",
+      numeric : true
+    }, {
+      name    : "Дохід",
+      orderBy : "sumIncome",
+      numeric : true
+    }, {
+      name    : "ЄСВ",
+      orderBy : "sumUSI",
+      numeric : true
+    }, {
+      name    : "ПДФО",
+      orderBy : "sumTax",
+      numeric : true
+    }, {
+      name    : "Додаткове благо",
+      orderBy : "sumxIncome",
+      numeric : true
+    }, {
+      name    : "ПДФО з додатокового блага",
+      orderBy : "sumxTax",
+      numeric : true
+    }, {
+      name    : "Військовий збір",
+      orderBy : "sumMilTax",
+      numeric : true
     }];
 
   }

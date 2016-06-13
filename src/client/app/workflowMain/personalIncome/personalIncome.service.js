@@ -26,6 +26,24 @@
     dataLPSservice,
     $log
   ){
+    // array of arrays representing income references
+    var mockData = [[
+      {
+        employer    : 'Національний авіаційний університет',
+        isMainJob   : true,
+        year        : 2015,
+        monthBegin  : 1,
+        monthEnd    : 7,
+        sumIncome   : 70000,
+        sumUSI      : 1400,
+        sumTax      : 11900,
+        sumxIncome  : 7155,
+        sumxTax     : 1788.75,
+        sumMilTax   : 1100,
+      }
+    ], [
+      
+    ]];
     var service = {};
     
     return service;
