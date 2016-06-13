@@ -9,6 +9,7 @@
     'ngMaterial',
     'app.core',
     'app.persons',
+    'md.data.table',
     // 'formFor',
     // 'formFor.materialTemplates',
   ]);
