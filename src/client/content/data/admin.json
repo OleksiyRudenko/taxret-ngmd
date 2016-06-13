@@ -1,0 +1,33 @@
+[
+  {
+    "isActive"         : true,
+    "isNatPers"        : true,
+    "isAdmin"          : true,
+    "isDeclarant"      : true,
+    "isHirer"          : false,
+    "isTaxAgent"       : false,
+    "isTaxAuthority"   : false,
+    "avatarid"         : "svg-2",
+    "comment"          : "Це - запис адміністратора. Його не можна деактивувати.",
+    "nameLast"         : "Замінити",
+    "nameFirst"        : "Замінити",
+    "namePat"          : "Замінити",
+    "isUAresident"     : true,
+    "passportNr"       : "",
+    "idUAtaxCode"      : "0000000000",
+    "addrCountry"      : "Україна",
+    "addrRegion"       : 1,
+    "addrDistrict"     : "",
+    "addrPO"           : "",
+    "addrCity"         : "",
+    "addrCityDistrict" : "",
+    "addrStreet"       : "",
+    "addrBuilding"     : "",
+    "addrSubBuilding"  : "",
+    "addrApt"          : "",
+    "addrAptType"      : 1,
+    "telNr"            : "",
+    "email"            : "",
+    "taxAuthName"      : ""
+  }
+]

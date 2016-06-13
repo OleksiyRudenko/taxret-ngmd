@@ -1,10 +1,9 @@
 /**
- * Created by keyroot on 28/04/2016.
+ * Created by Oleksiy Rudenko on 2016-04-28.
  */
 (function() {
   'use strict';
 
-  // configuration for routing 
   angular
     .module('app')
     .run(function ($state) { // force $state due to ui-view includes 

@@ -75,6 +75,7 @@
       // copy required data
       // TODO: 2READ: http://stackoverflow.com/questions/728360/most-elegant-way-to-clone-a-javascript-object
       for (var attr in declarant) {
+        // use ({}).hasOwnProperty.call(declarant,attr) ?
         if (declarant.hasOwnProperty(attr)) vm.form.fields[attr] = declarant[attr]; // non-recursive cloning
       }
     }
@@ -85,16 +86,21 @@
      */
     function ImportOptions() {
       // import from collection
-      var enumSet = dataLPSservice.enums.AddressRegion;
+      var enumSet;
+      /* enumSet = dataLPSservice.enums.AddressRegion.properties;
       vm.form.options.AddressRegion = [];
       for (var attr in enumSet) {
-        if (enumSet.hasOwnProperty(attr)) vm.form.options.AddressRegion.push( { value: attr, label: enumSet[attr] });
+        if (enumSet.hasOwnProperty(attr)) vm.form.options.AddressRegion.push( { value: attr, label: enumSet[attr].descr });
       }
+      */
+
+      vm.form.options.AddressRegion = dataLPSservice.enums.AddressRegion.selectOptions().slice(0); // clone
 
       // import from true enum
       enumSet = dataLPSservice.enums.ePersonAptType.properties;
       vm.form.options.AptType = [];
       for (var attr in enumSet) {
+        // use ({}).hasOwnProperty.call(enumSet,attr) ?
         if (enumSet.hasOwnProperty(attr)) vm.form.options.AptType.push( { value: attr, label: enumSet[attr].descr });
       }
     }
@@ -111,7 +117,8 @@
           return;
         }
       }
-      alert('Дані прийнято.');
+      // alert('Дані прийнято.');
+
     }
 
     /**

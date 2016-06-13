@@ -48,6 +48,7 @@ Material Start project but not currently in use.
 
 | [IndexedDB](https://www.w3.org/TR/IndexedDB/) | [Lovefield <sup>[2016-04-11]</sup>](https://github.com/google/lovefield) | [ng-lovefield <sup>[2016-03-01]</sup>](https://github.com/kutomer/ng-lovefield) |
 | --- | --- | --- |
+| [angular-IndexedDB.coffee](https://github.com/bramski/angular-indexedDB) |  | |
 
 [**[back-to-top](#table-of-contents)**]
 
