@@ -9,6 +9,8 @@ angular
       // -- Angular & Angular Material helpers
       'ngMessages',
       'ngMaterial',
+      // -- UI widgets
+      'md.data.table',
       // -- Routing
       'ui.router',
       // -- Markup
