@@ -23,8 +23,9 @@ angular
 
     // App Features
       'app.core',
-      'app.persons',
       'app.layout',
+      'app.persons',
+      'app.personalIncome',
 
   ]);
   
