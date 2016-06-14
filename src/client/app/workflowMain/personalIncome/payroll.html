@@ -2,8 +2,8 @@
 <!-- workflowMain/personalIncome/payroll.html -->
 <h1>Доходи фізичної особи</h1>
 <hr/>
-<md-content layout="column" flex ng-controller="PerosnalIncomeController as picct">
-    <md-card>
+<md-content layout="column" flex ng-controller="PersonalIncomeController as picct">
+    <!-- md-card>
         <div layout="row" layout-wrap class="checkboxes">
             <md-checkbox ng-model="options.rowSelection">Row Selection</md-checkbox>
             <md-checkbox ng-model="options.multiSelect">Multiple Selection</md-checkbox>
@@ -14,9 +14,9 @@
             <md-checkbox ng-model="options.limitSelect" ng-click="toggleLimitOptions()">Pagination Limit Select</md-checkbox>
             <md-checkbox ng-model="options.pageSelect">Pagination Page Select</md-checkbox>
         </div>
-    </md-card>
+    </md-card -->
 
-    <md-card ng-include="'templates/nutrition-table.html'"></md-card>
+    <md-card ng-include="'./app/workflowMain/personalIncome/personalIncome.list.html'"></md-card>
 
 </md-content>
 
