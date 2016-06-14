@@ -6,7 +6,7 @@
             <md-icon>filter_list</md-icon>
         </md-button>
         <md-button class="md-icon-button" ng-click="picct.addItem($event)">
-            <md-icon>local_dining</md-icon>
+            <md-icon>add_circle</md-icon>
         </md-button>
     </div>
 </md-toolbar>
@@ -40,11 +40,12 @@
              However, it doesn't always work as expected at least with md-data-table lib.
              It definitely doesn't work for: ng-attr-md-numeric.
              Known issue: https://github.com/daniel-nagy/md-data-table/issues/64
+             There is also $parse() error if md-numeric assigned any value.
             -->
             <!-- draw headers -->
             <th md-column
                 ng-repeat="column in picct.tbv.columns"
-                md-numeric="{{column.numeric}}">
+                data-void--md-numeric="{{column.numeric}}">
                 <span>{{column.name}}</span>
             </th>
             <!-- th md-column md-order-by="nameToLower"><span>Dessert (100g serving)</span></th>
