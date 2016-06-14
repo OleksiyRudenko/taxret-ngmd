@@ -36,8 +36,17 @@
     <table md-table md-row-select multiple ng-model="picct.tbv.selected" md-progress="picct.promise">
         <thead md-head md-order="picct.tbv.query.order" md-on-reorder="picct.getItems">
         <tr md-row>
+            <!-- ng-attr-md-*={value|undefined} should work like if undefined then md-* attr is not injected.
+             However, it doesn't always work as expected at least with md-data-table lib.
+             It definitely doesn't work for: ng-attr-md-numeric.
+             Known issue: https://github.com/daniel-nagy/md-data-table/issues/64
+            -->
             <!-- draw headers -->
-            <th md-column ng-repeat="column in picct.tbv.columns"><span>{{column.name}}</span></th>
+            <th md-column
+                ng-repeat="column in picct.tbv.columns"
+                md-numeric="{{column.numeric}}">
+                <span>{{column.name}}</span>
+            </th>
             <!-- th md-column md-order-by="nameToLower"><span>Dessert (100g serving)</span></th>
             <th md-column md-numeric md-order-by="calories.value"><span>Calories</span></th>
             <th md-column md-numeric>Fat (g)</th>
