@@ -8,6 +8,7 @@
     .controller('PersonalIncomeController',  PersonalIncomeController);
 
   PersonalIncomeController.$inject = [
+    '$scope',
     'PersonalIncomeService',
     '$log',
   ];
@@ -15,12 +16,14 @@
   /**
    * @name PersonalIncomeController
    * @desc Manage current declarant's personal income references
+   * @param $scope to employ $watch
    * @param PersonalIncomeService
    * @param $log
    * @constructor
    * Employs https://github.com/daniel-nagy/md-data-table
    */
   function PersonalIncomeController(
+    $scope,
     PersonalIncomeService,
     $log
   ) {
@@ -50,11 +53,12 @@
     };
     // rows per page selector set-up
     vm.tbv.limitOptions = [5, 10, 15, {
-      label: 'All',
+      label: 'Всі',
       value: function () {
         return vm.data ? vm.data.count : 0;
       }
     }];
+    // vm.tbv.bookmark -- current page, created by .$watch()
     // initial query
     vm.tbv.query = {
       order:  'name',
@@ -105,6 +109,68 @@
       orderBy : "sumMilTax",
       numeric : true
     }];
+
+    vm.getItems     = getItems;
+    vm.addItem      = addItem;
+    vm.deleteItem   = deleteItem;
+    vm.removeFilter = removeFilter;
+    
+    // Internal methods
+
+    function addItem(event) {
+      $mdDialog.show({
+        clickOutsideToClose : true,
+        controller          : 'piAddItemController',
+        controllerAs        : 'ctrl',
+        focusOnOpen         : false,
+        targetEvent         : event,
+        templateUrl         : './app/workflowMain/personalIncome/dialog.AddItem.html',
+      }).then(vm.getItems);
+    };
+
+    function getItems() {
+      vm.promise = PersonalIncomeService.personalIncomeReferences.get(vm.query, success).$promise; // ex desserts.get
+    }
+
+    function deleteItem(event) {
+      $mdDialog.show({
+        clickOutsideToClose : true,
+        controller          : 'piDeleteItemController',
+        controllerAs        : 'ctrl',
+        focusOnOpen         : false,
+        targetEvent         : event,
+        locals              : { items: vm.selected },                 // ex desserts: vm.selected
+        templateUrl         : './app/workflowMain/personalIncome/dialog.DeleteItem.html',
+      }).then(vm.getItems);
+    };
+
+    function removeFilter() {
+      vm.filter.show = false;
+      vm.query.filter = '';
+
+      if(vm.filter.form.$dirty) {
+        vm.filter.form.$setPristine();
+      }
+    };
+
+  $scope.$watch(
+    function(scope) {
+      return vm.tbv.query.filter;           // instead of 'vm.tbv....' which is illegal in ControllerAs syntax
+    }, function (newValue, oldValue) {
+      if(!oldValue) {
+        vm.tbv.bookmark = vm.tbv.query.page;
+      }
+
+      if(newValue !== oldValue) {
+        vm.tbv.query.page = 1;
+      }
+
+      if(!newValue) {
+        vm.tbv.query.page = vm.tbv.bookmark;
+      }
+
+      vm.getItems();
+    });
 
   }
 
