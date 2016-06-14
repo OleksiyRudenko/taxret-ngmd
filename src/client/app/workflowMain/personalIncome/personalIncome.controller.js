@@ -42,6 +42,12 @@
     };
     // selected rows storage
     vm.tbv.selected = [];
+    // data filter settings
+    vm.tbv.filter = {
+      options: {
+        debounce: 500
+      }
+    };
     // rows per page selector set-up
     vm.tbv.limitOptions = [5, 10, 15, {
       label: 'All',
