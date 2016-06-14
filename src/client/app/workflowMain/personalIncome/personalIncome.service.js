@@ -47,6 +47,11 @@
     var service = {};
     
     return service;
+
+    function get(id) {
+      return $q.resolve(mockData[id]);
+    }
+
   }
 
 })();
