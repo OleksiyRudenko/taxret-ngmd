@@ -61,9 +61,9 @@
     // vm.tbv.bookmark -- current page, created by .$watch()
     // initial query
     vm.tbv.query = {
-      order:  'name',
-      limit:  5,
-      page:   1
+      order   : 'name',
+      limit   : 5,
+      page    : 1
     };
     // table columns mapping
     vm.tbv.columns = [{
@@ -129,7 +129,12 @@
     };
 
     function getItems() {
-      vm.promise = PersonalIncomeService.personalIncomeReferences.get(vm.query, success).$promise; // ex desserts.get
+      // vm.promise = PersonalIncomeService.personalIncomeReferences.get(vm.query, success).$promise; // ex desserts.get
+      vm.promise = PersonalIncomeService.get(vm.query, success).$promise;
+    }
+    
+    function success(items) {
+      vm.items = items;
     }
 
     function deleteItem(event) {

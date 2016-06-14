@@ -18,7 +18,7 @@
    * @param $q
    * @param dataLPSservice
    * @param $log
-   * @returns {{loadAll: Function}}
+   * @returns {{Object}}
    * @constructor
    */
   function PersonalIncomeService(
@@ -44,11 +44,14 @@
     ], [
       
     ]];
-    var service = {};
+    var service = {
+      get   : get,
+    };
     
     return service;
 
-    function get(id) {
+    function get(query, successCallback) {
+      var idOwner = dataLPSservice.declarants.getCurrent();
       return $q.resolve(mockData[id]);
     }
 
