@@ -94,7 +94,7 @@
           });
       });
 
-      return $q.when(persons);
+      return $q.resolve(persons);
     };
 
     /**
