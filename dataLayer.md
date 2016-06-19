@@ -6,9 +6,15 @@ Purposes:
 
 ## Foreign Data
 
+## Same Origin Data
 
 ## Local Data Storage
 
+### Initial Defaults
 
-## Cache
+### Cache
+
+### Reservation
+
+## Cache Provider
 
