@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 However, here branches instead of versions described.
 
+## [fea-160613-persIncome] - 2016-06-13
+Personal income references from employers feature.
+
 ## [fea-160510-dbdeclarant] - 2016-05-10
 Synchronize user input form with Local Persistent Storage via dataLPS service.
 

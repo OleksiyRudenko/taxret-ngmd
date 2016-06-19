@@ -8,6 +8,7 @@
     '$scope',
     '$state',
     'dataLPSservice',
+    'DataImportService',
     '$mdDialog',
     '$mdMedia',
     '$log',
@@ -18,6 +19,7 @@
    * @desc User List Controller for the TaxRet App
    * @param $scope
    * @param dataLPSservice
+   * @param DataImportService
    * @param $mdDialog
    * @param $mdMedia
    * @param $log
@@ -27,6 +29,7 @@
       $scope,
       $state,
       dataLPSservice,
+      DataImportService,
       $mdDialog,
       $mdMedia,
       $log
@@ -38,6 +41,13 @@
 
     vm.declarants       = [ ];
     vm.selectDeclarant  = selectDeclarant;
+
+    // Create mock data
+    DataImportService.init().then(
+      function() {
+        // start observing; see src/final/query_builder_controller.js (basepath: @network.dataFetcher.service.js)
+      }
+    );
 
     // Load all registered persons
     dataLPSservice

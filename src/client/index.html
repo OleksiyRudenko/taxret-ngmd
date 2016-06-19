@@ -88,18 +88,29 @@
       <script type="text/javascript" src="app/core/core.module.js"></script>
       <script type="text/javascript" src="app/core/core.controller.js"></script>
       <script type="text/javascript" src="app/core/core.service.js"></script>
+
+          <!-- APP global services -->
+          <script type="text/javascript" src="app/core/enum.baseService.js"></script>
+          <script type="text/javascript" src="app/core/enum.PersonStatus.service.js"></script>
+          <script type="text/javascript" src="app/core/enum.CountryUARegion.service.js"></script>
+          <script type="text/javascript" src="app/core/enum.AptType.service.js"></script>
+          <script type="text/javascript" src="app/core/data.LPS.service.js"></script>
+          <script type="text/javascript" src="app/core/data.import.service.js"></script>
+          <script type="text/javascript" src="app/core/network.dataFetcher.service.js"></script>
+
           <!-- APP global filters & directives -->
           <script type="text/javascript" src="app/core/filters/telephone.filter.js"></script>
           <script type="text/javascript" src="app/core/filters/telephoneSanitize.filter.js"></script>
           <!-- script type="text/javascript" src="app/core/directives/telephoneNumber.directive.js"></script --><!-- TODO: Remove file from repo -->
           <script type="text/javascript" src="app/core/directives/ng-currency.directive.js"></script>
           <script type="text/javascript" src="app/core/directives/ng-telephone.directive.js"></script>
+
       <!-- APP features -->
       <script type="text/javascript" src="app/persons/persons.module.js"></script>
       <script type="text/javascript" src="app/persons/declarants.controller.js"></script>
       <script type="text/javascript" src="app/persons/declarants.editCurrent.controller.js"></script>
-      <script type="text/javascript" src="app/core/data.LPS.service.js"></script>
       <script type="text/javascript" src="app/persons/personAvatarGrid.controller.js"></script>
+
       <!-- APP General View Layout -->
           <script type="text/javascript" src="./app/layout/layout.module.js"></script>
           <script type="text/javascript" src="./app/layout/shell.controller.js"></script>
@@ -111,9 +122,11 @@
         <script type="text/javascript" src="./app/core/compileProvider-config.js"></script>
         <script type="text/javascript" src="./app/core/mdTheming-config.js"></script>
         <script type="text/javascript" src="./app/core/route-config.js"></script>
-        <script type="text/javascript" src="app/core/data.LPS-config.js"></script>
+        <script type="text/javascript" src="./app/core/data.LPS-config.js"></script>
         <script type="text/javascript" src="./app/core/markup-config.js"></script>
       <!-- runs -->
+        <script type="text/javascript" src="./app/core/database-run.js"></script> <!-- create admin -->
+        <script type="text/javascript" src="./app/core/database-mockdata-run.js"></script> <!-- create mock declarants -->
         <script type="text/javascript" src="./app/core/route-run.js"></script> <!-- enforce initial state show up -->
 
   </body>
