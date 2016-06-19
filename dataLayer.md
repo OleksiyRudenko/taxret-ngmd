@@ -1,12 +1,23 @@
 # Data Layer
 
 Purposes:
-- abstraction layer for data exchange
-- caching data
+ * abstraction layer for data exchange
+ * uniform interface to:
+   - $http (via ngResource)
+   - IndexedDB/other storages (via ngLovefield); see [Lovefield Data Store](https://github.com/google/lovefield/blob/master/docs/spec/02_data_store.md) for details 
+   - localStorage
+   - sessionStorage
+ * caching data (fetch from remote unless already stored locally)
 
-## Foreign Data
+## Process overview
 
-## Same Origin Data
+
+
+## Remote Data Storage
+
+### Foreign Data
+
+### Same Origin Data
 
 ## Local Data Storage
 
@@ -14,7 +25,5 @@ Purposes:
 
 ### Cache
 
-### Reservation
-
-## Cache Provider
+### Id Reservation
 
