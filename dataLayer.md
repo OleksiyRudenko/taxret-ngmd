@@ -115,6 +115,8 @@ resources and local storage:
 
 Make cache synced also to remote server.
 
+See [angular-cached-resource](https://github.com/goodeggs/angular-cached-resource).
+
 ### Id Reservation
 
 An app server supplies client (token) with a set (range) of ids to use.
@@ -130,3 +132,17 @@ This enables bi-directional sync, sync across devices transfer of
 Each id (not just ranges) has its owner identified by token.
 
 An hierarchy of owners (delegation with limited powers) can be built.
+
+## Other Related Resources
+
+[How to force AngularJS resource resolution with ui-router [2014-03-18]](http://www.jvandemo.com/how-to-resolve-angularjs-resources-with-ui-router/)
+
+[Extending Angular’s $resource Service for a Consistent API [2014-06-03]](https://objectpartners.com/2014/06/03/extending-angulars-resource-service-for-a-consistent-api/) +
+[gist](https://gist.github.com/brucecoddington/92a8d4b92478573d0f42)
+
+
+[Injecting a mock into an AngularJS service [2013-02-08..2016-04-13]](http://stackoverflow.com/questions/14773269/injecting-a-mock-into-an-angularjs-service) +
+[gist](https://gist.github.com/alicial/7681791)
+
+[$httpBackend [ng 1.5.1]](https://code.angularjs.org/1.5.1/docs/api/ngMock/service/$httpBackend)
+
