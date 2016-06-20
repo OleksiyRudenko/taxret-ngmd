@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 However, here branches instead of versions described.
 
+## [core-160620-remoteResource] - 2016-06-20
+- Extends ngResource with default actions `.create()` and `.update()`.
+- Overloads `.save()` so it invokes either `.create()` or `.update()` depending on `id` status (falsy or truthy).
+
+
 ## [fea-160613-persIncome] - 2016-06-13
 Personal income references from employers feature.
 
