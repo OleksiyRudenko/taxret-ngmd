@@ -145,6 +145,8 @@ An hierarchy of owners (delegation with limited powers) can be built.
 
 [$httpBackend [ng 1.5.1]](https://code.angularjs.org/1.5.1/docs/api/ngMock/service/$httpBackend)
 
+[Can angular resource do a bulk restful operation? [2013-06-18..2014-02-21]](http://stackoverflow.com/questions/17179416/can-angular-resource-do-a-bulk-restful-operation)
+
 ### Related Modules
 
 [angular-webstorage [2013]](http://ngmodules.org/modules/angular-webstorage) +
