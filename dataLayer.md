@@ -140,9 +140,20 @@ An hierarchy of owners (delegation with limited powers) can be built.
 [Extending Angular’s $resource Service for a Consistent API [2014-06-03]](https://objectpartners.com/2014/06/03/extending-angulars-resource-service-for-a-consistent-api/) +
 [gist](https://gist.github.com/brucecoddington/92a8d4b92478573d0f42)
 
-
 [Injecting a mock into an AngularJS service [2013-02-08..2016-04-13]](http://stackoverflow.com/questions/14773269/injecting-a-mock-into-an-angularjs-service) +
 [gist](https://gist.github.com/alicial/7681791)
 
 [$httpBackend [ng 1.5.1]](https://code.angularjs.org/1.5.1/docs/api/ngMock/service/$httpBackend)
 
+### Related Modules
+
+[angular-webstorage [2013]](http://ngmodules.org/modules/angular-webstorage) +
+[github [2015-12-20]](https://github.com/fredricrylander/angular-webstorage)
+
+[ngStorage [2013]](http://ngmodules.org/modules/ngStorage) +
+[github [2016-06-08]](https://github.com/gsklee/ngStorage)
+
+[angular-storage by Auth0 [2013]](http://ngmodules.org/modules/angular-storage) +
+[github [2016-04-03]](https://github.com/auth0/angular-storage)
+
+More @ [ngmodules tag:localStorage](http://ngmodules.org/tags/localStorage)
