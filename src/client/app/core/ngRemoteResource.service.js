@@ -3,6 +3,17 @@
  *
  * Extends ngResource.
  * Credits to Kirk Bushell http://kirkbushell.me/angular-js-using-ng-resource-in-a-more-restful-manner/
+ *
+ * **Usage**
+ * Inject module dependency:
+ * angular.module( 'app', [ 'ngRemoteResource' ] ); // inject dependency
+ *
+ * Inject dependency on service
+ * angular.module( 'app' ).factory( 'UserResource', UserResource );
+ * UserResource.$inject=[ 'RemoteResource' ];
+ * function UserResource( $resource ) {
+ *   return $resource( 'users/:id', { id: '@id' } ); // extended version invoked
+ * }
  */
 
 (function(){
