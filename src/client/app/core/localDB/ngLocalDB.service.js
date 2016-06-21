@@ -18,23 +18,74 @@
   function LocalDB() { // lovefield, $rootScope, $q, $log) {
     // service to return
     this.$get = LocalDBservice;
-    // configuration setting methods
-
-    // private configurable variables
-
-    // ====================== code
 
     // configuration setting methods
+    this.setDB                = setDB;
+    this.setDBconfigBasePath  = setDBconfigBasePath;
+    this.setDBname            = setDBname;
+    this.setDBversion         = setDBversion;
+
+    // private configurable variables with defaults
+    var privateDBconfigBasePath = './';
+    var privateDBname           = 'test';
+    var privateDBversion        = 1;
+
+    // ====================== code =================================
+    // configuration setting methods
+    function setDB(dbConfigBasePath, dbName, dbVersion) {
+      setDBconfigBasePath(dbConfigBasePath);
+      setDBname(dbName);
+      setDBversion(dbVersion);
+    }
+
+    function setDBconfigBasePath(dbConfigBasePath) {
+      if (dbConfigBasePath.length==0)
+        dbConfigBasePath = './';                // set current working directory
+      else
+        if (dbConfigBasePath.slice(-1)!=='/')
+          dbConfigBasePath += '/';              // add trailing slash
+      privateDBconfigBasePath = dbConfigBasePath;
+    }
+
+    function setDBname(dbName) {
+      privateDBname = dbName;
+    }
+
+    function setDBversion(dbVersion) {
+      dbVersion = parseInt(0 + dbVersion);
+      privateDBversion = (dbVersion<1) ? 1 : dbVersion;
+    }
 
     // Main service
     function LocalDBservice() {
       var service = {
-        version       : privateVersion,
-        schemaPath    : privateSchemaPath,
-        upgradeConfig : privateUpgradeConfig,
+        DBconfigBasePath  : privateDBconfigBasePath,
+        DBname            : privateDBname,
+        DBversion         : privateDBversion,
       };
 
       return service;
+
+      // public service methods
+
+      // private service methods
+      function configPathBuild(version) {
+        return this.DBconfigBasePath + ('000' + this.DBversion).slice(-3) + '/';
+      }
+
+      function loadDBschema(version) {
+        if (!!version)
+          version = this.DBversion;
+
+      }
+
+      function loadDBupgrade(version) {
+        if (!!version)
+          version = this.DBversion;
+
+      }
+
+
     }
 
   }
