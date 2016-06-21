@@ -162,7 +162,10 @@ limit `STRING` length to a value of
 regexp (`new RegExp("a|b\\w", "i");`,
 [see also](http://stackoverflow.com/questions/874709/converting-user-input-string-to-regular-expression))
 
+per language?
+
 onMismatch
+
 
 unique
 
