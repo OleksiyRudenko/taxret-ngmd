@@ -6,6 +6,13 @@
 
   angular
     .module('app')
-    .run(function ($state) { // force $state due to ui-view includes 
-    });
+      .run(runRoutine);
+
+  runRoutine.$inject = [
+    '$state',
+  ];
+
+  function runRoutine($state) { // force $state due to ui-view includes
+    // itentionally left blank!
+  }
 })();
