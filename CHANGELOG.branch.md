@@ -8,6 +8,7 @@ However, here branches instead of versions described.
 - Extends ngResource with default actions `.create()` and `.update()`.
 - Overloads `.save()` so it invokes either `.create()` or `.update()` depending on `id` status (falsy or truthy).
 
+[**completed**]
 
 ## [fea-160613-persIncome] - 2016-06-13
 Personal income references from employers feature.
