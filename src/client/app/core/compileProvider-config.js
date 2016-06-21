@@ -4,14 +4,7 @@
   // configuration for routing
   angular
     .module('app')
-    .config(
-      ConfigCompileProvider
-      /*
-      ['$compileProvider',
-      function($compileProvider) {
-        $compileProvider.debugInfoEnabled(false); // XXX: 'true' enables debugging with Protractor & Batarang, affects app performance
-      }] */
-    );
+    .config( ConfigCompileProvider );
 
   ConfigCompileProvider.$inject = [
     '$compileProvider',

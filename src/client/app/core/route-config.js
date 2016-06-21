@@ -4,14 +4,20 @@
   // configuration for routing 
   angular
     .module('app')
-      .config(function($stateProvider, $urlRouterProvider) {
+      .config( configure );
+  
+  configure.$inject = [
+    '$stateProvider', 
+    '$urlRouterProvider'
+  ];
+   
+  function configure($stateProvider, $urlRouterProvider) {
           //
-          // For any unmatched url, redirect to /state1
+          // For any unmatched url, redirect to /payroll
           $urlRouterProvider.otherwise("/payroll");
           //
           // Now set up the states
           $stateProvider
-
             // Declarants and its tabs
             .state('declarants', {
               url: "/declarants",
@@ -113,6 +119,6 @@
               url: "/docDev",
               templateUrl: "./app/manuals/docDev.html"
             })
-      });
+      };
 
 })();

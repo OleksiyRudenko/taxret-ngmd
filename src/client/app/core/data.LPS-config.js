@@ -4,8 +4,13 @@
   // configuration for database support
   angular
     .module('app')
-      .config(['lovefieldProvider',
-        function(lovefieldProvider) {
+      .config( configure );
+  
+  configure.$inject = [
+    'lovefieldProvider',
+  ];
+  
+  function configure(lovefieldProvider) {
             var schemaBuilder = lovefieldProvider.create('taxret', 1); // DataBase
 
             schemaBuilder.createTable('ePerson')
@@ -40,11 +45,6 @@
               .addColumn('email', lovefieldProvider.Type.STRING)
               .addColumn('taxAuthName', lovefieldProvider.Type.STRING)
               .addPrimaryKey(['id']);
-
-
-        }]
-      );
-
-
+        }
 
 })();
