@@ -17,7 +17,7 @@
 
   function LocalDB() { // lovefield, $rootScope, $q, $log) {
     // service to return
-    this.$get = LocalDBservice;
+    this.$get = [ 'lovefield', '$rootScope', '$q', '$log', LocalDBservice ];
 
     // configuration setting methods
     this.setDB                = setDB;
@@ -57,7 +57,7 @@
     }
 
     // MAIN SERVICE
-    function LocalDBservice() {
+    function LocalDBservice( lovefield, $rootScope, $q, $log ) {
       var service = {
         DBconfigBasePath  : privateDBconfigBasePath,
         DBname            : privateDBname,
