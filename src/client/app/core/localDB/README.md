@@ -174,16 +174,19 @@ not allowed according to Field Constraints.
 
 There is a number of preset behaviours available depending on field data type.
 
-| Data Type | onBelow | onAbove | onNull |
-| :--- | :--- | :--- | :--- |
-| numeric types | error,min,_value_ | error,max,_value_ | error,min,max,_value_ |
-| string types  | error,pad | error,trunc | error,spaces(.length=min),'string value' |
+| Data Type | onBelow | onAbove | onNull | onChange |
+| :--- | :--- | :--- | :--- | :--- |
+| numeric types | error,min,_value_ | error,max,_value_ | error,min,max,_value_ | allow,deny |
+| string types  | error,pad | error,trunc | error,spaces(.length=min),'string value' | allow,deny |
 | other |
 
 
 ID mutable?
 
-System defaults can be overridden with cross-database defaults unless marked with *.
+System defaults come first in a list and can be overridden with other behaviours from the list
+on field definition or with cross-database defaults unless marked with.
+
+If there is single behaviour then it is not overridable.
 
 [**[back-to-top](#table-of-contents)**]
 
@@ -191,7 +194,7 @@ System defaults can be overridden with cross-database defaults unless marked wit
 
 #### Primary Key
 
-Cross-database defaults (id/_id)
+Cross-database defaults (id/_id, auto-declare primary if id/_id field present)
 
 #### Foreign Key
 
