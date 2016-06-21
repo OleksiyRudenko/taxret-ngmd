@@ -6,16 +6,36 @@
   'use strict';
 
   angular.module('ngLocalDB')
-    .factory('LocalDBservice', LocalDBservice);
+    .provider('LocalDB', LocalDB);
 
-  LocalDBservice.$inject = [
+  /* LocalDBservice.$inject = [
     'lovefield',
     '$rootScope',
     '$q',
     '$log',
-  ];
+  ]; */
 
-  function LocalDBservice(lovefield, $rootScope, $q, $log) {
+  function LocalDB() { // lovefield, $rootScope, $q, $log) {
+    // service to return
+    this.$get = LocalDBservice;
+    // configuration setting methods
+
+    // private configurable variables
+
+    // ====================== code
+
+    // configuration setting methods
+
+    // Main service
+    function LocalDBservice() {
+      var service = {
+        version       : privateVersion,
+        schemaPath    : privateSchemaPath,
+        upgradeConfig : privateUpgradeConfig,
+      };
+
+      return service;
+    }
 
   }
 })();
