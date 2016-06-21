@@ -166,6 +166,10 @@ Other precision values rounded down, but 6 is a minimum.
 
 ### Field Constraints
 
+regexp (`new RegExp("a|b\\w", "i");`,
+[see also](http://stackoverflow.com/questions/874709/converting-user-input-string-to-regular-expression))
+
+onMismatch
 
 #### Behaviour
 
