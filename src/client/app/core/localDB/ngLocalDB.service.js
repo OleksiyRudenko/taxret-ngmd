@@ -56,7 +56,7 @@
       privateDBversion = (dbVersion<1) ? 1 : dbVersion;
     }
 
-    // Main service
+    // MAIN SERVICE
     function LocalDBservice() {
       var service = {
         DBconfigBasePath  : privateDBconfigBasePath,
@@ -66,9 +66,9 @@
 
       return service;
 
-      // public service methods
+      // PUBLIC SERVICE METHODS
 
-      // private service methods
+      // PRIVTAE SERVICE METHODS
       function configPathBuild(version) {
         return this.DBconfigBasePath + ('000' + this.DBversion).slice(-3) + '/';
       }
