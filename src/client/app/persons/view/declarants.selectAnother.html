@@ -1,0 +1,15 @@
+<md-content class="md-padding">
+    <md-list>
+        <md-list-item ng-repeat="it in declarantct.declarants">
+            <md-button ng-click="declarantct.selectDeclarant(it);"
+                       ng-class="{'selected' : it === declarantct.dataLPSservice.declarants.getCurrent() }">
+                <md-icon md-svg-icon="{{it.avatarid}}" class="avatar"></md-icon>
+                {{it.nameLastInitials()}}
+            </md-button>
+        </md-list-item>
+    </md-list>
+</md-content>
+<!-- h3>List of State 1 Items</h3>
+<ul>
+    <li ng-repeat="item in items">{{ item }}</li>
+</ul -->

@@ -13,8 +13,12 @@ angular
       'ui.router',
       // -- Markup
       'hc.marked',
-      // -- Database
+      // -- Data Layer
+      'ngRemoteResource',
       'kutomer.ng-lovefield',
+      // -- Directives
+      'ng-currency',
+      'ng-telephone',
 
     // App Features
       'app.core',

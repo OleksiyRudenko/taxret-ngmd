@@ -5,7 +5,7 @@ General project todo's
 ## Invent or find ready-made solution to
 
 - [ ] design a model so it is DRY to view, user input, data storage
-- [ ] auto-update field on blur if field validated OK
+- [ ] auto-update field to database on blur if field validated OK
 - [ ] new entry : insert a new record upon all required fields validated OK
 
 ## Implement libs
@@ -17,6 +17,11 @@ General project todo's
 - [ ] [angular-xeditable](https://vitalets.github.io/angular-xeditable/)
 - [ ] REST user:id
 - [ ] [Lovefield](https://github.com/google/lovefield) / [ng-lovefield](https://github.com/kutomer/ng-lovefield)
+
+## Implement features
+
+ - [ ] [HTML5 Application cache](http://www.w3schools.com/html/html5_app_cache.asp)
+ - [ ] [HTML5 Server-sent Events](http://www.w3schools.com/html/html5_serversentevents.asp)
 
 ## Master technologies/techniques
 

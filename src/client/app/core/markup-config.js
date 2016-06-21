@@ -4,12 +4,19 @@
   // configuration for database support
   angular
     .module('app')
-      .config(['markedProvider', function (markedProvider) {
+      .config( configure );
+  
+  configure.$inject = [
+    'markedProvider',
+  ];
+  
+  function configure(markedProvider) {
           markedProvider.setOptions({gfm: true, tables: true, });
           markedProvider.setRenderer({
             link: function (href, title, text) {
               return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank'>" + text + "</a>";
             }
           });
-      }]);
+      };
+  
 })();

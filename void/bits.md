@@ -83,6 +83,28 @@ See [explanation](https://gist.github.com/demisx/9605099)
 and also [in details](http://www.simplygoodcode.com/2015/11/the-difference-between-service-provider-and-factory-in-angularjs/)
 and on [docs.angularJS.org](https://docs.angularjs.org/guide/services)
 
+### Service and Factory inheritance
+
+http://stackoverflow.com/questions/26642174/angularjs-service-inheritance
+
+http://stackoverflow.com/questions/15192722/javascript-extending-class (see comment on AngularJS) --
+used to design `enum.*`
+
+http://blog.mgechev.com/2013/12/18/inheritance-services-controllers-in-angularjs/
+
+More to read:
+
+http://krasimirtsonev.com/blog/article/object-oriented-programming-oop-in-javascript-extending-Inheritance-classes
+
+http://www.bennadel.com/blog/1514-extending-classes-in-object-oriented-javascript.htm
+
+http://blog.revolunet.com/blog/2014/02/14/angularjs-services-inheritance/
+
+http://stackoverflow.com/questions/23788567/angularjs-extending-services-and-inheritance
+
+
+
+
 ## vm vs $scope
 
 [AngularJS's Controller As and the vm Variable<sup>[2014-06-24]</sup>](http://www.johnpapa.net/angularjss-controller-as-and-the-vm-variable/)
@@ -102,6 +124,10 @@ Avoid binding to primitives, even those produced by `ng-repeat`:
 
 ## $rootScope
 [broadcast/emit...](https://makeomatic.ru/blog/2014/10/07/Angular_scope_rootScope/)
+
+## Filters
+
+[Collection by a8m](https://github.com/a8m/angular-filter)
 
 ## misc
 
