@@ -42,6 +42,17 @@ The purpose to is to:
 
 ### Configuring Schema
 
+DB schema can be defined in _lazy_ or _strict_ format.
+
+Normally, you will want to start with _lazy_ format, which is compiled by LocalDB into _strict_
+internally before applied.
+
+Strict presentation of schema can be exported and stored for future use.
+Schema loader's workflow depending on argument value:
+ - `'strict'` - loads `schema.strict.json`
+ - `'lazy'` - loads `schema.json`
+ - no argument - loads `schema.strict.json` if available or `schema.json` otherwise
+
 ### Data Types
 
 | Data Type | `lovefield` Type Mapping* | JavaScript type |
