@@ -4,54 +4,47 @@
 
   angular.module('app.core')
          .factory('dataLPSservice', DataLPSservice);
-  DataLPSservice.$inject=['$q', '$rootScope'];
+  DataLPSservice.$inject=[
+    '$q',
+    '$rootScope',
+    'lovefield',
+    'enumPersonStatus',
+    'enumCountryUARegionService',
+    'enumAptType',
+    '$log',
+  ];
 
   /**
    * @name DataLPSservice
    * @desc Uses Local Persistent Storage (LPS) based on IndexedDB; acts asynchronously
    * @param $q
    * @param $rootScope
+   * @param lovefield
+   * @param enumPersonStatus
+   * @param enumCountryUARegionService
+   * @param enumAptType
+   * @param $log
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function DataLPSservice($q, $rootScope){
-    var ePersonStatusEnum = {
-      TAXAUTH   : 1,
-      LEGALP    : 2,
-      NATPERS   : 3,
-      PENTREP   : 4,
-      FREELANCE : 5,
-      properties : {
-        1 : { descr : "Податковий орган",  isnatpers : false, },
-        2 : { descr : "Юридична особа",    isnatpers : false, },
-        3 : { descr : "Фізична особа",     isnatpers : true,  },
-        4 : { descr : "ФО - підприємець",  isnatpers : true,  },
-        5 : { descr : "Самозайнята особа", isnatpers : true,  },
-      },
-    };
-    if (Object.freeze())
-      Object.freeze(ePersonStatusEnum);
-
-    var ePersonAptTypeEnum = {
-      APT     : 1,
-      OFFICE  : 2,
-      properties : {
-        1 : { descr : "кв.", },
-        2 : { descr : "оф.", },
-      },
-    };
-    if (Object.freeze())
-      Object.freeze(ePersonAptTypeEnum);
-
+  function DataLPSservice(
+      $q, 
+      $rootScope,
+      lovefield,
+      enumPersonStatus,
+      enumCountryUARegionService,
+      enumAptType,
+      $log
+  ){
     var persons = [
-      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     ePersonStatusEnum.NATPERS,    "CH788108", "2694204152", "",
-                  "Україна",  "м.Київ",   "", "02031",    "м.Київ", "ДПІ у Шевченківському р-ні",
-                  "Кудрявський узвіз",    10, "", 1,      ePersonAptTypeEnum.APT,
+      new ePerson("Руденко",  "Олексій",  "Анатолійович", true,     enumPersonStatus.NPemp,    "СН788108", "2694204152", "",
+                  "Україна",  1,          "", "02031",    "м.Київ", "",
+                  "Кудрявський узвіз",    10, "", 1,      enumAptType.APT,     "ДПІ у Шевченківському р-ні",
                   "+380501112233",        "oleksiy.rudenko@gmailx.com",     'svg-2',  "Principal"
       ),
-      new ePerson("Петренко", "Петро",    "Петрович",     true,     ePersonStatusEnum.NATPERS,    "CM888222", "2694203333", "",
-                  "Україна",  "м.Київ",   "", "03033",    "м.Київ", "ДПІ у Голосіївському р-ні",
-                  "вул.Васильківська",    30, "", 3,      ePersonAptTypeEnum.APT,
+      new ePerson("Петренко", "Петро",    "Петрович",     true,     enumPersonStatus.NPemp,    "СМ888222", "2694203333", "",
+                  "Україна",  1,          "", "03033",    "м.Київ", "",
+                  "вул.Васильківська",    30, "", 3,      enumAptType.APT,     "ДПІ у Голосіївському р-ні",
                   "+380503334455",        "petro.petrenko@gmailx.com",      'svg-1',  ""
       )
     ];
@@ -65,8 +58,9 @@
     // Service interface
     var service = {
       enums : {
-        ePersonStatus   : ePersonStatusEnum,
-        ePersonAptType  : ePersonAptTypeEnum,
+        ePersonStatus     : enumPersonStatus,
+        ePersonAptType    : enumAptType,
+        AddressRegion     : enumCountryUARegionService,
       },
       declarants : {
         loadAll     : declarantsLoadAll,
@@ -84,7 +78,23 @@
      */
     function declarantsLoadAll() {
       // Simulate async nature of real remote calls
-      return $q.when(persons);
+
+      lovefield.getDB().then(function (db) {
+        var ePerson = db.getSchema().table('ePerson');
+
+        $log.debug('-- With love from dataLPSservice');
+        db.select()
+          .from(ePerson)
+          .where(lf.op.and(
+            ePerson.isNatPers.eq(true),
+            ePerson.isDeclarant.eq(true)))
+          .exec()
+          .then(function (results) {
+            $log.debug("--- SELECT * FROM ePerson = " + angular.toJson(results,true));
+          });
+      });
+
+      return $q.resolve(persons);
     };
 
     /**
@@ -115,7 +125,8 @@
    * @returns {Object}
    * @constructor
    */
-  function ePerson(nameLast,    // for legal entities: principal name
+  function ePerson(
+                   nameLast,    // for legal entities: principal name
                    nameFirst,   // for legal entities: abbreviated principal name
                    namePat,     // for legal entities: incorporation form (Ltd, Inc. etc)
                    isUAresident,
@@ -134,6 +145,7 @@
                    addrSubBuilding,
                    addrApt,
                    addrAptType,
+                   taxAuthName,
                    telNr,
                    email,
                    avatarid,
@@ -141,7 +153,6 @@
     ) {
     this.id           = 0;
     this.isActive     = true;
-
     this.nameLast	    =	nameLast;
     this.nameFirst	  =	nameFirst;
     this.namePat	    =	namePat;
@@ -161,6 +172,7 @@
     this.addrSubBuilding	=	addrSubBuilding;
     this.addrApt	    =	addrApt;
     this.addrAptType	=	addrAptType;
+    this.taxAuthName  = taxAuthName;
     this.telNr	      =	telNr;
     this.email	      =	email;
     this.avatarid     = avatarid;
@@ -173,13 +185,18 @@
       return this.nameFirst + ' ' + this.nameLast;
     };
     this.nameFirstInitial = function() {
-      return this.nameFirst.charAt(0);
+      return (((typeof this.nameFirst!=="undefined") && this.nameFirst.length>0) ? this.nameFirst.charAt(0) : '');
     };
     this.namePatInitial = function() {
-      return this.namePat.charAt(0);
+      return (((typeof this.namePat!=="undefined") && this.namePat.length>0) ? this.namePat.charAt(0) : '');
     };
     this.nameInitials = function() {
-      return this.nameFirstInitial() + '.' + this.namePatInitial() +'.';
+      return ((this.nameFirstInitial().length>0)
+          ? (this.nameFirstInitial() + '.')
+          : '' ) +
+        ((this.namePatInitial().length>0)
+          ? this.namePatInitial() + '.'
+          : '' );
     };
     this.nameLastInitials = function() {
       return this.nameLast + ' ' + this.nameInitials();
