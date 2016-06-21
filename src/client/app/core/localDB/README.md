@@ -124,7 +124,6 @@ limit `STRING` length to a value of
 
 
 Cross-Database defaults per type (default value, isNull)
-Aliases
 
 Cross-Database defaults per type
 
@@ -170,12 +169,21 @@ Other precision values rounded down, but 6 is a minimum.
 
 #### Behaviour
 
-onBelow
+Designer can define LocalDB behaviour on attempts to assign a field a value, which is
+not allowed according to Field Constraints.
 
-onAbove
+There is a number of preset behaviours available depending on field data type.
 
-onNull
+| Data Type | onBelow | onAbove | onNull |
+| :--- | :--- | :--- | :--- |
+| numeric types | error,min,_value_ | error,max,_value_ | error,min,max,_value_ |
+| string types  | error,pad | error,trunc | error,spaces(.length=min),'string value' |
+| other |
 
+
+ID mutable?
+
+System defaults can be overridden with cross-database defaults unless marked with *.
 
 [**[back-to-top](#table-of-contents)**]
 
