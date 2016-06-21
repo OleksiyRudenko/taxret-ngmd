@@ -118,7 +118,7 @@ If `TIMESTAMP` field in Record Object undefined on INSERT then it is set to `nul
 If `TIMESTAMP` field in Record Object is `null` on INSERT/UPDATE then it is set to current time.
 
 In theory `string` length is limited to memory available. To be more practical I decided to
-limit `STRING` length with a value of
+limit `STRING` length to a value of
 [`maxlength` attribute of `<input>` element](http://www.w3schools.com/tags/att_input_maxlength.asp).
 
 
