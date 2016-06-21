@@ -74,61 +74,6 @@ Schema loader's workflow depending on argument value:
 
 *) All `lovefield` types are prefixed with `lf.Type.`
 
-#### Field Properties
-
-Fields may have extra properties like `notNull`, `min`, `max`, precision.
-For numeric types `min` and `max` refer to their values, while for string types refer to byte length.
-
-If properties are not set implicitly then system defaults in use. However, those defaults can
-be overridden with cross-database defaults with certain provisions for some aliases.
-
-System defaults are:
-
-| Data Type   | is nullable | notNull | min | max | precision | defaultValue |
-| :---        | :--- | :--- | :--- | :--- | :--- | :--- |
-| `ID`        | no  | true* |              1 | 2,147,483,647 | n/a | `null`* |
-| `INTEGER`   | yes | true | -2,147,483,648 | 2,147,483,647 | n/a |     0  |
-| `BIGINT`    | yes | true | -9,007,199,254,740,992 | 9,007,199,254,740,992 | n/a |     0  |
-| `NUMBER`    | yes | true | `number`   | `number` | `number` |     0  |
-| `DECIMAL`   | yes | true | -9,007,199,254,740,992 | 9,007,199,254,740,992 | 0   |     0  |
-| `STRING`    | yes | true | 0 | 524,288 | n/a | '' |
-| `BOOLEAN`   | yes | true | n/a | n/a | n/a| false |
-| `OBJECT`    | yes | false | n/a | n/a | n/a | `null` |
-| `BLOB`      | yes | false | n/a | n/a | n/a | `null` |
-| `ENUM`      | yes | false | n/a | n/a | n/a | `null` |
-| `SET`       | yes | false | n/a | n/a | n/a | `null` |
-| `JSDATE`    | yes | true | `Date` | `Date` | n/a | `null` |
-| `DATESTR`   | no | true* | '0000-00-00' | '9999-12-31' | n/a | `0000-00-00` |
-| `TIMESTAMP` | no | true  | 0 | 9,007,199,254,740,992 | n/a | `null` |
-| `DATETIME`  | no | true  | '0000-00-00 00:00:00' | '9999-12-31 23:59:59' | 14 | `null` |
-
-(*) denotes defaults that cannot be changed neither on field definition nor with cross-database
- defaults.
-
-If a type is not nullable and defaultValue set to `null` then there is special behavior
-for the case when `null` is supplied to store.
-
-If `ID` field in Record Object undefined then it is set to `null`.
-
-If `ID` field in Record Object is `null` then new record inserted. This behaviour, however,
-can be overridden.
-
-If `TIMESTAMP` field in Record Object undefined on INSERT then it is set to `null`.
-
-If `TIMESTAMP` field in Record Object is `null` on INSERT/UPDATE then it is set to current time.
-
-In theory `string` length is limited to memory available. To be more practical I decided to
-limit `STRING` length to a value of
-[`maxlength` attribute of `<input>` element](http://www.w3schools.com/tags/att_input_maxlength.asp).
-
-
-
-Cross-Database defaults per type (default value, isNull)
-
-Cross-Database defaults per type
-
-
-
 #### Data Type Aliases
 
 Some aliases are just convenience replacements. Other reset some or all default properties.
@@ -163,15 +108,69 @@ DATETIME precisions:
  - 14 = `0000-00-00 00:00:00`
 Other precision values rounded down, but 6 is a minimum.
 
+[**[back-to-top](#table-of-contents)**]
 
 ### Field Constraints
+
+Fields may have extra properties like `notNull`, `min`, `max`, `precision`.
+For numeric types `min` and `max` refer to values, while for string
+types these constraints refer to byte length.
+
+If properties are not set implicitly then system defaults in use. However, those defaults can
+be overridden with cross-database defaults with certain provisions for some aliases.
+
+System defaults are:
+
+| Data Type   | is nullable | notNull | min | max | precision | defaultValue |
+| :---        | :--- | :--- | :--- | :--- | :--- | :--- |
+| `ID`        | no  | true* |              1 | 2,147,483,647 | n/a | `null`* |
+| `INTEGER`   | yes | true | -2,147,483,648 | 2,147,483,647 | n/a |     0  |
+| `BIGINT`    | yes | true | -9,007,199,254,740,992 | 9,007,199,254,740,992 | n/a |     0  |
+| `NUMBER`    | yes | true | `number`   | `number` | `number` |     0  |
+| `DECIMAL`   | yes | true | -9,007,199,254,740,992 | 9,007,199,254,740,992 | 0   |     0  |
+| `STRING`    | yes | true | 0 | 524,288 | n/a | '' |
+| `BOOLEAN`   | yes | true | n/a | n/a | n/a| false |
+| `OBJECT`    | yes | false | n/a | n/a | n/a | `null` |
+| `BLOB`      | yes | false | n/a | n/a | n/a | `null` |
+| `ENUM`      | yes | false | n/a | n/a | n/a | `null` |
+| `SET`       | yes | false | n/a | n/a | n/a | `null` |
+| `JSDATE`    | yes | true | `Date` | `Date` | n/a | `null` |
+| `DATESTR`   | no  | true* | '0000-00-00' | '9999-12-31' | n/a | `0000-00-00` |
+| `TIMESTAMP` | no  | true  | 0 | 9,007,199,254,740,992 | n/a | `null` |
+| `DATETIME`  | no  | true  | '0000-00-00 00:00:00' | '9999-12-31 23:59:59' | 14 | `null` |
+
+(*) denotes defaults that cannot be changed neither on field definition nor with cross-database
+ defaults.
+
+If a type is not nullable and defaultValue set to `null` then there is special behavior
+for the case when `null` is supplied to store.
+
+If `ID` field in Record Object undefined then it is set to `null`.
+
+If `ID` field in Record Object is `null` then new record inserted. This behaviour, however,
+can be overridden.
+
+If `TIMESTAMP` field in Record Object undefined on INSERT then it is set to `null`.
+
+If `TIMESTAMP` field in Record Object is `null` on INSERT/UPDATE then it is set to current time.
+
+In theory `string` length is limited to memory available. To be more practical I decided to
+limit `STRING` length to a value of
+[`maxlength` attribute of `<input>` element](http://www.w3schools.com/tags/att_input_maxlength.asp).
+
 
 regexp (`new RegExp("a|b\\w", "i");`,
 [see also](http://stackoverflow.com/questions/874709/converting-user-input-string-to-regular-expression))
 
 onMismatch
 
-#### Behaviour
+unique
+
+Cross-Database defaults per type (default value, isNull)
+
+Cross-Database defaults per type
+
+#### Constraints Violation Behaviour
 
 Designer can define LocalDB behaviour on attempts to assign a field a value, which is
 not allowed according to Field Constraints.
