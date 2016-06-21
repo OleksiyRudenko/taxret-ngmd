@@ -16,19 +16,26 @@
   ]; */
 
   function LocalDB() { // lovefield, $rootScope, $q, $log) {
+    // provider
+    var provider = {};
+    var config   = {};
+
     // service to return
-    this.$get = [ 'lovefield', '$rootScope', '$q', '$log', LocalDBservice ];
+    provider.$get = [ 'lovefield', '$rootScope', '$q', '$log', LocalDBservice ];
 
     // configuration setting methods
-    this.setDB                = setDB;
-    this.setDBconfigBasePath  = setDBconfigBasePath;
-    this.setDBname            = setDBname;
-    this.setDBversion         = setDBversion;
+    provider.setDB                = setDB;
+    provider.setDBconfigBasePath  = setDBconfigBasePath;
+    provider.setDBname            = setDBname;
+    provider.setDBversion         = setDBversion;
 
     // private configurable variables with defaults
-    var privateDBconfigBasePath = './';
-    var privateDBname           = 'test';
-    var privateDBversion        = 1;
+    config.DBconfigBasePath = './';
+    config.DBname           = 'test';
+    config.DBversion        = 1;
+
+    // return provider
+    return provider;
 
     // ====================== code =================================
     // configuration setting methods
@@ -44,24 +51,22 @@
       else
         if (dbConfigBasePath.slice(-1)!=='/')
           dbConfigBasePath += '/';              // add trailing slash
-      privateDBconfigBasePath = dbConfigBasePath;
+      config.DBconfigBasePath = dbConfigBasePath;
     }
 
     function setDBname(dbName) {
-      privateDBname = dbName;
+      config.DBname = dbName;
     }
 
     function setDBversion(dbVersion) {
       dbVersion = parseInt(0 + dbVersion);
-      privateDBversion = (dbVersion<1) ? 1 : dbVersion;
+      config.DBversion = (dbVersion<1) ? 1 : dbVersion;
     }
 
     // MAIN SERVICE
     function LocalDBservice( lovefield, $rootScope, $q, $log ) {
       var service = {
-        DBconfigBasePath  : privateDBconfigBasePath,
-        DBname            : privateDBname,
-        DBversion         : privateDBversion,
+        config  : config,
       };
 
       return service;
@@ -70,19 +75,18 @@
 
       // PRIVTAE SERVICE METHODS
       function configPathBuild(version) {
-        return this.DBconfigBasePath + ('000' + this.DBversion).slice(-3) + '/';
+        return service.config.DBconfigBasePath + ('000' + service.config.DBversion).slice(-3) + '/';
       }
 
       function loadDBschema(version) {
         if (!!version)
-          version = this.DBversion;
+          version = service.config.DBversion;
 
       }
 
       function loadDBupgrade(version) {
         if (!!version)
-          version = this.DBversion;
-
+          version = service.config.DBversion;
       }
 
 
