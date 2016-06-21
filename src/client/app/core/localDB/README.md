@@ -121,23 +121,23 @@ be overridden with cross-database defaults with certain provisions for some alia
 
 System defaults are:
 
-| Data Type   | is nullable | notNull | min | max | precision | defaultValue |
-| :---        | :--- | :--- | :--- | :--- | :--- | :--- |
-| `ID`        | no  | true* |              1 | 2,147,483,647 | n/a | `null`* |
-| `INTEGER`   | yes | true | -2,147,483,648 | 2,147,483,647 | n/a |     0  |
-| `BIGINT`    | yes | true | -9,007,199,254,740,992 | 9,007,199,254,740,992 | n/a |     0  |
-| `NUMBER`    | yes | true | `number`   | `number` | `number` |     0  |
-| `DECIMAL`   | yes | true | -9,007,199,254,740,992 | 9,007,199,254,740,992 | 0   |     0  |
-| `STRING`    | yes | true | 0 | 524,288 | n/a | '' |
-| `BOOLEAN`   | yes | true | n/a | n/a | n/a| false |
-| `OBJECT`    | yes | false | n/a | n/a | n/a | `null` |
-| `BLOB`      | yes | false | n/a | n/a | n/a | `null` |
-| `ENUM`      | yes | false | n/a | n/a | n/a | `null` |
-| `SET`       | yes | false | n/a | n/a | n/a | `null` |
-| `JSDATE`    | yes | true | `Date` | `Date` | n/a | `null` |
-| `DATESTR`   | no  | true* | '0000-00-00' | '9999-12-31' | n/a | `0000-00-00` |
-| `TIMESTAMP` | no  | true  | 0 | 9,007,199,254,740,992 | n/a | `null` |
-| `DATETIME`  | no  | true  | '0000-00-00 00:00:00' | '9999-12-31 23:59:59' | 14 | `null` |
+| Data Type   | notNull | min | max | precision | defaultValue |
+| :---        | :---  | :---: | :---: | :---: | :---: |
+| `ID`        | true* |              1 | 2,147,483,647 | n/a | `null`* |
+| `INTEGER`   | true  | -2,147,483,648 | 2,147,483,647 | n/a |     0  |
+| `BIGINT`    | true  | -9,007,199,254,740,992 | 9,007,199,254,740,992 | n/a |     0  |
+| `NUMBER`    | true  | `number`   | `number` | `number` |     0  |
+| `DECIMAL`   | true  | -9,007,199,254,740,992 | 9,007,199,254,740,992 | 0   |     0  |
+| `STRING`    | true  | 0 | 524,288 | n/a | '' |
+| `BOOLEAN`   | true  | n/a | n/a | n/a| false |
+| `OBJECT`    | false* | n/a | n/a | n/a | `null` |
+| `BLOB`      | false* | n/a | n/a | n/a | `null` |
+| `ENUM`      | false | n/a | n/a | n/a | `null` |
+| `SET`       | false | n/a | n/a | n/a | `null` |
+| `JSDATE`    | false | `Date` | `Date` | n/a | `null` |
+| `DATESTR`   | true  | '0000-00-00' | '9999-12-31' | n/a | `0000-00-00` |
+| `TIMESTAMP` | true* | 0 | 9,007,199,254,740,992 | n/a | `null`* |
+| `DATETIME`  | true  | '0000-00-00 00:00:00' | '9999-12-31 23:59:59' | 14 | `null` |
 
 (*) denotes defaults that cannot be changed neither on field definition nor with cross-database
  defaults.
