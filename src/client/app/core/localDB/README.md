@@ -57,7 +57,8 @@ Schema loader's workflow depending on argument value:
 
 | Data Type | `lovefield` Type Mapping* | JavaScript type |
 | :--- | :--- | :--- |
-| `ID` | `INTEGER` | 32-bit integer |
+| `PID` | `INTEGER` | 32-bit integer |
+| `FID` | `INTEGER` | 32-bit integer |
 | `INTEGER` | `INTEGER` | 32-bit integer |
 | `BIGINT` | `NUMBER` | `number` |
 | `NUMBER` | `NUMBER` | `number` |
@@ -123,7 +124,8 @@ System defaults are:
 
 | Data Type   | notNull | min | max | precision | defaultValue |
 | :---        | :---  | :---: | :---: | :---: | :---: |
-| `ID`        | true* |              1 | 2,147,483,647 | n/a | `null`* |
+| `PID`        | true* |              1 | 2,147,483,647 | n/a | `null`* |
+| `FID`        | false |              1 | 2,147,483,647 | n/a | `null`  |
 | `INTEGER`   | true  | -2,147,483,648 | 2,147,483,647 | n/a |     0  |
 | `BIGINT`    | true  | -9,007,199,254,740,992 | 9,007,199,254,740,992 | n/a |     0  |
 | `NUMBER`    | true  | `number`   | `number` | `number` |     0  |
@@ -145,9 +147,9 @@ System defaults are:
 If a type is not nullable and defaultValue set to `null` then there is special behavior
 for the case when `null` is supplied to store.
 
-If `ID` field in Record Object undefined then it is set to `null`.
+If `PID` field in Record Object undefined then it is set to `null`.
 
-If `ID` field in Record Object is `null` then new record inserted. This behaviour, however,
+If `PID` field in Record Object is `null` then new record inserted. This behaviour, however,
 can be overridden.
 
 If `TIMESTAMP` field in Record Object undefined on INSERT then it is set to `null`.
@@ -209,6 +211,10 @@ Cross-database defaults (id/_id, auto-declare primary if id/_id field present)
 [**[back-to-top](#table-of-contents)**]
 
 ### Relations
+
+Supported relations:
+
+
 
 #### Many-to-Many Relation
 
