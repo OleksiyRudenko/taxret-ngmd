@@ -185,10 +185,10 @@ not allowed according to Field Constraints.
 
 There is a number of preset behaviours available depending on field data type.
 
-| Data Type | onBelow | onAbove | onNull | onChange |
-| :--- | :--- | :--- | :--- | :--- |
-| numeric types | error,min,_value_ | error,max,_value_ | error,min,max,_value_ | allow,deny |
-| string types  | error,pad | error,trunc | error,spaces(.length=min),'string value' | allow,deny |
+| Data Type | onBelow | onAbove | onNull | onZero | onChange |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| other numeric types | error,min,_value_ | error,max,_value_ | error,min,max,_value_ | n/a | allow,deny |
+| string types  | error,pad | error,trunc | error,spaces(.length=min),'string value' | n/a | allow,deny |
 | other |
 
 
