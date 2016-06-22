@@ -144,6 +144,8 @@ System defaults are:
 (*) denotes defaults that cannot be changed neither on field definition nor with cross-database
  defaults.
 
+`defaultValue` - is a value used on INSERT when field is `undefined`.
+
 If a type is not nullable (i.e. `notNull` == `true*` ) and defaultValue set to `null`
 then there is special behavior for the case when `null` is allowed on INSERT.
 
