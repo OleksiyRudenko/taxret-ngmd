@@ -87,9 +87,10 @@ data type.
 | Data Type | Alias | Defaults |
 | :--- | :--- | :--- |
 | `INTEGER` | `INT` | |
-| `STRING` | `CHAR` | `min=max; onBelow=pad; onAbove=truncate;` |
-| `STRING` | `VARCHAR` | `min=0; max=16; onBelow=error; onAbove=truncate;` |
+| `STRING`  | `CHAR` | `min=max; onBelow=pad; onAbove=truncate;` |
+| `STRING`  | `VARCHAR` | `min=0; max=16; onBelow=error; onAbove=truncate;` |
 | `DECIMAL` | `MONEY` | `precision=2;` |
+| `BOOLEAN` | `BOOL` |  |
 
 #### Data Type: `ID`
 
@@ -200,6 +201,19 @@ If there is single behaviour then it is not overridable.
 
 [**[back-to-top](#table-of-contents)**]
 
+### Field Attributes
+
+Some data types require special attributes.
+
+| Data Type | Attribute | Meaning |
+| :--- | :---  | :--- |
+| ENUM | table | Specifies table of type LIST or TREE which is a source of verbose value description |
+| SET  | table | Specifies table of type LIST or TREE which is a source of verbose value description |
+
+In case of SET host table there is intermediary `m:n`-table to bind with LIST/TREE table.
+
+[**[back-to-top](#table-of-contents)**]
+
 ### Indices
 
 #### Primary Key
@@ -245,6 +259,35 @@ Behaviour - onBelow/onAbove/onNull
 Min/Max
 
 ID=null on UPDATE -- default behavior => INSERT
+
+[**[back-to-top](#table-of-contents)**]
+
+## Caching
+
+Items can be cached. Items are rows or tables.
+
+Cache is on per table basis. User should provide an object to keep cache at. The cache object
+is bound to a table.
+
+Cache is supplemented upon SELECT on a single table (without joins).
+
+Upon DELETE cache gets updated according to user provided option: ignore cache or
+rows are deleted accordingly or
+cache repopulated upon DELETE completed or cleared.
+
+Upon INSERT/UPDATE cache gets updated according to user provided option: ignore cache or
+rows added/updated accordingly or cache repopulated upon INSERT/UPDATE completed or cleared.
+
+For the case of cache repopulation user should provide SELECT instruction or relevant
+SELECT instruction cache object (object which contains SELECT instruction).
+
+Cache may slowdown SELECT queries. Cache keeps special flag denoting whether it keeps complete
+table copy. ....
+
+Cache not used on SELECT queries with joins.
+
+Cache is useful to build `<SELECT>` lists, radio-buttons or check-boxes groups and similar widgets.
+Normally cache can be used directly for that purpose.
 
 [**[back-to-top](#table-of-contents)**]
 
