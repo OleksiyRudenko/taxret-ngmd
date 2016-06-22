@@ -228,7 +228,25 @@ Cross-database defaults (id/_id, auto-declare primary if id/_id field present)
 
 ### Relations
 
-Supported relations:
+#### Supported relations.
+
+`A` and `B` are entities in relation. `A` is always sovereign.
+
+`FID` in either entity refers to another one.
+
+`PID` is an id in entity.
+
+`[PID]` and `[FID]` denote optionality of id or id reference.
+
+| Use case | Keys in `A` | Keys in `B` | On DELETE `A` | On DELETE `B` |
+| :--- | :--- | :--- | :--- | :--- |
+
+**Flight-Passenger**
+
+`B` is sovereign, may be associated with one or more of `A`.
+
+`A` may be associated with one or more of `B`.
+
 
 
 
