@@ -144,8 +144,8 @@ System defaults are:
 (*) denotes defaults that cannot be changed neither on field definition nor with cross-database
  defaults.
 
-If a type is not nullable and defaultValue set to `null` then there is special behavior
-for the case when `null` is supplied to store.
+If a type is not nullable (i.e. `notNull` == `true*` ) and defaultValue set to `null`
+then there is special behavior for the case when `null` is allowed on INSERT.
 
 If `PID` field in Record Object undefined then it is set to `null`.
 
