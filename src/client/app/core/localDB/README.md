@@ -218,7 +218,7 @@ In case of SET host table there is intermediary `m:n`-table to bind with LIST/TR
 
 #### Primary Key
 
-Cross-database defaults (id/_id, auto-declare primary if id/_id field present)
+Cross-database defaults (id/_id, auto-declare primary if id/_id field present, isActive)
 
 #### Foreign Key
 
@@ -241,12 +241,55 @@ Cross-database defaults (id/_id, auto-declare primary if id/_id field present)
 | Use case | Keys in `A` | Keys in `B` | On DELETE `A` | On DELETE `B` |
 | :--- | :--- | :--- | :--- | :--- |
 
-**Flight-Passenger**
 
-`B` is sovereign, may be associated with one or more of `A`.
+
+**Person-Weight**
+
+`A` must be associated with one and only `B`.
+
+`B` must be associated with one and only `A`.
+
+`1:1` relation - composition.
+
+**Person-CurrentAddress**
+
+`A` may be associated with one `B`.
+
+`B` cannot exist without `A`.
+
+`1:[0,1]` relation - composition.
+
+**Person-BankAccount**
 
 `A` may be associated with one or more of `B`.
 
+`B` cannot exist without `A`.
+
+`1:0+` relation - composition.
+
+**House-Storey**
+
+`A` must be associated with at least one of `B`.
+
+`B` cannot exist without `A`.
+
+`1:1+` relation - composition.
+
+**Flight-Passenger**
+
+`A` may be associated with one or more of `B`.
+
+`B` is sovereign, may be associated with one or more of `A`.
+
+`0+:0+` relation - aggregation.
+
+**Company-Industry**
+
+`A` must be associated with at least one of `B`.
+
+`B` is sovereign, may be associated with one or more of `A`.
+
+`0+:1+` relation - aggregation.
 
 
 
