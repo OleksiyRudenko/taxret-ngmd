@@ -313,9 +313,83 @@ Normally cache can be used directly for that purpose.
 
 [**[back-to-top](#table-of-contents)**]
 
-## DB Upgrade
+## DB Initialization and Upgrade
 
-### Configuring Upgrades
+If you know well what **`upgrade`** means in context of IndexedDB skip ahead
+to [DB Initialization](#db-Initialization).
+
+At some point of your DB lifecycle you may decide to change the schema of your DB, so you
+implement schema changes and your app from now on relies on changed DB schema.
+Everything may work fine in your development environment,
+but once your app gets launched on a different device that keeps DB under outdated schema
+it has to **upgrade** existing DB.
+
+LocalDB automates the process. Each schema is stored under version starting with one.
+At launch LocalDB attempts to open DB with given target version.
+If available DB has lower version then LocalDB starts upgrading DB.
+
+Upgrade is done gradually - from current version until target version is reached.
+Each upgrade iteration may also require some manipulations on data stored, which is
+also automated.
+
+### DB Initialization
+
+Consider DB initialization as an upgrade from version 0 (inexistent) to version 1.
+
+### DB Upgrade
+
+On upgrade you may want:
+ * create new or delete existent table
+ * rename tables/columns
+ * add/remove columns
+ * move columns between tables
+ * add/remove persistent indices
+
+Moving columns may require data manipulations.
+
+Some schema changes may require persistent indices get rebuilt.
+
+It is also possible to populate new tables with data, which can be imported from local `json`
+or remote http-request. Most likely you will want to keep initial table data in a subdirectory
+under current schema version directory.
+
+Upgrade instructions are not checked for consistency, so if you delete a column and then
+try to move it you will end up with an exception.
+
+Table creation instructions should refer to a schema
+specification (`createTable *|tablename[tablename,...]`) for a version we are upgrading to.
+
+```
+[
+     "createTable Person",
+     "changeTbType Category TREE",
+     "removeTable OtherData",
+     "addColumn Person passport driversLicence",
+     "moveColumn city Person Address",
+     "renameColumn Person passport travelDocument",
+     "changeColDef Person passport",
+     "createTable Address Company",
+     "createTable *",
+     "auto",
+     { op: "populate Account initialBalance", value: "10.00" },
+     { op: "populate Address city district", value: [ "Kyiv", "Pechersk"] },
+     "importData Person ./ini/Person.json",
+    },
+]
+```
+
+`auto` instruction will compare target schema with old one amended with preceding
+instructions and will generate required instructions.
+However, it cannot recognize renaming and columns moving so these operations should precede
+ `auto` command.
+
+You also may want to export resulting database before each upgrade iteration
+(upgrade to next version).
+
+### Upgrade Roll-back
+
+To roll-back you need an exported copy of database as of desired DB version.
+
 
 [**[back-to-top](#table-of-contents)**]
 
