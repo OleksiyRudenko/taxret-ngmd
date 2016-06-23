@@ -297,6 +297,19 @@ Cross-database defaults (id/_id, auto-declare primary if id/_id field present, i
 
 #### Aggregation
 
+#### Cardinality Constraint
+
+Optionally specify min and max of related entities.
+
+E.g. limit number of industries a company may belong to `5` while `notNull` will indicate
+that the company should refer to at least one industry.
+
+`.getRelRange()`
+
+`.getRelMin()`
+
+`.getRelMax()`
+
 [**[back-to-top](#table-of-contents)**]
 
 ### Multi-Lingual Support
