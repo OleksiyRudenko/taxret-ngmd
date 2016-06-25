@@ -191,6 +191,8 @@ There is a number of preset behaviours available depending on field data type.
 | string types  | error,pad | error,trunc | error,spaces(.length=min),'string value' | n/a | allow,deny |
 | other |
 
+**NB**. Lists in `on*` columns mean _any one of listed behaviours_.
+
 
 ID mutable?
 
