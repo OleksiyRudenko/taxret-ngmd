@@ -257,7 +257,7 @@ Cross-database defaults (id/_id, auto-declare primary if id/_id field present, i
 
 `B` cannot exist without `A`.
 
-`1:[0,1]` relation - composition.
+`1:{0|1}` relation - composition.
 
 **Person-BankAccount**
 
@@ -291,7 +291,24 @@ Cross-database defaults (id/_id, auto-declare primary if id/_id field present, i
 
 `0+:1+` relation - aggregation.
 
+#### `1:1` and `1:{0|1}` Relation
 
+You may want to learn or refresh your knowledge on
+[Database normalization](https://en.wikipedia.org/wiki/Database_normalization).
+
+Why do we need `1:1` and/or `1:{0|1}` relations across tables?
+
+Consider having forum application and `User` entity as a part of data model.
+
+```
+    User {
+        id:         PID,
+        login:      STRING NOTNULL,
+        password:   STRING NOTNULL,
+        nickname:   STRING NOTNULL,
+        email:      STRING NOTNULL,
+    }
+```
 
 #### Many-to-Many Relation
 
