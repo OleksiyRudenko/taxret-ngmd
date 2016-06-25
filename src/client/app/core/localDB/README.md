@@ -87,7 +87,7 @@ data type.
 | Data Type | Alias | Defaults |
 | :--- | :--- | :--- |
 | `INTEGER` | `INT` | |
-| `STRING`  | `CHAR` | `min=max; onBelow=pad; onAbove=truncate;` |
+| `STRING`  | `CHAR` | `min=max=16; onBelow=pad; onAbove=truncate;` |
 | `STRING`  | `VARCHAR` | `min=0; max=16; onBelow=error; onAbove=truncate;` |
 | `DECIMAL` | `MONEY` | `precision=2;` |
 | `BOOLEAN` | `BOOL` |  |
