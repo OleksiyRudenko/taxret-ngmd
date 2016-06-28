@@ -84,6 +84,8 @@
       PID     : PID,
       FID     : FID,
       INTEGER : INTEGER,
+      INT32   : INTEGER,
+      INT     : INTEGER,
       BIGINT  : BIGINT,
     };
 
