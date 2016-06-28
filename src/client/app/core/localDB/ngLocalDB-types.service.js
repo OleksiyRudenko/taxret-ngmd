@@ -79,6 +79,22 @@
     };
     BIGINT.onsave = [ BIGINT.onNull, BIGINT.onBelow, BIGINT.onAbove ];
 
+    var NUMBER = {
+      lfType  : 'NUMBER',
+      min     : Number.MIN_VALUE,
+      max     : Number.MAX_VALUE,
+      notNull : true,
+      defaultValue  : 0,
+
+      onNull  : LDBp.errorNull,
+      onBelow : LDBp.errorBelowMinValue,
+      onAbove : LDBp.errorAboveMaxValue,
+
+      onSave  : undefined,
+      onRetrieve  : undefined,
+    };
+    NUMBER.onsave = [ NUMBER.onNull, NUMBER.onBelow, NUMBER.onAbove ];
+
     // service
     var service = {
       PID     : PID,
@@ -87,6 +103,7 @@
       INT32   : INTEGER,
       INT     : INTEGER,
       BIGINT  : BIGINT,
+      NUMBER  : NUMBER,
     };
 
     return service;
