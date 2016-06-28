@@ -95,6 +95,23 @@
     };
     NUMBER.onsave = [ NUMBER.onNull, NUMBER.onBelow, NUMBER.onAbove ];
 
+    var DECIMAL = {
+      lfType  : 'NUMBER',
+      min     : Number.MIN_SAFE_INTEGER,
+      max     : Number.MAX_SAFE_INTEGER,
+      notNull : true,
+      defaultValue  : 0,
+      precision     : 0,
+
+      onNull  : LDBp.errorNull,
+      onBelow : LDBp.errorBelowMinValue,
+      onAbove : LDBp.errorAboveMaxValue,
+
+      onSave  : undefined,
+      onRetrieve  : undefined,
+    };
+    DECIMAL.onsave = [ DECIMAL.onNull, DECIMAL.onBelow, DECIMAL.onAbove ];
+
     // service
     var service = {
       PID     : PID,
@@ -104,6 +121,7 @@
       INT     : INTEGER,
       BIGINT  : BIGINT,
       NUMBER  : NUMBER,
+      DECIMAL : DECIMAL,
     };
 
     return service;
