@@ -63,15 +63,16 @@ Schema loader's workflow depending on argument value:
 | `BIGINT` | `NUMBER` | `number` |
 | `NUMBER` | `NUMBER` | `number` |
 | `DECIMAL` | `NUMBER` | `number` |
-| `STRING` | `STRING` | `string` |
 | `BOOLEAN` | `BOOLEAN` | `boolean` |
+| `STRING` | `STRING` | `string` |
 | `OBJECT` | `OBJECT` | `Object` |
 | `BLOB` | `ARRAY_BUFFER` | `ArrayBuffer` |
-| `ENUM` | n/a | n/a |
-| `SET` | n/a | n/a |
 | `JSDATE` | `DATE_TIME` | `Date` |
 | `DATESTR` | `STRING` | `string` |
+| `DATETIME` | `STRING` | `string` |
 | `TIMESTAMP` | `NUMBER` | `number` |
+| `ENUM` | n/a | n/a |
+| `SET` | n/a | n/a |
 
 *) All `lovefield` types are prefixed with `lf.Type.`
 
@@ -131,16 +132,16 @@ System defaults are:
 | `BIGINT`    | true  | -9,007,199,254,740,992 | 9,007,199,254,740,992 | n/a |     0  |
 | `NUMBER`    | true  | `number`   | `number` | `number` |     0  |
 | `DECIMAL`   | true  | -9,007,199,254,740,992 | 9,007,199,254,740,992 | 0   |     0  |
-| `STRING`    | true  | 0 | 524,288 | n/a | '' |
 | `BOOLEAN`   | true  | n/a | n/a | n/a| false |
+| `STRING`    | true  | 0 | 524,288 | n/a | '' |
 | `OBJECT`    | false* | n/a | n/a | n/a | `null` |
 | `BLOB`      | false* | n/a | n/a | n/a | `null` |
-| `ENUM`      | false | n/a | n/a | n/a | `null` |
-| `SET`       | false | n/a | n/a | n/a | `null` |
 | `JSDATE`    | false | `Date` | `Date` | n/a | `null` |
 | `DATESTR`   | true  | '0000-00-00' | '9999-12-31' | n/a | `0000-00-00` |
-| `TIMESTAMP` | true* | 0 | 9,007,199,254,740,992 | n/a | `null`* |
 | `DATETIME`  | true  | '0000-00-00 00:00:00' | '9999-12-31 23:59:59' | 14 | `null` |
+| `TIMESTAMP` | true* | 0 | 9,007,199,254,740,992 | n/a | `null`* |
+| `ENUM`      | false | n/a | n/a | n/a | `null` |
+| `SET`       | false | n/a | n/a | n/a | `null` |
 
 (*) denotes defaults that cannot be changed neither on field definition nor with cross-database
  defaults.
