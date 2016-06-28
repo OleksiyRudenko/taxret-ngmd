@@ -62,7 +62,7 @@ Schema loader's workflow depending on argument value:
 | `INTEGER` | `INTEGER` | 32-bit integer |
 | `BIGINT` | `NUMBER` | `number` |
 | `NUMBER` | `NUMBER` | `number` |
-| `DECIMAL` | `INTEGER` | 32-bit integer |
+| `DECIMAL` | `NUMBER` | `number` |
 | `STRING` | `STRING` | `string` |
 | `BOOLEAN` | `BOOLEAN` | `boolean` |
 | `OBJECT` | `OBJECT` | `Object` |
