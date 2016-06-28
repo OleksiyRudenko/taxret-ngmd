@@ -61,13 +61,30 @@
       onSave  : undefined,
       onRetrieve  : undefined,
     };
-    INTEGER.onsave = [ FID.onNull, FID.onBelow, FID.onAbove ];
+    INTEGER.onsave = [ INTEGER.onNull, INTEGER.onBelow, INTEGER.onAbove ];
+
+    var BIGINT = {
+      lfType  : 'NUMBER',
+      min     : Number.MIN_SAFE_INTEGER,
+      max     : Number.MAX_SAFE_INTEGER,
+      notNull : true,
+      defaultValue  : 0,
+
+      onNull  : LDBp.errorNull,
+      onBelow : LDBp.errorBelowMinValue,
+      onAbove : LDBp.errorAboveMaxValue,
+
+      onSave  : undefined,
+      onRetrieve  : undefined,
+    };
+    BIGINT.onsave = [ BIGINT.onNull, BIGINT.onBelow, BIGINT.onAbove ];
 
     // service
     var service = {
       PID     : PID,
       FID     : FID,
       INTEGER : INTEGER,
+      BIGINT  : BIGINT,
     };
 
     return service;
