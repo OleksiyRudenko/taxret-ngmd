@@ -123,7 +123,7 @@ be overridden with cross-database defaults with certain provisions for some alia
 
 System defaults are:
 
-| Data Type   | notNull | min | max | precision | defaultValue |
+| Data Type   | notNull | min[length] | max[length] | precision | defaultValue |
 | :---        | :---  | :---: | :---: | :---: | :---: |
 | `PID`        | true* |              1 | 2,147,483,647 | n/a | `null`* |
 | `FID`        | false |              1 | 2,147,483,647 | n/a | `null`  |
