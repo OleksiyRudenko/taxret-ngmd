@@ -12,7 +12,7 @@
   function LocalDBprocessors($g, $log) {
     // provider
     var service = {
-
+      
 
     };
 
