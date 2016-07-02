@@ -73,7 +73,7 @@
 
       // PUBLIC SERVICE METHODS
 
-      // PRIVTAE SERVICE METHODS
+      // PRIVATE SERVICE METHODS
       function configPathBuild(version) {
         return service.config.DBconfigBasePath + ('000' + service.config.DBversion).slice(-3) + '/';
       }
