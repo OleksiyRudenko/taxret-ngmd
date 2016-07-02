@@ -28,6 +28,7 @@ This application is also might be used as a skeleton application.
     * [Server side](#server-side)
 1. [Project Directory Layout](#project-directory-layout)
 1. [Project branching conventions](#project-branching-conventions)
+1. [Similar or Related Solutions, Other Related Resources](#similar-or-related-solutions-other-related-resources)
 
 ## Stack
 
@@ -349,3 +350,18 @@ code, features etc.
 
 None reasonable
 
+## Similar or Related Solutions, Other Related Resources
+
+### Solutions
+
+[Taxer.ua](https://taxer.ua/ru/features) - more for private entrepreneurs
+
+[Tax Return Form [160702]](http://taxlink.ua/ua/declaration/)
+
+### Related Information
+
+[Summary: Tax Return for 2015 [160702]](http://familybudget.com.ua/2016/02/%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D1%96%D1%8F-%D0%BF%D1%80%D0%BE-%D0%B4%D0%BE%D1%85%D0%BE%D0%B4%D0%B8-2015/)
+
+[Summary: Uniform Tax [160702]](http://chp.com.ua/spravochnik/edinyj-nalog)
+
+[Summary: General Taxation [160702]](http://chp.com.ua/spravochnik/obwaja-sistema)
